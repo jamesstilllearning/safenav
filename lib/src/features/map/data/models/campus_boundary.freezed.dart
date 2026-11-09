@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'campus_boundary.dart';
@@ -9,172 +9,113 @@ part of 'campus_boundary.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CampusBoundary _$CampusBoundaryFromJson(Map<String, dynamic> json) {
-  return _CampusBoundary.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CampusBoundary {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get shortName => throw _privateConstructorUsedError;
-  String get amenity => throw _privateConstructorUsedError;
-  String get city => throw _privateConstructorUsedError;
-  String get street => throw _privateConstructorUsedError;
-  String? get wikidata => throw _privateConstructorUsedError;
-  int get osmRelationId => throw _privateConstructorUsedError;
-  String get source => throw _privateConstructorUsedError;
-  String get sourceDate => throw _privateConstructorUsedError;
-  String get verificationStatus => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  List<LatLng> get polygon => throw _privateConstructorUsedError;
-  LatLng? get centroid => throw _privateConstructorUsedError;
-  double? get areaSqMeters => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get additionalTags =>
-      throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get shortName;
+  String get amenity;
+  String get city;
+  String get street;
+  String? get wikidata;
+  int get osmRelationId;
+  String get source;
+  String get sourceDate;
+  String get verificationStatus;
+  String get description;
+  List<LatLng> get polygon;
+  LatLng? get centroid;
+  double? get areaSqMeters;
+  Map<String, dynamic>? get additionalTags;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CampusBoundaryCopyWith<CampusBoundary> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CampusBoundaryCopyWith<$Res> {
-  factory $CampusBoundaryCopyWith(
-          CampusBoundary value, $Res Function(CampusBoundary) then) =
-      _$CampusBoundaryCopyWithImpl<$Res, CampusBoundary>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String shortName,
-      String amenity,
-      String city,
-      String street,
-      String? wikidata,
-      int osmRelationId,
-      String source,
-      String sourceDate,
-      String verificationStatus,
-      String description,
-      List<LatLng> polygon,
-      LatLng? centroid,
-      double? areaSqMeters,
-      Map<String, dynamic>? additionalTags});
-}
-
-/// @nodoc
-class _$CampusBoundaryCopyWithImpl<$Res, $Val extends CampusBoundary>
-    implements $CampusBoundaryCopyWith<$Res> {
-  _$CampusBoundaryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CampusBoundary
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CampusBoundaryCopyWith<CampusBoundary> get copyWith =>
+      _$CampusBoundaryCopyWithImpl<CampusBoundary>(
+          this as CampusBoundary, _$identity);
+
+  /// Serializes this CampusBoundary to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? shortName = null,
-    Object? amenity = null,
-    Object? city = null,
-    Object? street = null,
-    Object? wikidata = freezed,
-    Object? osmRelationId = null,
-    Object? source = null,
-    Object? sourceDate = null,
-    Object? verificationStatus = null,
-    Object? description = null,
-    Object? polygon = null,
-    Object? centroid = freezed,
-    Object? areaSqMeters = freezed,
-    Object? additionalTags = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      shortName: null == shortName
-          ? _value.shortName
-          : shortName // ignore: cast_nullable_to_non_nullable
-              as String,
-      amenity: null == amenity
-          ? _value.amenity
-          : amenity // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      wikidata: freezed == wikidata
-          ? _value.wikidata
-          : wikidata // ignore: cast_nullable_to_non_nullable
-              as String?,
-      osmRelationId: null == osmRelationId
-          ? _value.osmRelationId
-          : osmRelationId // ignore: cast_nullable_to_non_nullable
-              as int,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceDate: null == sourceDate
-          ? _value.sourceDate
-          : sourceDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
-          : verificationStatus // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      polygon: null == polygon
-          ? _value.polygon
-          : polygon // ignore: cast_nullable_to_non_nullable
-              as List<LatLng>,
-      centroid: freezed == centroid
-          ? _value.centroid
-          : centroid // ignore: cast_nullable_to_non_nullable
-              as LatLng?,
-      areaSqMeters: freezed == areaSqMeters
-          ? _value.areaSqMeters
-          : areaSqMeters // ignore: cast_nullable_to_non_nullable
-              as double?,
-      additionalTags: freezed == additionalTags
-          ? _value.additionalTags
-          : additionalTags // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as CampusBoundary;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CampusBoundary &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.shortName, _this.shortName) ||
+                other.shortName == _this.shortName) &&
+            (identical(other.amenity, _this.amenity) ||
+                other.amenity == _this.amenity) &&
+            (identical(other.city, _this.city) || other.city == _this.city) &&
+            (identical(other.street, _this.street) ||
+                other.street == _this.street) &&
+            (identical(other.wikidata, _this.wikidata) ||
+                other.wikidata == _this.wikidata) &&
+            (identical(other.osmRelationId, _this.osmRelationId) ||
+                other.osmRelationId == _this.osmRelationId) &&
+            (identical(other.source, _this.source) ||
+                other.source == _this.source) &&
+            (identical(other.sourceDate, _this.sourceDate) ||
+                other.sourceDate == _this.sourceDate) &&
+            (identical(other.verificationStatus, _this.verificationStatus) ||
+                other.verificationStatus == _this.verificationStatus) &&
+            (identical(other.description, _this.description) ||
+                other.description == _this.description) &&
+            const DeepCollectionEquality()
+                .equals(other.polygon, _this.polygon) &&
+            (identical(other.centroid, _this.centroid) ||
+                other.centroid == _this.centroid) &&
+            (identical(other.areaSqMeters, _this.areaSqMeters) ||
+                other.areaSqMeters == _this.areaSqMeters) &&
+            const DeepCollectionEquality()
+                .equals(other.additionalTags, _this.additionalTags));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as CampusBoundary;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.name,
+        _this.shortName,
+        _this.amenity,
+        _this.city,
+        _this.street,
+        _this.wikidata,
+        _this.osmRelationId,
+        _this.source,
+        _this.sourceDate,
+        _this.verificationStatus,
+        _this.description,
+        const DeepCollectionEquality().hash(_this.polygon),
+        _this.centroid,
+        _this.areaSqMeters,
+        const DeepCollectionEquality().hash(_this.additionalTags));
+  }
+
+  @override
+  String toString() {
+    final _this = this as CampusBoundary;
+    return 'CampusBoundary(id: ${_this.id}, name: ${_this.name}, shortName: ${_this.shortName}, amenity: ${_this.amenity}, city: ${_this.city}, street: ${_this.street}, wikidata: ${_this.wikidata}, osmRelationId: ${_this.osmRelationId}, source: ${_this.source}, sourceDate: ${_this.sourceDate}, verificationStatus: ${_this.verificationStatus}, description: ${_this.description}, polygon: ${_this.polygon}, centroid: ${_this.centroid}, areaSqMeters: ${_this.areaSqMeters}, additionalTags: ${_this.additionalTags})';
   }
 }
 
 /// @nodoc
-abstract class _$$CampusBoundaryImplCopyWith<$Res>
-    implements $CampusBoundaryCopyWith<$Res> {
-  factory _$$CampusBoundaryImplCopyWith(_$CampusBoundaryImpl value,
-          $Res Function(_$CampusBoundaryImpl) then) =
-      __$$CampusBoundaryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CampusBoundaryCopyWith<$Res> {
+  factory $CampusBoundaryCopyWith(
+          CampusBoundary value, $Res Function(CampusBoundary) _then) =
+      _$CampusBoundaryCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -196,13 +137,15 @@ abstract class _$$CampusBoundaryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CampusBoundaryImplCopyWithImpl<$Res>
-    extends _$CampusBoundaryCopyWithImpl<$Res, _$CampusBoundaryImpl>
-    implements _$$CampusBoundaryImplCopyWith<$Res> {
-  __$$CampusBoundaryImplCopyWithImpl(
-      _$CampusBoundaryImpl _value, $Res Function(_$CampusBoundaryImpl) _then)
-      : super(_value, _then);
+class _$CampusBoundaryCopyWithImpl<$Res>
+    implements $CampusBoundaryCopyWith<$Res> {
+  _$CampusBoundaryCopyWithImpl(this._self, this._then);
 
+  final CampusBoundary _self;
+  final $Res Function(CampusBoundary) _then;
+
+  /// Create a copy of CampusBoundary
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -223,79 +166,335 @@ class __$$CampusBoundaryImplCopyWithImpl<$Res>
     Object? areaSqMeters = freezed,
     Object? additionalTags = freezed,
   }) {
-    return _then(_$CampusBoundaryImpl(
+    return _then(CampusBoundary(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       shortName: null == shortName
-          ? _value.shortName
+          ? _self.shortName
           : shortName // ignore: cast_nullable_to_non_nullable
               as String,
       amenity: null == amenity
-          ? _value.amenity
+          ? _self.amenity
           : amenity // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
-          ? _value.city
+          ? _self.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
       street: null == street
-          ? _value.street
+          ? _self.street
           : street // ignore: cast_nullable_to_non_nullable
               as String,
       wikidata: freezed == wikidata
-          ? _value.wikidata
+          ? _self.wikidata
           : wikidata // ignore: cast_nullable_to_non_nullable
               as String?,
       osmRelationId: null == osmRelationId
-          ? _value.osmRelationId
+          ? _self.osmRelationId
           : osmRelationId // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
       sourceDate: null == sourceDate
-          ? _value.sourceDate
+          ? _self.sourceDate
           : sourceDate // ignore: cast_nullable_to_non_nullable
               as String,
       verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
+          ? _self.verificationStatus
           : verificationStatus // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       polygon: null == polygon
-          ? _value._polygon
+          ? _self.polygon
           : polygon // ignore: cast_nullable_to_non_nullable
               as List<LatLng>,
       centroid: freezed == centroid
-          ? _value.centroid
+          ? _self.centroid
           : centroid // ignore: cast_nullable_to_non_nullable
               as LatLng?,
       areaSqMeters: freezed == areaSqMeters
-          ? _value.areaSqMeters
+          ? _self.areaSqMeters
           : areaSqMeters // ignore: cast_nullable_to_non_nullable
               as double?,
       additionalTags: freezed == additionalTags
-          ? _value._additionalTags
+          ? _self.additionalTags
           : additionalTags // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CampusBoundary].
+extension CampusBoundaryPatterns on CampusBoundary {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CampusBoundary value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CampusBoundary value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CampusBoundary value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String shortName,
+            String amenity,
+            String city,
+            String street,
+            String? wikidata,
+            int osmRelationId,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            String description,
+            List<LatLng> polygon,
+            LatLng? centroid,
+            double? areaSqMeters,
+            Map<String, dynamic>? additionalTags)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.shortName,
+            _that.amenity,
+            _that.city,
+            _that.street,
+            _that.wikidata,
+            _that.osmRelationId,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.description,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.additionalTags);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String shortName,
+            String amenity,
+            String city,
+            String street,
+            String? wikidata,
+            int osmRelationId,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            String description,
+            List<LatLng> polygon,
+            LatLng? centroid,
+            double? areaSqMeters,
+            Map<String, dynamic>? additionalTags)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.shortName,
+            _that.amenity,
+            _that.city,
+            _that.street,
+            _that.wikidata,
+            _that.osmRelationId,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.description,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.additionalTags);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String shortName,
+            String amenity,
+            String city,
+            String street,
+            String? wikidata,
+            int osmRelationId,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            String description,
+            List<LatLng> polygon,
+            LatLng? centroid,
+            double? areaSqMeters,
+            Map<String, dynamic>? additionalTags)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBoundary() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.shortName,
+            _that.amenity,
+            _that.city,
+            _that.street,
+            _that.wikidata,
+            _that.osmRelationId,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.description,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.additionalTags);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CampusBoundaryImpl extends _CampusBoundary {
-  const _$CampusBoundaryImpl(
+class _CampusBoundary extends CampusBoundary {
+  const _CampusBoundary(
       {required this.id,
       required this.name,
       required this.shortName,
@@ -308,16 +507,15 @@ class _$CampusBoundaryImpl extends _CampusBoundary {
       required this.sourceDate,
       required this.verificationStatus,
       required this.description,
-      required final List<LatLng> polygon,
+      required List<LatLng> polygon,
       this.centroid,
       this.areaSqMeters,
-      final Map<String, dynamic>? additionalTags})
+      Map<String, dynamic>? additionalTags})
       : _polygon = polygon,
         _additionalTags = additionalTags,
         super._();
-
-  factory _$CampusBoundaryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CampusBoundaryImplFromJson(json);
+  factory _CampusBoundary.fromJson(Map<String, dynamic> json) =>
+      _$CampusBoundaryFromJson(json);
 
   @override
   final String id;
@@ -365,16 +563,26 @@ class _$CampusBoundaryImpl extends _CampusBoundary {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CampusBoundary
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CampusBoundary(id: $id, name: $name, shortName: $shortName, amenity: $amenity, city: $city, street: $street, wikidata: $wikidata, osmRelationId: $osmRelationId, source: $source, sourceDate: $sourceDate, verificationStatus: $verificationStatus, description: $description, polygon: $polygon, centroid: $centroid, areaSqMeters: $areaSqMeters, additionalTags: $additionalTags)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CampusBoundaryCopyWith<_CampusBoundary> get copyWith =>
+      __$CampusBoundaryCopyWithImpl<_CampusBoundary>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CampusBoundaryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CampusBoundaryImpl &&
+            other is _CampusBoundary &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.shortName, shortName) ||
@@ -393,108 +601,168 @@ class _$CampusBoundaryImpl extends _CampusBoundary {
                 other.verificationStatus == verificationStatus) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other._polygon, _polygon) &&
+            const DeepCollectionEquality().equals(other.polygon, _polygon) &&
             (identical(other.centroid, centroid) ||
                 other.centroid == centroid) &&
             (identical(other.areaSqMeters, areaSqMeters) ||
                 other.areaSqMeters == areaSqMeters) &&
             const DeepCollectionEquality()
-                .equals(other._additionalTags, _additionalTags));
+                .equals(other.additionalTags, _additionalTags));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      shortName,
-      amenity,
-      city,
-      street,
-      wikidata,
-      osmRelationId,
-      source,
-      sourceDate,
-      verificationStatus,
-      description,
-      const DeepCollectionEquality().hash(_polygon),
-      centroid,
-      areaSqMeters,
-      const DeepCollectionEquality().hash(_additionalTags));
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        id,
+        name,
+        shortName,
+        amenity,
+        city,
+        street,
+        wikidata,
+        osmRelationId,
+        source,
+        sourceDate,
+        verificationStatus,
+        description,
+        const DeepCollectionEquality().hash(_polygon),
+        centroid,
+        areaSqMeters,
+        const DeepCollectionEquality().hash(_additionalTags));
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'CampusBoundary(id: $id, name: $name, shortName: $shortName, amenity: $amenity, city: $city, street: $street, wikidata: $wikidata, osmRelationId: $osmRelationId, source: $source, sourceDate: $sourceDate, verificationStatus: $verificationStatus, description: $description, polygon: $polygon, centroid: $centroid, areaSqMeters: $areaSqMeters, additionalTags: $additionalTags)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CampusBoundaryCopyWith<$Res>
+    implements $CampusBoundaryCopyWith<$Res> {
+  factory _$CampusBoundaryCopyWith(
+          _CampusBoundary value, $Res Function(_CampusBoundary) _then) =
+      __$CampusBoundaryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String shortName,
+      String amenity,
+      String city,
+      String street,
+      String? wikidata,
+      int osmRelationId,
+      String source,
+      String sourceDate,
+      String verificationStatus,
+      String description,
+      List<LatLng> polygon,
+      LatLng? centroid,
+      double? areaSqMeters,
+      Map<String, dynamic>? additionalTags});
+}
+
+/// @nodoc
+class __$CampusBoundaryCopyWithImpl<$Res>
+    implements _$CampusBoundaryCopyWith<$Res> {
+  __$CampusBoundaryCopyWithImpl(this._self, this._then);
+
+  final _CampusBoundary _self;
+  final $Res Function(_CampusBoundary) _then;
+
+  /// Create a copy of CampusBoundary
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$CampusBoundaryImplCopyWith<_$CampusBoundaryImpl> get copyWith =>
-      __$$CampusBoundaryImplCopyWithImpl<_$CampusBoundaryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CampusBoundaryImplToJson(
-      this,
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? shortName = null,
+    Object? amenity = null,
+    Object? city = null,
+    Object? street = null,
+    Object? wikidata = freezed,
+    Object? osmRelationId = null,
+    Object? source = null,
+    Object? sourceDate = null,
+    Object? verificationStatus = null,
+    Object? description = null,
+    Object? polygon = null,
+    Object? centroid = freezed,
+    Object? areaSqMeters = freezed,
+    Object? additionalTags = freezed,
+  }) {
+    return _then(_CampusBoundary(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      shortName: null == shortName
+          ? _self.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String,
+      amenity: null == amenity
+          ? _self.amenity
+          : amenity // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      street: null == street
+          ? _self.street
+          : street // ignore: cast_nullable_to_non_nullable
+              as String,
+      wikidata: freezed == wikidata
+          ? _self.wikidata
+          : wikidata // ignore: cast_nullable_to_non_nullable
+              as String?,
+      osmRelationId: null == osmRelationId
+          ? _self.osmRelationId
+          : osmRelationId // ignore: cast_nullable_to_non_nullable
+              as int,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceDate: null == sourceDate
+          ? _self.sourceDate
+          : sourceDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      verificationStatus: null == verificationStatus
+          ? _self.verificationStatus
+          : verificationStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      polygon: null == polygon
+          ? _self._polygon
+          : polygon // ignore: cast_nullable_to_non_nullable
+              as List<LatLng>,
+      centroid: freezed == centroid
+          ? _self.centroid
+          : centroid // ignore: cast_nullable_to_non_nullable
+              as LatLng?,
+      areaSqMeters: freezed == areaSqMeters
+          ? _self.areaSqMeters
+          : areaSqMeters // ignore: cast_nullable_to_non_nullable
+              as double?,
+      additionalTags: freezed == additionalTags
+          ? _self._additionalTags
+          : additionalTags // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
   }
 }
 
-abstract class _CampusBoundary extends CampusBoundary {
-  const factory _CampusBoundary(
-      {required final String id,
-      required final String name,
-      required final String shortName,
-      required final String amenity,
-      required final String city,
-      required final String street,
-      final String? wikidata,
-      required final int osmRelationId,
-      required final String source,
-      required final String sourceDate,
-      required final String verificationStatus,
-      required final String description,
-      required final List<LatLng> polygon,
-      final LatLng? centroid,
-      final double? areaSqMeters,
-      final Map<String, dynamic>? additionalTags}) = _$CampusBoundaryImpl;
-  const _CampusBoundary._() : super._();
-
-  factory _CampusBoundary.fromJson(Map<String, dynamic> json) =
-      _$CampusBoundaryImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get shortName;
-  @override
-  String get amenity;
-  @override
-  String get city;
-  @override
-  String get street;
-  @override
-  String? get wikidata;
-  @override
-  int get osmRelationId;
-  @override
-  String get source;
-  @override
-  String get sourceDate;
-  @override
-  String get verificationStatus;
-  @override
-  String get description;
-  @override
-  List<LatLng> get polygon;
-  @override
-  LatLng? get centroid;
-  @override
-  double? get areaSqMeters;
-  @override
-  Map<String, dynamic>? get additionalTags;
-  @override
-  @JsonKey(ignore: true)
-  _$$CampusBoundaryImplCopyWith<_$CampusBoundaryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

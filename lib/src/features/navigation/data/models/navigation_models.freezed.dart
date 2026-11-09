@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'navigation_models.dart';
@@ -9,59 +9,47 @@ part of 'navigation_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DestinationType {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DestinationType);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'DestinationType()';
+  }
+}
+
+/// @nodoc
+class $DestinationTypeCopyWith<$Res> {
+  $DestinationTypeCopyWith(
+      DestinationType _, $Res Function(DestinationType) __);
+}
+
+/// Adds pattern-matching-related methods to [DestinationType].
+extension DestinationTypePatterns on DestinationType {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Building value)? building,
@@ -70,659 +58,387 @@ mixin _$DestinationType {
     TResult Function(_EmergencyExit value)? emergencyExit,
     TResult Function(_AssemblyPoint value)? assemblyPoint,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building() when building != null:
+        return building(_that);
+      case _Location() when location != null:
+        return location(_that);
+      case _Coordinates() when coordinates != null:
+        return coordinates(_that);
+      case _EmergencyExit() when emergencyExit != null:
+        return emergencyExit(_that);
+      case _AssemblyPoint() when assemblyPoint != null:
+        return assemblyPoint(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Building value) building,
+    required TResult Function(_Location value) location,
+    required TResult Function(_Coordinates value) coordinates,
+    required TResult Function(_EmergencyExit value) emergencyExit,
+    required TResult Function(_AssemblyPoint value) assemblyPoint,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building():
+        return building(_that);
+      case _Location():
+        return location(_that);
+      case _Coordinates():
+        return coordinates(_that);
+      case _EmergencyExit():
+        return emergencyExit(_that);
+      case _AssemblyPoint():
+        return assemblyPoint(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Building value)? building,
+    TResult? Function(_Location value)? location,
+    TResult? Function(_Coordinates value)? coordinates,
+    TResult? Function(_EmergencyExit value)? emergencyExit,
+    TResult? Function(_AssemblyPoint value)? assemblyPoint,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building() when building != null:
+        return building(_that);
+      case _Location() when location != null:
+        return location(_that);
+      case _Coordinates() when coordinates != null:
+        return coordinates(_that);
+      case _EmergencyExit() when emergencyExit != null:
+        return emergencyExit(_that);
+      case _AssemblyPoint() when assemblyPoint != null:
+        return assemblyPoint(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? building,
+    TResult Function()? location,
+    TResult Function()? coordinates,
+    TResult Function()? emergencyExit,
+    TResult Function()? assemblyPoint,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building() when building != null:
+        return building();
+      case _Location() when location != null:
+        return location();
+      case _Coordinates() when coordinates != null:
+        return coordinates();
+      case _EmergencyExit() when emergencyExit != null:
+        return emergencyExit();
+      case _AssemblyPoint() when assemblyPoint != null:
+        return assemblyPoint();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() building,
+    required TResult Function() location,
+    required TResult Function() coordinates,
+    required TResult Function() emergencyExit,
+    required TResult Function() assemblyPoint,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building():
+        return building();
+      case _Location():
+        return location();
+      case _Coordinates():
+        return coordinates();
+      case _EmergencyExit():
+        return emergencyExit();
+      case _AssemblyPoint():
+        return assemblyPoint();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? building,
+    TResult? Function()? location,
+    TResult? Function()? coordinates,
+    TResult? Function()? emergencyExit,
+    TResult? Function()? assemblyPoint,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Building() when building != null:
+        return building();
+      case _Location() when location != null:
+        return location();
+      case _Coordinates() when coordinates != null:
+        return coordinates();
+      case _EmergencyExit() when emergencyExit != null:
+        return emergencyExit();
+      case _AssemblyPoint() when assemblyPoint != null:
+        return assemblyPoint();
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $DestinationTypeCopyWith<$Res> {
-  factory $DestinationTypeCopyWith(
-          DestinationType value, $Res Function(DestinationType) then) =
-      _$DestinationTypeCopyWithImpl<$Res, DestinationType>;
-}
 
-/// @nodoc
-class _$DestinationTypeCopyWithImpl<$Res, $Val extends DestinationType>
-    implements $DestinationTypeCopyWith<$Res> {
-  _$DestinationTypeCopyWithImpl(this._value, this._then);
+class _Building implements DestinationType {
+  const _Building();
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Building);
+  }
 
-/// @nodoc
-abstract class _$$BuildingImplCopyWith<$Res> {
-  factory _$$BuildingImplCopyWith(
-          _$BuildingImpl value, $Res Function(_$BuildingImpl) then) =
-      __$$BuildingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$BuildingImplCopyWithImpl<$Res>
-    extends _$DestinationTypeCopyWithImpl<$Res, _$BuildingImpl>
-    implements _$$BuildingImplCopyWith<$Res> {
-  __$$BuildingImplCopyWithImpl(
-      _$BuildingImpl _value, $Res Function(_$BuildingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$BuildingImpl implements _Building {
-  const _$BuildingImpl();
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'DestinationType.building()';
   }
+}
+
+/// @nodoc
+
+class _Location implements DestinationType {
+  const _Location();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BuildingImpl);
+        (other.runtimeType == runtimeType && other is _Location);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) {
-    return building();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) {
-    return building?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (building != null) {
-      return building();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) {
-    return building(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) {
-    return building?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Building value)? building,
-    TResult Function(_Location value)? location,
-    TResult Function(_Coordinates value)? coordinates,
-    TResult Function(_EmergencyExit value)? emergencyExit,
-    TResult Function(_AssemblyPoint value)? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (building != null) {
-      return building(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Building implements DestinationType {
-  const factory _Building() = _$BuildingImpl;
-}
-
-/// @nodoc
-abstract class _$$LocationImplCopyWith<$Res> {
-  factory _$$LocationImplCopyWith(
-          _$LocationImpl value, $Res Function(_$LocationImpl) then) =
-      __$$LocationImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LocationImplCopyWithImpl<$Res>
-    extends _$DestinationTypeCopyWithImpl<$Res, _$LocationImpl>
-    implements _$$LocationImplCopyWith<$Res> {
-  __$$LocationImplCopyWithImpl(
-      _$LocationImpl _value, $Res Function(_$LocationImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LocationImpl implements _Location {
-  const _$LocationImpl();
 
   @override
   String toString() {
     return 'DestinationType.location()';
   }
+}
+
+/// @nodoc
+
+class _Coordinates implements DestinationType {
+  const _Coordinates();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationImpl);
+        (other.runtimeType == runtimeType && other is _Coordinates);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) {
-    return location();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) {
-    return location?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (location != null) {
-      return location();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) {
-    return location(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) {
-    return location?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Building value)? building,
-    TResult Function(_Location value)? location,
-    TResult Function(_Coordinates value)? coordinates,
-    TResult Function(_EmergencyExit value)? emergencyExit,
-    TResult Function(_AssemblyPoint value)? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (location != null) {
-      return location(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Location implements DestinationType {
-  const factory _Location() = _$LocationImpl;
-}
-
-/// @nodoc
-abstract class _$$CoordinatesImplCopyWith<$Res> {
-  factory _$$CoordinatesImplCopyWith(
-          _$CoordinatesImpl value, $Res Function(_$CoordinatesImpl) then) =
-      __$$CoordinatesImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CoordinatesImplCopyWithImpl<$Res>
-    extends _$DestinationTypeCopyWithImpl<$Res, _$CoordinatesImpl>
-    implements _$$CoordinatesImplCopyWith<$Res> {
-  __$$CoordinatesImplCopyWithImpl(
-      _$CoordinatesImpl _value, $Res Function(_$CoordinatesImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CoordinatesImpl implements _Coordinates {
-  const _$CoordinatesImpl();
 
   @override
   String toString() {
     return 'DestinationType.coordinates()';
   }
+}
+
+/// @nodoc
+
+class _EmergencyExit implements DestinationType {
+  const _EmergencyExit();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CoordinatesImpl);
+        (other.runtimeType == runtimeType && other is _EmergencyExit);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) {
-    return coordinates();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) {
-    return coordinates?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (coordinates != null) {
-      return coordinates();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) {
-    return coordinates(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) {
-    return coordinates?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Building value)? building,
-    TResult Function(_Location value)? location,
-    TResult Function(_Coordinates value)? coordinates,
-    TResult Function(_EmergencyExit value)? emergencyExit,
-    TResult Function(_AssemblyPoint value)? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (coordinates != null) {
-      return coordinates(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Coordinates implements DestinationType {
-  const factory _Coordinates() = _$CoordinatesImpl;
-}
-
-/// @nodoc
-abstract class _$$EmergencyExitImplCopyWith<$Res> {
-  factory _$$EmergencyExitImplCopyWith(
-          _$EmergencyExitImpl value, $Res Function(_$EmergencyExitImpl) then) =
-      __$$EmergencyExitImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$EmergencyExitImplCopyWithImpl<$Res>
-    extends _$DestinationTypeCopyWithImpl<$Res, _$EmergencyExitImpl>
-    implements _$$EmergencyExitImplCopyWith<$Res> {
-  __$$EmergencyExitImplCopyWithImpl(
-      _$EmergencyExitImpl _value, $Res Function(_$EmergencyExitImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$EmergencyExitImpl implements _EmergencyExit {
-  const _$EmergencyExitImpl();
 
   @override
   String toString() {
     return 'DestinationType.emergencyExit()';
   }
+}
+
+/// @nodoc
+
+class _AssemblyPoint implements DestinationType {
+  const _AssemblyPoint();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EmergencyExitImpl);
+        (other.runtimeType == runtimeType && other is _AssemblyPoint);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) {
-    return emergencyExit();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) {
-    return emergencyExit?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (emergencyExit != null) {
-      return emergencyExit();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) {
-    return emergencyExit(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) {
-    return emergencyExit?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Building value)? building,
-    TResult Function(_Location value)? location,
-    TResult Function(_Coordinates value)? coordinates,
-    TResult Function(_EmergencyExit value)? emergencyExit,
-    TResult Function(_AssemblyPoint value)? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (emergencyExit != null) {
-      return emergencyExit(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EmergencyExit implements DestinationType {
-  const factory _EmergencyExit() = _$EmergencyExitImpl;
-}
-
-/// @nodoc
-abstract class _$$AssemblyPointImplCopyWith<$Res> {
-  factory _$$AssemblyPointImplCopyWith(
-          _$AssemblyPointImpl value, $Res Function(_$AssemblyPointImpl) then) =
-      __$$AssemblyPointImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AssemblyPointImplCopyWithImpl<$Res>
-    extends _$DestinationTypeCopyWithImpl<$Res, _$AssemblyPointImpl>
-    implements _$$AssemblyPointImplCopyWith<$Res> {
-  __$$AssemblyPointImplCopyWithImpl(
-      _$AssemblyPointImpl _value, $Res Function(_$AssemblyPointImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AssemblyPointImpl implements _AssemblyPoint {
-  const _$AssemblyPointImpl();
 
   @override
   String toString() {
     return 'DestinationType.assemblyPoint()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AssemblyPointImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() building,
-    required TResult Function() location,
-    required TResult Function() coordinates,
-    required TResult Function() emergencyExit,
-    required TResult Function() assemblyPoint,
-  }) {
-    return assemblyPoint();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? building,
-    TResult? Function()? location,
-    TResult? Function()? coordinates,
-    TResult? Function()? emergencyExit,
-    TResult? Function()? assemblyPoint,
-  }) {
-    return assemblyPoint?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? building,
-    TResult Function()? location,
-    TResult Function()? coordinates,
-    TResult Function()? emergencyExit,
-    TResult Function()? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (assemblyPoint != null) {
-      return assemblyPoint();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Building value) building,
-    required TResult Function(_Location value) location,
-    required TResult Function(_Coordinates value) coordinates,
-    required TResult Function(_EmergencyExit value) emergencyExit,
-    required TResult Function(_AssemblyPoint value) assemblyPoint,
-  }) {
-    return assemblyPoint(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Building value)? building,
-    TResult? Function(_Location value)? location,
-    TResult? Function(_Coordinates value)? coordinates,
-    TResult? Function(_EmergencyExit value)? emergencyExit,
-    TResult? Function(_AssemblyPoint value)? assemblyPoint,
-  }) {
-    return assemblyPoint?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Building value)? building,
-    TResult Function(_Location value)? location,
-    TResult Function(_Coordinates value)? coordinates,
-    TResult Function(_EmergencyExit value)? emergencyExit,
-    TResult Function(_AssemblyPoint value)? assemblyPoint,
-    required TResult orElse(),
-  }) {
-    if (assemblyPoint != null) {
-      return assemblyPoint(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AssemblyPoint implements DestinationType {
-  const factory _AssemblyPoint() = _$AssemblyPointImpl;
-}
-
-NavigationDestination _$NavigationDestinationFromJson(
-    Map<String, dynamic> json) {
-  return _NavigationDestination.fromJson(json);
 }
 
 /// @nodoc
 mixin _$NavigationDestination {
-  String get id => throw _privateConstructorUsedError;
-  String get name =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  String get id;
+  String get name;
   @JsonKey(
       fromJson: DestinationTypeConverter._destinationTypeFromJson,
       toJson: DestinationTypeConverter._destinationTypeToJson)
-  DestinationType get type => throw _privateConstructorUsedError;
-  LatLng get coordinates => throw _privateConstructorUsedError;
-  String? get buildingId => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  DestinationType get type;
+  LatLng get coordinates;
+  String? get buildingId;
+  String? get description;
+  String? get address;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NavigationDestinationCopyWith<NavigationDestination> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$NavigationDestinationCopyWithImpl<NavigationDestination>(
+          this as NavigationDestination, _$identity);
+
+  /// Serializes this NavigationDestination to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as NavigationDestination;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NavigationDestination &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.coordinates, _this.coordinates) ||
+                other.coordinates == _this.coordinates) &&
+            (identical(other.buildingId, _this.buildingId) ||
+                other.buildingId == _this.buildingId) &&
+            (identical(other.description, _this.description) ||
+                other.description == _this.description) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            const DeepCollectionEquality()
+                .equals(other.metadata, _this.metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as NavigationDestination;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.name,
+        _this.type,
+        _this.coordinates,
+        _this.buildingId,
+        _this.description,
+        _this.address,
+        const DeepCollectionEquality().hash(_this.metadata));
+  }
+
+  @override
+  String toString() {
+    final _this = this as NavigationDestination;
+    return 'NavigationDestination(id: ${_this.id}, name: ${_this.name}, type: ${_this.type}, coordinates: ${_this.coordinates}, buildingId: ${_this.buildingId}, description: ${_this.description}, address: ${_this.address}, metadata: ${_this.metadata})';
+  }
 }
 
 /// @nodoc
-abstract class $NavigationDestinationCopyWith<$Res> {
+abstract mixin class $NavigationDestinationCopyWith<$Res> {
   factory $NavigationDestinationCopyWith(NavigationDestination value,
-          $Res Function(NavigationDestination) then) =
-      _$NavigationDestinationCopyWithImpl<$Res, NavigationDestination>;
+          $Res Function(NavigationDestination) _then) =
+      _$NavigationDestinationCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -741,16 +457,15 @@ abstract class $NavigationDestinationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NavigationDestinationCopyWithImpl<$Res,
-        $Val extends NavigationDestination>
+class _$NavigationDestinationCopyWithImpl<$Res>
     implements $NavigationDestinationCopyWith<$Res> {
-  _$NavigationDestinationCopyWithImpl(this._value, this._then);
+  _$NavigationDestinationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final NavigationDestination _self;
+  final $Res Function(NavigationDestination) _then;
 
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -763,139 +478,253 @@ class _$NavigationDestinationCopyWithImpl<$Res,
     Object? address = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(NavigationDestination(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as DestinationType,
       coordinates: null == coordinates
-          ? _value.coordinates
+          ? _self.coordinates
           : coordinates // ignore: cast_nullable_to_non_nullable
               as LatLng,
       buildingId: freezed == buildingId
-          ? _value.buildingId
+          ? _self.buildingId
           : buildingId // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DestinationTypeCopyWith<$Res> get type {
-    return $DestinationTypeCopyWith<$Res>(_value.type, (value) {
-      return _then(_value.copyWith(type: value) as $Val);
+    return $DestinationTypeCopyWith<$Res>(_self.type, (value) {
+      return _then(_self.copyWith(type: value));
     });
   }
 }
 
-/// @nodoc
-abstract class _$$NavigationDestinationImplCopyWith<$Res>
-    implements $NavigationDestinationCopyWith<$Res> {
-  factory _$$NavigationDestinationImplCopyWith(
-          _$NavigationDestinationImpl value,
-          $Res Function(_$NavigationDestinationImpl) then) =
-      __$$NavigationDestinationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(
-          fromJson: DestinationTypeConverter._destinationTypeFromJson,
-          toJson: DestinationTypeConverter._destinationTypeToJson)
-      DestinationType type,
-      LatLng coordinates,
-      String? buildingId,
-      String? description,
-      String? address,
-      Map<String, dynamic>? metadata});
+/// Adds pattern-matching-related methods to [NavigationDestination].
+extension NavigationDestinationPatterns on NavigationDestination {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  $DestinationTypeCopyWith<$Res> get type;
-}
-
-/// @nodoc
-class __$$NavigationDestinationImplCopyWithImpl<$Res>
-    extends _$NavigationDestinationCopyWithImpl<$Res,
-        _$NavigationDestinationImpl>
-    implements _$$NavigationDestinationImplCopyWith<$Res> {
-  __$$NavigationDestinationImplCopyWithImpl(_$NavigationDestinationImpl _value,
-      $Res Function(_$NavigationDestinationImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? coordinates = null,
-    Object? buildingId = freezed,
-    Object? description = freezed,
-    Object? address = freezed,
-    Object? metadata = freezed,
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavigationDestination value)? $default, {
+    required TResult orElse(),
   }) {
-    return _then(_$NavigationDestinationImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as DestinationType,
-      coordinates: null == coordinates
-          ? _value.coordinates
-          : coordinates // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-      buildingId: freezed == buildingId
-          ? _value.buildingId
-          : buildingId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavigationDestination value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_NavigationDestination value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(
+                fromJson: DestinationTypeConverter._destinationTypeFromJson,
+                toJson: DestinationTypeConverter._destinationTypeToJson)
+            DestinationType type,
+            LatLng coordinates,
+            String? buildingId,
+            String? description,
+            String? address,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination() when $default != null:
+        return $default(_that.id, _that.name, _that.type, _that.coordinates,
+            _that.buildingId, _that.description, _that.address, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            @JsonKey(
+                fromJson: DestinationTypeConverter._destinationTypeFromJson,
+                toJson: DestinationTypeConverter._destinationTypeToJson)
+            DestinationType type,
+            LatLng coordinates,
+            String? buildingId,
+            String? description,
+            String? address,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination():
+        return $default(_that.id, _that.name, _that.type, _that.coordinates,
+            _that.buildingId, _that.description, _that.address, _that.metadata);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            @JsonKey(
+                fromJson: DestinationTypeConverter._destinationTypeFromJson,
+                toJson: DestinationTypeConverter._destinationTypeToJson)
+            DestinationType type,
+            LatLng coordinates,
+            String? buildingId,
+            String? description,
+            String? address,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationDestination() when $default != null:
+        return $default(_that.id, _that.name, _that.type, _that.coordinates,
+            _that.buildingId, _that.description, _that.address, _that.metadata);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NavigationDestinationImpl extends _NavigationDestination {
-  const _$NavigationDestinationImpl(
+class _NavigationDestination extends NavigationDestination {
+  const _NavigationDestination(
       {required this.id,
       required this.name,
       @JsonKey(
@@ -906,18 +735,16 @@ class _$NavigationDestinationImpl extends _NavigationDestination {
       this.buildingId,
       this.description,
       this.address,
-      final Map<String, dynamic>? metadata})
+      Map<String, dynamic>? metadata})
       : _metadata = metadata,
         super._();
-
-  factory _$NavigationDestinationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NavigationDestinationImplFromJson(json);
+  factory _NavigationDestination.fromJson(Map<String, dynamic> json) =>
+      _$NavigationDestinationFromJson(json);
 
   @override
   final String id;
   @override
   final String name;
-// ignore: invalid_annotation_target
   @override
   @JsonKey(
       fromJson: DestinationTypeConverter._destinationTypeFromJson,
@@ -941,16 +768,27 @@ class _$NavigationDestinationImpl extends _NavigationDestination {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NavigationDestination(id: $id, name: $name, type: $type, coordinates: $coordinates, buildingId: $buildingId, description: $description, address: $address, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NavigationDestinationCopyWith<_NavigationDestination> get copyWith =>
+      __$NavigationDestinationCopyWithImpl<_NavigationDestination>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NavigationDestinationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NavigationDestinationImpl &&
+            other is _NavigationDestination &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -961,113 +799,199 @@ class _$NavigationDestinationImpl extends _NavigationDestination {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.address, address) || other.address == address) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            const DeepCollectionEquality().equals(other.metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      type,
-      coordinates,
-      buildingId,
-      description,
-      address,
-      const DeepCollectionEquality().hash(_metadata));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NavigationDestinationImplCopyWith<_$NavigationDestinationImpl>
-      get copyWith => __$$NavigationDestinationImplCopyWithImpl<
-          _$NavigationDestinationImpl>(this, _$identity);
+  int get hashCode {
+    return Object.hash(runtimeType, id, name, type, coordinates, buildingId,
+        description, address, const DeepCollectionEquality().hash(_metadata));
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$NavigationDestinationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NavigationDestination(id: $id, name: $name, type: $type, coordinates: $coordinates, buildingId: $buildingId, description: $description, address: $address, metadata: $metadata)';
   }
 }
 
-abstract class _NavigationDestination extends NavigationDestination {
-  const factory _NavigationDestination(
-      {required final String id,
-      required final String name,
+/// @nodoc
+abstract mixin class _$NavigationDestinationCopyWith<$Res>
+    implements $NavigationDestinationCopyWith<$Res> {
+  factory _$NavigationDestinationCopyWith(_NavigationDestination value,
+          $Res Function(_NavigationDestination) _then) =
+      __$NavigationDestinationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
       @JsonKey(
           fromJson: DestinationTypeConverter._destinationTypeFromJson,
           toJson: DestinationTypeConverter._destinationTypeToJson)
-      required final DestinationType type,
-      required final LatLng coordinates,
-      final String? buildingId,
-      final String? description,
-      final String? address,
-      final Map<String, dynamic>? metadata}) = _$NavigationDestinationImpl;
-  const _NavigationDestination._() : super._();
-
-  factory _NavigationDestination.fromJson(Map<String, dynamic> json) =
-      _$NavigationDestinationImpl.fromJson;
+      DestinationType type,
+      LatLng coordinates,
+      String? buildingId,
+      String? description,
+      String? address,
+      Map<String, dynamic>? metadata});
 
   @override
-  String get id;
-  @override
-  String get name;
-  @override // ignore: invalid_annotation_target
-  @JsonKey(
-      fromJson: DestinationTypeConverter._destinationTypeFromJson,
-      toJson: DestinationTypeConverter._destinationTypeToJson)
-  DestinationType get type;
-  @override
-  LatLng get coordinates;
-  @override
-  String? get buildingId;
-  @override
-  String? get description;
-  @override
-  String? get address;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$NavigationDestinationImplCopyWith<_$NavigationDestinationImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  $DestinationTypeCopyWith<$Res> get type;
 }
 
-NavigationRoute _$NavigationRouteFromJson(Map<String, dynamic> json) {
-  return _NavigationRoute.fromJson(json);
+/// @nodoc
+class __$NavigationDestinationCopyWithImpl<$Res>
+    implements _$NavigationDestinationCopyWith<$Res> {
+  __$NavigationDestinationCopyWithImpl(this._self, this._then);
+
+  final _NavigationDestination _self;
+  final $Res Function(_NavigationDestination) _then;
+
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? coordinates = null,
+    Object? buildingId = freezed,
+    Object? description = freezed,
+    Object? address = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_NavigationDestination(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as DestinationType,
+      coordinates: null == coordinates
+          ? _self.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as LatLng,
+      buildingId: freezed == buildingId
+          ? _self.buildingId
+          : buildingId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+
+  /// Create a copy of NavigationDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DestinationTypeCopyWith<$Res> get type {
+    return $DestinationTypeCopyWith<$Res>(_self.type, (value) {
+      return _then(_self.copyWith(type: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$NavigationRoute {
-  String get id => throw _privateConstructorUsedError;
-  NavigationDestination get start => throw _privateConstructorUsedError;
-  NavigationDestination get end => throw _privateConstructorUsedError;
-  List<LatLng> get geometry => throw _privateConstructorUsedError;
-  double get totalDistance => throw _privateConstructorUsedError;
-  Duration get estimatedDuration => throw _privateConstructorUsedError;
-  List<NavigationInstruction> get instructions =>
-      throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get pathwayIds =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  String get id;
+  NavigationDestination get start;
+  NavigationDestination get end;
+  List<LatLng> get geometry;
+  double get totalDistance;
+  Duration get estimatedDuration;
+  List<NavigationInstruction> get instructions;
+  DateTime get createdAt;
+  String? get pathwayIds;
   @JsonKey(
       fromJson: RouteStatusConverter._routeStatusFromJson,
       toJson: RouteStatusConverter._routeStatusToJson)
-  RouteStatus? get status => throw _privateConstructorUsedError;
+  RouteStatus? get status;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $NavigationRouteCopyWith<NavigationRoute> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$NavigationRouteCopyWithImpl<NavigationRoute>(
+          this as NavigationRoute, _$identity);
+
+  /// Serializes this NavigationRoute to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as NavigationRoute;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NavigationRoute &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.start, _this.start) ||
+                other.start == _this.start) &&
+            (identical(other.end, _this.end) || other.end == _this.end) &&
+            const DeepCollectionEquality()
+                .equals(other.geometry, _this.geometry) &&
+            (identical(other.totalDistance, _this.totalDistance) ||
+                other.totalDistance == _this.totalDistance) &&
+            (identical(other.estimatedDuration, _this.estimatedDuration) ||
+                other.estimatedDuration == _this.estimatedDuration) &&
+            const DeepCollectionEquality()
+                .equals(other.instructions, _this.instructions) &&
+            (identical(other.createdAt, _this.createdAt) ||
+                other.createdAt == _this.createdAt) &&
+            (identical(other.pathwayIds, _this.pathwayIds) ||
+                other.pathwayIds == _this.pathwayIds) &&
+            (identical(other.status, _this.status) ||
+                other.status == _this.status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as NavigationRoute;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.start,
+        _this.end,
+        const DeepCollectionEquality().hash(_this.geometry),
+        _this.totalDistance,
+        _this.estimatedDuration,
+        const DeepCollectionEquality().hash(_this.instructions),
+        _this.createdAt,
+        _this.pathwayIds,
+        _this.status);
+  }
+
+  @override
+  String toString() {
+    final _this = this as NavigationRoute;
+    return 'NavigationRoute(id: ${_this.id}, start: ${_this.start}, end: ${_this.end}, geometry: ${_this.geometry}, totalDistance: ${_this.totalDistance}, estimatedDuration: ${_this.estimatedDuration}, instructions: ${_this.instructions}, createdAt: ${_this.createdAt}, pathwayIds: ${_this.pathwayIds}, status: ${_this.status})';
+  }
 }
 
 /// @nodoc
-abstract class $NavigationRouteCopyWith<$Res> {
+abstract mixin class $NavigationRouteCopyWith<$Res> {
   factory $NavigationRouteCopyWith(
-          NavigationRoute value, $Res Function(NavigationRoute) then) =
-      _$NavigationRouteCopyWithImpl<$Res, NavigationRoute>;
+          NavigationRoute value, $Res Function(NavigationRoute) _then) =
+      _$NavigationRouteCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1090,15 +1014,15 @@ abstract class $NavigationRouteCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NavigationRouteCopyWithImpl<$Res, $Val extends NavigationRoute>
+class _$NavigationRouteCopyWithImpl<$Res>
     implements $NavigationRouteCopyWith<$Res> {
-  _$NavigationRouteCopyWithImpl(this._value, this._then);
+  _$NavigationRouteCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final NavigationRoute _self;
+  final $Res Function(NavigationRoute) _then;
 
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1113,188 +1037,325 @@ class _$NavigationRouteCopyWithImpl<$Res, $Val extends NavigationRoute>
     Object? pathwayIds = freezed,
     Object? status = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(NavigationRoute(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       start: null == start
-          ? _value.start
+          ? _self.start
           : start // ignore: cast_nullable_to_non_nullable
               as NavigationDestination,
       end: null == end
-          ? _value.end
+          ? _self.end
           : end // ignore: cast_nullable_to_non_nullable
               as NavigationDestination,
       geometry: null == geometry
-          ? _value.geometry
+          ? _self.geometry
           : geometry // ignore: cast_nullable_to_non_nullable
               as List<LatLng>,
       totalDistance: null == totalDistance
-          ? _value.totalDistance
+          ? _self.totalDistance
           : totalDistance // ignore: cast_nullable_to_non_nullable
               as double,
       estimatedDuration: null == estimatedDuration
-          ? _value.estimatedDuration
+          ? _self.estimatedDuration
           : estimatedDuration // ignore: cast_nullable_to_non_nullable
               as Duration,
       instructions: null == instructions
-          ? _value.instructions
+          ? _self.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
               as List<NavigationInstruction>,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       pathwayIds: freezed == pathwayIds
-          ? _value.pathwayIds
+          ? _self.pathwayIds
           : pathwayIds // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as RouteStatus?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $NavigationDestinationCopyWith<$Res> get start {
-    return $NavigationDestinationCopyWith<$Res>(_value.start, (value) {
-      return _then(_value.copyWith(start: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $NavigationDestinationCopyWith<$Res> get end {
-    return $NavigationDestinationCopyWith<$Res>(_value.end, (value) {
-      return _then(_value.copyWith(end: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RouteStatusCopyWith<$Res>? get status {
-    if (_value.status == null) {
-      return null;
-    }
-
-    return $RouteStatusCopyWith<$Res>(_value.status!, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$NavigationRouteImplCopyWith<$Res>
-    implements $NavigationRouteCopyWith<$Res> {
-  factory _$$NavigationRouteImplCopyWith(_$NavigationRouteImpl value,
-          $Res Function(_$NavigationRouteImpl) then) =
-      __$$NavigationRouteImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      NavigationDestination start,
-      NavigationDestination end,
-      List<LatLng> geometry,
-      double totalDistance,
-      Duration estimatedDuration,
-      List<NavigationInstruction> instructions,
-      DateTime createdAt,
-      String? pathwayIds,
-      @JsonKey(
-          fromJson: RouteStatusConverter._routeStatusFromJson,
-          toJson: RouteStatusConverter._routeStatusToJson)
-      RouteStatus? status});
-
-  @override
-  $NavigationDestinationCopyWith<$Res> get start;
-  @override
-  $NavigationDestinationCopyWith<$Res> get end;
-  @override
-  $RouteStatusCopyWith<$Res>? get status;
-}
-
-/// @nodoc
-class __$$NavigationRouteImplCopyWithImpl<$Res>
-    extends _$NavigationRouteCopyWithImpl<$Res, _$NavigationRouteImpl>
-    implements _$$NavigationRouteImplCopyWith<$Res> {
-  __$$NavigationRouteImplCopyWithImpl(
-      _$NavigationRouteImpl _value, $Res Function(_$NavigationRouteImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? start = null,
-    Object? end = null,
-    Object? geometry = null,
-    Object? totalDistance = null,
-    Object? estimatedDuration = null,
-    Object? instructions = null,
-    Object? createdAt = null,
-    Object? pathwayIds = freezed,
-    Object? status = freezed,
-  }) {
-    return _then(_$NavigationRouteImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      start: null == start
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as NavigationDestination,
-      end: null == end
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as NavigationDestination,
-      geometry: null == geometry
-          ? _value._geometry
-          : geometry // ignore: cast_nullable_to_non_nullable
-              as List<LatLng>,
-      totalDistance: null == totalDistance
-          ? _value.totalDistance
-          : totalDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-      estimatedDuration: null == estimatedDuration
-          ? _value.estimatedDuration
-          : estimatedDuration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      instructions: null == instructions
-          ? _value._instructions
-          : instructions // ignore: cast_nullable_to_non_nullable
-              as List<NavigationInstruction>,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      pathwayIds: freezed == pathwayIds
-          ? _value.pathwayIds
-          : pathwayIds // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as RouteStatus?,
     ));
+  }
+
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationDestinationCopyWith<$Res> get start {
+    return $NavigationDestinationCopyWith<$Res>(_self.start, (value) {
+      return _then(_self.copyWith(start: value));
+    });
+  }
+
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationDestinationCopyWith<$Res> get end {
+    return $NavigationDestinationCopyWith<$Res>(_self.end, (value) {
+      return _then(_self.copyWith(end: value));
+    });
+  }
+
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RouteStatusCopyWith<$Res>? get status {
+    if (_self.status == null) {
+      return null;
+    }
+
+    return $RouteStatusCopyWith<$Res>(_self.status!, (value) {
+      return _then(_self.copyWith(status: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [NavigationRoute].
+extension NavigationRoutePatterns on NavigationRoute {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavigationRoute value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavigationRoute value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_NavigationRoute value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            NavigationDestination start,
+            NavigationDestination end,
+            List<LatLng> geometry,
+            double totalDistance,
+            Duration estimatedDuration,
+            List<NavigationInstruction> instructions,
+            DateTime createdAt,
+            String? pathwayIds,
+            @JsonKey(
+                fromJson: RouteStatusConverter._routeStatusFromJson,
+                toJson: RouteStatusConverter._routeStatusToJson)
+            RouteStatus? status)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute() when $default != null:
+        return $default(
+            _that.id,
+            _that.start,
+            _that.end,
+            _that.geometry,
+            _that.totalDistance,
+            _that.estimatedDuration,
+            _that.instructions,
+            _that.createdAt,
+            _that.pathwayIds,
+            _that.status);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            NavigationDestination start,
+            NavigationDestination end,
+            List<LatLng> geometry,
+            double totalDistance,
+            Duration estimatedDuration,
+            List<NavigationInstruction> instructions,
+            DateTime createdAt,
+            String? pathwayIds,
+            @JsonKey(
+                fromJson: RouteStatusConverter._routeStatusFromJson,
+                toJson: RouteStatusConverter._routeStatusToJson)
+            RouteStatus? status)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute():
+        return $default(
+            _that.id,
+            _that.start,
+            _that.end,
+            _that.geometry,
+            _that.totalDistance,
+            _that.estimatedDuration,
+            _that.instructions,
+            _that.createdAt,
+            _that.pathwayIds,
+            _that.status);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            NavigationDestination start,
+            NavigationDestination end,
+            List<LatLng> geometry,
+            double totalDistance,
+            Duration estimatedDuration,
+            List<NavigationInstruction> instructions,
+            DateTime createdAt,
+            String? pathwayIds,
+            @JsonKey(
+                fromJson: RouteStatusConverter._routeStatusFromJson,
+                toJson: RouteStatusConverter._routeStatusToJson)
+            RouteStatus? status)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationRoute() when $default != null:
+        return $default(
+            _that.id,
+            _that.start,
+            _that.end,
+            _that.geometry,
+            _that.totalDistance,
+            _that.estimatedDuration,
+            _that.instructions,
+            _that.createdAt,
+            _that.pathwayIds,
+            _that.status);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NavigationRouteImpl extends _NavigationRoute {
-  const _$NavigationRouteImpl(
+class _NavigationRoute extends NavigationRoute {
+  const _NavigationRoute(
       {required this.id,
       required this.start,
       required this.end,
-      required final List<LatLng> geometry,
+      required List<LatLng> geometry,
       required this.totalDistance,
       required this.estimatedDuration,
-      required final List<NavigationInstruction> instructions,
+      required List<NavigationInstruction> instructions,
       required this.createdAt,
       this.pathwayIds,
       @JsonKey(
@@ -1304,9 +1365,8 @@ class _$NavigationRouteImpl extends _NavigationRoute {
       : _geometry = geometry,
         _instructions = instructions,
         super._();
-
-  factory _$NavigationRouteImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NavigationRouteImplFromJson(json);
+  factory _NavigationRoute.fromJson(Map<String, dynamic> json) =>
+      _$NavigationRouteFromJson(json);
 
   @override
   final String id;
@@ -1338,33 +1398,42 @@ class _$NavigationRouteImpl extends _NavigationRoute {
   final DateTime createdAt;
   @override
   final String? pathwayIds;
-// ignore: invalid_annotation_target
   @override
   @JsonKey(
       fromJson: RouteStatusConverter._routeStatusFromJson,
       toJson: RouteStatusConverter._routeStatusToJson)
   final RouteStatus? status;
 
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NavigationRoute(id: $id, start: $start, end: $end, geometry: $geometry, totalDistance: $totalDistance, estimatedDuration: $estimatedDuration, instructions: $instructions, createdAt: $createdAt, pathwayIds: $pathwayIds, status: $status)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NavigationRouteCopyWith<_NavigationRoute> get copyWith =>
+      __$NavigationRouteCopyWithImpl<_NavigationRoute>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NavigationRouteToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NavigationRouteImpl &&
+            other is _NavigationRoute &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            const DeepCollectionEquality().equals(other._geometry, _geometry) &&
+            const DeepCollectionEquality().equals(other.geometry, _geometry) &&
             (identical(other.totalDistance, totalDistance) ||
                 other.totalDistance == totalDistance) &&
             (identical(other.estimatedDuration, estimatedDuration) ||
                 other.estimatedDuration == estimatedDuration) &&
             const DeepCollectionEquality()
-                .equals(other._instructions, _instructions) &&
+                .equals(other.instructions, _instructions) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.pathwayIds, pathwayIds) ||
@@ -1372,202 +1441,235 @@ class _$NavigationRouteImpl extends _NavigationRoute {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      start,
-      end,
-      const DeepCollectionEquality().hash(_geometry),
-      totalDistance,
-      estimatedDuration,
-      const DeepCollectionEquality().hash(_instructions),
-      createdAt,
-      pathwayIds,
-      status);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NavigationRouteImplCopyWith<_$NavigationRouteImpl> get copyWith =>
-      __$$NavigationRouteImplCopyWithImpl<_$NavigationRouteImpl>(
-          this, _$identity);
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        id,
+        start,
+        end,
+        const DeepCollectionEquality().hash(_geometry),
+        totalDistance,
+        estimatedDuration,
+        const DeepCollectionEquality().hash(_instructions),
+        createdAt,
+        pathwayIds,
+        status);
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$NavigationRouteImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NavigationRoute(id: $id, start: $start, end: $end, geometry: $geometry, totalDistance: $totalDistance, estimatedDuration: $estimatedDuration, instructions: $instructions, createdAt: $createdAt, pathwayIds: $pathwayIds, status: $status)';
   }
 }
 
-abstract class _NavigationRoute extends NavigationRoute {
-  const factory _NavigationRoute(
-      {required final String id,
-      required final NavigationDestination start,
-      required final NavigationDestination end,
-      required final List<LatLng> geometry,
-      required final double totalDistance,
-      required final Duration estimatedDuration,
-      required final List<NavigationInstruction> instructions,
-      required final DateTime createdAt,
-      final String? pathwayIds,
+/// @nodoc
+abstract mixin class _$NavigationRouteCopyWith<$Res>
+    implements $NavigationRouteCopyWith<$Res> {
+  factory _$NavigationRouteCopyWith(
+          _NavigationRoute value, $Res Function(_NavigationRoute) _then) =
+      __$NavigationRouteCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      NavigationDestination start,
+      NavigationDestination end,
+      List<LatLng> geometry,
+      double totalDistance,
+      Duration estimatedDuration,
+      List<NavigationInstruction> instructions,
+      DateTime createdAt,
+      String? pathwayIds,
       @JsonKey(
           fromJson: RouteStatusConverter._routeStatusFromJson,
           toJson: RouteStatusConverter._routeStatusToJson)
-      final RouteStatus? status}) = _$NavigationRouteImpl;
-  const _NavigationRoute._() : super._();
-
-  factory _NavigationRoute.fromJson(Map<String, dynamic> json) =
-      _$NavigationRouteImpl.fromJson;
+      RouteStatus? status});
 
   @override
-  String get id;
+  $NavigationDestinationCopyWith<$Res> get start;
   @override
-  NavigationDestination get start;
+  $NavigationDestinationCopyWith<$Res> get end;
   @override
-  NavigationDestination get end;
-  @override
-  List<LatLng> get geometry;
-  @override
-  double get totalDistance;
-  @override
-  Duration get estimatedDuration;
-  @override
-  List<NavigationInstruction> get instructions;
-  @override
-  DateTime get createdAt;
-  @override
-  String? get pathwayIds;
-  @override // ignore: invalid_annotation_target
-  @JsonKey(
-      fromJson: RouteStatusConverter._routeStatusFromJson,
-      toJson: RouteStatusConverter._routeStatusToJson)
-  RouteStatus? get status;
-  @override
-  @JsonKey(ignore: true)
-  _$$NavigationRouteImplCopyWith<_$NavigationRouteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-NavigationInstruction _$NavigationInstructionFromJson(
-    Map<String, dynamic> json) {
-  return _NavigationInstruction.fromJson(json);
+  $RouteStatusCopyWith<$Res>? get status;
 }
 
 /// @nodoc
-mixin _$NavigationInstruction {
-  String get instruction => throw _privateConstructorUsedError;
-  double get latitude => throw _privateConstructorUsedError;
-  double get longitude => throw _privateConstructorUsedError;
-  double get distanceToNext =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
-  @JsonKey(
-      fromJson: InstructionTypeConverter._instructionTypeFromJson,
-      toJson: InstructionTypeConverter._instructionTypeToJson)
-  InstructionType get type => throw _privateConstructorUsedError;
-  String? get roadName => throw _privateConstructorUsedError;
-  String? get landmark => throw _privateConstructorUsedError;
+class __$NavigationRouteCopyWithImpl<$Res>
+    implements _$NavigationRouteCopyWith<$Res> {
+  __$NavigationRouteCopyWithImpl(this._self, this._then);
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NavigationInstructionCopyWith<NavigationInstruction> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  final _NavigationRoute _self;
+  final $Res Function(_NavigationRoute) _then;
 
-/// @nodoc
-abstract class $NavigationInstructionCopyWith<$Res> {
-  factory $NavigationInstructionCopyWith(NavigationInstruction value,
-          $Res Function(NavigationInstruction) then) =
-      _$NavigationInstructionCopyWithImpl<$Res, NavigationInstruction>;
-  @useResult
-  $Res call(
-      {String instruction,
-      double latitude,
-      double longitude,
-      double distanceToNext,
-      @JsonKey(
-          fromJson: InstructionTypeConverter._instructionTypeFromJson,
-          toJson: InstructionTypeConverter._instructionTypeToJson)
-      InstructionType type,
-      String? roadName,
-      String? landmark});
-
-  $InstructionTypeCopyWith<$Res> get type;
-}
-
-/// @nodoc
-class _$NavigationInstructionCopyWithImpl<$Res,
-        $Val extends NavigationInstruction>
-    implements $NavigationInstructionCopyWith<$Res> {
-  _$NavigationInstructionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? instruction = null,
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? distanceToNext = null,
-    Object? type = null,
-    Object? roadName = freezed,
-    Object? landmark = freezed,
+    Object? id = null,
+    Object? start = null,
+    Object? end = null,
+    Object? geometry = null,
+    Object? totalDistance = null,
+    Object? estimatedDuration = null,
+    Object? instructions = null,
+    Object? createdAt = null,
+    Object? pathwayIds = freezed,
+    Object? status = freezed,
   }) {
-    return _then(_value.copyWith(
-      instruction: null == instruction
-          ? _value.instruction
-          : instruction // ignore: cast_nullable_to_non_nullable
+    return _then(_NavigationRoute(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
+      start: null == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as NavigationDestination,
+      end: null == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as NavigationDestination,
+      geometry: null == geometry
+          ? _self._geometry
+          : geometry // ignore: cast_nullable_to_non_nullable
+              as List<LatLng>,
+      totalDistance: null == totalDistance
+          ? _self.totalDistance
+          : totalDistance // ignore: cast_nullable_to_non_nullable
               as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      distanceToNext: null == distanceToNext
-          ? _value.distanceToNext
-          : distanceToNext // ignore: cast_nullable_to_non_nullable
-              as double,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InstructionType,
-      roadName: freezed == roadName
-          ? _value.roadName
-          : roadName // ignore: cast_nullable_to_non_nullable
+      estimatedDuration: null == estimatedDuration
+          ? _self.estimatedDuration
+          : estimatedDuration // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      instructions: null == instructions
+          ? _self._instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as List<NavigationInstruction>,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      pathwayIds: freezed == pathwayIds
+          ? _self.pathwayIds
+          : pathwayIds // ignore: cast_nullable_to_non_nullable
               as String?,
-      landmark: freezed == landmark
-          ? _value.landmark
-          : landmark // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RouteStatus?,
+    ));
   }
 
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $InstructionTypeCopyWith<$Res> get type {
-    return $InstructionTypeCopyWith<$Res>(_value.type, (value) {
-      return _then(_value.copyWith(type: value) as $Val);
+  $NavigationDestinationCopyWith<$Res> get start {
+    return $NavigationDestinationCopyWith<$Res>(_self.start, (value) {
+      return _then(_self.copyWith(start: value));
+    });
+  }
+
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationDestinationCopyWith<$Res> get end {
+    return $NavigationDestinationCopyWith<$Res>(_self.end, (value) {
+      return _then(_self.copyWith(end: value));
+    });
+  }
+
+  /// Create a copy of NavigationRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RouteStatusCopyWith<$Res>? get status {
+    if (_self.status == null) {
+      return null;
+    }
+
+    return $RouteStatusCopyWith<$Res>(_self.status!, (value) {
+      return _then(_self.copyWith(status: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$NavigationInstructionImplCopyWith<$Res>
-    implements $NavigationInstructionCopyWith<$Res> {
-  factory _$$NavigationInstructionImplCopyWith(
-          _$NavigationInstructionImpl value,
-          $Res Function(_$NavigationInstructionImpl) then) =
-      __$$NavigationInstructionImplCopyWithImpl<$Res>;
+mixin _$NavigationInstruction {
+  String get instruction;
+  double get latitude;
+  double get longitude;
+  double get distanceToNext;
+  @JsonKey(
+      fromJson: InstructionTypeConverter._instructionTypeFromJson,
+      toJson: InstructionTypeConverter._instructionTypeToJson)
+  InstructionType get type;
+  String? get roadName;
+  String? get landmark;
+
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NavigationInstructionCopyWith<NavigationInstruction> get copyWith =>
+      _$NavigationInstructionCopyWithImpl<NavigationInstruction>(
+          this as NavigationInstruction, _$identity);
+
+  /// Serializes this NavigationInstruction to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
+  bool operator ==(Object other) {
+    final _this = this as NavigationInstruction;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NavigationInstruction &&
+            (identical(other.instruction, _this.instruction) ||
+                other.instruction == _this.instruction) &&
+            (identical(other.latitude, _this.latitude) ||
+                other.latitude == _this.latitude) &&
+            (identical(other.longitude, _this.longitude) ||
+                other.longitude == _this.longitude) &&
+            (identical(other.distanceToNext, _this.distanceToNext) ||
+                other.distanceToNext == _this.distanceToNext) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.roadName, _this.roadName) ||
+                other.roadName == _this.roadName) &&
+            (identical(other.landmark, _this.landmark) ||
+                other.landmark == _this.landmark));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as NavigationInstruction;
+    return Object.hash(
+        runtimeType,
+        _this.instruction,
+        _this.latitude,
+        _this.longitude,
+        _this.distanceToNext,
+        _this.type,
+        _this.roadName,
+        _this.landmark);
+  }
+
+  @override
+  String toString() {
+    final _this = this as NavigationInstruction;
+    return 'NavigationInstruction(instruction: ${_this.instruction}, latitude: ${_this.latitude}, longitude: ${_this.longitude}, distanceToNext: ${_this.distanceToNext}, type: ${_this.type}, roadName: ${_this.roadName}, landmark: ${_this.landmark})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $NavigationInstructionCopyWith<$Res> {
+  factory $NavigationInstructionCopyWith(NavigationInstruction value,
+          $Res Function(NavigationInstruction) _then) =
+      _$NavigationInstructionCopyWithImpl;
   @useResult
   $Res call(
       {String instruction,
@@ -1581,19 +1683,19 @@ abstract class _$$NavigationInstructionImplCopyWith<$Res>
       String? roadName,
       String? landmark});
 
-  @override
   $InstructionTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
-class __$$NavigationInstructionImplCopyWithImpl<$Res>
-    extends _$NavigationInstructionCopyWithImpl<$Res,
-        _$NavigationInstructionImpl>
-    implements _$$NavigationInstructionImplCopyWith<$Res> {
-  __$$NavigationInstructionImplCopyWithImpl(_$NavigationInstructionImpl _value,
-      $Res Function(_$NavigationInstructionImpl) _then)
-      : super(_value, _then);
+class _$NavigationInstructionCopyWithImpl<$Res>
+    implements $NavigationInstructionCopyWith<$Res> {
+  _$NavigationInstructionCopyWithImpl(this._self, this._then);
 
+  final NavigationInstruction _self;
+  final $Res Function(NavigationInstruction) _then;
+
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1605,43 +1707,246 @@ class __$$NavigationInstructionImplCopyWithImpl<$Res>
     Object? roadName = freezed,
     Object? landmark = freezed,
   }) {
-    return _then(_$NavigationInstructionImpl(
+    return _then(NavigationInstruction(
       instruction: null == instruction
-          ? _value.instruction
+          ? _self.instruction
           : instruction // ignore: cast_nullable_to_non_nullable
               as String,
       latitude: null == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
       longitude: null == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
       distanceToNext: null == distanceToNext
-          ? _value.distanceToNext
+          ? _self.distanceToNext
           : distanceToNext // ignore: cast_nullable_to_non_nullable
               as double,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as InstructionType,
       roadName: freezed == roadName
-          ? _value.roadName
+          ? _self.roadName
           : roadName // ignore: cast_nullable_to_non_nullable
               as String?,
       landmark: freezed == landmark
-          ? _value.landmark
+          ? _self.landmark
           : landmark // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $InstructionTypeCopyWith<$Res> get type {
+    return $InstructionTypeCopyWith<$Res>(_self.type, (value) {
+      return _then(_self.copyWith(type: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [NavigationInstruction].
+extension NavigationInstructionPatterns on NavigationInstruction {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavigationInstruction value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavigationInstruction value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_NavigationInstruction value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String instruction,
+            double latitude,
+            double longitude,
+            double distanceToNext,
+            @JsonKey(
+                fromJson: InstructionTypeConverter._instructionTypeFromJson,
+                toJson: InstructionTypeConverter._instructionTypeToJson)
+            InstructionType type,
+            String? roadName,
+            String? landmark)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction() when $default != null:
+        return $default(_that.instruction, _that.latitude, _that.longitude,
+            _that.distanceToNext, _that.type, _that.roadName, _that.landmark);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String instruction,
+            double latitude,
+            double longitude,
+            double distanceToNext,
+            @JsonKey(
+                fromJson: InstructionTypeConverter._instructionTypeFromJson,
+                toJson: InstructionTypeConverter._instructionTypeToJson)
+            InstructionType type,
+            String? roadName,
+            String? landmark)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction():
+        return $default(_that.instruction, _that.latitude, _that.longitude,
+            _that.distanceToNext, _that.type, _that.roadName, _that.landmark);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String instruction,
+            double latitude,
+            double longitude,
+            double distanceToNext,
+            @JsonKey(
+                fromJson: InstructionTypeConverter._instructionTypeFromJson,
+                toJson: InstructionTypeConverter._instructionTypeToJson)
+            InstructionType type,
+            String? roadName,
+            String? landmark)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationInstruction() when $default != null:
+        return $default(_that.instruction, _that.latitude, _that.longitude,
+            _that.distanceToNext, _that.type, _that.roadName, _that.landmark);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NavigationInstructionImpl extends _NavigationInstruction {
-  const _$NavigationInstructionImpl(
+class _NavigationInstruction extends NavigationInstruction {
+  const _NavigationInstruction(
       {required this.instruction,
       required this.latitude,
       required this.longitude,
@@ -1653,9 +1958,8 @@ class _$NavigationInstructionImpl extends _NavigationInstruction {
       this.roadName,
       this.landmark})
       : super._();
-
-  factory _$NavigationInstructionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NavigationInstructionImplFromJson(json);
+  factory _NavigationInstruction.fromJson(Map<String, dynamic> json) =>
+      _$NavigationInstructionFromJson(json);
 
   @override
   final String instruction;
@@ -1665,7 +1969,6 @@ class _$NavigationInstructionImpl extends _NavigationInstruction {
   final double longitude;
   @override
   final double distanceToNext;
-// ignore: invalid_annotation_target
   @override
   @JsonKey(
       fromJson: InstructionTypeConverter._instructionTypeFromJson,
@@ -1676,16 +1979,27 @@ class _$NavigationInstructionImpl extends _NavigationInstruction {
   @override
   final String? landmark;
 
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NavigationInstruction(instruction: $instruction, latitude: $latitude, longitude: $longitude, distanceToNext: $distanceToNext, type: $type, roadName: $roadName, landmark: $landmark)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NavigationInstructionCopyWith<_NavigationInstruction> get copyWith =>
+      __$NavigationInstructionCopyWithImpl<_NavigationInstruction>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NavigationInstructionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NavigationInstructionImpl &&
+            other is _NavigationInstruction &&
             (identical(other.instruction, instruction) ||
                 other.instruction == instruction) &&
             (identical(other.latitude, latitude) ||
@@ -1701,2480 +2015,1084 @@ class _$NavigationInstructionImpl extends _NavigationInstruction {
                 other.landmark == landmark));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, instruction, latitude, longitude,
-      distanceToNext, type, roadName, landmark);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NavigationInstructionImplCopyWith<_$NavigationInstructionImpl>
-      get copyWith => __$$NavigationInstructionImplCopyWithImpl<
-          _$NavigationInstructionImpl>(this, _$identity);
+  int get hashCode {
+    return Object.hash(runtimeType, instruction, latitude, longitude,
+        distanceToNext, type, roadName, landmark);
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$NavigationInstructionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NavigationInstruction(instruction: $instruction, latitude: $latitude, longitude: $longitude, distanceToNext: $distanceToNext, type: $type, roadName: $roadName, landmark: $landmark)';
   }
 }
 
-abstract class _NavigationInstruction extends NavigationInstruction {
-  const factory _NavigationInstruction(
-      {required final String instruction,
-      required final double latitude,
-      required final double longitude,
-      required final double distanceToNext,
+/// @nodoc
+abstract mixin class _$NavigationInstructionCopyWith<$Res>
+    implements $NavigationInstructionCopyWith<$Res> {
+  factory _$NavigationInstructionCopyWith(_NavigationInstruction value,
+          $Res Function(_NavigationInstruction) _then) =
+      __$NavigationInstructionCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String instruction,
+      double latitude,
+      double longitude,
+      double distanceToNext,
       @JsonKey(
           fromJson: InstructionTypeConverter._instructionTypeFromJson,
           toJson: InstructionTypeConverter._instructionTypeToJson)
-      required final InstructionType type,
-      final String? roadName,
-      final String? landmark}) = _$NavigationInstructionImpl;
-  const _NavigationInstruction._() : super._();
-
-  factory _NavigationInstruction.fromJson(Map<String, dynamic> json) =
-      _$NavigationInstructionImpl.fromJson;
+      InstructionType type,
+      String? roadName,
+      String? landmark});
 
   @override
-  String get instruction;
-  @override
-  double get latitude;
-  @override
-  double get longitude;
-  @override
-  double get distanceToNext;
-  @override // ignore: invalid_annotation_target
-  @JsonKey(
-      fromJson: InstructionTypeConverter._instructionTypeFromJson,
-      toJson: InstructionTypeConverter._instructionTypeToJson)
-  InstructionType get type;
-  @override
-  String? get roadName;
-  @override
-  String? get landmark;
-  @override
-  @JsonKey(ignore: true)
-  _$$NavigationInstructionImplCopyWith<_$NavigationInstructionImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  $InstructionTypeCopyWith<$Res> get type;
 }
 
 /// @nodoc
-mixin _$InstructionType {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
+class __$NavigationInstructionCopyWithImpl<$Res>
+    implements _$NavigationInstructionCopyWith<$Res> {
+  __$NavigationInstructionCopyWithImpl(this._self, this._then);
 
-/// @nodoc
-abstract class $InstructionTypeCopyWith<$Res> {
-  factory $InstructionTypeCopyWith(
-          InstructionType value, $Res Function(InstructionType) then) =
-      _$InstructionTypeCopyWithImpl<$Res, InstructionType>;
-}
+  final _NavigationInstruction _self;
+  final $Res Function(_NavigationInstruction) _then;
 
-/// @nodoc
-class _$InstructionTypeCopyWithImpl<$Res, $Val extends InstructionType>
-    implements $InstructionTypeCopyWith<$Res> {
-  _$InstructionTypeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$StartImplCopyWith<$Res> {
-  factory _$$StartImplCopyWith(
-          _$StartImpl value, $Res Function(_$StartImpl) then) =
-      __$$StartImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$StartImpl>
-    implements _$$StartImplCopyWith<$Res> {
-  __$$StartImplCopyWithImpl(
-      _$StartImpl _value, $Res Function(_$StartImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$StartImpl implements _Start {
-  const _$StartImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.start()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return start();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return start?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return start(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return start?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Start implements InstructionType {
-  const factory _Start() = _$StartImpl;
-}
-
-/// @nodoc
-abstract class _$$ContinueStraightImplCopyWith<$Res> {
-  factory _$$ContinueStraightImplCopyWith(_$ContinueStraightImpl value,
-          $Res Function(_$ContinueStraightImpl) then) =
-      __$$ContinueStraightImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ContinueStraightImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$ContinueStraightImpl>
-    implements _$$ContinueStraightImplCopyWith<$Res> {
-  __$$ContinueStraightImplCopyWithImpl(_$ContinueStraightImpl _value,
-      $Res Function(_$ContinueStraightImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ContinueStraightImpl implements _ContinueStraight {
-  const _$ContinueStraightImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.continueStraight()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ContinueStraightImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return continueStraight();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return continueStraight?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (continueStraight != null) {
-      return continueStraight();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return continueStraight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return continueStraight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (continueStraight != null) {
-      return continueStraight(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ContinueStraight implements InstructionType {
-  const factory _ContinueStraight() = _$ContinueStraightImpl;
-}
-
-/// @nodoc
-abstract class _$$TurnLeftImplCopyWith<$Res> {
-  factory _$$TurnLeftImplCopyWith(
-          _$TurnLeftImpl value, $Res Function(_$TurnLeftImpl) then) =
-      __$$TurnLeftImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TurnLeftImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$TurnLeftImpl>
-    implements _$$TurnLeftImplCopyWith<$Res> {
-  __$$TurnLeftImplCopyWithImpl(
-      _$TurnLeftImpl _value, $Res Function(_$TurnLeftImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TurnLeftImpl implements _TurnLeft {
-  const _$TurnLeftImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.turnLeft()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TurnLeftImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return turnLeft();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return turnLeft?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnLeft != null) {
-      return turnLeft();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return turnLeft(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return turnLeft?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnLeft != null) {
-      return turnLeft(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TurnLeft implements InstructionType {
-  const factory _TurnLeft() = _$TurnLeftImpl;
-}
-
-/// @nodoc
-abstract class _$$TurnRightImplCopyWith<$Res> {
-  factory _$$TurnRightImplCopyWith(
-          _$TurnRightImpl value, $Res Function(_$TurnRightImpl) then) =
-      __$$TurnRightImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TurnRightImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$TurnRightImpl>
-    implements _$$TurnRightImplCopyWith<$Res> {
-  __$$TurnRightImplCopyWithImpl(
-      _$TurnRightImpl _value, $Res Function(_$TurnRightImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TurnRightImpl implements _TurnRight {
-  const _$TurnRightImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.turnRight()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TurnRightImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return turnRight();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return turnRight?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnRight != null) {
-      return turnRight();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return turnRight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return turnRight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnRight != null) {
-      return turnRight(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TurnRight implements InstructionType {
-  const factory _TurnRight() = _$TurnRightImpl;
-}
-
-/// @nodoc
-abstract class _$$TurnSlightLeftImplCopyWith<$Res> {
-  factory _$$TurnSlightLeftImplCopyWith(_$TurnSlightLeftImpl value,
-          $Res Function(_$TurnSlightLeftImpl) then) =
-      __$$TurnSlightLeftImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TurnSlightLeftImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$TurnSlightLeftImpl>
-    implements _$$TurnSlightLeftImplCopyWith<$Res> {
-  __$$TurnSlightLeftImplCopyWithImpl(
-      _$TurnSlightLeftImpl _value, $Res Function(_$TurnSlightLeftImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TurnSlightLeftImpl implements _TurnSlightLeft {
-  const _$TurnSlightLeftImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.turnSlightLeft()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TurnSlightLeftImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return turnSlightLeft();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return turnSlightLeft?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnSlightLeft != null) {
-      return turnSlightLeft();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return turnSlightLeft(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return turnSlightLeft?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnSlightLeft != null) {
-      return turnSlightLeft(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TurnSlightLeft implements InstructionType {
-  const factory _TurnSlightLeft() = _$TurnSlightLeftImpl;
-}
-
-/// @nodoc
-abstract class _$$TurnSlightRightImplCopyWith<$Res> {
-  factory _$$TurnSlightRightImplCopyWith(_$TurnSlightRightImpl value,
-          $Res Function(_$TurnSlightRightImpl) then) =
-      __$$TurnSlightRightImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$TurnSlightRightImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$TurnSlightRightImpl>
-    implements _$$TurnSlightRightImplCopyWith<$Res> {
-  __$$TurnSlightRightImplCopyWithImpl(
-      _$TurnSlightRightImpl _value, $Res Function(_$TurnSlightRightImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$TurnSlightRightImpl implements _TurnSlightRight {
-  const _$TurnSlightRightImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.turnSlightRight()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TurnSlightRightImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return turnSlightRight();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return turnSlightRight?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnSlightRight != null) {
-      return turnSlightRight();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return turnSlightRight(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return turnSlightRight?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (turnSlightRight != null) {
-      return turnSlightRight(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TurnSlightRight implements InstructionType {
-  const factory _TurnSlightRight() = _$TurnSlightRightImpl;
-}
-
-/// @nodoc
-abstract class _$$UturnImplCopyWith<$Res> {
-  factory _$$UturnImplCopyWith(
-          _$UturnImpl value, $Res Function(_$UturnImpl) then) =
-      __$$UturnImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UturnImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$UturnImpl>
-    implements _$$UturnImplCopyWith<$Res> {
-  __$$UturnImplCopyWithImpl(
-      _$UturnImpl _value, $Res Function(_$UturnImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UturnImpl implements _Uturn {
-  const _$UturnImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.uturn()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UturnImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return uturn();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return uturn?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (uturn != null) {
-      return uturn();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return uturn(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return uturn?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (uturn != null) {
-      return uturn(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Uturn implements InstructionType {
-  const factory _Uturn() = _$UturnImpl;
-}
-
-/// @nodoc
-abstract class _$$ArriveImplCopyWith<$Res> {
-  factory _$$ArriveImplCopyWith(
-          _$ArriveImpl value, $Res Function(_$ArriveImpl) then) =
-      __$$ArriveImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ArriveImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$ArriveImpl>
-    implements _$$ArriveImplCopyWith<$Res> {
-  __$$ArriveImplCopyWithImpl(
-      _$ArriveImpl _value, $Res Function(_$ArriveImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ArriveImpl implements _Arrive {
-  const _$ArriveImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.arrive()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ArriveImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return arrive();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return arrive?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (arrive != null) {
-      return arrive();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return arrive(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return arrive?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (arrive != null) {
-      return arrive(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Arrive implements InstructionType {
-  const factory _Arrive() = _$ArriveImpl;
-}
-
-/// @nodoc
-abstract class _$$EnterBuildingImplCopyWith<$Res> {
-  factory _$$EnterBuildingImplCopyWith(
-          _$EnterBuildingImpl value, $Res Function(_$EnterBuildingImpl) then) =
-      __$$EnterBuildingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$EnterBuildingImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$EnterBuildingImpl>
-    implements _$$EnterBuildingImplCopyWith<$Res> {
-  __$$EnterBuildingImplCopyWithImpl(
-      _$EnterBuildingImpl _value, $Res Function(_$EnterBuildingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$EnterBuildingImpl implements _EnterBuilding {
-  const _$EnterBuildingImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.enterBuilding()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EnterBuildingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return enterBuilding();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return enterBuilding?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (enterBuilding != null) {
-      return enterBuilding();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return enterBuilding(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return enterBuilding?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (enterBuilding != null) {
-      return enterBuilding(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EnterBuilding implements InstructionType {
-  const factory _EnterBuilding() = _$EnterBuildingImpl;
-}
-
-/// @nodoc
-abstract class _$$ExitBuildingImplCopyWith<$Res> {
-  factory _$$ExitBuildingImplCopyWith(
-          _$ExitBuildingImpl value, $Res Function(_$ExitBuildingImpl) then) =
-      __$$ExitBuildingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ExitBuildingImplCopyWithImpl<$Res>
-    extends _$InstructionTypeCopyWithImpl<$Res, _$ExitBuildingImpl>
-    implements _$$ExitBuildingImplCopyWith<$Res> {
-  __$$ExitBuildingImplCopyWithImpl(
-      _$ExitBuildingImpl _value, $Res Function(_$ExitBuildingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ExitBuildingImpl implements _ExitBuilding {
-  const _$ExitBuildingImpl();
-
-  @override
-  String toString() {
-    return 'InstructionType.exitBuilding()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ExitBuildingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() start,
-    required TResult Function() continueStraight,
-    required TResult Function() turnLeft,
-    required TResult Function() turnRight,
-    required TResult Function() turnSlightLeft,
-    required TResult Function() turnSlightRight,
-    required TResult Function() uturn,
-    required TResult Function() arrive,
-    required TResult Function() enterBuilding,
-    required TResult Function() exitBuilding,
-  }) {
-    return exitBuilding();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? start,
-    TResult? Function()? continueStraight,
-    TResult? Function()? turnLeft,
-    TResult? Function()? turnRight,
-    TResult? Function()? turnSlightLeft,
-    TResult? Function()? turnSlightRight,
-    TResult? Function()? uturn,
-    TResult? Function()? arrive,
-    TResult? Function()? enterBuilding,
-    TResult? Function()? exitBuilding,
-  }) {
-    return exitBuilding?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? start,
-    TResult Function()? continueStraight,
-    TResult Function()? turnLeft,
-    TResult Function()? turnRight,
-    TResult Function()? turnSlightLeft,
-    TResult Function()? turnSlightRight,
-    TResult Function()? uturn,
-    TResult Function()? arrive,
-    TResult Function()? enterBuilding,
-    TResult Function()? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (exitBuilding != null) {
-      return exitBuilding();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Start value) start,
-    required TResult Function(_ContinueStraight value) continueStraight,
-    required TResult Function(_TurnLeft value) turnLeft,
-    required TResult Function(_TurnRight value) turnRight,
-    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
-    required TResult Function(_TurnSlightRight value) turnSlightRight,
-    required TResult Function(_Uturn value) uturn,
-    required TResult Function(_Arrive value) arrive,
-    required TResult Function(_EnterBuilding value) enterBuilding,
-    required TResult Function(_ExitBuilding value) exitBuilding,
-  }) {
-    return exitBuilding(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Start value)? start,
-    TResult? Function(_ContinueStraight value)? continueStraight,
-    TResult? Function(_TurnLeft value)? turnLeft,
-    TResult? Function(_TurnRight value)? turnRight,
-    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult? Function(_TurnSlightRight value)? turnSlightRight,
-    TResult? Function(_Uturn value)? uturn,
-    TResult? Function(_Arrive value)? arrive,
-    TResult? Function(_EnterBuilding value)? enterBuilding,
-    TResult? Function(_ExitBuilding value)? exitBuilding,
-  }) {
-    return exitBuilding?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Start value)? start,
-    TResult Function(_ContinueStraight value)? continueStraight,
-    TResult Function(_TurnLeft value)? turnLeft,
-    TResult Function(_TurnRight value)? turnRight,
-    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
-    TResult Function(_TurnSlightRight value)? turnSlightRight,
-    TResult Function(_Uturn value)? uturn,
-    TResult Function(_Arrive value)? arrive,
-    TResult Function(_EnterBuilding value)? enterBuilding,
-    TResult Function(_ExitBuilding value)? exitBuilding,
-    required TResult orElse(),
-  }) {
-    if (exitBuilding != null) {
-      return exitBuilding(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ExitBuilding implements InstructionType {
-  const factory _ExitBuilding() = _$ExitBuildingImpl;
-}
-
-/// @nodoc
-mixin _$RouteStatus {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RouteStatusCopyWith<$Res> {
-  factory $RouteStatusCopyWith(
-          RouteStatus value, $Res Function(RouteStatus) then) =
-      _$RouteStatusCopyWithImpl<$Res, RouteStatus>;
-}
-
-/// @nodoc
-class _$RouteStatusCopyWithImpl<$Res, $Val extends RouteStatus>
-    implements $RouteStatusCopyWith<$Res> {
-  _$RouteStatusCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$PlannedImplCopyWith<$Res> {
-  factory _$$PlannedImplCopyWith(
-          _$PlannedImpl value, $Res Function(_$PlannedImpl) then) =
-      __$$PlannedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PlannedImplCopyWithImpl<$Res>
-    extends _$RouteStatusCopyWithImpl<$Res, _$PlannedImpl>
-    implements _$$PlannedImplCopyWith<$Res> {
-  __$$PlannedImplCopyWithImpl(
-      _$PlannedImpl _value, $Res Function(_$PlannedImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$PlannedImpl implements _Planned {
-  const _$PlannedImpl();
-
-  @override
-  String toString() {
-    return 'RouteStatus.planned()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PlannedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) {
-    return planned();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) {
-    return planned?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) {
-    if (planned != null) {
-      return planned();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) {
-    return planned(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) {
-    return planned?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) {
-    if (planned != null) {
-      return planned(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Planned implements RouteStatus {
-  const factory _Planned() = _$PlannedImpl;
-}
-
-/// @nodoc
-abstract class _$$ActiveImplCopyWith<$Res> {
-  factory _$$ActiveImplCopyWith(
-          _$ActiveImpl value, $Res Function(_$ActiveImpl) then) =
-      __$$ActiveImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ActiveImplCopyWithImpl<$Res>
-    extends _$RouteStatusCopyWithImpl<$Res, _$ActiveImpl>
-    implements _$$ActiveImplCopyWith<$Res> {
-  __$$ActiveImplCopyWithImpl(
-      _$ActiveImpl _value, $Res Function(_$ActiveImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ActiveImpl implements _Active {
-  const _$ActiveImpl();
-
-  @override
-  String toString() {
-    return 'RouteStatus.active()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ActiveImpl);
-  }
-
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) {
-    return active();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) {
-    return active?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) {
-    if (active != null) {
-      return active();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) {
-    return active(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) {
-    return active?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) {
-    if (active != null) {
-      return active(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Active implements RouteStatus {
-  const factory _Active() = _$ActiveImpl;
-}
-
-/// @nodoc
-abstract class _$$PausedImplCopyWith<$Res> {
-  factory _$$PausedImplCopyWith(
-          _$PausedImpl value, $Res Function(_$PausedImpl) then) =
-      __$$PausedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PausedImplCopyWithImpl<$Res>
-    extends _$RouteStatusCopyWithImpl<$Res, _$PausedImpl>
-    implements _$$PausedImplCopyWith<$Res> {
-  __$$PausedImplCopyWithImpl(
-      _$PausedImpl _value, $Res Function(_$PausedImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$PausedImpl implements _Paused {
-  const _$PausedImpl();
-
-  @override
-  String toString() {
-    return 'RouteStatus.paused()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PausedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) {
-    return paused();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) {
-    return paused?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) {
-    if (paused != null) {
-      return paused();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) {
-    return paused(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) {
-    return paused?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) {
-    if (paused != null) {
-      return paused(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Paused implements RouteStatus {
-  const factory _Paused() = _$PausedImpl;
-}
-
-/// @nodoc
-abstract class _$$CompletedImplCopyWith<$Res> {
-  factory _$$CompletedImplCopyWith(
-          _$CompletedImpl value, $Res Function(_$CompletedImpl) then) =
-      __$$CompletedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CompletedImplCopyWithImpl<$Res>
-    extends _$RouteStatusCopyWithImpl<$Res, _$CompletedImpl>
-    implements _$$CompletedImplCopyWith<$Res> {
-  __$$CompletedImplCopyWithImpl(
-      _$CompletedImpl _value, $Res Function(_$CompletedImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CompletedImpl implements _Completed {
-  const _$CompletedImpl();
-
-  @override
-  String toString() {
-    return 'RouteStatus.completed()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CompletedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) {
-    return completed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) {
-    return completed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) {
-    if (completed != null) {
-      return completed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) {
-    return completed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) {
-    return completed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) {
-    if (completed != null) {
-      return completed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Completed implements RouteStatus {
-  const factory _Completed() = _$CompletedImpl;
-}
-
-/// @nodoc
-abstract class _$$CancelledImplCopyWith<$Res> {
-  factory _$$CancelledImplCopyWith(
-          _$CancelledImpl value, $Res Function(_$CancelledImpl) then) =
-      __$$CancelledImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CancelledImplCopyWithImpl<$Res>
-    extends _$RouteStatusCopyWithImpl<$Res, _$CancelledImpl>
-    implements _$$CancelledImplCopyWith<$Res> {
-  __$$CancelledImplCopyWithImpl(
-      _$CancelledImpl _value, $Res Function(_$CancelledImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CancelledImpl implements _Cancelled {
-  const _$CancelledImpl();
-
-  @override
-  String toString() {
-    return 'RouteStatus.cancelled()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CancelledImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() planned,
-    required TResult Function() active,
-    required TResult Function() paused,
-    required TResult Function() completed,
-    required TResult Function() cancelled,
-  }) {
-    return cancelled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? planned,
-    TResult? Function()? active,
-    TResult? Function()? paused,
-    TResult? Function()? completed,
-    TResult? Function()? cancelled,
-  }) {
-    return cancelled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? planned,
-    TResult Function()? active,
-    TResult Function()? paused,
-    TResult Function()? completed,
-    TResult Function()? cancelled,
-    required TResult orElse(),
-  }) {
-    if (cancelled != null) {
-      return cancelled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Planned value) planned,
-    required TResult Function(_Active value) active,
-    required TResult Function(_Paused value) paused,
-    required TResult Function(_Completed value) completed,
-    required TResult Function(_Cancelled value) cancelled,
-  }) {
-    return cancelled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Planned value)? planned,
-    TResult? Function(_Active value)? active,
-    TResult? Function(_Paused value)? paused,
-    TResult? Function(_Completed value)? completed,
-    TResult? Function(_Cancelled value)? cancelled,
-  }) {
-    return cancelled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Planned value)? planned,
-    TResult Function(_Active value)? active,
-    TResult Function(_Paused value)? paused,
-    TResult Function(_Completed value)? completed,
-    TResult Function(_Cancelled value)? cancelled,
-    required TResult orElse(),
-  }) {
-    if (cancelled != null) {
-      return cancelled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Cancelled implements RouteStatus {
-  const factory _Cancelled() = _$CancelledImpl;
-}
-
-NavigationSession _$NavigationSessionFromJson(Map<String, dynamic> json) {
-  return _NavigationSession.fromJson(json);
-}
-
-/// @nodoc
-mixin _$NavigationSession {
-  String get id => throw _privateConstructorUsedError;
-  NavigationRoute get route => throw _privateConstructorUsedError;
-  int get currentInstructionIndex => throw _privateConstructorUsedError;
-  LatLng get currentPosition => throw _privateConstructorUsedError;
-  DateTime get startedAt => throw _privateConstructorUsedError;
-  DateTime? get completedAt => throw _privateConstructorUsedError;
-  double? get remainingDistance => throw _privateConstructorUsedError;
-  Duration? get remainingTime => throw _privateConstructorUsedError;
-  bool get isVoiceGuidanceEnabled => throw _privateConstructorUsedError;
-  bool get isRerouting => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NavigationSessionCopyWith<NavigationSession> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NavigationSessionCopyWith<$Res> {
-  factory $NavigationSessionCopyWith(
-          NavigationSession value, $Res Function(NavigationSession) then) =
-      _$NavigationSessionCopyWithImpl<$Res, NavigationSession>;
-  @useResult
-  $Res call(
-      {String id,
-      NavigationRoute route,
-      int currentInstructionIndex,
-      LatLng currentPosition,
-      DateTime startedAt,
-      DateTime? completedAt,
-      double? remainingDistance,
-      Duration? remainingTime,
-      bool isVoiceGuidanceEnabled,
-      bool isRerouting});
-
-  $NavigationRouteCopyWith<$Res> get route;
-}
-
-/// @nodoc
-class _$NavigationSessionCopyWithImpl<$Res, $Val extends NavigationSession>
-    implements $NavigationSessionCopyWith<$Res> {
-  _$NavigationSessionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? id = null,
-    Object? route = null,
-    Object? currentInstructionIndex = null,
-    Object? currentPosition = null,
-    Object? startedAt = null,
-    Object? completedAt = freezed,
-    Object? remainingDistance = freezed,
-    Object? remainingTime = freezed,
-    Object? isVoiceGuidanceEnabled = null,
-    Object? isRerouting = null,
+    Object? instruction = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? distanceToNext = null,
+    Object? type = null,
+    Object? roadName = freezed,
+    Object? landmark = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+    return _then(_NavigationInstruction(
+      instruction: null == instruction
+          ? _self.instruction
+          : instruction // ignore: cast_nullable_to_non_nullable
               as String,
-      route: null == route
-          ? _value.route
-          : route // ignore: cast_nullable_to_non_nullable
-              as NavigationRoute,
-      currentInstructionIndex: null == currentInstructionIndex
-          ? _value.currentInstructionIndex
-          : currentInstructionIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      currentPosition: null == currentPosition
-          ? _value.currentPosition
-          : currentPosition // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-      startedAt: null == startedAt
-          ? _value.startedAt
-          : startedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      completedAt: freezed == completedAt
-          ? _value.completedAt
-          : completedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      remainingDistance: freezed == remainingDistance
-          ? _value.remainingDistance
-          : remainingDistance // ignore: cast_nullable_to_non_nullable
-              as double?,
-      remainingTime: freezed == remainingTime
-          ? _value.remainingTime
-          : remainingTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      isVoiceGuidanceEnabled: null == isVoiceGuidanceEnabled
-          ? _value.isVoiceGuidanceEnabled
-          : isVoiceGuidanceEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isRerouting: null == isRerouting
-          ? _value.isRerouting
-          : isRerouting // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+      latitude: null == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      distanceToNext: null == distanceToNext
+          ? _self.distanceToNext
+          : distanceToNext // ignore: cast_nullable_to_non_nullable
+              as double,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InstructionType,
+      roadName: freezed == roadName
+          ? _self.roadName
+          : roadName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      landmark: freezed == landmark
+          ? _self.landmark
+          : landmark // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 
+  /// Create a copy of NavigationInstruction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $NavigationRouteCopyWith<$Res> get route {
-    return $NavigationRouteCopyWith<$Res>(_value.route, (value) {
-      return _then(_value.copyWith(route: value) as $Val);
+  $InstructionTypeCopyWith<$Res> get type {
+    return $InstructionTypeCopyWith<$Res>(_self.type, (value) {
+      return _then(_self.copyWith(type: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$NavigationSessionImplCopyWith<$Res>
-    implements $NavigationSessionCopyWith<$Res> {
-  factory _$$NavigationSessionImplCopyWith(_$NavigationSessionImpl value,
-          $Res Function(_$NavigationSessionImpl) then) =
-      __$$NavigationSessionImplCopyWithImpl<$Res>;
+mixin _$InstructionType {
   @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InstructionType);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType()';
+  }
+}
+
+/// @nodoc
+class $InstructionTypeCopyWith<$Res> {
+  $InstructionTypeCopyWith(
+      InstructionType _, $Res Function(InstructionType) __);
+}
+
+/// Adds pattern-matching-related methods to [InstructionType].
+extension InstructionTypePatterns on InstructionType {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Start value)? start,
+    TResult Function(_ContinueStraight value)? continueStraight,
+    TResult Function(_TurnLeft value)? turnLeft,
+    TResult Function(_TurnRight value)? turnRight,
+    TResult Function(_TurnSlightLeft value)? turnSlightLeft,
+    TResult Function(_TurnSlightRight value)? turnSlightRight,
+    TResult Function(_Uturn value)? uturn,
+    TResult Function(_Arrive value)? arrive,
+    TResult Function(_EnterBuilding value)? enterBuilding,
+    TResult Function(_ExitBuilding value)? exitBuilding,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start() when start != null:
+        return start(_that);
+      case _ContinueStraight() when continueStraight != null:
+        return continueStraight(_that);
+      case _TurnLeft() when turnLeft != null:
+        return turnLeft(_that);
+      case _TurnRight() when turnRight != null:
+        return turnRight(_that);
+      case _TurnSlightLeft() when turnSlightLeft != null:
+        return turnSlightLeft(_that);
+      case _TurnSlightRight() when turnSlightRight != null:
+        return turnSlightRight(_that);
+      case _Uturn() when uturn != null:
+        return uturn(_that);
+      case _Arrive() when arrive != null:
+        return arrive(_that);
+      case _EnterBuilding() when enterBuilding != null:
+        return enterBuilding(_that);
+      case _ExitBuilding() when exitBuilding != null:
+        return exitBuilding(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Start value) start,
+    required TResult Function(_ContinueStraight value) continueStraight,
+    required TResult Function(_TurnLeft value) turnLeft,
+    required TResult Function(_TurnRight value) turnRight,
+    required TResult Function(_TurnSlightLeft value) turnSlightLeft,
+    required TResult Function(_TurnSlightRight value) turnSlightRight,
+    required TResult Function(_Uturn value) uturn,
+    required TResult Function(_Arrive value) arrive,
+    required TResult Function(_EnterBuilding value) enterBuilding,
+    required TResult Function(_ExitBuilding value) exitBuilding,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start():
+        return start(_that);
+      case _ContinueStraight():
+        return continueStraight(_that);
+      case _TurnLeft():
+        return turnLeft(_that);
+      case _TurnRight():
+        return turnRight(_that);
+      case _TurnSlightLeft():
+        return turnSlightLeft(_that);
+      case _TurnSlightRight():
+        return turnSlightRight(_that);
+      case _Uturn():
+        return uturn(_that);
+      case _Arrive():
+        return arrive(_that);
+      case _EnterBuilding():
+        return enterBuilding(_that);
+      case _ExitBuilding():
+        return exitBuilding(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Start value)? start,
+    TResult? Function(_ContinueStraight value)? continueStraight,
+    TResult? Function(_TurnLeft value)? turnLeft,
+    TResult? Function(_TurnRight value)? turnRight,
+    TResult? Function(_TurnSlightLeft value)? turnSlightLeft,
+    TResult? Function(_TurnSlightRight value)? turnSlightRight,
+    TResult? Function(_Uturn value)? uturn,
+    TResult? Function(_Arrive value)? arrive,
+    TResult? Function(_EnterBuilding value)? enterBuilding,
+    TResult? Function(_ExitBuilding value)? exitBuilding,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start() when start != null:
+        return start(_that);
+      case _ContinueStraight() when continueStraight != null:
+        return continueStraight(_that);
+      case _TurnLeft() when turnLeft != null:
+        return turnLeft(_that);
+      case _TurnRight() when turnRight != null:
+        return turnRight(_that);
+      case _TurnSlightLeft() when turnSlightLeft != null:
+        return turnSlightLeft(_that);
+      case _TurnSlightRight() when turnSlightRight != null:
+        return turnSlightRight(_that);
+      case _Uturn() when uturn != null:
+        return uturn(_that);
+      case _Arrive() when arrive != null:
+        return arrive(_that);
+      case _EnterBuilding() when enterBuilding != null:
+        return enterBuilding(_that);
+      case _ExitBuilding() when exitBuilding != null:
+        return exitBuilding(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? continueStraight,
+    TResult Function()? turnLeft,
+    TResult Function()? turnRight,
+    TResult Function()? turnSlightLeft,
+    TResult Function()? turnSlightRight,
+    TResult Function()? uturn,
+    TResult Function()? arrive,
+    TResult Function()? enterBuilding,
+    TResult Function()? exitBuilding,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start() when start != null:
+        return start();
+      case _ContinueStraight() when continueStraight != null:
+        return continueStraight();
+      case _TurnLeft() when turnLeft != null:
+        return turnLeft();
+      case _TurnRight() when turnRight != null:
+        return turnRight();
+      case _TurnSlightLeft() when turnSlightLeft != null:
+        return turnSlightLeft();
+      case _TurnSlightRight() when turnSlightRight != null:
+        return turnSlightRight();
+      case _Uturn() when uturn != null:
+        return uturn();
+      case _Arrive() when arrive != null:
+        return arrive();
+      case _EnterBuilding() when enterBuilding != null:
+        return enterBuilding();
+      case _ExitBuilding() when exitBuilding != null:
+        return exitBuilding();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() continueStraight,
+    required TResult Function() turnLeft,
+    required TResult Function() turnRight,
+    required TResult Function() turnSlightLeft,
+    required TResult Function() turnSlightRight,
+    required TResult Function() uturn,
+    required TResult Function() arrive,
+    required TResult Function() enterBuilding,
+    required TResult Function() exitBuilding,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start():
+        return start();
+      case _ContinueStraight():
+        return continueStraight();
+      case _TurnLeft():
+        return turnLeft();
+      case _TurnRight():
+        return turnRight();
+      case _TurnSlightLeft():
+        return turnSlightLeft();
+      case _TurnSlightRight():
+        return turnSlightRight();
+      case _Uturn():
+        return uturn();
+      case _Arrive():
+        return arrive();
+      case _EnterBuilding():
+        return enterBuilding();
+      case _ExitBuilding():
+        return exitBuilding();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? continueStraight,
+    TResult? Function()? turnLeft,
+    TResult? Function()? turnRight,
+    TResult? Function()? turnSlightLeft,
+    TResult? Function()? turnSlightRight,
+    TResult? Function()? uturn,
+    TResult? Function()? arrive,
+    TResult? Function()? enterBuilding,
+    TResult? Function()? exitBuilding,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Start() when start != null:
+        return start();
+      case _ContinueStraight() when continueStraight != null:
+        return continueStraight();
+      case _TurnLeft() when turnLeft != null:
+        return turnLeft();
+      case _TurnRight() when turnRight != null:
+        return turnRight();
+      case _TurnSlightLeft() when turnSlightLeft != null:
+        return turnSlightLeft();
+      case _TurnSlightRight() when turnSlightRight != null:
+        return turnSlightRight();
+      case _Uturn() when uturn != null:
+        return uturn();
+      case _Arrive() when arrive != null:
+        return arrive();
+      case _EnterBuilding() when enterBuilding != null:
+        return enterBuilding();
+      case _ExitBuilding() when exitBuilding != null:
+        return exitBuilding();
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _Start implements InstructionType {
+  const _Start();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Start);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.start()';
+  }
+}
+
+/// @nodoc
+
+class _ContinueStraight implements InstructionType {
+  const _ContinueStraight();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ContinueStraight);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.continueStraight()';
+  }
+}
+
+/// @nodoc
+
+class _TurnLeft implements InstructionType {
+  const _TurnLeft();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TurnLeft);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.turnLeft()';
+  }
+}
+
+/// @nodoc
+
+class _TurnRight implements InstructionType {
+  const _TurnRight();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TurnRight);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.turnRight()';
+  }
+}
+
+/// @nodoc
+
+class _TurnSlightLeft implements InstructionType {
+  const _TurnSlightLeft();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TurnSlightLeft);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.turnSlightLeft()';
+  }
+}
+
+/// @nodoc
+
+class _TurnSlightRight implements InstructionType {
+  const _TurnSlightRight();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _TurnSlightRight);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.turnSlightRight()';
+  }
+}
+
+/// @nodoc
+
+class _Uturn implements InstructionType {
+  const _Uturn();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Uturn);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.uturn()';
+  }
+}
+
+/// @nodoc
+
+class _Arrive implements InstructionType {
+  const _Arrive();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Arrive);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.arrive()';
+  }
+}
+
+/// @nodoc
+
+class _EnterBuilding implements InstructionType {
+  const _EnterBuilding();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _EnterBuilding);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.enterBuilding()';
+  }
+}
+
+/// @nodoc
+
+class _ExitBuilding implements InstructionType {
+  const _ExitBuilding();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ExitBuilding);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'InstructionType.exitBuilding()';
+  }
+}
+
+/// @nodoc
+mixin _$RouteStatus {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is RouteStatus);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus()';
+  }
+}
+
+/// @nodoc
+class $RouteStatusCopyWith<$Res> {
+  $RouteStatusCopyWith(RouteStatus _, $Res Function(RouteStatus) __);
+}
+
+/// Adds pattern-matching-related methods to [RouteStatus].
+extension RouteStatusPatterns on RouteStatus {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Planned value)? planned,
+    TResult Function(_Active value)? active,
+    TResult Function(_Paused value)? paused,
+    TResult Function(_Completed value)? completed,
+    TResult Function(_Cancelled value)? cancelled,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned() when planned != null:
+        return planned(_that);
+      case _Active() when active != null:
+        return active(_that);
+      case _Paused() when paused != null:
+        return paused(_that);
+      case _Completed() when completed != null:
+        return completed(_that);
+      case _Cancelled() when cancelled != null:
+        return cancelled(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Planned value) planned,
+    required TResult Function(_Active value) active,
+    required TResult Function(_Paused value) paused,
+    required TResult Function(_Completed value) completed,
+    required TResult Function(_Cancelled value) cancelled,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned():
+        return planned(_that);
+      case _Active():
+        return active(_that);
+      case _Paused():
+        return paused(_that);
+      case _Completed():
+        return completed(_that);
+      case _Cancelled():
+        return cancelled(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Planned value)? planned,
+    TResult? Function(_Active value)? active,
+    TResult? Function(_Paused value)? paused,
+    TResult? Function(_Completed value)? completed,
+    TResult? Function(_Cancelled value)? cancelled,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned() when planned != null:
+        return planned(_that);
+      case _Active() when active != null:
+        return active(_that);
+      case _Paused() when paused != null:
+        return paused(_that);
+      case _Completed() when completed != null:
+        return completed(_that);
+      case _Cancelled() when cancelled != null:
+        return cancelled(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? planned,
+    TResult Function()? active,
+    TResult Function()? paused,
+    TResult Function()? completed,
+    TResult Function()? cancelled,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned() when planned != null:
+        return planned();
+      case _Active() when active != null:
+        return active();
+      case _Paused() when paused != null:
+        return paused();
+      case _Completed() when completed != null:
+        return completed();
+      case _Cancelled() when cancelled != null:
+        return cancelled();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() planned,
+    required TResult Function() active,
+    required TResult Function() paused,
+    required TResult Function() completed,
+    required TResult Function() cancelled,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned():
+        return planned();
+      case _Active():
+        return active();
+      case _Paused():
+        return paused();
+      case _Completed():
+        return completed();
+      case _Cancelled():
+        return cancelled();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? planned,
+    TResult? Function()? active,
+    TResult? Function()? paused,
+    TResult? Function()? completed,
+    TResult? Function()? cancelled,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Planned() when planned != null:
+        return planned();
+      case _Active() when active != null:
+        return active();
+      case _Paused() when paused != null:
+        return paused();
+      case _Completed() when completed != null:
+        return completed();
+      case _Cancelled() when cancelled != null:
+        return cancelled();
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+
+class _Planned implements RouteStatus {
+  const _Planned();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Planned);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus.planned()';
+  }
+}
+
+/// @nodoc
+
+class _Active implements RouteStatus {
+  const _Active();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Active);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus.active()';
+  }
+}
+
+/// @nodoc
+
+class _Paused implements RouteStatus {
+  const _Paused();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Paused);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus.paused()';
+  }
+}
+
+/// @nodoc
+
+class _Completed implements RouteStatus {
+  const _Completed();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Completed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus.completed()';
+  }
+}
+
+/// @nodoc
+
+class _Cancelled implements RouteStatus {
+  const _Cancelled();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Cancelled);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RouteStatus.cancelled()';
+  }
+}
+
+/// @nodoc
+mixin _$NavigationSession {
+  String get id;
+  NavigationRoute get route;
+  int get currentInstructionIndex;
+  LatLng get currentPosition;
+  DateTime get startedAt;
+  DateTime? get completedAt;
+  double? get remainingDistance;
+  Duration? get remainingTime;
+  bool get isVoiceGuidanceEnabled;
+  bool get isRerouting;
+
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NavigationSessionCopyWith<NavigationSession> get copyWith =>
+      _$NavigationSessionCopyWithImpl<NavigationSession>(
+          this as NavigationSession, _$identity);
+
+  /// Serializes this NavigationSession to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as NavigationSession;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NavigationSession &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.route, _this.route) ||
+                other.route == _this.route) &&
+            (identical(other.currentInstructionIndex,
+                    _this.currentInstructionIndex) ||
+                other.currentInstructionIndex ==
+                    _this.currentInstructionIndex) &&
+            (identical(other.currentPosition, _this.currentPosition) ||
+                other.currentPosition == _this.currentPosition) &&
+            (identical(other.startedAt, _this.startedAt) ||
+                other.startedAt == _this.startedAt) &&
+            (identical(other.completedAt, _this.completedAt) ||
+                other.completedAt == _this.completedAt) &&
+            (identical(other.remainingDistance, _this.remainingDistance) ||
+                other.remainingDistance == _this.remainingDistance) &&
+            (identical(other.remainingTime, _this.remainingTime) ||
+                other.remainingTime == _this.remainingTime) &&
+            (identical(other.isVoiceGuidanceEnabled,
+                    _this.isVoiceGuidanceEnabled) ||
+                other.isVoiceGuidanceEnabled == _this.isVoiceGuidanceEnabled) &&
+            (identical(other.isRerouting, _this.isRerouting) ||
+                other.isRerouting == _this.isRerouting));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as NavigationSession;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.route,
+        _this.currentInstructionIndex,
+        _this.currentPosition,
+        _this.startedAt,
+        _this.completedAt,
+        _this.remainingDistance,
+        _this.remainingTime,
+        _this.isVoiceGuidanceEnabled,
+        _this.isRerouting);
+  }
+
+  @override
+  String toString() {
+    final _this = this as NavigationSession;
+    return 'NavigationSession(id: ${_this.id}, route: ${_this.route}, currentInstructionIndex: ${_this.currentInstructionIndex}, currentPosition: ${_this.currentPosition}, startedAt: ${_this.startedAt}, completedAt: ${_this.completedAt}, remainingDistance: ${_this.remainingDistance}, remainingTime: ${_this.remainingTime}, isVoiceGuidanceEnabled: ${_this.isVoiceGuidanceEnabled}, isRerouting: ${_this.isRerouting})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $NavigationSessionCopyWith<$Res> {
+  factory $NavigationSessionCopyWith(
+          NavigationSession value, $Res Function(NavigationSession) _then) =
+      _$NavigationSessionCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -4188,18 +3106,19 @@ abstract class _$$NavigationSessionImplCopyWith<$Res>
       bool isVoiceGuidanceEnabled,
       bool isRerouting});
 
-  @override
   $NavigationRouteCopyWith<$Res> get route;
 }
 
 /// @nodoc
-class __$$NavigationSessionImplCopyWithImpl<$Res>
-    extends _$NavigationSessionCopyWithImpl<$Res, _$NavigationSessionImpl>
-    implements _$$NavigationSessionImplCopyWith<$Res> {
-  __$$NavigationSessionImplCopyWithImpl(_$NavigationSessionImpl _value,
-      $Res Function(_$NavigationSessionImpl) _then)
-      : super(_value, _then);
+class _$NavigationSessionCopyWithImpl<$Res>
+    implements $NavigationSessionCopyWith<$Res> {
+  _$NavigationSessionCopyWithImpl(this._self, this._then);
 
+  final NavigationSession _self;
+  final $Res Function(NavigationSession) _then;
+
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4214,55 +3133,285 @@ class __$$NavigationSessionImplCopyWithImpl<$Res>
     Object? isVoiceGuidanceEnabled = null,
     Object? isRerouting = null,
   }) {
-    return _then(_$NavigationSessionImpl(
+    return _then(NavigationSession(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       route: null == route
-          ? _value.route
+          ? _self.route
           : route // ignore: cast_nullable_to_non_nullable
               as NavigationRoute,
       currentInstructionIndex: null == currentInstructionIndex
-          ? _value.currentInstructionIndex
+          ? _self.currentInstructionIndex
           : currentInstructionIndex // ignore: cast_nullable_to_non_nullable
               as int,
       currentPosition: null == currentPosition
-          ? _value.currentPosition
+          ? _self.currentPosition
           : currentPosition // ignore: cast_nullable_to_non_nullable
               as LatLng,
       startedAt: null == startedAt
-          ? _value.startedAt
+          ? _self.startedAt
           : startedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       completedAt: freezed == completedAt
-          ? _value.completedAt
+          ? _self.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       remainingDistance: freezed == remainingDistance
-          ? _value.remainingDistance
+          ? _self.remainingDistance
           : remainingDistance // ignore: cast_nullable_to_non_nullable
               as double?,
       remainingTime: freezed == remainingTime
-          ? _value.remainingTime
+          ? _self.remainingTime
           : remainingTime // ignore: cast_nullable_to_non_nullable
               as Duration?,
       isVoiceGuidanceEnabled: null == isVoiceGuidanceEnabled
-          ? _value.isVoiceGuidanceEnabled
+          ? _self.isVoiceGuidanceEnabled
           : isVoiceGuidanceEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       isRerouting: null == isRerouting
-          ? _value.isRerouting
+          ? _self.isRerouting
           : isRerouting // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationRouteCopyWith<$Res> get route {
+    return $NavigationRouteCopyWith<$Res>(_self.route, (value) {
+      return _then(_self.copyWith(route: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [NavigationSession].
+extension NavigationSessionPatterns on NavigationSession {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavigationSession value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavigationSession value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_NavigationSession value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            NavigationRoute route,
+            int currentInstructionIndex,
+            LatLng currentPosition,
+            DateTime startedAt,
+            DateTime? completedAt,
+            double? remainingDistance,
+            Duration? remainingTime,
+            bool isVoiceGuidanceEnabled,
+            bool isRerouting)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession() when $default != null:
+        return $default(
+            _that.id,
+            _that.route,
+            _that.currentInstructionIndex,
+            _that.currentPosition,
+            _that.startedAt,
+            _that.completedAt,
+            _that.remainingDistance,
+            _that.remainingTime,
+            _that.isVoiceGuidanceEnabled,
+            _that.isRerouting);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            NavigationRoute route,
+            int currentInstructionIndex,
+            LatLng currentPosition,
+            DateTime startedAt,
+            DateTime? completedAt,
+            double? remainingDistance,
+            Duration? remainingTime,
+            bool isVoiceGuidanceEnabled,
+            bool isRerouting)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession():
+        return $default(
+            _that.id,
+            _that.route,
+            _that.currentInstructionIndex,
+            _that.currentPosition,
+            _that.startedAt,
+            _that.completedAt,
+            _that.remainingDistance,
+            _that.remainingTime,
+            _that.isVoiceGuidanceEnabled,
+            _that.isRerouting);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            NavigationRoute route,
+            int currentInstructionIndex,
+            LatLng currentPosition,
+            DateTime startedAt,
+            DateTime? completedAt,
+            double? remainingDistance,
+            Duration? remainingTime,
+            bool isVoiceGuidanceEnabled,
+            bool isRerouting)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NavigationSession() when $default != null:
+        return $default(
+            _that.id,
+            _that.route,
+            _that.currentInstructionIndex,
+            _that.currentPosition,
+            _that.startedAt,
+            _that.completedAt,
+            _that.remainingDistance,
+            _that.remainingTime,
+            _that.isVoiceGuidanceEnabled,
+            _that.isRerouting);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NavigationSessionImpl extends _NavigationSession {
-  const _$NavigationSessionImpl(
+class _NavigationSession extends NavigationSession {
+  const _NavigationSession(
       {required this.id,
       required this.route,
       required this.currentInstructionIndex,
@@ -4274,9 +3423,8 @@ class _$NavigationSessionImpl extends _NavigationSession {
       this.isVoiceGuidanceEnabled = false,
       this.isRerouting = false})
       : super._();
-
-  factory _$NavigationSessionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NavigationSessionImplFromJson(json);
+  factory _NavigationSession.fromJson(Map<String, dynamic> json) =>
+      _$NavigationSessionFromJson(json);
 
   @override
   final String id;
@@ -4301,16 +3449,26 @@ class _$NavigationSessionImpl extends _NavigationSession {
   @JsonKey()
   final bool isRerouting;
 
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NavigationSession(id: $id, route: $route, currentInstructionIndex: $currentInstructionIndex, currentPosition: $currentPosition, startedAt: $startedAt, completedAt: $completedAt, remainingDistance: $remainingDistance, remainingTime: $remainingTime, isVoiceGuidanceEnabled: $isVoiceGuidanceEnabled, isRerouting: $isRerouting)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NavigationSessionCopyWith<_NavigationSession> get copyWith =>
+      __$NavigationSessionCopyWithImpl<_NavigationSession>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NavigationSessionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NavigationSessionImpl &&
+            other is _NavigationSession &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.route, route) || other.route == route) &&
             (identical(
@@ -4332,179 +3490,189 @@ class _$NavigationSessionImpl extends _NavigationSession {
                 other.isRerouting == isRerouting));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      route,
-      currentInstructionIndex,
-      currentPosition,
-      startedAt,
-      completedAt,
-      remainingDistance,
-      remainingTime,
-      isVoiceGuidanceEnabled,
-      isRerouting);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NavigationSessionImplCopyWith<_$NavigationSessionImpl> get copyWith =>
-      __$$NavigationSessionImplCopyWithImpl<_$NavigationSessionImpl>(
-          this, _$identity);
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        id,
+        route,
+        currentInstructionIndex,
+        currentPosition,
+        startedAt,
+        completedAt,
+        remainingDistance,
+        remainingTime,
+        isVoiceGuidanceEnabled,
+        isRerouting);
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$NavigationSessionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NavigationSession(id: $id, route: $route, currentInstructionIndex: $currentInstructionIndex, currentPosition: $currentPosition, startedAt: $startedAt, completedAt: $completedAt, remainingDistance: $remainingDistance, remainingTime: $remainingTime, isVoiceGuidanceEnabled: $isVoiceGuidanceEnabled, isRerouting: $isRerouting)';
   }
 }
 
-abstract class _NavigationSession extends NavigationSession {
-  const factory _NavigationSession(
-      {required final String id,
-      required final NavigationRoute route,
-      required final int currentInstructionIndex,
-      required final LatLng currentPosition,
-      required final DateTime startedAt,
-      final DateTime? completedAt,
-      final double? remainingDistance,
-      final Duration? remainingTime,
-      final bool isVoiceGuidanceEnabled,
-      final bool isRerouting}) = _$NavigationSessionImpl;
-  const _NavigationSession._() : super._();
-
-  factory _NavigationSession.fromJson(Map<String, dynamic> json) =
-      _$NavigationSessionImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  NavigationRoute get route;
-  @override
-  int get currentInstructionIndex;
-  @override
-  LatLng get currentPosition;
-  @override
-  DateTime get startedAt;
-  @override
-  DateTime? get completedAt;
-  @override
-  double? get remainingDistance;
-  @override
-  Duration? get remainingTime;
-  @override
-  bool get isVoiceGuidanceEnabled;
-  @override
-  bool get isRerouting;
-  @override
-  @JsonKey(ignore: true)
-  _$$NavigationSessionImplCopyWith<_$NavigationSessionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SavedRoute _$SavedRouteFromJson(Map<String, dynamic> json) {
-  return _SavedRoute.fromJson(json);
-}
-
 /// @nodoc
-mixin _$SavedRoute {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  NavigationRoute get route => throw _privateConstructorUsedError;
-  DateTime get savedAt => throw _privateConstructorUsedError;
-  bool get isFavorite => throw _privateConstructorUsedError;
-  int get useCount => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SavedRouteCopyWith<SavedRoute> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SavedRouteCopyWith<$Res> {
-  factory $SavedRouteCopyWith(
-          SavedRoute value, $Res Function(SavedRoute) then) =
-      _$SavedRouteCopyWithImpl<$Res, SavedRoute>;
+abstract mixin class _$NavigationSessionCopyWith<$Res>
+    implements $NavigationSessionCopyWith<$Res> {
+  factory _$NavigationSessionCopyWith(
+          _NavigationSession value, $Res Function(_NavigationSession) _then) =
+      __$NavigationSessionCopyWithImpl;
+  @override
   @useResult
   $Res call(
       {String id,
-      String name,
       NavigationRoute route,
-      DateTime savedAt,
-      bool isFavorite,
-      int useCount});
+      int currentInstructionIndex,
+      LatLng currentPosition,
+      DateTime startedAt,
+      DateTime? completedAt,
+      double? remainingDistance,
+      Duration? remainingTime,
+      bool isVoiceGuidanceEnabled,
+      bool isRerouting});
 
+  @override
   $NavigationRouteCopyWith<$Res> get route;
 }
 
 /// @nodoc
-class _$SavedRouteCopyWithImpl<$Res, $Val extends SavedRoute>
-    implements $SavedRouteCopyWith<$Res> {
-  _$SavedRouteCopyWithImpl(this._value, this._then);
+class __$NavigationSessionCopyWithImpl<$Res>
+    implements _$NavigationSessionCopyWith<$Res> {
+  __$NavigationSessionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _NavigationSession _self;
+  final $Res Function(_NavigationSession) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? name = null,
     Object? route = null,
-    Object? savedAt = null,
-    Object? isFavorite = null,
-    Object? useCount = null,
+    Object? currentInstructionIndex = null,
+    Object? currentPosition = null,
+    Object? startedAt = null,
+    Object? completedAt = freezed,
+    Object? remainingDistance = freezed,
+    Object? remainingTime = freezed,
+    Object? isVoiceGuidanceEnabled = null,
+    Object? isRerouting = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_NavigationSession(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
       route: null == route
-          ? _value.route
+          ? _self.route
           : route // ignore: cast_nullable_to_non_nullable
               as NavigationRoute,
-      savedAt: null == savedAt
-          ? _value.savedAt
-          : savedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      isFavorite: null == isFavorite
-          ? _value.isFavorite
-          : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      useCount: null == useCount
-          ? _value.useCount
-          : useCount // ignore: cast_nullable_to_non_nullable
+      currentInstructionIndex: null == currentInstructionIndex
+          ? _self.currentInstructionIndex
+          : currentInstructionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-    ) as $Val);
+      currentPosition: null == currentPosition
+          ? _self.currentPosition
+          : currentPosition // ignore: cast_nullable_to_non_nullable
+              as LatLng,
+      startedAt: null == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      completedAt: freezed == completedAt
+          ? _self.completedAt
+          : completedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      remainingDistance: freezed == remainingDistance
+          ? _self.remainingDistance
+          : remainingDistance // ignore: cast_nullable_to_non_nullable
+              as double?,
+      remainingTime: freezed == remainingTime
+          ? _self.remainingTime
+          : remainingTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      isVoiceGuidanceEnabled: null == isVoiceGuidanceEnabled
+          ? _self.isVoiceGuidanceEnabled
+          : isVoiceGuidanceEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRerouting: null == isRerouting
+          ? _self.isRerouting
+          : isRerouting // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 
+  /// Create a copy of NavigationSession
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NavigationRouteCopyWith<$Res> get route {
-    return $NavigationRouteCopyWith<$Res>(_value.route, (value) {
-      return _then(_value.copyWith(route: value) as $Val);
+    return $NavigationRouteCopyWith<$Res>(_self.route, (value) {
+      return _then(_self.copyWith(route: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SavedRouteImplCopyWith<$Res>
-    implements $SavedRouteCopyWith<$Res> {
-  factory _$$SavedRouteImplCopyWith(
-          _$SavedRouteImpl value, $Res Function(_$SavedRouteImpl) then) =
-      __$$SavedRouteImplCopyWithImpl<$Res>;
+mixin _$SavedRoute {
+  String get id;
+  String get name;
+  NavigationRoute get route;
+  DateTime get savedAt;
+  bool get isFavorite;
+  int get useCount;
+
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SavedRouteCopyWith<SavedRoute> get copyWith =>
+      _$SavedRouteCopyWithImpl<SavedRoute>(this as SavedRoute, _$identity);
+
+  /// Serializes this SavedRoute to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
+  bool operator ==(Object other) {
+    final _this = this as SavedRoute;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SavedRoute &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.route, _this.route) ||
+                other.route == _this.route) &&
+            (identical(other.savedAt, _this.savedAt) ||
+                other.savedAt == _this.savedAt) &&
+            (identical(other.isFavorite, _this.isFavorite) ||
+                other.isFavorite == _this.isFavorite) &&
+            (identical(other.useCount, _this.useCount) ||
+                other.useCount == _this.useCount));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as SavedRoute;
+    return Object.hash(runtimeType, _this.id, _this.name, _this.route,
+        _this.savedAt, _this.isFavorite, _this.useCount);
+  }
+
+  @override
+  String toString() {
+    final _this = this as SavedRoute;
+    return 'SavedRoute(id: ${_this.id}, name: ${_this.name}, route: ${_this.route}, savedAt: ${_this.savedAt}, isFavorite: ${_this.isFavorite}, useCount: ${_this.useCount})';
+  }
+}
+
+/// @nodoc
+abstract mixin class $SavedRouteCopyWith<$Res> {
+  factory $SavedRouteCopyWith(
+          SavedRoute value, $Res Function(SavedRoute) _then) =
+      _$SavedRouteCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -4514,18 +3682,18 @@ abstract class _$$SavedRouteImplCopyWith<$Res>
       bool isFavorite,
       int useCount});
 
-  @override
   $NavigationRouteCopyWith<$Res> get route;
 }
 
 /// @nodoc
-class __$$SavedRouteImplCopyWithImpl<$Res>
-    extends _$SavedRouteCopyWithImpl<$Res, _$SavedRouteImpl>
-    implements _$$SavedRouteImplCopyWith<$Res> {
-  __$$SavedRouteImplCopyWithImpl(
-      _$SavedRouteImpl _value, $Res Function(_$SavedRouteImpl) _then)
-      : super(_value, _then);
+class _$SavedRouteCopyWithImpl<$Res> implements $SavedRouteCopyWith<$Res> {
+  _$SavedRouteCopyWithImpl(this._self, this._then);
 
+  final SavedRoute _self;
+  final $Res Function(SavedRoute) _then;
+
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4536,48 +3704,223 @@ class __$$SavedRouteImplCopyWithImpl<$Res>
     Object? isFavorite = null,
     Object? useCount = null,
   }) {
-    return _then(_$SavedRouteImpl(
+    return _then(SavedRoute(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       route: null == route
-          ? _value.route
+          ? _self.route
           : route // ignore: cast_nullable_to_non_nullable
               as NavigationRoute,
       savedAt: null == savedAt
-          ? _value.savedAt
+          ? _self.savedAt
           : savedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       isFavorite: null == isFavorite
-          ? _value.isFavorite
+          ? _self.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
       useCount: null == useCount
-          ? _value.useCount
+          ? _self.useCount
           : useCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
+  }
+
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationRouteCopyWith<$Res> get route {
+    return $NavigationRouteCopyWith<$Res>(_self.route, (value) {
+      return _then(_self.copyWith(route: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [SavedRoute].
+extension SavedRoutePatterns on SavedRoute {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SavedRoute value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SavedRoute value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SavedRoute value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String name, NavigationRoute route,
+            DateTime savedAt, bool isFavorite, int useCount)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute() when $default != null:
+        return $default(_that.id, _that.name, _that.route, _that.savedAt,
+            _that.isFavorite, _that.useCount);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String name, NavigationRoute route,
+            DateTime savedAt, bool isFavorite, int useCount)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute():
+        return $default(_that.id, _that.name, _that.route, _that.savedAt,
+            _that.isFavorite, _that.useCount);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String name, NavigationRoute route,
+            DateTime savedAt, bool isFavorite, int useCount)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SavedRoute() when $default != null:
+        return $default(_that.id, _that.name, _that.route, _that.savedAt,
+            _that.isFavorite, _that.useCount);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$SavedRouteImpl implements _SavedRoute {
-  const _$SavedRouteImpl(
+class _SavedRoute implements SavedRoute {
+  const _SavedRoute(
       {required this.id,
       required this.name,
       required this.route,
       required this.savedAt,
       this.isFavorite = false,
       this.useCount = 0});
-
-  factory _$SavedRouteImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SavedRouteImplFromJson(json);
+  factory _SavedRoute.fromJson(Map<String, dynamic> json) =>
+      _$SavedRouteFromJson(json);
 
   @override
   final String id;
@@ -4594,16 +3937,26 @@ class _$SavedRouteImpl implements _SavedRoute {
   @JsonKey()
   final int useCount;
 
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SavedRoute(id: $id, name: $name, route: $route, savedAt: $savedAt, isFavorite: $isFavorite, useCount: $useCount)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SavedRouteCopyWith<_SavedRoute> get copyWith =>
+      __$SavedRouteCopyWithImpl<_SavedRoute>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SavedRouteToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SavedRouteImpl &&
+            other is _SavedRoute &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.route, route) || other.route == route) &&
@@ -4614,51 +3967,95 @@ class _$SavedRouteImpl implements _SavedRoute {
                 other.useCount == useCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, route, savedAt, isFavorite, useCount);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SavedRouteImplCopyWith<_$SavedRouteImpl> get copyWith =>
-      __$$SavedRouteImplCopyWithImpl<_$SavedRouteImpl>(this, _$identity);
+  int get hashCode {
+    return Object.hash(
+        runtimeType, id, name, route, savedAt, isFavorite, useCount);
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$SavedRouteImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SavedRoute(id: $id, name: $name, route: $route, savedAt: $savedAt, isFavorite: $isFavorite, useCount: $useCount)';
   }
 }
 
-abstract class _SavedRoute implements SavedRoute {
-  const factory _SavedRoute(
-      {required final String id,
-      required final String name,
-      required final NavigationRoute route,
-      required final DateTime savedAt,
-      final bool isFavorite,
-      final int useCount}) = _$SavedRouteImpl;
+/// @nodoc
+abstract mixin class _$SavedRouteCopyWith<$Res>
+    implements $SavedRouteCopyWith<$Res> {
+  factory _$SavedRouteCopyWith(
+          _SavedRoute value, $Res Function(_SavedRoute) _then) =
+      __$SavedRouteCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      NavigationRoute route,
+      DateTime savedAt,
+      bool isFavorite,
+      int useCount});
 
-  factory _SavedRoute.fromJson(Map<String, dynamic> json) =
-      _$SavedRouteImpl.fromJson;
-
   @override
-  String get id;
-  @override
-  String get name;
-  @override
-  NavigationRoute get route;
-  @override
-  DateTime get savedAt;
-  @override
-  bool get isFavorite;
-  @override
-  int get useCount;
-  @override
-  @JsonKey(ignore: true)
-  _$$SavedRouteImplCopyWith<_$SavedRouteImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $NavigationRouteCopyWith<$Res> get route;
 }
+
+/// @nodoc
+class __$SavedRouteCopyWithImpl<$Res> implements _$SavedRouteCopyWith<$Res> {
+  __$SavedRouteCopyWithImpl(this._self, this._then);
+
+  final _SavedRoute _self;
+  final $Res Function(_SavedRoute) _then;
+
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? route = null,
+    Object? savedAt = null,
+    Object? isFavorite = null,
+    Object? useCount = null,
+  }) {
+    return _then(_SavedRoute(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      route: null == route
+          ? _self.route
+          : route // ignore: cast_nullable_to_non_nullable
+              as NavigationRoute,
+      savedAt: null == savedAt
+          ? _self.savedAt
+          : savedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      useCount: null == useCount
+          ? _self.useCount
+          : useCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+
+  /// Create a copy of SavedRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $NavigationRouteCopyWith<$Res> get route {
+    return $NavigationRouteCopyWith<$Res>(_self.route, (value) {
+      return _then(_self.copyWith(route: value));
+    });
+  }
+}
+
+// dart format on

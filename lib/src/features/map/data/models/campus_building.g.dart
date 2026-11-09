@@ -6,8 +6,8 @@ part of 'campus_building.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CampusBuildingImpl _$$CampusBuildingImplFromJson(Map<String, dynamic> json) =>
-    _$CampusBuildingImpl(
+_CampusBuilding _$CampusBuildingFromJson(Map<String, dynamic> json) =>
+    _CampusBuilding(
       id: json['id'] as String,
       osmWayId: (json['osmWayId'] as num).toInt(),
       name: json['name'] as String,
@@ -28,8 +28,7 @@ _$CampusBuildingImpl _$$CampusBuildingImplFromJson(Map<String, dynamic> json) =>
       additionalTags: json['additionalTags'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$CampusBuildingImplToJson(
-        _$CampusBuildingImpl instance) =>
+Map<String, dynamic> _$CampusBuildingToJson(_CampusBuilding instance) =>
     <String, dynamic>{
       'id': instance.id,
       'osmWayId': instance.osmWayId,

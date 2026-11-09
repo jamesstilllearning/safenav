@@ -6,7 +6,7 @@ part of 'alert.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AlertImpl _$$AlertImplFromJson(Map<String, dynamic> json) => _$AlertImpl(
+_Alert _$AlertFromJson(Map<String, dynamic> json) => _Alert(
       id: json['id'] as String,
       title: json['title'] as String,
       message: json['message'] as String,
@@ -62,8 +62,7 @@ _$AlertImpl _$$AlertImplFromJson(Map<String, dynamic> json) => _$AlertImpl(
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$AlertImplToJson(_$AlertImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AlertToJson(_Alert instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'message': instance.message,

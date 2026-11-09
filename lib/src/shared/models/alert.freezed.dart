@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'alert.dart';
@@ -9,352 +9,245 @@ part of 'alert.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Alert _$AlertFromJson(Map<String, dynamic> json) {
-  return _Alert.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Alert {
   /// Unique alert ID
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Alert title
-  String get title => throw _privateConstructorUsedError;
+  String get title;
 
   /// Alert message/description
-  String get message => throw _privateConstructorUsedError;
+  String get message;
 
   /// Alert type
-  AlertType get type => throw _privateConstructorUsedError;
+  AlertType get type;
 
   /// Alert severity
-  AlertSeverity get severity => throw _privateConstructorUsedError;
+  AlertSeverity get severity;
 
   /// Current status
-  AlertStatus get status => throw _privateConstructorUsedError;
+  AlertStatus get status;
 
   /// Location ID where alert originated
-  String? get locationId => throw _privateConstructorUsedError;
+  String? get locationId;
 
   /// Location name
-  String? get locationName => throw _privateConstructorUsedError;
+  String? get locationName;
 
   /// Latitude of alert location
-  double? get latitude => throw _privateConstructorUsedError;
+  double? get latitude;
 
   /// Longitude of alert location
-  double? get longitude => throw _privateConstructorUsedError;
+  double? get longitude;
 
   /// Building affected
-  String? get buildingId => throw _privateConstructorUsedError;
+  String? get buildingId;
 
   /// Floor affected
-  int? get floor => throw _privateConstructorUsedError;
+  int? get floor;
 
   /// Affected area description
-  String? get affectedArea => throw _privateConstructorUsedError;
+  String? get affectedArea;
 
   /// User ID who created the alert
-  String? get createdBy => throw _privateConstructorUsedError;
+  String? get createdBy;
 
   /// User role who created the alert
-  String? get createdByRole => throw _privateConstructorUsedError;
+  String? get createdByRole;
 
   /// Whether this is a system-generated alert
-  bool get isSystemGenerated => throw _privateConstructorUsedError;
+  bool get isSystemGenerated;
 
   /// Whether this is a test/drill
-  bool get isTest => throw _privateConstructorUsedError;
+  bool get isTest;
 
   /// Instructions for users
-  String? get instructions => throw _privateConstructorUsedError;
+  String? get instructions;
 
   /// Evacuation route ID (if applicable)
-  String? get evacuationRouteId => throw _privateConstructorUsedError;
+  String? get evacuationRouteId;
 
   /// Assembly point ID (if applicable)
-  String? get assemblyPointId => throw _privateConstructorUsedError;
+  String? get assemblyPointId;
 
   /// Shelter ID (if applicable)
-  String? get shelterId => throw _privateConstructorUsedError;
+  String? get shelterId;
 
   /// Related alert IDs
-  List<String> get relatedAlertIds => throw _privateConstructorUsedError;
+  List<String> get relatedAlertIds;
 
   /// Attachments (photos, documents)
-  List<String> get attachmentUrls => throw _privateConstructorUsedError;
+  List<String> get attachmentUrls;
 
   /// Tags for filtering
-  List<String> get tags => throw _privateConstructorUsedError;
+  List<String> get tags;
 
   /// Target audience (roles)
-  List<String> get targetRoles => throw _privateConstructorUsedError;
+  List<String> get targetRoles;
 
   /// Target building IDs
-  List<String> get targetBuildingIds => throw _privateConstructorUsedError;
+  List<String> get targetBuildingIds;
 
   /// Expires at
-  DateTime? get expiresAt => throw _privateConstructorUsedError;
+  DateTime? get expiresAt;
 
   /// Acknowledged by user IDs
-  List<String> get acknowledgedBy => throw _privateConstructorUsedError;
+  List<String> get acknowledgedBy;
 
   /// Resolved by user ID
-  String? get resolvedBy => throw _privateConstructorUsedError;
+  String? get resolvedBy;
 
   /// Resolution notes
-  String? get resolutionNotes => throw _privateConstructorUsedError;
+  String? get resolutionNotes;
 
   /// Created at
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
 
   /// Updated at
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
   /// Metadata
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic> get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AlertCopyWith<Alert> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AlertCopyWith<$Res> {
-  factory $AlertCopyWith(Alert value, $Res Function(Alert) then) =
-      _$AlertCopyWithImpl<$Res, Alert>;
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String message,
-      AlertType type,
-      AlertSeverity severity,
-      AlertStatus status,
-      String? locationId,
-      String? locationName,
-      double? latitude,
-      double? longitude,
-      String? buildingId,
-      int? floor,
-      String? affectedArea,
-      String? createdBy,
-      String? createdByRole,
-      bool isSystemGenerated,
-      bool isTest,
-      String? instructions,
-      String? evacuationRouteId,
-      String? assemblyPointId,
-      String? shelterId,
-      List<String> relatedAlertIds,
-      List<String> attachmentUrls,
-      List<String> tags,
-      List<String> targetRoles,
-      List<String> targetBuildingIds,
-      DateTime? expiresAt,
-      List<String> acknowledgedBy,
-      String? resolvedBy,
-      String? resolutionNotes,
-      DateTime createdAt,
-      DateTime updatedAt,
-      Map<String, dynamic> metadata});
-}
-
-/// @nodoc
-class _$AlertCopyWithImpl<$Res, $Val extends Alert>
-    implements $AlertCopyWith<$Res> {
-  _$AlertCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Alert
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $AlertCopyWith<Alert> get copyWith =>
+      _$AlertCopyWithImpl<Alert>(this as Alert, _$identity);
+
+  /// Serializes this Alert to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? message = null,
-    Object? type = null,
-    Object? severity = null,
-    Object? status = null,
-    Object? locationId = freezed,
-    Object? locationName = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? buildingId = freezed,
-    Object? floor = freezed,
-    Object? affectedArea = freezed,
-    Object? createdBy = freezed,
-    Object? createdByRole = freezed,
-    Object? isSystemGenerated = null,
-    Object? isTest = null,
-    Object? instructions = freezed,
-    Object? evacuationRouteId = freezed,
-    Object? assemblyPointId = freezed,
-    Object? shelterId = freezed,
-    Object? relatedAlertIds = null,
-    Object? attachmentUrls = null,
-    Object? tags = null,
-    Object? targetRoles = null,
-    Object? targetBuildingIds = null,
-    Object? expiresAt = freezed,
-    Object? acknowledgedBy = null,
-    Object? resolvedBy = freezed,
-    Object? resolutionNotes = freezed,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? metadata = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AlertType,
-      severity: null == severity
-          ? _value.severity
-          : severity // ignore: cast_nullable_to_non_nullable
-              as AlertSeverity,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AlertStatus,
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      locationName: freezed == locationName
-          ? _value.locationName
-          : locationName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      buildingId: freezed == buildingId
-          ? _value.buildingId
-          : buildingId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      floor: freezed == floor
-          ? _value.floor
-          : floor // ignore: cast_nullable_to_non_nullable
-              as int?,
-      affectedArea: freezed == affectedArea
-          ? _value.affectedArea
-          : affectedArea // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdByRole: freezed == createdByRole
-          ? _value.createdByRole
-          : createdByRole // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isSystemGenerated: null == isSystemGenerated
-          ? _value.isSystemGenerated
-          : isSystemGenerated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isTest: null == isTest
-          ? _value.isTest
-          : isTest // ignore: cast_nullable_to_non_nullable
-              as bool,
-      instructions: freezed == instructions
-          ? _value.instructions
-          : instructions // ignore: cast_nullable_to_non_nullable
-              as String?,
-      evacuationRouteId: freezed == evacuationRouteId
-          ? _value.evacuationRouteId
-          : evacuationRouteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assemblyPointId: freezed == assemblyPointId
-          ? _value.assemblyPointId
-          : assemblyPointId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      shelterId: freezed == shelterId
-          ? _value.shelterId
-          : shelterId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      relatedAlertIds: null == relatedAlertIds
-          ? _value.relatedAlertIds
-          : relatedAlertIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      attachmentUrls: null == attachmentUrls
-          ? _value.attachmentUrls
-          : attachmentUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      targetRoles: null == targetRoles
-          ? _value.targetRoles
-          : targetRoles // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      targetBuildingIds: null == targetBuildingIds
-          ? _value.targetBuildingIds
-          : targetBuildingIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      expiresAt: freezed == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      acknowledgedBy: null == acknowledgedBy
-          ? _value.acknowledgedBy
-          : acknowledgedBy // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      resolvedBy: freezed == resolvedBy
-          ? _value.resolvedBy
-          : resolvedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      resolutionNotes: freezed == resolutionNotes
-          ? _value.resolutionNotes
-          : resolutionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      metadata: null == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as Alert;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Alert &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.title, _this.title) ||
+                other.title == _this.title) &&
+            (identical(other.message, _this.message) ||
+                other.message == _this.message) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.severity, _this.severity) ||
+                other.severity == _this.severity) &&
+            (identical(other.status, _this.status) ||
+                other.status == _this.status) &&
+            (identical(other.locationId, _this.locationId) ||
+                other.locationId == _this.locationId) &&
+            (identical(other.locationName, _this.locationName) ||
+                other.locationName == _this.locationName) &&
+            (identical(other.latitude, _this.latitude) ||
+                other.latitude == _this.latitude) &&
+            (identical(other.longitude, _this.longitude) ||
+                other.longitude == _this.longitude) &&
+            (identical(other.buildingId, _this.buildingId) ||
+                other.buildingId == _this.buildingId) &&
+            (identical(other.floor, _this.floor) ||
+                other.floor == _this.floor) &&
+            (identical(other.affectedArea, _this.affectedArea) ||
+                other.affectedArea == _this.affectedArea) &&
+            (identical(other.createdBy, _this.createdBy) ||
+                other.createdBy == _this.createdBy) &&
+            (identical(other.createdByRole, _this.createdByRole) ||
+                other.createdByRole == _this.createdByRole) &&
+            (identical(other.isSystemGenerated, _this.isSystemGenerated) ||
+                other.isSystemGenerated == _this.isSystemGenerated) &&
+            (identical(other.isTest, _this.isTest) ||
+                other.isTest == _this.isTest) &&
+            (identical(other.instructions, _this.instructions) ||
+                other.instructions == _this.instructions) &&
+            (identical(other.evacuationRouteId, _this.evacuationRouteId) ||
+                other.evacuationRouteId == _this.evacuationRouteId) &&
+            (identical(other.assemblyPointId, _this.assemblyPointId) ||
+                other.assemblyPointId == _this.assemblyPointId) &&
+            (identical(other.shelterId, _this.shelterId) ||
+                other.shelterId == _this.shelterId) &&
+            const DeepCollectionEquality()
+                .equals(other.relatedAlertIds, _this.relatedAlertIds) &&
+            const DeepCollectionEquality()
+                .equals(other.attachmentUrls, _this.attachmentUrls) &&
+            const DeepCollectionEquality().equals(other.tags, _this.tags) &&
+            const DeepCollectionEquality()
+                .equals(other.targetRoles, _this.targetRoles) &&
+            const DeepCollectionEquality()
+                .equals(other.targetBuildingIds, _this.targetBuildingIds) &&
+            (identical(other.expiresAt, _this.expiresAt) ||
+                other.expiresAt == _this.expiresAt) &&
+            const DeepCollectionEquality()
+                .equals(other.acknowledgedBy, _this.acknowledgedBy) &&
+            (identical(other.resolvedBy, _this.resolvedBy) ||
+                other.resolvedBy == _this.resolvedBy) &&
+            (identical(other.resolutionNotes, _this.resolutionNotes) ||
+                other.resolutionNotes == _this.resolutionNotes) &&
+            (identical(other.createdAt, _this.createdAt) ||
+                other.createdAt == _this.createdAt) &&
+            (identical(other.updatedAt, _this.updatedAt) ||
+                other.updatedAt == _this.updatedAt) &&
+            const DeepCollectionEquality()
+                .equals(other.metadata, _this.metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as Alert;
+    return Object.hashAll([
+      runtimeType,
+      _this.id,
+      _this.title,
+      _this.message,
+      _this.type,
+      _this.severity,
+      _this.status,
+      _this.locationId,
+      _this.locationName,
+      _this.latitude,
+      _this.longitude,
+      _this.buildingId,
+      _this.floor,
+      _this.affectedArea,
+      _this.createdBy,
+      _this.createdByRole,
+      _this.isSystemGenerated,
+      _this.isTest,
+      _this.instructions,
+      _this.evacuationRouteId,
+      _this.assemblyPointId,
+      _this.shelterId,
+      const DeepCollectionEquality().hash(_this.relatedAlertIds),
+      const DeepCollectionEquality().hash(_this.attachmentUrls),
+      const DeepCollectionEquality().hash(_this.tags),
+      const DeepCollectionEquality().hash(_this.targetRoles),
+      const DeepCollectionEquality().hash(_this.targetBuildingIds),
+      _this.expiresAt,
+      const DeepCollectionEquality().hash(_this.acknowledgedBy),
+      _this.resolvedBy,
+      _this.resolutionNotes,
+      _this.createdAt,
+      _this.updatedAt,
+      const DeepCollectionEquality().hash(_this.metadata)
+    ]);
+  }
+
+  @override
+  String toString() {
+    final _this = this as Alert;
+    return 'Alert(id: ${_this.id}, title: ${_this.title}, message: ${_this.message}, type: ${_this.type}, severity: ${_this.severity}, status: ${_this.status}, locationId: ${_this.locationId}, locationName: ${_this.locationName}, latitude: ${_this.latitude}, longitude: ${_this.longitude}, buildingId: ${_this.buildingId}, floor: ${_this.floor}, affectedArea: ${_this.affectedArea}, createdBy: ${_this.createdBy}, createdByRole: ${_this.createdByRole}, isSystemGenerated: ${_this.isSystemGenerated}, isTest: ${_this.isTest}, instructions: ${_this.instructions}, evacuationRouteId: ${_this.evacuationRouteId}, assemblyPointId: ${_this.assemblyPointId}, shelterId: ${_this.shelterId}, relatedAlertIds: ${_this.relatedAlertIds}, attachmentUrls: ${_this.attachmentUrls}, tags: ${_this.tags}, targetRoles: ${_this.targetRoles}, targetBuildingIds: ${_this.targetBuildingIds}, expiresAt: ${_this.expiresAt}, acknowledgedBy: ${_this.acknowledgedBy}, resolvedBy: ${_this.resolvedBy}, resolutionNotes: ${_this.resolutionNotes}, createdAt: ${_this.createdAt}, updatedAt: ${_this.updatedAt}, metadata: ${_this.metadata})';
   }
 }
 
 /// @nodoc
-abstract class _$$AlertImplCopyWith<$Res> implements $AlertCopyWith<$Res> {
-  factory _$$AlertImplCopyWith(
-          _$AlertImpl value, $Res Function(_$AlertImpl) then) =
-      __$$AlertImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AlertCopyWith<$Res> {
+  factory $AlertCopyWith(Alert value, $Res Function(Alert) _then) =
+      _$AlertCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -393,13 +286,14 @@ abstract class _$$AlertImplCopyWith<$Res> implements $AlertCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AlertImplCopyWithImpl<$Res>
-    extends _$AlertCopyWithImpl<$Res, _$AlertImpl>
-    implements _$$AlertImplCopyWith<$Res> {
-  __$$AlertImplCopyWithImpl(
-      _$AlertImpl _value, $Res Function(_$AlertImpl) _then)
-      : super(_value, _then);
+class _$AlertCopyWithImpl<$Res> implements $AlertCopyWith<$Res> {
+  _$AlertCopyWithImpl(this._self, this._then);
 
+  final Alert _self;
+  final $Res Function(Alert) _then;
+
+  /// Create a copy of Alert
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -437,147 +331,505 @@ class __$$AlertImplCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? metadata = null,
   }) {
-    return _then(_$AlertImpl(
+    return _then(Alert(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       message: null == message
-          ? _value.message
+          ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as AlertType,
       severity: null == severity
-          ? _value.severity
+          ? _self.severity
           : severity // ignore: cast_nullable_to_non_nullable
               as AlertSeverity,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as AlertStatus,
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       locationName: freezed == locationName
-          ? _value.locationName
+          ? _self.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String?,
       latitude: freezed == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
       longitude: freezed == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
       buildingId: freezed == buildingId
-          ? _value.buildingId
+          ? _self.buildingId
           : buildingId // ignore: cast_nullable_to_non_nullable
               as String?,
       floor: freezed == floor
-          ? _value.floor
+          ? _self.floor
           : floor // ignore: cast_nullable_to_non_nullable
               as int?,
       affectedArea: freezed == affectedArea
-          ? _value.affectedArea
+          ? _self.affectedArea
           : affectedArea // ignore: cast_nullable_to_non_nullable
               as String?,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       createdByRole: freezed == createdByRole
-          ? _value.createdByRole
+          ? _self.createdByRole
           : createdByRole // ignore: cast_nullable_to_non_nullable
               as String?,
       isSystemGenerated: null == isSystemGenerated
-          ? _value.isSystemGenerated
+          ? _self.isSystemGenerated
           : isSystemGenerated // ignore: cast_nullable_to_non_nullable
               as bool,
       isTest: null == isTest
-          ? _value.isTest
+          ? _self.isTest
           : isTest // ignore: cast_nullable_to_non_nullable
               as bool,
       instructions: freezed == instructions
-          ? _value.instructions
+          ? _self.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
               as String?,
       evacuationRouteId: freezed == evacuationRouteId
-          ? _value.evacuationRouteId
+          ? _self.evacuationRouteId
           : evacuationRouteId // ignore: cast_nullable_to_non_nullable
               as String?,
       assemblyPointId: freezed == assemblyPointId
-          ? _value.assemblyPointId
+          ? _self.assemblyPointId
           : assemblyPointId // ignore: cast_nullable_to_non_nullable
               as String?,
       shelterId: freezed == shelterId
-          ? _value.shelterId
+          ? _self.shelterId
           : shelterId // ignore: cast_nullable_to_non_nullable
               as String?,
       relatedAlertIds: null == relatedAlertIds
-          ? _value._relatedAlertIds
+          ? _self.relatedAlertIds
           : relatedAlertIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       attachmentUrls: null == attachmentUrls
-          ? _value._attachmentUrls
+          ? _self.attachmentUrls
           : attachmentUrls // ignore: cast_nullable_to_non_nullable
               as List<String>,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       targetRoles: null == targetRoles
-          ? _value._targetRoles
+          ? _self.targetRoles
           : targetRoles // ignore: cast_nullable_to_non_nullable
               as List<String>,
       targetBuildingIds: null == targetBuildingIds
-          ? _value._targetBuildingIds
+          ? _self.targetBuildingIds
           : targetBuildingIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       expiresAt: freezed == expiresAt
-          ? _value.expiresAt
+          ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       acknowledgedBy: null == acknowledgedBy
-          ? _value._acknowledgedBy
+          ? _self.acknowledgedBy
           : acknowledgedBy // ignore: cast_nullable_to_non_nullable
               as List<String>,
       resolvedBy: freezed == resolvedBy
-          ? _value.resolvedBy
+          ? _self.resolvedBy
           : resolvedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       resolutionNotes: freezed == resolutionNotes
-          ? _value.resolutionNotes
+          ? _self.resolutionNotes
           : resolutionNotes // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       metadata: null == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Alert].
+extension AlertPatterns on Alert {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Alert value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Alert() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Alert value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Alert():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Alert value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Alert() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String title,
+            String message,
+            AlertType type,
+            AlertSeverity severity,
+            AlertStatus status,
+            String? locationId,
+            String? locationName,
+            double? latitude,
+            double? longitude,
+            String? buildingId,
+            int? floor,
+            String? affectedArea,
+            String? createdBy,
+            String? createdByRole,
+            bool isSystemGenerated,
+            bool isTest,
+            String? instructions,
+            String? evacuationRouteId,
+            String? assemblyPointId,
+            String? shelterId,
+            List<String> relatedAlertIds,
+            List<String> attachmentUrls,
+            List<String> tags,
+            List<String> targetRoles,
+            List<String> targetBuildingIds,
+            DateTime? expiresAt,
+            List<String> acknowledgedBy,
+            String? resolvedBy,
+            String? resolutionNotes,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Alert() when $default != null:
+        return $default(
+            _that.id,
+            _that.title,
+            _that.message,
+            _that.type,
+            _that.severity,
+            _that.status,
+            _that.locationId,
+            _that.locationName,
+            _that.latitude,
+            _that.longitude,
+            _that.buildingId,
+            _that.floor,
+            _that.affectedArea,
+            _that.createdBy,
+            _that.createdByRole,
+            _that.isSystemGenerated,
+            _that.isTest,
+            _that.instructions,
+            _that.evacuationRouteId,
+            _that.assemblyPointId,
+            _that.shelterId,
+            _that.relatedAlertIds,
+            _that.attachmentUrls,
+            _that.tags,
+            _that.targetRoles,
+            _that.targetBuildingIds,
+            _that.expiresAt,
+            _that.acknowledgedBy,
+            _that.resolvedBy,
+            _that.resolutionNotes,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String title,
+            String message,
+            AlertType type,
+            AlertSeverity severity,
+            AlertStatus status,
+            String? locationId,
+            String? locationName,
+            double? latitude,
+            double? longitude,
+            String? buildingId,
+            int? floor,
+            String? affectedArea,
+            String? createdBy,
+            String? createdByRole,
+            bool isSystemGenerated,
+            bool isTest,
+            String? instructions,
+            String? evacuationRouteId,
+            String? assemblyPointId,
+            String? shelterId,
+            List<String> relatedAlertIds,
+            List<String> attachmentUrls,
+            List<String> tags,
+            List<String> targetRoles,
+            List<String> targetBuildingIds,
+            DateTime? expiresAt,
+            List<String> acknowledgedBy,
+            String? resolvedBy,
+            String? resolutionNotes,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Alert():
+        return $default(
+            _that.id,
+            _that.title,
+            _that.message,
+            _that.type,
+            _that.severity,
+            _that.status,
+            _that.locationId,
+            _that.locationName,
+            _that.latitude,
+            _that.longitude,
+            _that.buildingId,
+            _that.floor,
+            _that.affectedArea,
+            _that.createdBy,
+            _that.createdByRole,
+            _that.isSystemGenerated,
+            _that.isTest,
+            _that.instructions,
+            _that.evacuationRouteId,
+            _that.assemblyPointId,
+            _that.shelterId,
+            _that.relatedAlertIds,
+            _that.attachmentUrls,
+            _that.tags,
+            _that.targetRoles,
+            _that.targetBuildingIds,
+            _that.expiresAt,
+            _that.acknowledgedBy,
+            _that.resolvedBy,
+            _that.resolutionNotes,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String title,
+            String message,
+            AlertType type,
+            AlertSeverity severity,
+            AlertStatus status,
+            String? locationId,
+            String? locationName,
+            double? latitude,
+            double? longitude,
+            String? buildingId,
+            int? floor,
+            String? affectedArea,
+            String? createdBy,
+            String? createdByRole,
+            bool isSystemGenerated,
+            bool isTest,
+            String? instructions,
+            String? evacuationRouteId,
+            String? assemblyPointId,
+            String? shelterId,
+            List<String> relatedAlertIds,
+            List<String> attachmentUrls,
+            List<String> tags,
+            List<String> targetRoles,
+            List<String> targetBuildingIds,
+            DateTime? expiresAt,
+            List<String> acknowledgedBy,
+            String? resolvedBy,
+            String? resolutionNotes,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Alert() when $default != null:
+        return $default(
+            _that.id,
+            _that.title,
+            _that.message,
+            _that.type,
+            _that.severity,
+            _that.status,
+            _that.locationId,
+            _that.locationName,
+            _that.latitude,
+            _that.longitude,
+            _that.buildingId,
+            _that.floor,
+            _that.affectedArea,
+            _that.createdBy,
+            _that.createdByRole,
+            _that.isSystemGenerated,
+            _that.isTest,
+            _that.instructions,
+            _that.evacuationRouteId,
+            _that.assemblyPointId,
+            _that.shelterId,
+            _that.relatedAlertIds,
+            _that.attachmentUrls,
+            _that.tags,
+            _that.targetRoles,
+            _that.targetBuildingIds,
+            _that.expiresAt,
+            _that.acknowledgedBy,
+            _that.resolvedBy,
+            _that.resolutionNotes,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$AlertImpl implements _Alert {
-  const _$AlertImpl(
+class _Alert implements Alert {
+  const _Alert(
       {required this.id,
       required this.title,
       required this.message,
@@ -599,18 +851,18 @@ class _$AlertImpl implements _Alert {
       this.evacuationRouteId,
       this.assemblyPointId,
       this.shelterId,
-      final List<String> relatedAlertIds = const [],
-      final List<String> attachmentUrls = const [],
-      final List<String> tags = const [],
-      final List<String> targetRoles = const [],
-      final List<String> targetBuildingIds = const [],
+      List<String> relatedAlertIds = const [],
+      List<String> attachmentUrls = const [],
+      List<String> tags = const [],
+      List<String> targetRoles = const [],
+      List<String> targetBuildingIds = const [],
       this.expiresAt,
-      final List<String> acknowledgedBy = const [],
+      List<String> acknowledgedBy = const [],
       this.resolvedBy,
       this.resolutionNotes,
       required this.createdAt,
       required this.updatedAt,
-      final Map<String, dynamic> metadata = const {}})
+      Map<String, dynamic> metadata = const {}})
       : _relatedAlertIds = relatedAlertIds,
         _attachmentUrls = attachmentUrls,
         _tags = tags,
@@ -618,9 +870,7 @@ class _$AlertImpl implements _Alert {
         _targetBuildingIds = targetBuildingIds,
         _acknowledgedBy = acknowledgedBy,
         _metadata = metadata;
-
-  factory _$AlertImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AlertImplFromJson(json);
+  factory _Alert.fromJson(Map<String, dynamic> json) => _$AlertFromJson(json);
 
   /// Unique alert ID
   @override
@@ -814,16 +1064,26 @@ class _$AlertImpl implements _Alert {
     return EqualUnmodifiableMapView(_metadata);
   }
 
+  /// Create a copy of Alert
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Alert(id: $id, title: $title, message: $message, type: $type, severity: $severity, status: $status, locationId: $locationId, locationName: $locationName, latitude: $latitude, longitude: $longitude, buildingId: $buildingId, floor: $floor, affectedArea: $affectedArea, createdBy: $createdBy, createdByRole: $createdByRole, isSystemGenerated: $isSystemGenerated, isTest: $isTest, instructions: $instructions, evacuationRouteId: $evacuationRouteId, assemblyPointId: $assemblyPointId, shelterId: $shelterId, relatedAlertIds: $relatedAlertIds, attachmentUrls: $attachmentUrls, tags: $tags, targetRoles: $targetRoles, targetBuildingIds: $targetBuildingIds, expiresAt: $expiresAt, acknowledgedBy: $acknowledgedBy, resolvedBy: $resolvedBy, resolutionNotes: $resolutionNotes, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AlertCopyWith<_Alert> get copyWith =>
+      __$AlertCopyWithImpl<_Alert>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AlertToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AlertImpl &&
+            other is _Alert &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.message, message) || other.message == message) &&
@@ -860,18 +1120,18 @@ class _$AlertImpl implements _Alert {
             (identical(other.shelterId, shelterId) ||
                 other.shelterId == shelterId) &&
             const DeepCollectionEquality()
-                .equals(other._relatedAlertIds, _relatedAlertIds) &&
+                .equals(other.relatedAlertIds, _relatedAlertIds) &&
             const DeepCollectionEquality()
-                .equals(other._attachmentUrls, _attachmentUrls) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
+                .equals(other.attachmentUrls, _attachmentUrls) &&
+            const DeepCollectionEquality().equals(other.tags, _tags) &&
             const DeepCollectionEquality()
-                .equals(other._targetRoles, _targetRoles) &&
+                .equals(other.targetRoles, _targetRoles) &&
             const DeepCollectionEquality()
-                .equals(other._targetBuildingIds, _targetBuildingIds) &&
+                .equals(other.targetBuildingIds, _targetBuildingIds) &&
             (identical(other.expiresAt, expiresAt) ||
                 other.expiresAt == expiresAt) &&
             const DeepCollectionEquality()
-                .equals(other._acknowledgedBy, _acknowledgedBy) &&
+                .equals(other.acknowledgedBy, _acknowledgedBy) &&
             (identical(other.resolvedBy, resolvedBy) ||
                 other.resolvedBy == resolvedBy) &&
             (identical(other.resolutionNotes, resolutionNotes) ||
@@ -880,234 +1140,279 @@ class _$AlertImpl implements _Alert {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            const DeepCollectionEquality().equals(other.metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        title,
-        message,
-        type,
-        severity,
-        status,
-        locationId,
-        locationName,
-        latitude,
-        longitude,
-        buildingId,
-        floor,
-        affectedArea,
-        createdBy,
-        createdByRole,
-        isSystemGenerated,
-        isTest,
-        instructions,
-        evacuationRouteId,
-        assemblyPointId,
-        shelterId,
-        const DeepCollectionEquality().hash(_relatedAlertIds),
-        const DeepCollectionEquality().hash(_attachmentUrls),
-        const DeepCollectionEquality().hash(_tags),
-        const DeepCollectionEquality().hash(_targetRoles),
-        const DeepCollectionEquality().hash(_targetBuildingIds),
-        expiresAt,
-        const DeepCollectionEquality().hash(_acknowledgedBy),
-        resolvedBy,
-        resolutionNotes,
-        createdAt,
-        updatedAt,
-        const DeepCollectionEquality().hash(_metadata)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      id,
+      title,
+      message,
+      type,
+      severity,
+      status,
+      locationId,
+      locationName,
+      latitude,
+      longitude,
+      buildingId,
+      floor,
+      affectedArea,
+      createdBy,
+      createdByRole,
+      isSystemGenerated,
+      isTest,
+      instructions,
+      evacuationRouteId,
+      assemblyPointId,
+      shelterId,
+      const DeepCollectionEquality().hash(_relatedAlertIds),
+      const DeepCollectionEquality().hash(_attachmentUrls),
+      const DeepCollectionEquality().hash(_tags),
+      const DeepCollectionEquality().hash(_targetRoles),
+      const DeepCollectionEquality().hash(_targetBuildingIds),
+      expiresAt,
+      const DeepCollectionEquality().hash(_acknowledgedBy),
+      resolvedBy,
+      resolutionNotes,
+      createdAt,
+      updatedAt,
+      const DeepCollectionEquality().hash(_metadata)
+    ]);
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'Alert(id: $id, title: $title, message: $message, type: $type, severity: $severity, status: $status, locationId: $locationId, locationName: $locationName, latitude: $latitude, longitude: $longitude, buildingId: $buildingId, floor: $floor, affectedArea: $affectedArea, createdBy: $createdBy, createdByRole: $createdByRole, isSystemGenerated: $isSystemGenerated, isTest: $isTest, instructions: $instructions, evacuationRouteId: $evacuationRouteId, assemblyPointId: $assemblyPointId, shelterId: $shelterId, relatedAlertIds: $relatedAlertIds, attachmentUrls: $attachmentUrls, tags: $tags, targetRoles: $targetRoles, targetBuildingIds: $targetBuildingIds, expiresAt: $expiresAt, acknowledgedBy: $acknowledgedBy, resolvedBy: $resolvedBy, resolutionNotes: $resolutionNotes, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AlertCopyWith<$Res> implements $AlertCopyWith<$Res> {
+  factory _$AlertCopyWith(_Alert value, $Res Function(_Alert) _then) =
+      __$AlertCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String title,
+      String message,
+      AlertType type,
+      AlertSeverity severity,
+      AlertStatus status,
+      String? locationId,
+      String? locationName,
+      double? latitude,
+      double? longitude,
+      String? buildingId,
+      int? floor,
+      String? affectedArea,
+      String? createdBy,
+      String? createdByRole,
+      bool isSystemGenerated,
+      bool isTest,
+      String? instructions,
+      String? evacuationRouteId,
+      String? assemblyPointId,
+      String? shelterId,
+      List<String> relatedAlertIds,
+      List<String> attachmentUrls,
+      List<String> tags,
+      List<String> targetRoles,
+      List<String> targetBuildingIds,
+      DateTime? expiresAt,
+      List<String> acknowledgedBy,
+      String? resolvedBy,
+      String? resolutionNotes,
+      DateTime createdAt,
+      DateTime updatedAt,
+      Map<String, dynamic> metadata});
+}
+
+/// @nodoc
+class __$AlertCopyWithImpl<$Res> implements _$AlertCopyWith<$Res> {
+  __$AlertCopyWithImpl(this._self, this._then);
+
+  final _Alert _self;
+  final $Res Function(_Alert) _then;
+
+  /// Create a copy of Alert
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$AlertImplCopyWith<_$AlertImpl> get copyWith =>
-      __$$AlertImplCopyWithImpl<_$AlertImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AlertImplToJson(
-      this,
-    );
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? message = null,
+    Object? type = null,
+    Object? severity = null,
+    Object? status = null,
+    Object? locationId = freezed,
+    Object? locationName = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? buildingId = freezed,
+    Object? floor = freezed,
+    Object? affectedArea = freezed,
+    Object? createdBy = freezed,
+    Object? createdByRole = freezed,
+    Object? isSystemGenerated = null,
+    Object? isTest = null,
+    Object? instructions = freezed,
+    Object? evacuationRouteId = freezed,
+    Object? assemblyPointId = freezed,
+    Object? shelterId = freezed,
+    Object? relatedAlertIds = null,
+    Object? attachmentUrls = null,
+    Object? tags = null,
+    Object? targetRoles = null,
+    Object? targetBuildingIds = null,
+    Object? expiresAt = freezed,
+    Object? acknowledgedBy = null,
+    Object? resolvedBy = freezed,
+    Object? resolutionNotes = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? metadata = null,
+  }) {
+    return _then(_Alert(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AlertType,
+      severity: null == severity
+          ? _self.severity
+          : severity // ignore: cast_nullable_to_non_nullable
+              as AlertSeverity,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AlertStatus,
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locationName: freezed == locationName
+          ? _self.locationName
+          : locationName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      buildingId: freezed == buildingId
+          ? _self.buildingId
+          : buildingId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      floor: freezed == floor
+          ? _self.floor
+          : floor // ignore: cast_nullable_to_non_nullable
+              as int?,
+      affectedArea: freezed == affectedArea
+          ? _self.affectedArea
+          : affectedArea // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdByRole: freezed == createdByRole
+          ? _self.createdByRole
+          : createdByRole // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isSystemGenerated: null == isSystemGenerated
+          ? _self.isSystemGenerated
+          : isSystemGenerated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isTest: null == isTest
+          ? _self.isTest
+          : isTest // ignore: cast_nullable_to_non_nullable
+              as bool,
+      instructions: freezed == instructions
+          ? _self.instructions
+          : instructions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      evacuationRouteId: freezed == evacuationRouteId
+          ? _self.evacuationRouteId
+          : evacuationRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assemblyPointId: freezed == assemblyPointId
+          ? _self.assemblyPointId
+          : assemblyPointId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shelterId: freezed == shelterId
+          ? _self.shelterId
+          : shelterId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      relatedAlertIds: null == relatedAlertIds
+          ? _self._relatedAlertIds
+          : relatedAlertIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      attachmentUrls: null == attachmentUrls
+          ? _self._attachmentUrls
+          : attachmentUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      targetRoles: null == targetRoles
+          ? _self._targetRoles
+          : targetRoles // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      targetBuildingIds: null == targetBuildingIds
+          ? _self._targetBuildingIds
+          : targetBuildingIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      expiresAt: freezed == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      acknowledgedBy: null == acknowledgedBy
+          ? _self._acknowledgedBy
+          : acknowledgedBy // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      resolvedBy: freezed == resolvedBy
+          ? _self.resolvedBy
+          : resolvedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resolutionNotes: freezed == resolutionNotes
+          ? _self.resolutionNotes
+          : resolutionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      metadata: null == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
   }
 }
 
-abstract class _Alert implements Alert {
-  const factory _Alert(
-      {required final String id,
-      required final String title,
-      required final String message,
-      required final AlertType type,
-      required final AlertSeverity severity,
-      final AlertStatus status,
-      final String? locationId,
-      final String? locationName,
-      final double? latitude,
-      final double? longitude,
-      final String? buildingId,
-      final int? floor,
-      final String? affectedArea,
-      final String? createdBy,
-      final String? createdByRole,
-      final bool isSystemGenerated,
-      final bool isTest,
-      final String? instructions,
-      final String? evacuationRouteId,
-      final String? assemblyPointId,
-      final String? shelterId,
-      final List<String> relatedAlertIds,
-      final List<String> attachmentUrls,
-      final List<String> tags,
-      final List<String> targetRoles,
-      final List<String> targetBuildingIds,
-      final DateTime? expiresAt,
-      final List<String> acknowledgedBy,
-      final String? resolvedBy,
-      final String? resolutionNotes,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final Map<String, dynamic> metadata}) = _$AlertImpl;
-
-  factory _Alert.fromJson(Map<String, dynamic> json) = _$AlertImpl.fromJson;
-
-  @override
-
-  /// Unique alert ID
-  String get id;
-  @override
-
-  /// Alert title
-  String get title;
-  @override
-
-  /// Alert message/description
-  String get message;
-  @override
-
-  /// Alert type
-  AlertType get type;
-  @override
-
-  /// Alert severity
-  AlertSeverity get severity;
-  @override
-
-  /// Current status
-  AlertStatus get status;
-  @override
-
-  /// Location ID where alert originated
-  String? get locationId;
-  @override
-
-  /// Location name
-  String? get locationName;
-  @override
-
-  /// Latitude of alert location
-  double? get latitude;
-  @override
-
-  /// Longitude of alert location
-  double? get longitude;
-  @override
-
-  /// Building affected
-  String? get buildingId;
-  @override
-
-  /// Floor affected
-  int? get floor;
-  @override
-
-  /// Affected area description
-  String? get affectedArea;
-  @override
-
-  /// User ID who created the alert
-  String? get createdBy;
-  @override
-
-  /// User role who created the alert
-  String? get createdByRole;
-  @override
-
-  /// Whether this is a system-generated alert
-  bool get isSystemGenerated;
-  @override
-
-  /// Whether this is a test/drill
-  bool get isTest;
-  @override
-
-  /// Instructions for users
-  String? get instructions;
-  @override
-
-  /// Evacuation route ID (if applicable)
-  String? get evacuationRouteId;
-  @override
-
-  /// Assembly point ID (if applicable)
-  String? get assemblyPointId;
-  @override
-
-  /// Shelter ID (if applicable)
-  String? get shelterId;
-  @override
-
-  /// Related alert IDs
-  List<String> get relatedAlertIds;
-  @override
-
-  /// Attachments (photos, documents)
-  List<String> get attachmentUrls;
-  @override
-
-  /// Tags for filtering
-  List<String> get tags;
-  @override
-
-  /// Target audience (roles)
-  List<String> get targetRoles;
-  @override
-
-  /// Target building IDs
-  List<String> get targetBuildingIds;
-  @override
-
-  /// Expires at
-  DateTime? get expiresAt;
-  @override
-
-  /// Acknowledged by user IDs
-  List<String> get acknowledgedBy;
-  @override
-
-  /// Resolved by user ID
-  String? get resolvedBy;
-  @override
-
-  /// Resolution notes
-  String? get resolutionNotes;
-  @override
-
-  /// Created at
-  DateTime get createdAt;
-  @override
-
-  /// Updated at
-  DateTime get updatedAt;
-  @override
-
-  /// Metadata
-  Map<String, dynamic> get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$AlertImplCopyWith<_$AlertImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

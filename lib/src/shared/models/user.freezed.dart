@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user.dart';
@@ -9,244 +9,176 @@ part of 'user.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
-}
 
 /// @nodoc
 mixin _$User {
   /// Unique user ID (Firebase Auth UID)
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// User's email address
-  String get email => throw _privateConstructorUsedError;
+  String get email;
 
   /// User's first name
-  String get firstName => throw _privateConstructorUsedError;
+  String get firstName;
 
   /// User's last name
-  String get lastName => throw _privateConstructorUsedError;
+  String get lastName;
 
   /// User's middle initial (optional)
-  String? get middleInitial => throw _privateConstructorUsedError;
+  String? get middleInitial;
 
   /// User's role in the system
-  UserRole get role => throw _privateConstructorUsedError;
+  UserRole get role;
 
   /// Student ID (for students only)
-  String? get studentId => throw _privateConstructorUsedError;
+  String? get studentId;
 
   /// Employee ID (for faculty/security/admin)
-  String? get employeeId => throw _privateConstructorUsedError;
+  String? get employeeId;
 
   /// Department/College
-  String? get department => throw _privateConstructorUsedError;
+  String? get department;
 
   /// Phone number
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber;
 
   /// Profile photo URL
-  String? get photoUrl => throw _privateConstructorUsedError;
+  String? get photoUrl;
 
   /// Whether user is active
-  bool get isActive => throw _privateConstructorUsedError;
+  bool get isActive;
 
   /// Whether email is verified
-  bool get emailVerified => throw _privateConstructorUsedError;
+  bool get emailVerified;
 
   /// Last login timestamp
-  DateTime? get lastLoginAt => throw _privateConstructorUsedError;
+  DateTime? get lastLoginAt;
 
   /// Account creation timestamp
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
 
   /// Last update timestamp
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
   /// FCM token for push notifications
-  String? get fcmToken => throw _privateConstructorUsedError;
+  String? get fcmToken;
 
   /// Emergency contact name
-  String? get emergencyContactName => throw _privateConstructorUsedError;
+  String? get emergencyContactName;
 
   /// Emergency contact phone
-  String? get emergencyContactPhone => throw _privateConstructorUsedError;
+  String? get emergencyContactPhone;
 
   /// Preferred language
-  String get language => throw _privateConstructorUsedError;
+  String get language;
 
   /// Notification preferences
-  Map<String, bool> get notificationPrefs => throw _privateConstructorUsedError;
+  Map<String, bool> get notificationPrefs;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
-  @useResult
-  $Res call(
-      {String id,
-      String email,
-      String firstName,
-      String lastName,
-      String? middleInitial,
-      UserRole role,
-      String? studentId,
-      String? employeeId,
-      String? department,
-      String? phoneNumber,
-      String? photoUrl,
-      bool isActive,
-      bool emailVerified,
-      DateTime? lastLoginAt,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? fcmToken,
-      String? emergencyContactName,
-      String? emergencyContactPhone,
-      String language,
-      Map<String, bool> notificationPrefs});
-}
-
-/// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UserCopyWith<User> get copyWith =>
+      _$UserCopyWithImpl<User>(this as User, _$identity);
+
+  /// Serializes this User to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? email = null,
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? middleInitial = freezed,
-    Object? role = null,
-    Object? studentId = freezed,
-    Object? employeeId = freezed,
-    Object? department = freezed,
-    Object? phoneNumber = freezed,
-    Object? photoUrl = freezed,
-    Object? isActive = null,
-    Object? emailVerified = null,
-    Object? lastLoginAt = freezed,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? fcmToken = freezed,
-    Object? emergencyContactName = freezed,
-    Object? emergencyContactPhone = freezed,
-    Object? language = null,
-    Object? notificationPrefs = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleInitial: freezed == middleInitial
-          ? _value.middleInitial
-          : middleInitial // ignore: cast_nullable_to_non_nullable
-              as String?,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as UserRole,
-      studentId: freezed == studentId
-          ? _value.studentId
-          : studentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      employeeId: freezed == employeeId
-          ? _value.employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      department: freezed == department
-          ? _value.department
-          : department // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      photoUrl: freezed == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emailVerified: null == emailVerified
-          ? _value.emailVerified
-          : emailVerified // ignore: cast_nullable_to_non_nullable
-              as bool,
-      lastLoginAt: freezed == lastLoginAt
-          ? _value.lastLoginAt
-          : lastLoginAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      fcmToken: freezed == fcmToken
-          ? _value.fcmToken
-          : fcmToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      emergencyContactName: freezed == emergencyContactName
-          ? _value.emergencyContactName
-          : emergencyContactName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      emergencyContactPhone: freezed == emergencyContactPhone
-          ? _value.emergencyContactPhone
-          : emergencyContactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: null == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String,
-      notificationPrefs: null == notificationPrefs
-          ? _value.notificationPrefs
-          : notificationPrefs // ignore: cast_nullable_to_non_nullable
-              as Map<String, bool>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as User;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is User &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.email, _this.email) ||
+                other.email == _this.email) &&
+            (identical(other.firstName, _this.firstName) ||
+                other.firstName == _this.firstName) &&
+            (identical(other.lastName, _this.lastName) ||
+                other.lastName == _this.lastName) &&
+            (identical(other.middleInitial, _this.middleInitial) ||
+                other.middleInitial == _this.middleInitial) &&
+            (identical(other.role, _this.role) || other.role == _this.role) &&
+            (identical(other.studentId, _this.studentId) ||
+                other.studentId == _this.studentId) &&
+            (identical(other.employeeId, _this.employeeId) ||
+                other.employeeId == _this.employeeId) &&
+            (identical(other.department, _this.department) ||
+                other.department == _this.department) &&
+            (identical(other.phoneNumber, _this.phoneNumber) ||
+                other.phoneNumber == _this.phoneNumber) &&
+            (identical(other.photoUrl, _this.photoUrl) ||
+                other.photoUrl == _this.photoUrl) &&
+            (identical(other.isActive, _this.isActive) ||
+                other.isActive == _this.isActive) &&
+            (identical(other.emailVerified, _this.emailVerified) ||
+                other.emailVerified == _this.emailVerified) &&
+            (identical(other.lastLoginAt, _this.lastLoginAt) ||
+                other.lastLoginAt == _this.lastLoginAt) &&
+            (identical(other.createdAt, _this.createdAt) ||
+                other.createdAt == _this.createdAt) &&
+            (identical(other.updatedAt, _this.updatedAt) ||
+                other.updatedAt == _this.updatedAt) &&
+            (identical(other.fcmToken, _this.fcmToken) ||
+                other.fcmToken == _this.fcmToken) &&
+            (identical(
+                    other.emergencyContactName, _this.emergencyContactName) ||
+                other.emergencyContactName == _this.emergencyContactName) &&
+            (identical(
+                    other.emergencyContactPhone, _this.emergencyContactPhone) ||
+                other.emergencyContactPhone == _this.emergencyContactPhone) &&
+            (identical(other.language, _this.language) ||
+                other.language == _this.language) &&
+            const DeepCollectionEquality()
+                .equals(other.notificationPrefs, _this.notificationPrefs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as User;
+    return Object.hashAll([
+      runtimeType,
+      _this.id,
+      _this.email,
+      _this.firstName,
+      _this.lastName,
+      _this.middleInitial,
+      _this.role,
+      _this.studentId,
+      _this.employeeId,
+      _this.department,
+      _this.phoneNumber,
+      _this.photoUrl,
+      _this.isActive,
+      _this.emailVerified,
+      _this.lastLoginAt,
+      _this.createdAt,
+      _this.updatedAt,
+      _this.fcmToken,
+      _this.emergencyContactName,
+      _this.emergencyContactPhone,
+      _this.language,
+      const DeepCollectionEquality().hash(_this.notificationPrefs)
+    ]);
+  }
+
+  @override
+  String toString() {
+    final _this = this as User;
+    return 'User(id: ${_this.id}, email: ${_this.email}, firstName: ${_this.firstName}, lastName: ${_this.lastName}, middleInitial: ${_this.middleInitial}, role: ${_this.role}, studentId: ${_this.studentId}, employeeId: ${_this.employeeId}, department: ${_this.department}, phoneNumber: ${_this.phoneNumber}, photoUrl: ${_this.photoUrl}, isActive: ${_this.isActive}, emailVerified: ${_this.emailVerified}, lastLoginAt: ${_this.lastLoginAt}, createdAt: ${_this.createdAt}, updatedAt: ${_this.updatedAt}, fcmToken: ${_this.fcmToken}, emergencyContactName: ${_this.emergencyContactName}, emergencyContactPhone: ${_this.emergencyContactPhone}, language: ${_this.language}, notificationPrefs: ${_this.notificationPrefs})';
   }
 }
 
 /// @nodoc
-abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
-      __$$UserImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) _then) =
+      _$UserCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -273,12 +205,14 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
-    implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
-      : super(_value, _then);
+class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._self, this._then);
 
+  final User _self;
+  final $Res Function(User) _then;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -304,99 +238,385 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? language = null,
     Object? notificationPrefs = null,
   }) {
-    return _then(_$UserImpl(
+    return _then(User(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       firstName: null == firstName
-          ? _value.firstName
+          ? _self.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
-          ? _value.lastName
+          ? _self.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       middleInitial: freezed == middleInitial
-          ? _value.middleInitial
+          ? _self.middleInitial
           : middleInitial // ignore: cast_nullable_to_non_nullable
               as String?,
       role: null == role
-          ? _value.role
+          ? _self.role
           : role // ignore: cast_nullable_to_non_nullable
               as UserRole,
       studentId: freezed == studentId
-          ? _value.studentId
+          ? _self.studentId
           : studentId // ignore: cast_nullable_to_non_nullable
               as String?,
       employeeId: freezed == employeeId
-          ? _value.employeeId
+          ? _self.employeeId
           : employeeId // ignore: cast_nullable_to_non_nullable
               as String?,
       department: freezed == department
-          ? _value.department
+          ? _self.department
           : department // ignore: cast_nullable_to_non_nullable
               as String?,
       phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
+          ? _self.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       photoUrl: freezed == photoUrl
-          ? _value.photoUrl
+          ? _self.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       isActive: null == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
       emailVerified: null == emailVerified
-          ? _value.emailVerified
+          ? _self.emailVerified
           : emailVerified // ignore: cast_nullable_to_non_nullable
               as bool,
       lastLoginAt: freezed == lastLoginAt
-          ? _value.lastLoginAt
+          ? _self.lastLoginAt
           : lastLoginAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       fcmToken: freezed == fcmToken
-          ? _value.fcmToken
+          ? _self.fcmToken
           : fcmToken // ignore: cast_nullable_to_non_nullable
               as String?,
       emergencyContactName: freezed == emergencyContactName
-          ? _value.emergencyContactName
+          ? _self.emergencyContactName
           : emergencyContactName // ignore: cast_nullable_to_non_nullable
               as String?,
       emergencyContactPhone: freezed == emergencyContactPhone
-          ? _value.emergencyContactPhone
+          ? _self.emergencyContactPhone
           : emergencyContactPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       language: null == language
-          ? _value.language
+          ? _self.language
           : language // ignore: cast_nullable_to_non_nullable
               as String,
       notificationPrefs: null == notificationPrefs
-          ? _value._notificationPrefs
+          ? _self.notificationPrefs
           : notificationPrefs // ignore: cast_nullable_to_non_nullable
               as Map<String, bool>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [User].
+extension UserPatterns on User {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_User value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _User() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_User value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _User():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_User value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _User() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String email,
+            String firstName,
+            String lastName,
+            String? middleInitial,
+            UserRole role,
+            String? studentId,
+            String? employeeId,
+            String? department,
+            String? phoneNumber,
+            String? photoUrl,
+            bool isActive,
+            bool emailVerified,
+            DateTime? lastLoginAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? fcmToken,
+            String? emergencyContactName,
+            String? emergencyContactPhone,
+            String language,
+            Map<String, bool> notificationPrefs)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _User() when $default != null:
+        return $default(
+            _that.id,
+            _that.email,
+            _that.firstName,
+            _that.lastName,
+            _that.middleInitial,
+            _that.role,
+            _that.studentId,
+            _that.employeeId,
+            _that.department,
+            _that.phoneNumber,
+            _that.photoUrl,
+            _that.isActive,
+            _that.emailVerified,
+            _that.lastLoginAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.fcmToken,
+            _that.emergencyContactName,
+            _that.emergencyContactPhone,
+            _that.language,
+            _that.notificationPrefs);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String email,
+            String firstName,
+            String lastName,
+            String? middleInitial,
+            UserRole role,
+            String? studentId,
+            String? employeeId,
+            String? department,
+            String? phoneNumber,
+            String? photoUrl,
+            bool isActive,
+            bool emailVerified,
+            DateTime? lastLoginAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? fcmToken,
+            String? emergencyContactName,
+            String? emergencyContactPhone,
+            String language,
+            Map<String, bool> notificationPrefs)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _User():
+        return $default(
+            _that.id,
+            _that.email,
+            _that.firstName,
+            _that.lastName,
+            _that.middleInitial,
+            _that.role,
+            _that.studentId,
+            _that.employeeId,
+            _that.department,
+            _that.phoneNumber,
+            _that.photoUrl,
+            _that.isActive,
+            _that.emailVerified,
+            _that.lastLoginAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.fcmToken,
+            _that.emergencyContactName,
+            _that.emergencyContactPhone,
+            _that.language,
+            _that.notificationPrefs);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String email,
+            String firstName,
+            String lastName,
+            String? middleInitial,
+            UserRole role,
+            String? studentId,
+            String? employeeId,
+            String? department,
+            String? phoneNumber,
+            String? photoUrl,
+            bool isActive,
+            bool emailVerified,
+            DateTime? lastLoginAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? fcmToken,
+            String? emergencyContactName,
+            String? emergencyContactPhone,
+            String language,
+            Map<String, bool> notificationPrefs)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _User() when $default != null:
+        return $default(
+            _that.id,
+            _that.email,
+            _that.firstName,
+            _that.lastName,
+            _that.middleInitial,
+            _that.role,
+            _that.studentId,
+            _that.employeeId,
+            _that.department,
+            _that.phoneNumber,
+            _that.photoUrl,
+            _that.isActive,
+            _that.emailVerified,
+            _that.lastLoginAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.fcmToken,
+            _that.emergencyContactName,
+            _that.emergencyContactPhone,
+            _that.language,
+            _that.notificationPrefs);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl implements _User {
-  const _$UserImpl(
+class _User implements User {
+  const _User(
       {required this.id,
       required this.email,
       required this.firstName,
@@ -417,11 +637,9 @@ class _$UserImpl implements _User {
       this.emergencyContactName,
       this.emergencyContactPhone,
       this.language = 'en',
-      final Map<String, bool> notificationPrefs = const {}})
+      Map<String, bool> notificationPrefs = const {}})
       : _notificationPrefs = notificationPrefs;
-
-  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserImplFromJson(json);
+  factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// Unique user ID (Firebase Auth UID)
   @override
@@ -519,16 +737,26 @@ class _$UserImpl implements _User {
     return EqualUnmodifiableMapView(_notificationPrefs);
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, middleInitial: $middleInitial, role: $role, studentId: $studentId, employeeId: $employeeId, department: $department, phoneNumber: $phoneNumber, photoUrl: $photoUrl, isActive: $isActive, emailVerified: $emailVerified, lastLoginAt: $lastLoginAt, createdAt: $createdAt, updatedAt: $updatedAt, fcmToken: $fcmToken, emergencyContactName: $emergencyContactName, emergencyContactPhone: $emergencyContactPhone, language: $language, notificationPrefs: $notificationPrefs)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UserCopyWith<_User> get copyWith =>
+      __$UserCopyWithImpl<_User>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UserToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserImpl &&
+            other is _User &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.firstName, firstName) ||
@@ -567,162 +795,195 @@ class _$UserImpl implements _User {
             (identical(other.language, language) ||
                 other.language == language) &&
             const DeepCollectionEquality()
-                .equals(other._notificationPrefs, _notificationPrefs));
+                .equals(other.notificationPrefs, _notificationPrefs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        email,
-        firstName,
-        lastName,
-        middleInitial,
-        role,
-        studentId,
-        employeeId,
-        department,
-        phoneNumber,
-        photoUrl,
-        isActive,
-        emailVerified,
-        lastLoginAt,
-        createdAt,
-        updatedAt,
-        fcmToken,
-        emergencyContactName,
-        emergencyContactPhone,
-        language,
-        const DeepCollectionEquality().hash(_notificationPrefs)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      id,
+      email,
+      firstName,
+      lastName,
+      middleInitial,
+      role,
+      studentId,
+      employeeId,
+      department,
+      phoneNumber,
+      photoUrl,
+      isActive,
+      emailVerified,
+      lastLoginAt,
+      createdAt,
+      updatedAt,
+      fcmToken,
+      emergencyContactName,
+      emergencyContactPhone,
+      language,
+      const DeepCollectionEquality().hash(_notificationPrefs)
+    ]);
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, middleInitial: $middleInitial, role: $role, studentId: $studentId, employeeId: $employeeId, department: $department, phoneNumber: $phoneNumber, photoUrl: $photoUrl, isActive: $isActive, emailVerified: $emailVerified, lastLoginAt: $lastLoginAt, createdAt: $createdAt, updatedAt: $updatedAt, fcmToken: $fcmToken, emergencyContactName: $emergencyContactName, emergencyContactPhone: $emergencyContactPhone, language: $language, notificationPrefs: $notificationPrefs)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) _then) =
+      __$UserCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String email,
+      String firstName,
+      String lastName,
+      String? middleInitial,
+      UserRole role,
+      String? studentId,
+      String? employeeId,
+      String? department,
+      String? phoneNumber,
+      String? photoUrl,
+      bool isActive,
+      bool emailVerified,
+      DateTime? lastLoginAt,
+      DateTime createdAt,
+      DateTime updatedAt,
+      String? fcmToken,
+      String? emergencyContactName,
+      String? emergencyContactPhone,
+      String language,
+      Map<String, bool> notificationPrefs});
+}
+
+/// @nodoc
+class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(this._self, this._then);
+
+  final _User _self;
+  final $Res Function(_User) _then;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserImplToJson(
-      this,
-    );
+  $Res call({
+    Object? id = null,
+    Object? email = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? middleInitial = freezed,
+    Object? role = null,
+    Object? studentId = freezed,
+    Object? employeeId = freezed,
+    Object? department = freezed,
+    Object? phoneNumber = freezed,
+    Object? photoUrl = freezed,
+    Object? isActive = null,
+    Object? emailVerified = null,
+    Object? lastLoginAt = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? fcmToken = freezed,
+    Object? emergencyContactName = freezed,
+    Object? emergencyContactPhone = freezed,
+    Object? language = null,
+    Object? notificationPrefs = null,
+  }) {
+    return _then(_User(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleInitial: freezed == middleInitial
+          ? _self.middleInitial
+          : middleInitial // ignore: cast_nullable_to_non_nullable
+              as String?,
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as UserRole,
+      studentId: freezed == studentId
+          ? _self.studentId
+          : studentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      employeeId: freezed == employeeId
+          ? _self.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      department: freezed == department
+          ? _self.department
+          : department // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: freezed == phoneNumber
+          ? _self.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      photoUrl: freezed == photoUrl
+          ? _self.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isActive: null == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailVerified: null == emailVerified
+          ? _self.emailVerified
+          : emailVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
+      lastLoginAt: freezed == lastLoginAt
+          ? _self.lastLoginAt
+          : lastLoginAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      fcmToken: freezed == fcmToken
+          ? _self.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      emergencyContactName: freezed == emergencyContactName
+          ? _self.emergencyContactName
+          : emergencyContactName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      emergencyContactPhone: freezed == emergencyContactPhone
+          ? _self.emergencyContactPhone
+          : emergencyContactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: null == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      notificationPrefs: null == notificationPrefs
+          ? _self._notificationPrefs
+          : notificationPrefs // ignore: cast_nullable_to_non_nullable
+              as Map<String, bool>,
+    ));
   }
 }
 
-abstract class _User implements User {
-  const factory _User(
-      {required final String id,
-      required final String email,
-      required final String firstName,
-      required final String lastName,
-      final String? middleInitial,
-      required final UserRole role,
-      final String? studentId,
-      final String? employeeId,
-      final String? department,
-      final String? phoneNumber,
-      final String? photoUrl,
-      final bool isActive,
-      final bool emailVerified,
-      final DateTime? lastLoginAt,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final String? fcmToken,
-      final String? emergencyContactName,
-      final String? emergencyContactPhone,
-      final String language,
-      final Map<String, bool> notificationPrefs}) = _$UserImpl;
-
-  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
-
-  @override
-
-  /// Unique user ID (Firebase Auth UID)
-  String get id;
-  @override
-
-  /// User's email address
-  String get email;
-  @override
-
-  /// User's first name
-  String get firstName;
-  @override
-
-  /// User's last name
-  String get lastName;
-  @override
-
-  /// User's middle initial (optional)
-  String? get middleInitial;
-  @override
-
-  /// User's role in the system
-  UserRole get role;
-  @override
-
-  /// Student ID (for students only)
-  String? get studentId;
-  @override
-
-  /// Employee ID (for faculty/security/admin)
-  String? get employeeId;
-  @override
-
-  /// Department/College
-  String? get department;
-  @override
-
-  /// Phone number
-  String? get phoneNumber;
-  @override
-
-  /// Profile photo URL
-  String? get photoUrl;
-  @override
-
-  /// Whether user is active
-  bool get isActive;
-  @override
-
-  /// Whether email is verified
-  bool get emailVerified;
-  @override
-
-  /// Last login timestamp
-  DateTime? get lastLoginAt;
-  @override
-
-  /// Account creation timestamp
-  DateTime get createdAt;
-  @override
-
-  /// Last update timestamp
-  DateTime get updatedAt;
-  @override
-
-  /// FCM token for push notifications
-  String? get fcmToken;
-  @override
-
-  /// Emergency contact name
-  String? get emergencyContactName;
-  @override
-
-  /// Emergency contact phone
-  String? get emergencyContactPhone;
-  @override
-
-  /// Preferred language
-  String get language;
-  @override
-
-  /// Notification preferences
-  Map<String, bool> get notificationPrefs;
-  @override
-  @JsonKey(ignore: true)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

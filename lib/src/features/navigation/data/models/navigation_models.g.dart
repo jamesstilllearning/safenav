@@ -6,9 +6,9 @@ part of 'navigation_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NavigationDestinationImpl _$$NavigationDestinationImplFromJson(
+_NavigationDestination _$NavigationDestinationFromJson(
         Map<String, dynamic> json) =>
-    _$NavigationDestinationImpl(
+    _NavigationDestination(
       id: json['id'] as String,
       name: json['name'] as String,
       type: DestinationTypeConverter._destinationTypeFromJson(
@@ -20,8 +20,8 @@ _$NavigationDestinationImpl _$$NavigationDestinationImplFromJson(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$NavigationDestinationImplToJson(
-        _$NavigationDestinationImpl instance) =>
+Map<String, dynamic> _$NavigationDestinationToJson(
+        _NavigationDestination instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -33,9 +33,8 @@ Map<String, dynamic> _$$NavigationDestinationImplToJson(
       'metadata': instance.metadata,
     };
 
-_$NavigationRouteImpl _$$NavigationRouteImplFromJson(
-        Map<String, dynamic> json) =>
-    _$NavigationRouteImpl(
+_NavigationRoute _$NavigationRouteFromJson(Map<String, dynamic> json) =>
+    _NavigationRoute(
       id: json['id'] as String,
       start:
           NavigationDestination.fromJson(json['start'] as Map<String, dynamic>),
@@ -55,8 +54,7 @@ _$NavigationRouteImpl _$$NavigationRouteImplFromJson(
           json['status'] as Map<String, dynamic>?),
     );
 
-Map<String, dynamic> _$$NavigationRouteImplToJson(
-        _$NavigationRouteImpl instance) =>
+Map<String, dynamic> _$NavigationRouteToJson(_NavigationRoute instance) =>
     <String, dynamic>{
       'id': instance.id,
       'start': instance.start,
@@ -70,9 +68,9 @@ Map<String, dynamic> _$$NavigationRouteImplToJson(
       'status': RouteStatusConverter._routeStatusToJson(instance.status),
     };
 
-_$NavigationInstructionImpl _$$NavigationInstructionImplFromJson(
+_NavigationInstruction _$NavigationInstructionFromJson(
         Map<String, dynamic> json) =>
-    _$NavigationInstructionImpl(
+    _NavigationInstruction(
       instruction: json['instruction'] as String,
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
@@ -83,8 +81,8 @@ _$NavigationInstructionImpl _$$NavigationInstructionImplFromJson(
       landmark: json['landmark'] as String?,
     );
 
-Map<String, dynamic> _$$NavigationInstructionImplToJson(
-        _$NavigationInstructionImpl instance) =>
+Map<String, dynamic> _$NavigationInstructionToJson(
+        _NavigationInstruction instance) =>
     <String, dynamic>{
       'instruction': instance.instruction,
       'latitude': instance.latitude,
@@ -95,9 +93,8 @@ Map<String, dynamic> _$$NavigationInstructionImplToJson(
       'landmark': instance.landmark,
     };
 
-_$NavigationSessionImpl _$$NavigationSessionImplFromJson(
-        Map<String, dynamic> json) =>
-    _$NavigationSessionImpl(
+_NavigationSession _$NavigationSessionFromJson(Map<String, dynamic> json) =>
+    _NavigationSession(
       id: json['id'] as String,
       route: NavigationRoute.fromJson(json['route'] as Map<String, dynamic>),
       currentInstructionIndex: (json['currentInstructionIndex'] as num).toInt(),
@@ -115,8 +112,7 @@ _$NavigationSessionImpl _$$NavigationSessionImplFromJson(
       isRerouting: json['isRerouting'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$NavigationSessionImplToJson(
-        _$NavigationSessionImpl instance) =>
+Map<String, dynamic> _$NavigationSessionToJson(_NavigationSession instance) =>
     <String, dynamic>{
       'id': instance.id,
       'route': instance.route,
@@ -130,8 +126,7 @@ Map<String, dynamic> _$$NavigationSessionImplToJson(
       'isRerouting': instance.isRerouting,
     };
 
-_$SavedRouteImpl _$$SavedRouteImplFromJson(Map<String, dynamic> json) =>
-    _$SavedRouteImpl(
+_SavedRoute _$SavedRouteFromJson(Map<String, dynamic> json) => _SavedRoute(
       id: json['id'] as String,
       name: json['name'] as String,
       route: NavigationRoute.fromJson(json['route'] as Map<String, dynamic>),
@@ -140,7 +135,7 @@ _$SavedRouteImpl _$$SavedRouteImplFromJson(Map<String, dynamic> json) =>
       useCount: (json['useCount'] as num?)?.toInt() ?? 0,
     );
 
-Map<String, dynamic> _$$SavedRouteImplToJson(_$SavedRouteImpl instance) =>
+Map<String, dynamic> _$SavedRouteToJson(_SavedRoute instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

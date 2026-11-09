@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'campus_pathway.dart';
@@ -9,69 +9,47 @@ part of 'campus_pathway.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PathwayCategory {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PathwayCategory);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'PathwayCategory()';
+  }
+}
+
+/// @nodoc
+class $PathwayCategoryCopyWith<$Res> {
+  $PathwayCategoryCopyWith(
+      PathwayCategory _, $Res Function(PathwayCategory) __);
+}
+
+/// Adds pattern-matching-related methods to [PathwayCategory].
+extension PathwayCategoryPatterns on PathwayCategory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainPath value)? mainPath,
@@ -82,986 +60,480 @@ mixin _$PathwayCategory {
     TResult Function(_OpenSpace value)? openSpace,
     TResult Function(_Other value)? other,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath() when mainPath != null:
+        return mainPath(_that);
+      case _Connector() when connector != null:
+        return connector(_that);
+      case _Perimeter() when perimeter != null:
+        return perimeter(_that);
+      case _Emergency() when emergency != null:
+        return emergency(_that);
+      case _Parking() when parking != null:
+        return parking(_that);
+      case _OpenSpace() when openSpace != null:
+        return openSpace(_that);
+      case _Other() when other != null:
+        return other(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainPath value) mainPath,
+    required TResult Function(_Connector value) connector,
+    required TResult Function(_Perimeter value) perimeter,
+    required TResult Function(_Emergency value) emergency,
+    required TResult Function(_Parking value) parking,
+    required TResult Function(_OpenSpace value) openSpace,
+    required TResult Function(_Other value) other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath():
+        return mainPath(_that);
+      case _Connector():
+        return connector(_that);
+      case _Perimeter():
+        return perimeter(_that);
+      case _Emergency():
+        return emergency(_that);
+      case _Parking():
+        return parking(_that);
+      case _OpenSpace():
+        return openSpace(_that);
+      case _Other():
+        return other(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MainPath value)? mainPath,
+    TResult? Function(_Connector value)? connector,
+    TResult? Function(_Perimeter value)? perimeter,
+    TResult? Function(_Emergency value)? emergency,
+    TResult? Function(_Parking value)? parking,
+    TResult? Function(_OpenSpace value)? openSpace,
+    TResult? Function(_Other value)? other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath() when mainPath != null:
+        return mainPath(_that);
+      case _Connector() when connector != null:
+        return connector(_that);
+      case _Perimeter() when perimeter != null:
+        return perimeter(_that);
+      case _Emergency() when emergency != null:
+        return emergency(_that);
+      case _Parking() when parking != null:
+        return parking(_that);
+      case _OpenSpace() when openSpace != null:
+        return openSpace(_that);
+      case _Other() when other != null:
+        return other(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? mainPath,
+    TResult Function()? connector,
+    TResult Function()? perimeter,
+    TResult Function()? emergency,
+    TResult Function()? parking,
+    TResult Function()? openSpace,
+    TResult Function()? other,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath() when mainPath != null:
+        return mainPath();
+      case _Connector() when connector != null:
+        return connector();
+      case _Perimeter() when perimeter != null:
+        return perimeter();
+      case _Emergency() when emergency != null:
+        return emergency();
+      case _Parking() when parking != null:
+        return parking();
+      case _OpenSpace() when openSpace != null:
+        return openSpace();
+      case _Other() when other != null:
+        return other();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() mainPath,
+    required TResult Function() connector,
+    required TResult Function() perimeter,
+    required TResult Function() emergency,
+    required TResult Function() parking,
+    required TResult Function() openSpace,
+    required TResult Function() other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath():
+        return mainPath();
+      case _Connector():
+        return connector();
+      case _Perimeter():
+        return perimeter();
+      case _Emergency():
+        return emergency();
+      case _Parking():
+        return parking();
+      case _OpenSpace():
+        return openSpace();
+      case _Other():
+        return other();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? mainPath,
+    TResult? Function()? connector,
+    TResult? Function()? perimeter,
+    TResult? Function()? emergency,
+    TResult? Function()? parking,
+    TResult? Function()? openSpace,
+    TResult? Function()? other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MainPath() when mainPath != null:
+        return mainPath();
+      case _Connector() when connector != null:
+        return connector();
+      case _Perimeter() when perimeter != null:
+        return perimeter();
+      case _Emergency() when emergency != null:
+        return emergency();
+      case _Parking() when parking != null:
+        return parking();
+      case _OpenSpace() when openSpace != null:
+        return openSpace();
+      case _Other() when other != null:
+        return other();
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $PathwayCategoryCopyWith<$Res> {
-  factory $PathwayCategoryCopyWith(
-          PathwayCategory value, $Res Function(PathwayCategory) then) =
-      _$PathwayCategoryCopyWithImpl<$Res, PathwayCategory>;
-}
 
-/// @nodoc
-class _$PathwayCategoryCopyWithImpl<$Res, $Val extends PathwayCategory>
-    implements $PathwayCategoryCopyWith<$Res> {
-  _$PathwayCategoryCopyWithImpl(this._value, this._then);
+class _MainPath implements PathwayCategory {
+  const _MainPath();
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MainPath);
+  }
 
-/// @nodoc
-abstract class _$$MainPathImplCopyWith<$Res> {
-  factory _$$MainPathImplCopyWith(
-          _$MainPathImpl value, $Res Function(_$MainPathImpl) then) =
-      __$$MainPathImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$MainPathImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$MainPathImpl>
-    implements _$$MainPathImplCopyWith<$Res> {
-  __$$MainPathImplCopyWithImpl(
-      _$MainPathImpl _value, $Res Function(_$MainPathImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$MainPathImpl implements _MainPath {
-  const _$MainPathImpl();
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'PathwayCategory.mainPath()';
   }
+}
+
+/// @nodoc
+
+class _Connector implements PathwayCategory {
+  const _Connector();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MainPathImpl);
+        (other.runtimeType == runtimeType && other is _Connector);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return mainPath();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return mainPath?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (mainPath != null) {
-      return mainPath();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return mainPath(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return mainPath?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (mainPath != null) {
-      return mainPath(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _MainPath implements PathwayCategory {
-  const factory _MainPath() = _$MainPathImpl;
-}
-
-/// @nodoc
-abstract class _$$ConnectorImplCopyWith<$Res> {
-  factory _$$ConnectorImplCopyWith(
-          _$ConnectorImpl value, $Res Function(_$ConnectorImpl) then) =
-      __$$ConnectorImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ConnectorImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$ConnectorImpl>
-    implements _$$ConnectorImplCopyWith<$Res> {
-  __$$ConnectorImplCopyWithImpl(
-      _$ConnectorImpl _value, $Res Function(_$ConnectorImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ConnectorImpl implements _Connector {
-  const _$ConnectorImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.connector()';
   }
+}
+
+/// @nodoc
+
+class _Perimeter implements PathwayCategory {
+  const _Perimeter();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ConnectorImpl);
+        (other.runtimeType == runtimeType && other is _Perimeter);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return connector();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return connector?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (connector != null) {
-      return connector();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return connector(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return connector?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (connector != null) {
-      return connector(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Connector implements PathwayCategory {
-  const factory _Connector() = _$ConnectorImpl;
-}
-
-/// @nodoc
-abstract class _$$PerimeterImplCopyWith<$Res> {
-  factory _$$PerimeterImplCopyWith(
-          _$PerimeterImpl value, $Res Function(_$PerimeterImpl) then) =
-      __$$PerimeterImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$PerimeterImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$PerimeterImpl>
-    implements _$$PerimeterImplCopyWith<$Res> {
-  __$$PerimeterImplCopyWithImpl(
-      _$PerimeterImpl _value, $Res Function(_$PerimeterImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$PerimeterImpl implements _Perimeter {
-  const _$PerimeterImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.perimeter()';
   }
+}
+
+/// @nodoc
+
+class _Emergency implements PathwayCategory {
+  const _Emergency();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PerimeterImpl);
+        (other.runtimeType == runtimeType && other is _Emergency);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return perimeter();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return perimeter?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (perimeter != null) {
-      return perimeter();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return perimeter(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return perimeter?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (perimeter != null) {
-      return perimeter(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Perimeter implements PathwayCategory {
-  const factory _Perimeter() = _$PerimeterImpl;
-}
-
-/// @nodoc
-abstract class _$$EmergencyImplCopyWith<$Res> {
-  factory _$$EmergencyImplCopyWith(
-          _$EmergencyImpl value, $Res Function(_$EmergencyImpl) then) =
-      __$$EmergencyImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$EmergencyImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$EmergencyImpl>
-    implements _$$EmergencyImplCopyWith<$Res> {
-  __$$EmergencyImplCopyWithImpl(
-      _$EmergencyImpl _value, $Res Function(_$EmergencyImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$EmergencyImpl implements _Emergency {
-  const _$EmergencyImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.emergency()';
   }
+}
+
+/// @nodoc
+
+class _Parking implements PathwayCategory {
+  const _Parking();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EmergencyImpl);
+        (other.runtimeType == runtimeType && other is _Parking);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return emergency();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return emergency?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (emergency != null) {
-      return emergency();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return emergency(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return emergency?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (emergency != null) {
-      return emergency(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Emergency implements PathwayCategory {
-  const factory _Emergency() = _$EmergencyImpl;
-}
-
-/// @nodoc
-abstract class _$$ParkingImplCopyWith<$Res> {
-  factory _$$ParkingImplCopyWith(
-          _$ParkingImpl value, $Res Function(_$ParkingImpl) then) =
-      __$$ParkingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ParkingImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$ParkingImpl>
-    implements _$$ParkingImplCopyWith<$Res> {
-  __$$ParkingImplCopyWithImpl(
-      _$ParkingImpl _value, $Res Function(_$ParkingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ParkingImpl implements _Parking {
-  const _$ParkingImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.parking()';
   }
+}
+
+/// @nodoc
+
+class _OpenSpace implements PathwayCategory {
+  const _OpenSpace();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ParkingImpl);
+        (other.runtimeType == runtimeType && other is _OpenSpace);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return parking();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return parking?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (parking != null) {
-      return parking();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return parking(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return parking?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (parking != null) {
-      return parking(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Parking implements PathwayCategory {
-  const factory _Parking() = _$ParkingImpl;
-}
-
-/// @nodoc
-abstract class _$$OpenSpaceImplCopyWith<$Res> {
-  factory _$$OpenSpaceImplCopyWith(
-          _$OpenSpaceImpl value, $Res Function(_$OpenSpaceImpl) then) =
-      __$$OpenSpaceImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OpenSpaceImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$OpenSpaceImpl>
-    implements _$$OpenSpaceImplCopyWith<$Res> {
-  __$$OpenSpaceImplCopyWithImpl(
-      _$OpenSpaceImpl _value, $Res Function(_$OpenSpaceImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OpenSpaceImpl implements _OpenSpace {
-  const _$OpenSpaceImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.openSpace()';
   }
+}
+
+/// @nodoc
+
+class _Other implements PathwayCategory {
+  const _Other();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OpenSpaceImpl);
+        (other.runtimeType == runtimeType && other is _Other);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return openSpace();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return openSpace?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (openSpace != null) {
-      return openSpace();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return openSpace(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return openSpace?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (openSpace != null) {
-      return openSpace(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OpenSpace implements PathwayCategory {
-  const factory _OpenSpace() = _$OpenSpaceImpl;
-}
-
-/// @nodoc
-abstract class _$$OtherImplCopyWith<$Res> {
-  factory _$$OtherImplCopyWith(
-          _$OtherImpl value, $Res Function(_$OtherImpl) then) =
-      __$$OtherImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OtherImplCopyWithImpl<$Res>
-    extends _$PathwayCategoryCopyWithImpl<$Res, _$OtherImpl>
-    implements _$$OtherImplCopyWith<$Res> {
-  __$$OtherImplCopyWithImpl(
-      _$OtherImpl _value, $Res Function(_$OtherImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OtherImpl implements _Other {
-  const _$OtherImpl();
 
   @override
   String toString() {
     return 'PathwayCategory.other()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OtherImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() mainPath,
-    required TResult Function() connector,
-    required TResult Function() perimeter,
-    required TResult Function() emergency,
-    required TResult Function() parking,
-    required TResult Function() openSpace,
-    required TResult Function() other,
-  }) {
-    return other();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? mainPath,
-    TResult? Function()? connector,
-    TResult? Function()? perimeter,
-    TResult? Function()? emergency,
-    TResult? Function()? parking,
-    TResult? Function()? openSpace,
-    TResult? Function()? other,
-  }) {
-    return other?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? mainPath,
-    TResult Function()? connector,
-    TResult Function()? perimeter,
-    TResult Function()? emergency,
-    TResult Function()? parking,
-    TResult Function()? openSpace,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (other != null) {
-      return other();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainPath value) mainPath,
-    required TResult Function(_Connector value) connector,
-    required TResult Function(_Perimeter value) perimeter,
-    required TResult Function(_Emergency value) emergency,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_OpenSpace value) openSpace,
-    required TResult Function(_Other value) other,
-  }) {
-    return other(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainPath value)? mainPath,
-    TResult? Function(_Connector value)? connector,
-    TResult? Function(_Perimeter value)? perimeter,
-    TResult? Function(_Emergency value)? emergency,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_OpenSpace value)? openSpace,
-    TResult? Function(_Other value)? other,
-  }) {
-    return other?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainPath value)? mainPath,
-    TResult Function(_Connector value)? connector,
-    TResult Function(_Perimeter value)? perimeter,
-    TResult Function(_Emergency value)? emergency,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_OpenSpace value)? openSpace,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (other != null) {
-      return other(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Other implements PathwayCategory {
-  const factory _Other() = _$OtherImpl;
-}
-
-CampusPathway _$CampusPathwayFromJson(Map<String, dynamic> json) {
-  return _CampusPathway.fromJson(json);
 }
 
 /// @nodoc
 mixin _$CampusPathway {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get highway => throw _privateConstructorUsedError;
-  String get surface => throw _privateConstructorUsedError;
-  double get width => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get highway;
+  String get surface;
+  double get width;
   @PathwayCategoryConverter()
-  PathwayCategory get category => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get source => throw _privateConstructorUsedError;
-  String get verificationStatus => throw _privateConstructorUsedError;
-  List<LatLng> get coordinates => throw _privateConstructorUsedError;
-  String? get geometryType =>
-      throw _privateConstructorUsedError; // 'LineString' or 'Polygon'
-  int? get capacity => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get additionalTags =>
-      throw _privateConstructorUsedError;
+  PathwayCategory get category;
+  String get description;
+  String get source;
+  String get verificationStatus;
+  List<LatLng> get coordinates;
+  String? get geometryType;
+  int? get capacity;
+  Map<String, dynamic>? get additionalTags;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CampusPathwayCopyWith<CampusPathway> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CampusPathwayCopyWithImpl<CampusPathway>(
+          this as CampusPathway, _$identity);
+
+  /// Serializes this CampusPathway to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as CampusPathway;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CampusPathway &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.highway, _this.highway) ||
+                other.highway == _this.highway) &&
+            (identical(other.surface, _this.surface) ||
+                other.surface == _this.surface) &&
+            (identical(other.width, _this.width) ||
+                other.width == _this.width) &&
+            (identical(other.category, _this.category) ||
+                other.category == _this.category) &&
+            (identical(other.description, _this.description) ||
+                other.description == _this.description) &&
+            (identical(other.source, _this.source) ||
+                other.source == _this.source) &&
+            (identical(other.verificationStatus, _this.verificationStatus) ||
+                other.verificationStatus == _this.verificationStatus) &&
+            const DeepCollectionEquality()
+                .equals(other.coordinates, _this.coordinates) &&
+            (identical(other.geometryType, _this.geometryType) ||
+                other.geometryType == _this.geometryType) &&
+            (identical(other.capacity, _this.capacity) ||
+                other.capacity == _this.capacity) &&
+            const DeepCollectionEquality()
+                .equals(other.additionalTags, _this.additionalTags));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as CampusPathway;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.name,
+        _this.highway,
+        _this.surface,
+        _this.width,
+        _this.category,
+        _this.description,
+        _this.source,
+        _this.verificationStatus,
+        const DeepCollectionEquality().hash(_this.coordinates),
+        _this.geometryType,
+        _this.capacity,
+        const DeepCollectionEquality().hash(_this.additionalTags));
+  }
+
+  @override
+  String toString() {
+    final _this = this as CampusPathway;
+    return 'CampusPathway(id: ${_this.id}, name: ${_this.name}, highway: ${_this.highway}, surface: ${_this.surface}, width: ${_this.width}, category: ${_this.category}, description: ${_this.description}, source: ${_this.source}, verificationStatus: ${_this.verificationStatus}, coordinates: ${_this.coordinates}, geometryType: ${_this.geometryType}, capacity: ${_this.capacity}, additionalTags: ${_this.additionalTags})';
+  }
 }
 
 /// @nodoc
-abstract class $CampusPathwayCopyWith<$Res> {
+abstract mixin class $CampusPathwayCopyWith<$Res> {
   factory $CampusPathwayCopyWith(
-          CampusPathway value, $Res Function(CampusPathway) then) =
-      _$CampusPathwayCopyWithImpl<$Res, CampusPathway>;
+          CampusPathway value, $Res Function(CampusPathway) _then) =
+      _$CampusPathwayCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1082,15 +554,15 @@ abstract class $CampusPathwayCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CampusPathwayCopyWithImpl<$Res, $Val extends CampusPathway>
+class _$CampusPathwayCopyWithImpl<$Res>
     implements $CampusPathwayCopyWith<$Res> {
-  _$CampusPathwayCopyWithImpl(this._value, this._then);
+  _$CampusPathwayCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CampusPathway _self;
+  final $Res Function(CampusPathway) _then;
 
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1108,184 +580,315 @@ class _$CampusPathwayCopyWithImpl<$Res, $Val extends CampusPathway>
     Object? capacity = freezed,
     Object? additionalTags = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(CampusPathway(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       highway: null == highway
-          ? _value.highway
+          ? _self.highway
           : highway // ignore: cast_nullable_to_non_nullable
               as String,
       surface: null == surface
-          ? _value.surface
+          ? _self.surface
           : surface // ignore: cast_nullable_to_non_nullable
               as String,
       width: null == width
-          ? _value.width
+          ? _self.width
           : width // ignore: cast_nullable_to_non_nullable
               as double,
       category: null == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as PathwayCategory,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
       verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
+          ? _self.verificationStatus
           : verificationStatus // ignore: cast_nullable_to_non_nullable
               as String,
       coordinates: null == coordinates
-          ? _value.coordinates
+          ? _self.coordinates
           : coordinates // ignore: cast_nullable_to_non_nullable
               as List<LatLng>,
       geometryType: freezed == geometryType
-          ? _value.geometryType
+          ? _self.geometryType
           : geometryType // ignore: cast_nullable_to_non_nullable
               as String?,
       capacity: freezed == capacity
-          ? _value.capacity
+          ? _self.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
               as int?,
       additionalTags: freezed == additionalTags
-          ? _value.additionalTags
+          ? _self.additionalTags
           : additionalTags // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PathwayCategoryCopyWith<$Res> get category {
-    return $PathwayCategoryCopyWith<$Res>(_value.category, (value) {
-      return _then(_value.copyWith(category: value) as $Val);
+    return $PathwayCategoryCopyWith<$Res>(_self.category, (value) {
+      return _then(_self.copyWith(category: value));
     });
   }
 }
 
-/// @nodoc
-abstract class _$$CampusPathwayImplCopyWith<$Res>
-    implements $CampusPathwayCopyWith<$Res> {
-  factory _$$CampusPathwayImplCopyWith(
-          _$CampusPathwayImpl value, $Res Function(_$CampusPathwayImpl) then) =
-      __$$CampusPathwayImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String highway,
-      String surface,
-      double width,
-      @PathwayCategoryConverter() PathwayCategory category,
-      String description,
-      String source,
-      String verificationStatus,
-      List<LatLng> coordinates,
-      String? geometryType,
-      int? capacity,
-      Map<String, dynamic>? additionalTags});
+/// Adds pattern-matching-related methods to [CampusPathway].
+extension CampusPathwayPatterns on CampusPathway {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  $PathwayCategoryCopyWith<$Res> get category;
-}
-
-/// @nodoc
-class __$$CampusPathwayImplCopyWithImpl<$Res>
-    extends _$CampusPathwayCopyWithImpl<$Res, _$CampusPathwayImpl>
-    implements _$$CampusPathwayImplCopyWith<$Res> {
-  __$$CampusPathwayImplCopyWithImpl(
-      _$CampusPathwayImpl _value, $Res Function(_$CampusPathwayImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? highway = null,
-    Object? surface = null,
-    Object? width = null,
-    Object? category = null,
-    Object? description = null,
-    Object? source = null,
-    Object? verificationStatus = null,
-    Object? coordinates = null,
-    Object? geometryType = freezed,
-    Object? capacity = freezed,
-    Object? additionalTags = freezed,
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CampusPathway value)? $default, {
+    required TResult orElse(),
   }) {
-    return _then(_$CampusPathwayImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      highway: null == highway
-          ? _value.highway
-          : highway // ignore: cast_nullable_to_non_nullable
-              as String,
-      surface: null == surface
-          ? _value.surface
-          : surface // ignore: cast_nullable_to_non_nullable
-              as String,
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as double,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as PathwayCategory,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
-          : verificationStatus // ignore: cast_nullable_to_non_nullable
-              as String,
-      coordinates: null == coordinates
-          ? _value._coordinates
-          : coordinates // ignore: cast_nullable_to_non_nullable
-              as List<LatLng>,
-      geometryType: freezed == geometryType
-          ? _value.geometryType
-          : geometryType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      capacity: freezed == capacity
-          ? _value.capacity
-          : capacity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      additionalTags: freezed == additionalTags
-          ? _value._additionalTags
-          : additionalTags // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CampusPathway value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CampusPathway value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String highway,
+            String surface,
+            double width,
+            @PathwayCategoryConverter() PathwayCategory category,
+            String description,
+            String source,
+            String verificationStatus,
+            List<LatLng> coordinates,
+            String? geometryType,
+            int? capacity,
+            Map<String, dynamic>? additionalTags)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.highway,
+            _that.surface,
+            _that.width,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.verificationStatus,
+            _that.coordinates,
+            _that.geometryType,
+            _that.capacity,
+            _that.additionalTags);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String highway,
+            String surface,
+            double width,
+            @PathwayCategoryConverter() PathwayCategory category,
+            String description,
+            String source,
+            String verificationStatus,
+            List<LatLng> coordinates,
+            String? geometryType,
+            int? capacity,
+            Map<String, dynamic>? additionalTags)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.highway,
+            _that.surface,
+            _that.width,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.verificationStatus,
+            _that.coordinates,
+            _that.geometryType,
+            _that.capacity,
+            _that.additionalTags);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String highway,
+            String surface,
+            double width,
+            @PathwayCategoryConverter() PathwayCategory category,
+            String description,
+            String source,
+            String verificationStatus,
+            List<LatLng> coordinates,
+            String? geometryType,
+            int? capacity,
+            Map<String, dynamic>? additionalTags)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusPathway() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.highway,
+            _that.surface,
+            _that.width,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.verificationStatus,
+            _that.coordinates,
+            _that.geometryType,
+            _that.capacity,
+            _that.additionalTags);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CampusPathwayImpl extends _CampusPathway {
-  const _$CampusPathwayImpl(
+class _CampusPathway extends CampusPathway {
+  const _CampusPathway(
       {required this.id,
       required this.name,
       required this.highway,
@@ -1295,16 +898,15 @@ class _$CampusPathwayImpl extends _CampusPathway {
       required this.description,
       required this.source,
       required this.verificationStatus,
-      required final List<LatLng> coordinates,
+      required List<LatLng> coordinates,
       this.geometryType,
       this.capacity,
-      final Map<String, dynamic>? additionalTags})
+      Map<String, dynamic>? additionalTags})
       : _coordinates = coordinates,
         _additionalTags = additionalTags,
         super._();
-
-  factory _$CampusPathwayImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CampusPathwayImplFromJson(json);
+  factory _CampusPathway.fromJson(Map<String, dynamic> json) =>
+      _$CampusPathwayFromJson(json);
 
   @override
   final String id;
@@ -1335,7 +937,6 @@ class _$CampusPathwayImpl extends _CampusPathway {
 
   @override
   final String? geometryType;
-// 'LineString' or 'Polygon'
   @override
   final int? capacity;
   final Map<String, dynamic>? _additionalTags;
@@ -1348,16 +949,26 @@ class _$CampusPathwayImpl extends _CampusPathway {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CampusPathway(id: $id, name: $name, highway: $highway, surface: $surface, width: $width, category: $category, description: $description, source: $source, verificationStatus: $verificationStatus, coordinates: $coordinates, geometryType: $geometryType, capacity: $capacity, additionalTags: $additionalTags)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CampusPathwayCopyWith<_CampusPathway> get copyWith =>
+      __$CampusPathwayCopyWithImpl<_CampusPathway>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CampusPathwayToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CampusPathwayImpl &&
+            other is _CampusPathway &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.highway, highway) || other.highway == highway) &&
@@ -1371,96 +982,160 @@ class _$CampusPathwayImpl extends _CampusPathway {
             (identical(other.verificationStatus, verificationStatus) ||
                 other.verificationStatus == verificationStatus) &&
             const DeepCollectionEquality()
-                .equals(other._coordinates, _coordinates) &&
+                .equals(other.coordinates, _coordinates) &&
             (identical(other.geometryType, geometryType) ||
                 other.geometryType == geometryType) &&
             (identical(other.capacity, capacity) ||
                 other.capacity == capacity) &&
             const DeepCollectionEquality()
-                .equals(other._additionalTags, _additionalTags));
+                .equals(other.additionalTags, _additionalTags));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      highway,
-      surface,
-      width,
-      category,
-      description,
-      source,
-      verificationStatus,
-      const DeepCollectionEquality().hash(_coordinates),
-      geometryType,
-      capacity,
-      const DeepCollectionEquality().hash(_additionalTags));
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        id,
+        name,
+        highway,
+        surface,
+        width,
+        category,
+        description,
+        source,
+        verificationStatus,
+        const DeepCollectionEquality().hash(_coordinates),
+        geometryType,
+        capacity,
+        const DeepCollectionEquality().hash(_additionalTags));
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'CampusPathway(id: $id, name: $name, highway: $highway, surface: $surface, width: $width, category: $category, description: $description, source: $source, verificationStatus: $verificationStatus, coordinates: $coordinates, geometryType: $geometryType, capacity: $capacity, additionalTags: $additionalTags)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CampusPathwayCopyWith<$Res>
+    implements $CampusPathwayCopyWith<$Res> {
+  factory _$CampusPathwayCopyWith(
+          _CampusPathway value, $Res Function(_CampusPathway) _then) =
+      __$CampusPathwayCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String highway,
+      String surface,
+      double width,
+      @PathwayCategoryConverter() PathwayCategory category,
+      String description,
+      String source,
+      String verificationStatus,
+      List<LatLng> coordinates,
+      String? geometryType,
+      int? capacity,
+      Map<String, dynamic>? additionalTags});
+
+  @override
+  $PathwayCategoryCopyWith<$Res> get category;
+}
+
+/// @nodoc
+class __$CampusPathwayCopyWithImpl<$Res>
+    implements _$CampusPathwayCopyWith<$Res> {
+  __$CampusPathwayCopyWithImpl(this._self, this._then);
+
+  final _CampusPathway _self;
+  final $Res Function(_CampusPathway) _then;
+
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$CampusPathwayImplCopyWith<_$CampusPathwayImpl> get copyWith =>
-      __$$CampusPathwayImplCopyWithImpl<_$CampusPathwayImpl>(this, _$identity);
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? highway = null,
+    Object? surface = null,
+    Object? width = null,
+    Object? category = null,
+    Object? description = null,
+    Object? source = null,
+    Object? verificationStatus = null,
+    Object? coordinates = null,
+    Object? geometryType = freezed,
+    Object? capacity = freezed,
+    Object? additionalTags = freezed,
+  }) {
+    return _then(_CampusPathway(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      highway: null == highway
+          ? _self.highway
+          : highway // ignore: cast_nullable_to_non_nullable
+              as String,
+      surface: null == surface
+          ? _self.surface
+          : surface // ignore: cast_nullable_to_non_nullable
+              as String,
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as PathwayCategory,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      verificationStatus: null == verificationStatus
+          ? _self.verificationStatus
+          : verificationStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+      coordinates: null == coordinates
+          ? _self._coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as List<LatLng>,
+      geometryType: freezed == geometryType
+          ? _self.geometryType
+          : geometryType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      capacity: freezed == capacity
+          ? _self.capacity
+          : capacity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      additionalTags: freezed == additionalTags
+          ? _self._additionalTags
+          : additionalTags // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 
+  /// Create a copy of CampusPathway
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  Map<String, dynamic> toJson() {
-    return _$$CampusPathwayImplToJson(
-      this,
-    );
+  @pragma('vm:prefer-inline')
+  $PathwayCategoryCopyWith<$Res> get category {
+    return $PathwayCategoryCopyWith<$Res>(_self.category, (value) {
+      return _then(_self.copyWith(category: value));
+    });
   }
 }
 
-abstract class _CampusPathway extends CampusPathway {
-  const factory _CampusPathway(
-      {required final String id,
-      required final String name,
-      required final String highway,
-      required final String surface,
-      required final double width,
-      @PathwayCategoryConverter() required final PathwayCategory category,
-      required final String description,
-      required final String source,
-      required final String verificationStatus,
-      required final List<LatLng> coordinates,
-      final String? geometryType,
-      final int? capacity,
-      final Map<String, dynamic>? additionalTags}) = _$CampusPathwayImpl;
-  const _CampusPathway._() : super._();
-
-  factory _CampusPathway.fromJson(Map<String, dynamic> json) =
-      _$CampusPathwayImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get highway;
-  @override
-  String get surface;
-  @override
-  double get width;
-  @override
-  @PathwayCategoryConverter()
-  PathwayCategory get category;
-  @override
-  String get description;
-  @override
-  String get source;
-  @override
-  String get verificationStatus;
-  @override
-  List<LatLng> get coordinates;
-  @override
-  String? get geometryType;
-  @override // 'LineString' or 'Polygon'
-  int? get capacity;
-  @override
-  Map<String, dynamic>? get additionalTags;
-  @override
-  @JsonKey(ignore: true)
-  _$$CampusPathwayImplCopyWith<_$CampusPathwayImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

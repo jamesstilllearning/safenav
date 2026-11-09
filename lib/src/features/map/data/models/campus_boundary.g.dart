@@ -6,8 +6,8 @@ part of 'campus_boundary.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CampusBoundaryImpl _$$CampusBoundaryImplFromJson(Map<String, dynamic> json) =>
-    _$CampusBoundaryImpl(
+_CampusBoundary _$CampusBoundaryFromJson(Map<String, dynamic> json) =>
+    _CampusBoundary(
       id: json['id'] as String,
       name: json['name'] as String,
       shortName: json['shortName'] as String,
@@ -30,8 +30,7 @@ _$CampusBoundaryImpl _$$CampusBoundaryImplFromJson(Map<String, dynamic> json) =>
       additionalTags: json['additionalTags'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$CampusBoundaryImplToJson(
-        _$CampusBoundaryImpl instance) =>
+Map<String, dynamic> _$CampusBoundaryToJson(_CampusBoundary instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

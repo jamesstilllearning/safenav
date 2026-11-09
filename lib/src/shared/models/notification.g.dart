@@ -6,8 +6,8 @@ part of 'notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotificationImpl _$$NotificationImplFromJson(Map<String, dynamic> json) =>
-    _$NotificationImpl(
+_Notification _$NotificationFromJson(Map<String, dynamic> json) =>
+    _Notification(
       id: json['id'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
@@ -56,7 +56,7 @@ _$NotificationImpl _$$NotificationImplFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) =>
+Map<String, dynamic> _$NotificationToJson(_Notification instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
@@ -115,9 +115,9 @@ const _$NotificationStatusEnumMap = {
   NotificationStatus.failed: 'failed',
 };
 
-_$NotificationPreferencesImpl _$$NotificationPreferencesImplFromJson(
+_NotificationPreferences _$NotificationPreferencesFromJson(
         Map<String, dynamic> json) =>
-    _$NotificationPreferencesImpl(
+    _NotificationPreferences(
       userId: json['userId'] as String,
       pushEnabled: json['pushEnabled'] as bool? ?? true,
       emergencyAlertsEnabled: json['emergencyAlertsEnabled'] as bool? ?? true,
@@ -139,8 +139,8 @@ _$NotificationPreferencesImpl _$$NotificationPreferencesImplFromJson(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$NotificationPreferencesImplToJson(
-        _$NotificationPreferencesImpl instance) =>
+Map<String, dynamic> _$NotificationPreferencesToJson(
+        _NotificationPreferences instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'pushEnabled': instance.pushEnabled,

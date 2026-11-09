@@ -6,8 +6,8 @@ part of 'evacuation_graph.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EvacuationEdgeImpl _$$EvacuationEdgeImplFromJson(Map<String, dynamic> json) =>
-    _$EvacuationEdgeImpl(
+_EvacuationEdge _$EvacuationEdgeFromJson(Map<String, dynamic> json) =>
+    _EvacuationEdge(
       id: json['id'] as String,
       fromNodeId: json['fromNodeId'] as String,
       toNodeId: json['toNodeId'] as String,
@@ -29,8 +29,7 @@ _$EvacuationEdgeImpl _$$EvacuationEdgeImplFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$EvacuationEdgeImplToJson(
-        _$EvacuationEdgeImpl instance) =>
+Map<String, dynamic> _$EvacuationEdgeToJson(_EvacuationEdge instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromNodeId': instance.fromNodeId,
@@ -48,8 +47,8 @@ Map<String, dynamic> _$$EvacuationEdgeImplToJson(
       'metadata': instance.metadata,
     };
 
-_$EvacuationNodeImpl _$$EvacuationNodeImplFromJson(Map<String, dynamic> json) =>
-    _$EvacuationNodeImpl(
+_EvacuationNode _$EvacuationNodeFromJson(Map<String, dynamic> json) =>
+    _EvacuationNode(
       id: json['id'] as String,
       label: json['label'] as String,
       type: $enumDecode(_$EvacuationNodeTypeEnumMap, json['type']),
@@ -78,8 +77,7 @@ _$EvacuationNodeImpl _$$EvacuationNodeImplFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$EvacuationNodeImplToJson(
-        _$EvacuationNodeImpl instance) =>
+Map<String, dynamic> _$EvacuationNodeToJson(_EvacuationNode instance) =>
     <String, dynamic>{
       'id': instance.id,
       'label': instance.label,
@@ -113,9 +111,8 @@ const _$EvacuationNodeTypeEnumMap = {
   EvacuationNodeType.other: 'other',
 };
 
-_$EvacuationGraphImpl _$$EvacuationGraphImplFromJson(
-        Map<String, dynamic> json) =>
-    _$EvacuationGraphImpl(
+_EvacuationGraph _$EvacuationGraphFromJson(Map<String, dynamic> json) =>
+    _EvacuationGraph(
       id: json['id'] as String,
       name: json['name'] as String,
       buildingId: json['buildingId'] as String?,
@@ -144,8 +141,7 @@ _$EvacuationGraphImpl _$$EvacuationGraphImplFromJson(
       metadata: json['metadata'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$EvacuationGraphImplToJson(
-        _$EvacuationGraphImpl instance) =>
+Map<String, dynamic> _$EvacuationGraphToJson(_EvacuationGraph instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'campus_building.dart';
@@ -9,79 +9,47 @@ part of 'campus_building.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BuildingCategory {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is BuildingCategory);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'BuildingCategory()';
+  }
+}
+
+/// @nodoc
+class $BuildingCategoryCopyWith<$Res> {
+  $BuildingCategoryCopyWith(
+      BuildingCategory _, $Res Function(BuildingCategory) __);
+}
+
+/// Adds pattern-matching-related methods to [BuildingCategory].
+extension BuildingCategoryPatterns on BuildingCategory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Academic value)? academic,
@@ -94,1359 +62,562 @@ mixin _$BuildingCategory {
     TResult Function(_Parking value)? parking,
     TResult Function(_Other value)? other,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic() when academic != null:
+        return academic(_that);
+      case _Administrative() when administrative != null:
+        return administrative(_that);
+      case _Library() when library != null:
+        return library(_that);
+      case _Laboratory() when laboratory != null:
+        return laboratory(_that);
+      case _Gymnasium() when gymnasium != null:
+        return gymnasium(_that);
+      case _Cafeteria() when cafeteria != null:
+        return cafeteria(_that);
+      case _Dormitory() when dormitory != null:
+        return dormitory(_that);
+      case _Parking() when parking != null:
+        return parking(_that);
+      case _Other() when other != null:
+        return other(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Academic value) academic,
+    required TResult Function(_Administrative value) administrative,
+    required TResult Function(_Library value) library,
+    required TResult Function(_Laboratory value) laboratory,
+    required TResult Function(_Gymnasium value) gymnasium,
+    required TResult Function(_Cafeteria value) cafeteria,
+    required TResult Function(_Dormitory value) dormitory,
+    required TResult Function(_Parking value) parking,
+    required TResult Function(_Other value) other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic():
+        return academic(_that);
+      case _Administrative():
+        return administrative(_that);
+      case _Library():
+        return library(_that);
+      case _Laboratory():
+        return laboratory(_that);
+      case _Gymnasium():
+        return gymnasium(_that);
+      case _Cafeteria():
+        return cafeteria(_that);
+      case _Dormitory():
+        return dormitory(_that);
+      case _Parking():
+        return parking(_that);
+      case _Other():
+        return other(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Academic value)? academic,
+    TResult? Function(_Administrative value)? administrative,
+    TResult? Function(_Library value)? library,
+    TResult? Function(_Laboratory value)? laboratory,
+    TResult? Function(_Gymnasium value)? gymnasium,
+    TResult? Function(_Cafeteria value)? cafeteria,
+    TResult? Function(_Dormitory value)? dormitory,
+    TResult? Function(_Parking value)? parking,
+    TResult? Function(_Other value)? other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic() when academic != null:
+        return academic(_that);
+      case _Administrative() when administrative != null:
+        return administrative(_that);
+      case _Library() when library != null:
+        return library(_that);
+      case _Laboratory() when laboratory != null:
+        return laboratory(_that);
+      case _Gymnasium() when gymnasium != null:
+        return gymnasium(_that);
+      case _Cafeteria() when cafeteria != null:
+        return cafeteria(_that);
+      case _Dormitory() when dormitory != null:
+        return dormitory(_that);
+      case _Parking() when parking != null:
+        return parking(_that);
+      case _Other() when other != null:
+        return other(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? academic,
+    TResult Function()? administrative,
+    TResult Function()? library,
+    TResult Function()? laboratory,
+    TResult Function()? gymnasium,
+    TResult Function()? cafeteria,
+    TResult Function()? dormitory,
+    TResult Function()? parking,
+    TResult Function()? other,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic() when academic != null:
+        return academic();
+      case _Administrative() when administrative != null:
+        return administrative();
+      case _Library() when library != null:
+        return library();
+      case _Laboratory() when laboratory != null:
+        return laboratory();
+      case _Gymnasium() when gymnasium != null:
+        return gymnasium();
+      case _Cafeteria() when cafeteria != null:
+        return cafeteria();
+      case _Dormitory() when dormitory != null:
+        return dormitory();
+      case _Parking() when parking != null:
+        return parking();
+      case _Other() when other != null:
+        return other();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() academic,
+    required TResult Function() administrative,
+    required TResult Function() library,
+    required TResult Function() laboratory,
+    required TResult Function() gymnasium,
+    required TResult Function() cafeteria,
+    required TResult Function() dormitory,
+    required TResult Function() parking,
+    required TResult Function() other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic():
+        return academic();
+      case _Administrative():
+        return administrative();
+      case _Library():
+        return library();
+      case _Laboratory():
+        return laboratory();
+      case _Gymnasium():
+        return gymnasium();
+      case _Cafeteria():
+        return cafeteria();
+      case _Dormitory():
+        return dormitory();
+      case _Parking():
+        return parking();
+      case _Other():
+        return other();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? academic,
+    TResult? Function()? administrative,
+    TResult? Function()? library,
+    TResult? Function()? laboratory,
+    TResult? Function()? gymnasium,
+    TResult? Function()? cafeteria,
+    TResult? Function()? dormitory,
+    TResult? Function()? parking,
+    TResult? Function()? other,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Academic() when academic != null:
+        return academic();
+      case _Administrative() when administrative != null:
+        return administrative();
+      case _Library() when library != null:
+        return library();
+      case _Laboratory() when laboratory != null:
+        return laboratory();
+      case _Gymnasium() when gymnasium != null:
+        return gymnasium();
+      case _Cafeteria() when cafeteria != null:
+        return cafeteria();
+      case _Dormitory() when dormitory != null:
+        return dormitory();
+      case _Parking() when parking != null:
+        return parking();
+      case _Other() when other != null:
+        return other();
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
-abstract class $BuildingCategoryCopyWith<$Res> {
-  factory $BuildingCategoryCopyWith(
-          BuildingCategory value, $Res Function(BuildingCategory) then) =
-      _$BuildingCategoryCopyWithImpl<$Res, BuildingCategory>;
-}
 
-/// @nodoc
-class _$BuildingCategoryCopyWithImpl<$Res, $Val extends BuildingCategory>
-    implements $BuildingCategoryCopyWith<$Res> {
-  _$BuildingCategoryCopyWithImpl(this._value, this._then);
+class _Academic implements BuildingCategory {
+  const _Academic();
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Academic);
+  }
 
-/// @nodoc
-abstract class _$$AcademicImplCopyWith<$Res> {
-  factory _$$AcademicImplCopyWith(
-          _$AcademicImpl value, $Res Function(_$AcademicImpl) then) =
-      __$$AcademicImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AcademicImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$AcademicImpl>
-    implements _$$AcademicImplCopyWith<$Res> {
-  __$$AcademicImplCopyWithImpl(
-      _$AcademicImpl _value, $Res Function(_$AcademicImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AcademicImpl implements _Academic {
-  const _$AcademicImpl();
+  @override
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'BuildingCategory.academic()';
   }
+}
+
+/// @nodoc
+
+class _Administrative implements BuildingCategory {
+  const _Administrative();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AcademicImpl);
+        (other.runtimeType == runtimeType && other is _Administrative);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return academic();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return academic?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (academic != null) {
-      return academic();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return academic(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return academic?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (academic != null) {
-      return academic(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Academic implements BuildingCategory {
-  const factory _Academic() = _$AcademicImpl;
-}
-
-/// @nodoc
-abstract class _$$AdministrativeImplCopyWith<$Res> {
-  factory _$$AdministrativeImplCopyWith(_$AdministrativeImpl value,
-          $Res Function(_$AdministrativeImpl) then) =
-      __$$AdministrativeImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AdministrativeImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$AdministrativeImpl>
-    implements _$$AdministrativeImplCopyWith<$Res> {
-  __$$AdministrativeImplCopyWithImpl(
-      _$AdministrativeImpl _value, $Res Function(_$AdministrativeImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AdministrativeImpl implements _Administrative {
-  const _$AdministrativeImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.administrative()';
   }
+}
+
+/// @nodoc
+
+class _Library implements BuildingCategory {
+  const _Library();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AdministrativeImpl);
+        (other.runtimeType == runtimeType && other is _Library);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return administrative();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return administrative?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (administrative != null) {
-      return administrative();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return administrative(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return administrative?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (administrative != null) {
-      return administrative(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Administrative implements BuildingCategory {
-  const factory _Administrative() = _$AdministrativeImpl;
-}
-
-/// @nodoc
-abstract class _$$LibraryImplCopyWith<$Res> {
-  factory _$$LibraryImplCopyWith(
-          _$LibraryImpl value, $Res Function(_$LibraryImpl) then) =
-      __$$LibraryImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LibraryImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$LibraryImpl>
-    implements _$$LibraryImplCopyWith<$Res> {
-  __$$LibraryImplCopyWithImpl(
-      _$LibraryImpl _value, $Res Function(_$LibraryImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LibraryImpl implements _Library {
-  const _$LibraryImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.library()';
   }
+}
+
+/// @nodoc
+
+class _Laboratory implements BuildingCategory {
+  const _Laboratory();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LibraryImpl);
+        (other.runtimeType == runtimeType && other is _Laboratory);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return library();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return library?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (library != null) {
-      return library();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return library(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return library?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (library != null) {
-      return library(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Library implements BuildingCategory {
-  const factory _Library() = _$LibraryImpl;
-}
-
-/// @nodoc
-abstract class _$$LaboratoryImplCopyWith<$Res> {
-  factory _$$LaboratoryImplCopyWith(
-          _$LaboratoryImpl value, $Res Function(_$LaboratoryImpl) then) =
-      __$$LaboratoryImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LaboratoryImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$LaboratoryImpl>
-    implements _$$LaboratoryImplCopyWith<$Res> {
-  __$$LaboratoryImplCopyWithImpl(
-      _$LaboratoryImpl _value, $Res Function(_$LaboratoryImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LaboratoryImpl implements _Laboratory {
-  const _$LaboratoryImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.laboratory()';
   }
+}
+
+/// @nodoc
+
+class _Gymnasium implements BuildingCategory {
+  const _Gymnasium();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LaboratoryImpl);
+        (other.runtimeType == runtimeType && other is _Gymnasium);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return laboratory();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return laboratory?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (laboratory != null) {
-      return laboratory();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return laboratory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return laboratory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (laboratory != null) {
-      return laboratory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Laboratory implements BuildingCategory {
-  const factory _Laboratory() = _$LaboratoryImpl;
-}
-
-/// @nodoc
-abstract class _$$GymnasiumImplCopyWith<$Res> {
-  factory _$$GymnasiumImplCopyWith(
-          _$GymnasiumImpl value, $Res Function(_$GymnasiumImpl) then) =
-      __$$GymnasiumImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GymnasiumImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$GymnasiumImpl>
-    implements _$$GymnasiumImplCopyWith<$Res> {
-  __$$GymnasiumImplCopyWithImpl(
-      _$GymnasiumImpl _value, $Res Function(_$GymnasiumImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GymnasiumImpl implements _Gymnasium {
-  const _$GymnasiumImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.gymnasium()';
   }
+}
+
+/// @nodoc
+
+class _Cafeteria implements BuildingCategory {
+  const _Cafeteria();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GymnasiumImpl);
+        (other.runtimeType == runtimeType && other is _Cafeteria);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return gymnasium();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return gymnasium?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (gymnasium != null) {
-      return gymnasium();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return gymnasium(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return gymnasium?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (gymnasium != null) {
-      return gymnasium(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Gymnasium implements BuildingCategory {
-  const factory _Gymnasium() = _$GymnasiumImpl;
-}
-
-/// @nodoc
-abstract class _$$CafeteriaImplCopyWith<$Res> {
-  factory _$$CafeteriaImplCopyWith(
-          _$CafeteriaImpl value, $Res Function(_$CafeteriaImpl) then) =
-      __$$CafeteriaImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CafeteriaImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$CafeteriaImpl>
-    implements _$$CafeteriaImplCopyWith<$Res> {
-  __$$CafeteriaImplCopyWithImpl(
-      _$CafeteriaImpl _value, $Res Function(_$CafeteriaImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CafeteriaImpl implements _Cafeteria {
-  const _$CafeteriaImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.cafeteria()';
   }
+}
+
+/// @nodoc
+
+class _Dormitory implements BuildingCategory {
+  const _Dormitory();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CafeteriaImpl);
+        (other.runtimeType == runtimeType && other is _Dormitory);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return cafeteria();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return cafeteria?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (cafeteria != null) {
-      return cafeteria();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return cafeteria(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return cafeteria?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (cafeteria != null) {
-      return cafeteria(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Cafeteria implements BuildingCategory {
-  const factory _Cafeteria() = _$CafeteriaImpl;
-}
-
-/// @nodoc
-abstract class _$$DormitoryImplCopyWith<$Res> {
-  factory _$$DormitoryImplCopyWith(
-          _$DormitoryImpl value, $Res Function(_$DormitoryImpl) then) =
-      __$$DormitoryImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DormitoryImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$DormitoryImpl>
-    implements _$$DormitoryImplCopyWith<$Res> {
-  __$$DormitoryImplCopyWithImpl(
-      _$DormitoryImpl _value, $Res Function(_$DormitoryImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DormitoryImpl implements _Dormitory {
-  const _$DormitoryImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.dormitory()';
   }
+}
+
+/// @nodoc
+
+class _Parking implements BuildingCategory {
+  const _Parking();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DormitoryImpl);
+        (other.runtimeType == runtimeType && other is _Parking);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return dormitory();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return dormitory?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (dormitory != null) {
-      return dormitory();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return dormitory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return dormitory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (dormitory != null) {
-      return dormitory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Dormitory implements BuildingCategory {
-  const factory _Dormitory() = _$DormitoryImpl;
-}
-
-/// @nodoc
-abstract class _$$ParkingImplCopyWith<$Res> {
-  factory _$$ParkingImplCopyWith(
-          _$ParkingImpl value, $Res Function(_$ParkingImpl) then) =
-      __$$ParkingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ParkingImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$ParkingImpl>
-    implements _$$ParkingImplCopyWith<$Res> {
-  __$$ParkingImplCopyWithImpl(
-      _$ParkingImpl _value, $Res Function(_$ParkingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ParkingImpl implements _Parking {
-  const _$ParkingImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.parking()';
   }
+}
+
+/// @nodoc
+
+class _Other implements BuildingCategory {
+  const _Other();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ParkingImpl);
+        (other.runtimeType == runtimeType && other is _Other);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return parking();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return parking?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (parking != null) {
-      return parking();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return parking(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return parking?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (parking != null) {
-      return parking(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Parking implements BuildingCategory {
-  const factory _Parking() = _$ParkingImpl;
-}
-
-/// @nodoc
-abstract class _$$OtherImplCopyWith<$Res> {
-  factory _$$OtherImplCopyWith(
-          _$OtherImpl value, $Res Function(_$OtherImpl) then) =
-      __$$OtherImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$OtherImplCopyWithImpl<$Res>
-    extends _$BuildingCategoryCopyWithImpl<$Res, _$OtherImpl>
-    implements _$$OtherImplCopyWith<$Res> {
-  __$$OtherImplCopyWithImpl(
-      _$OtherImpl _value, $Res Function(_$OtherImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$OtherImpl implements _Other {
-  const _$OtherImpl();
 
   @override
   String toString() {
     return 'BuildingCategory.other()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OtherImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() academic,
-    required TResult Function() administrative,
-    required TResult Function() library,
-    required TResult Function() laboratory,
-    required TResult Function() gymnasium,
-    required TResult Function() cafeteria,
-    required TResult Function() dormitory,
-    required TResult Function() parking,
-    required TResult Function() other,
-  }) {
-    return other();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? academic,
-    TResult? Function()? administrative,
-    TResult? Function()? library,
-    TResult? Function()? laboratory,
-    TResult? Function()? gymnasium,
-    TResult? Function()? cafeteria,
-    TResult? Function()? dormitory,
-    TResult? Function()? parking,
-    TResult? Function()? other,
-  }) {
-    return other?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? academic,
-    TResult Function()? administrative,
-    TResult Function()? library,
-    TResult Function()? laboratory,
-    TResult Function()? gymnasium,
-    TResult Function()? cafeteria,
-    TResult Function()? dormitory,
-    TResult Function()? parking,
-    TResult Function()? other,
-    required TResult orElse(),
-  }) {
-    if (other != null) {
-      return other();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Academic value) academic,
-    required TResult Function(_Administrative value) administrative,
-    required TResult Function(_Library value) library,
-    required TResult Function(_Laboratory value) laboratory,
-    required TResult Function(_Gymnasium value) gymnasium,
-    required TResult Function(_Cafeteria value) cafeteria,
-    required TResult Function(_Dormitory value) dormitory,
-    required TResult Function(_Parking value) parking,
-    required TResult Function(_Other value) other,
-  }) {
-    return other(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Academic value)? academic,
-    TResult? Function(_Administrative value)? administrative,
-    TResult? Function(_Library value)? library,
-    TResult? Function(_Laboratory value)? laboratory,
-    TResult? Function(_Gymnasium value)? gymnasium,
-    TResult? Function(_Cafeteria value)? cafeteria,
-    TResult? Function(_Dormitory value)? dormitory,
-    TResult? Function(_Parking value)? parking,
-    TResult? Function(_Other value)? other,
-  }) {
-    return other?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Academic value)? academic,
-    TResult Function(_Administrative value)? administrative,
-    TResult Function(_Library value)? library,
-    TResult Function(_Laboratory value)? laboratory,
-    TResult Function(_Gymnasium value)? gymnasium,
-    TResult Function(_Cafeteria value)? cafeteria,
-    TResult Function(_Dormitory value)? dormitory,
-    TResult Function(_Parking value)? parking,
-    TResult Function(_Other value)? other,
-    required TResult orElse(),
-  }) {
-    if (other != null) {
-      return other(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Other implements BuildingCategory {
-  const factory _Other() = _$OtherImpl;
-}
-
-CampusBuilding _$CampusBuildingFromJson(Map<String, dynamic> json) {
-  return _CampusBuilding.fromJson(json);
 }
 
 /// @nodoc
 mixin _$CampusBuilding {
-  String get id => throw _privateConstructorUsedError;
-  int get osmWayId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get buildingType => throw _privateConstructorUsedError;
+  String get id;
+  int get osmWayId;
+  String get name;
+  String get buildingType;
   @BuildingCategoryConverter()
-  BuildingCategory get category => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get source => throw _privateConstructorUsedError;
-  String get sourceDate => throw _privateConstructorUsedError;
-  String get verificationStatus => throw _privateConstructorUsedError;
-  List<LatLng> get polygon => throw _privateConstructorUsedError;
-  LatLng get centroid => throw _privateConstructorUsedError;
-  double? get areaSqMeters => throw _privateConstructorUsedError;
-  int? get floors => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get additionalTags =>
-      throw _privateConstructorUsedError;
+  BuildingCategory get category;
+  String get description;
+  String get source;
+  String get sourceDate;
+  String get verificationStatus;
+  List<LatLng> get polygon;
+  LatLng get centroid;
+  double? get areaSqMeters;
+  int? get floors;
+  String? get address;
+  Map<String, dynamic>? get additionalTags;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CampusBuildingCopyWith<CampusBuilding> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CampusBuildingCopyWithImpl<CampusBuilding>(
+          this as CampusBuilding, _$identity);
+
+  /// Serializes this CampusBuilding to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    final _this = this as CampusBuilding;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CampusBuilding &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.osmWayId, _this.osmWayId) ||
+                other.osmWayId == _this.osmWayId) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.buildingType, _this.buildingType) ||
+                other.buildingType == _this.buildingType) &&
+            (identical(other.category, _this.category) ||
+                other.category == _this.category) &&
+            (identical(other.description, _this.description) ||
+                other.description == _this.description) &&
+            (identical(other.source, _this.source) ||
+                other.source == _this.source) &&
+            (identical(other.sourceDate, _this.sourceDate) ||
+                other.sourceDate == _this.sourceDate) &&
+            (identical(other.verificationStatus, _this.verificationStatus) ||
+                other.verificationStatus == _this.verificationStatus) &&
+            const DeepCollectionEquality()
+                .equals(other.polygon, _this.polygon) &&
+            (identical(other.centroid, _this.centroid) ||
+                other.centroid == _this.centroid) &&
+            (identical(other.areaSqMeters, _this.areaSqMeters) ||
+                other.areaSqMeters == _this.areaSqMeters) &&
+            (identical(other.floors, _this.floors) ||
+                other.floors == _this.floors) &&
+            (identical(other.address, _this.address) ||
+                other.address == _this.address) &&
+            const DeepCollectionEquality()
+                .equals(other.additionalTags, _this.additionalTags));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as CampusBuilding;
+    return Object.hash(
+        runtimeType,
+        _this.id,
+        _this.osmWayId,
+        _this.name,
+        _this.buildingType,
+        _this.category,
+        _this.description,
+        _this.source,
+        _this.sourceDate,
+        _this.verificationStatus,
+        const DeepCollectionEquality().hash(_this.polygon),
+        _this.centroid,
+        _this.areaSqMeters,
+        _this.floors,
+        _this.address,
+        const DeepCollectionEquality().hash(_this.additionalTags));
+  }
+
+  @override
+  String toString() {
+    final _this = this as CampusBuilding;
+    return 'CampusBuilding(id: ${_this.id}, osmWayId: ${_this.osmWayId}, name: ${_this.name}, buildingType: ${_this.buildingType}, category: ${_this.category}, description: ${_this.description}, source: ${_this.source}, sourceDate: ${_this.sourceDate}, verificationStatus: ${_this.verificationStatus}, polygon: ${_this.polygon}, centroid: ${_this.centroid}, areaSqMeters: ${_this.areaSqMeters}, floors: ${_this.floors}, address: ${_this.address}, additionalTags: ${_this.additionalTags})';
+  }
 }
 
 /// @nodoc
-abstract class $CampusBuildingCopyWith<$Res> {
+abstract mixin class $CampusBuildingCopyWith<$Res> {
   factory $CampusBuildingCopyWith(
-          CampusBuilding value, $Res Function(CampusBuilding) then) =
-      _$CampusBuildingCopyWithImpl<$Res, CampusBuilding>;
+          CampusBuilding value, $Res Function(CampusBuilding) _then) =
+      _$CampusBuildingCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1469,15 +640,15 @@ abstract class $CampusBuildingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CampusBuildingCopyWithImpl<$Res, $Val extends CampusBuilding>
+class _$CampusBuildingCopyWithImpl<$Res>
     implements $CampusBuildingCopyWith<$Res> {
-  _$CampusBuildingCopyWithImpl(this._value, this._then);
+  _$CampusBuildingCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CampusBuilding _self;
+  final $Res Function(CampusBuilding) _then;
 
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1497,204 +668,335 @@ class _$CampusBuildingCopyWithImpl<$Res, $Val extends CampusBuilding>
     Object? address = freezed,
     Object? additionalTags = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(CampusBuilding(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       osmWayId: null == osmWayId
-          ? _value.osmWayId
+          ? _self.osmWayId
           : osmWayId // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       buildingType: null == buildingType
-          ? _value.buildingType
+          ? _self.buildingType
           : buildingType // ignore: cast_nullable_to_non_nullable
               as String,
       category: null == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as BuildingCategory,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
       sourceDate: null == sourceDate
-          ? _value.sourceDate
+          ? _self.sourceDate
           : sourceDate // ignore: cast_nullable_to_non_nullable
               as String,
       verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
+          ? _self.verificationStatus
           : verificationStatus // ignore: cast_nullable_to_non_nullable
               as String,
       polygon: null == polygon
-          ? _value.polygon
+          ? _self.polygon
           : polygon // ignore: cast_nullable_to_non_nullable
               as List<LatLng>,
       centroid: null == centroid
-          ? _value.centroid
+          ? _self.centroid
           : centroid // ignore: cast_nullable_to_non_nullable
               as LatLng,
       areaSqMeters: freezed == areaSqMeters
-          ? _value.areaSqMeters
+          ? _self.areaSqMeters
           : areaSqMeters // ignore: cast_nullable_to_non_nullable
               as double?,
       floors: freezed == floors
-          ? _value.floors
+          ? _self.floors
           : floors // ignore: cast_nullable_to_non_nullable
               as int?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       additionalTags: freezed == additionalTags
-          ? _value.additionalTags
+          ? _self.additionalTags
           : additionalTags // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BuildingCategoryCopyWith<$Res> get category {
-    return $BuildingCategoryCopyWith<$Res>(_value.category, (value) {
-      return _then(_value.copyWith(category: value) as $Val);
+    return $BuildingCategoryCopyWith<$Res>(_self.category, (value) {
+      return _then(_self.copyWith(category: value));
     });
   }
 }
 
-/// @nodoc
-abstract class _$$CampusBuildingImplCopyWith<$Res>
-    implements $CampusBuildingCopyWith<$Res> {
-  factory _$$CampusBuildingImplCopyWith(_$CampusBuildingImpl value,
-          $Res Function(_$CampusBuildingImpl) then) =
-      __$$CampusBuildingImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      int osmWayId,
-      String name,
-      String buildingType,
-      @BuildingCategoryConverter() BuildingCategory category,
-      String description,
-      String source,
-      String sourceDate,
-      String verificationStatus,
-      List<LatLng> polygon,
-      LatLng centroid,
-      double? areaSqMeters,
-      int? floors,
-      String? address,
-      Map<String, dynamic>? additionalTags});
+/// Adds pattern-matching-related methods to [CampusBuilding].
+extension CampusBuildingPatterns on CampusBuilding {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  $BuildingCategoryCopyWith<$Res> get category;
-}
-
-/// @nodoc
-class __$$CampusBuildingImplCopyWithImpl<$Res>
-    extends _$CampusBuildingCopyWithImpl<$Res, _$CampusBuildingImpl>
-    implements _$$CampusBuildingImplCopyWith<$Res> {
-  __$$CampusBuildingImplCopyWithImpl(
-      _$CampusBuildingImpl _value, $Res Function(_$CampusBuildingImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? osmWayId = null,
-    Object? name = null,
-    Object? buildingType = null,
-    Object? category = null,
-    Object? description = null,
-    Object? source = null,
-    Object? sourceDate = null,
-    Object? verificationStatus = null,
-    Object? polygon = null,
-    Object? centroid = null,
-    Object? areaSqMeters = freezed,
-    Object? floors = freezed,
-    Object? address = freezed,
-    Object? additionalTags = freezed,
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CampusBuilding value)? $default, {
+    required TResult orElse(),
   }) {
-    return _then(_$CampusBuildingImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      osmWayId: null == osmWayId
-          ? _value.osmWayId
-          : osmWayId // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      buildingType: null == buildingType
-          ? _value.buildingType
-          : buildingType // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as BuildingCategory,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceDate: null == sourceDate
-          ? _value.sourceDate
-          : sourceDate // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationStatus: null == verificationStatus
-          ? _value.verificationStatus
-          : verificationStatus // ignore: cast_nullable_to_non_nullable
-              as String,
-      polygon: null == polygon
-          ? _value._polygon
-          : polygon // ignore: cast_nullable_to_non_nullable
-              as List<LatLng>,
-      centroid: null == centroid
-          ? _value.centroid
-          : centroid // ignore: cast_nullable_to_non_nullable
-              as LatLng,
-      areaSqMeters: freezed == areaSqMeters
-          ? _value.areaSqMeters
-          : areaSqMeters // ignore: cast_nullable_to_non_nullable
-              as double?,
-      floors: freezed == floors
-          ? _value.floors
-          : floors // ignore: cast_nullable_to_non_nullable
-              as int?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      additionalTags: freezed == additionalTags
-          ? _value._additionalTags
-          : additionalTags // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CampusBuilding value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CampusBuilding value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int osmWayId,
+            String name,
+            String buildingType,
+            @BuildingCategoryConverter() BuildingCategory category,
+            String description,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            List<LatLng> polygon,
+            LatLng centroid,
+            double? areaSqMeters,
+            int? floors,
+            String? address,
+            Map<String, dynamic>? additionalTags)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding() when $default != null:
+        return $default(
+            _that.id,
+            _that.osmWayId,
+            _that.name,
+            _that.buildingType,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.floors,
+            _that.address,
+            _that.additionalTags);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            int osmWayId,
+            String name,
+            String buildingType,
+            @BuildingCategoryConverter() BuildingCategory category,
+            String description,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            List<LatLng> polygon,
+            LatLng centroid,
+            double? areaSqMeters,
+            int? floors,
+            String? address,
+            Map<String, dynamic>? additionalTags)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding():
+        return $default(
+            _that.id,
+            _that.osmWayId,
+            _that.name,
+            _that.buildingType,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.floors,
+            _that.address,
+            _that.additionalTags);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            int osmWayId,
+            String name,
+            String buildingType,
+            @BuildingCategoryConverter() BuildingCategory category,
+            String description,
+            String source,
+            String sourceDate,
+            String verificationStatus,
+            List<LatLng> polygon,
+            LatLng centroid,
+            double? areaSqMeters,
+            int? floors,
+            String? address,
+            Map<String, dynamic>? additionalTags)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CampusBuilding() when $default != null:
+        return $default(
+            _that.id,
+            _that.osmWayId,
+            _that.name,
+            _that.buildingType,
+            _that.category,
+            _that.description,
+            _that.source,
+            _that.sourceDate,
+            _that.verificationStatus,
+            _that.polygon,
+            _that.centroid,
+            _that.areaSqMeters,
+            _that.floors,
+            _that.address,
+            _that.additionalTags);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CampusBuildingImpl extends _CampusBuilding {
-  const _$CampusBuildingImpl(
+class _CampusBuilding extends CampusBuilding {
+  const _CampusBuilding(
       {required this.id,
       required this.osmWayId,
       required this.name,
@@ -1704,18 +1006,17 @@ class _$CampusBuildingImpl extends _CampusBuilding {
       required this.source,
       required this.sourceDate,
       required this.verificationStatus,
-      required final List<LatLng> polygon,
+      required List<LatLng> polygon,
       required this.centroid,
       this.areaSqMeters,
       this.floors,
       this.address,
-      final Map<String, dynamic>? additionalTags})
+      Map<String, dynamic>? additionalTags})
       : _polygon = polygon,
         _additionalTags = additionalTags,
         super._();
-
-  factory _$CampusBuildingImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CampusBuildingImplFromJson(json);
+  factory _CampusBuilding.fromJson(Map<String, dynamic> json) =>
+      _$CampusBuildingFromJson(json);
 
   @override
   final String id;
@@ -1762,16 +1063,26 @@ class _$CampusBuildingImpl extends _CampusBuilding {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CampusBuilding(id: $id, osmWayId: $osmWayId, name: $name, buildingType: $buildingType, category: $category, description: $description, source: $source, sourceDate: $sourceDate, verificationStatus: $verificationStatus, polygon: $polygon, centroid: $centroid, areaSqMeters: $areaSqMeters, floors: $floors, address: $address, additionalTags: $additionalTags)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CampusBuildingCopyWith<_CampusBuilding> get copyWith =>
+      __$CampusBuildingCopyWithImpl<_CampusBuilding>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CampusBuildingToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CampusBuildingImpl &&
+            other is _CampusBuilding &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.osmWayId, osmWayId) ||
                 other.osmWayId == osmWayId) &&
@@ -1787,7 +1098,7 @@ class _$CampusBuildingImpl extends _CampusBuilding {
                 other.sourceDate == sourceDate) &&
             (identical(other.verificationStatus, verificationStatus) ||
                 other.verificationStatus == verificationStatus) &&
-            const DeepCollectionEquality().equals(other._polygon, _polygon) &&
+            const DeepCollectionEquality().equals(other.polygon, _polygon) &&
             (identical(other.centroid, centroid) ||
                 other.centroid == centroid) &&
             (identical(other.areaSqMeters, areaSqMeters) ||
@@ -1795,99 +1106,168 @@ class _$CampusBuildingImpl extends _CampusBuilding {
             (identical(other.floors, floors) || other.floors == floors) &&
             (identical(other.address, address) || other.address == address) &&
             const DeepCollectionEquality()
-                .equals(other._additionalTags, _additionalTags));
+                .equals(other.additionalTags, _additionalTags));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      osmWayId,
-      name,
-      buildingType,
-      category,
-      description,
-      source,
-      sourceDate,
-      verificationStatus,
-      const DeepCollectionEquality().hash(_polygon),
-      centroid,
-      areaSqMeters,
-      floors,
-      address,
-      const DeepCollectionEquality().hash(_additionalTags));
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        id,
+        osmWayId,
+        name,
+        buildingType,
+        category,
+        description,
+        source,
+        sourceDate,
+        verificationStatus,
+        const DeepCollectionEquality().hash(_polygon),
+        centroid,
+        areaSqMeters,
+        floors,
+        address,
+        const DeepCollectionEquality().hash(_additionalTags));
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'CampusBuilding(id: $id, osmWayId: $osmWayId, name: $name, buildingType: $buildingType, category: $category, description: $description, source: $source, sourceDate: $sourceDate, verificationStatus: $verificationStatus, polygon: $polygon, centroid: $centroid, areaSqMeters: $areaSqMeters, floors: $floors, address: $address, additionalTags: $additionalTags)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CampusBuildingCopyWith<$Res>
+    implements $CampusBuildingCopyWith<$Res> {
+  factory _$CampusBuildingCopyWith(
+          _CampusBuilding value, $Res Function(_CampusBuilding) _then) =
+      __$CampusBuildingCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      int osmWayId,
+      String name,
+      String buildingType,
+      @BuildingCategoryConverter() BuildingCategory category,
+      String description,
+      String source,
+      String sourceDate,
+      String verificationStatus,
+      List<LatLng> polygon,
+      LatLng centroid,
+      double? areaSqMeters,
+      int? floors,
+      String? address,
+      Map<String, dynamic>? additionalTags});
+
+  @override
+  $BuildingCategoryCopyWith<$Res> get category;
+}
+
+/// @nodoc
+class __$CampusBuildingCopyWithImpl<$Res>
+    implements _$CampusBuildingCopyWith<$Res> {
+  __$CampusBuildingCopyWithImpl(this._self, this._then);
+
+  final _CampusBuilding _self;
+  final $Res Function(_CampusBuilding) _then;
+
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$CampusBuildingImplCopyWith<_$CampusBuildingImpl> get copyWith =>
-      __$$CampusBuildingImplCopyWithImpl<_$CampusBuildingImpl>(
-          this, _$identity);
+  $Res call({
+    Object? id = null,
+    Object? osmWayId = null,
+    Object? name = null,
+    Object? buildingType = null,
+    Object? category = null,
+    Object? description = null,
+    Object? source = null,
+    Object? sourceDate = null,
+    Object? verificationStatus = null,
+    Object? polygon = null,
+    Object? centroid = null,
+    Object? areaSqMeters = freezed,
+    Object? floors = freezed,
+    Object? address = freezed,
+    Object? additionalTags = freezed,
+  }) {
+    return _then(_CampusBuilding(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      osmWayId: null == osmWayId
+          ? _self.osmWayId
+          : osmWayId // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      buildingType: null == buildingType
+          ? _self.buildingType
+          : buildingType // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as BuildingCategory,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceDate: null == sourceDate
+          ? _self.sourceDate
+          : sourceDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      verificationStatus: null == verificationStatus
+          ? _self.verificationStatus
+          : verificationStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+      polygon: null == polygon
+          ? _self._polygon
+          : polygon // ignore: cast_nullable_to_non_nullable
+              as List<LatLng>,
+      centroid: null == centroid
+          ? _self.centroid
+          : centroid // ignore: cast_nullable_to_non_nullable
+              as LatLng,
+      areaSqMeters: freezed == areaSqMeters
+          ? _self.areaSqMeters
+          : areaSqMeters // ignore: cast_nullable_to_non_nullable
+              as double?,
+      floors: freezed == floors
+          ? _self.floors
+          : floors // ignore: cast_nullable_to_non_nullable
+              as int?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      additionalTags: freezed == additionalTags
+          ? _self._additionalTags
+          : additionalTags // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 
+  /// Create a copy of CampusBuilding
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  Map<String, dynamic> toJson() {
-    return _$$CampusBuildingImplToJson(
-      this,
-    );
+  @pragma('vm:prefer-inline')
+  $BuildingCategoryCopyWith<$Res> get category {
+    return $BuildingCategoryCopyWith<$Res>(_self.category, (value) {
+      return _then(_self.copyWith(category: value));
+    });
   }
 }
 
-abstract class _CampusBuilding extends CampusBuilding {
-  const factory _CampusBuilding(
-      {required final String id,
-      required final int osmWayId,
-      required final String name,
-      required final String buildingType,
-      @BuildingCategoryConverter() required final BuildingCategory category,
-      required final String description,
-      required final String source,
-      required final String sourceDate,
-      required final String verificationStatus,
-      required final List<LatLng> polygon,
-      required final LatLng centroid,
-      final double? areaSqMeters,
-      final int? floors,
-      final String? address,
-      final Map<String, dynamic>? additionalTags}) = _$CampusBuildingImpl;
-  const _CampusBuilding._() : super._();
-
-  factory _CampusBuilding.fromJson(Map<String, dynamic> json) =
-      _$CampusBuildingImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  int get osmWayId;
-  @override
-  String get name;
-  @override
-  String get buildingType;
-  @override
-  @BuildingCategoryConverter()
-  BuildingCategory get category;
-  @override
-  String get description;
-  @override
-  String get source;
-  @override
-  String get sourceDate;
-  @override
-  String get verificationStatus;
-  @override
-  List<LatLng> get polygon;
-  @override
-  LatLng get centroid;
-  @override
-  double? get areaSqMeters;
-  @override
-  int? get floors;
-  @override
-  String? get address;
-  @override
-  Map<String, dynamic>? get additionalTags;
-  @override
-  @JsonKey(ignore: true)
-  _$$CampusBuildingImplCopyWith<_$CampusBuildingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

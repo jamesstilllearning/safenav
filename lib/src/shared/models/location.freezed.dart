@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location.dart';
@@ -9,246 +9,175 @@ part of 'location.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Location _$LocationFromJson(Map<String, dynamic> json) {
-  return _Location.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Location {
   /// Unique location ID
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Location name
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Location code (e.g., BLDG-A, BLDG-B)
-  String get code => throw _privateConstructorUsedError;
+  String get code;
 
   /// Category
-  LocationCategory get category => throw _privateConstructorUsedError;
+  LocationCategory get category;
 
   /// Description
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
 
   /// Latitude
-  double get latitude => throw _privateConstructorUsedError;
+  double get latitude;
 
   /// Longitude
-  double get longitude => throw _privateConstructorUsedError;
+  double get longitude;
 
   /// Building floor (for multi-floor buildings)
-  int? get floor => throw _privateConstructorUsedError;
+  int? get floor;
 
   /// Room number (for specific rooms)
-  String? get roomNumber => throw _privateConstructorUsedError;
+  String? get roomNumber;
 
   /// Whether this is an evacuation assembly point
-  bool get isEvacuationPoint => throw _privateConstructorUsedError;
+  bool get isEvacuationPoint;
 
   /// Whether this is a shelter location
-  bool get isShelter => throw _privateConstructorUsedError;
+  bool get isShelter;
 
   /// Whether location has wheelchair access
-  bool get hasWheelchairAccess => throw _privateConstructorUsedError;
+  bool get hasWheelchairAccess;
 
   /// Whether location has emergency equipment
-  bool get hasEmergencyEquipment => throw _privateConstructorUsedError;
+  bool get hasEmergencyEquipment;
 
   /// Emergency equipment details
-  String? get emergencyEquipmentDetails => throw _privateConstructorUsedError;
+  String? get emergencyEquipmentDetails;
 
   /// Contact phone for this location
-  String? get contactPhone => throw _privateConstructorUsedError;
+  String? get contactPhone;
 
   /// Operating hours
-  String? get operatingHours => throw _privateConstructorUsedError;
+  String? get operatingHours;
 
   /// Image URL
-  String? get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl;
 
   /// Tags for search/filtering
-  List<String> get tags => throw _privateConstructorUsedError;
+  List<String> get tags;
 
   /// Creation timestamp
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
 
   /// Last update timestamp
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
   /// Additional metadata
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic> get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LocationCopyWith<Location> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocationCopyWith<$Res> {
-  factory $LocationCopyWith(Location value, $Res Function(Location) then) =
-      _$LocationCopyWithImpl<$Res, Location>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String code,
-      LocationCategory category,
-      String? description,
-      double latitude,
-      double longitude,
-      int? floor,
-      String? roomNumber,
-      bool isEvacuationPoint,
-      bool isShelter,
-      bool hasWheelchairAccess,
-      bool hasEmergencyEquipment,
-      String? emergencyEquipmentDetails,
-      String? contactPhone,
-      String? operatingHours,
-      String? imageUrl,
-      List<String> tags,
-      DateTime createdAt,
-      DateTime updatedAt,
-      Map<String, dynamic> metadata});
-}
-
-/// @nodoc
-class _$LocationCopyWithImpl<$Res, $Val extends Location>
-    implements $LocationCopyWith<$Res> {
-  _$LocationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $LocationCopyWith<Location> get copyWith =>
+      _$LocationCopyWithImpl<Location>(this as Location, _$identity);
+
+  /// Serializes this Location to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? code = null,
-    Object? category = null,
-    Object? description = freezed,
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? floor = freezed,
-    Object? roomNumber = freezed,
-    Object? isEvacuationPoint = null,
-    Object? isShelter = null,
-    Object? hasWheelchairAccess = null,
-    Object? hasEmergencyEquipment = null,
-    Object? emergencyEquipmentDetails = freezed,
-    Object? contactPhone = freezed,
-    Object? operatingHours = freezed,
-    Object? imageUrl = freezed,
-    Object? tags = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? metadata = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as LocationCategory,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      floor: freezed == floor
-          ? _value.floor
-          : floor // ignore: cast_nullable_to_non_nullable
-              as int?,
-      roomNumber: freezed == roomNumber
-          ? _value.roomNumber
-          : roomNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isEvacuationPoint: null == isEvacuationPoint
-          ? _value.isEvacuationPoint
-          : isEvacuationPoint // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isShelter: null == isShelter
-          ? _value.isShelter
-          : isShelter // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasWheelchairAccess: null == hasWheelchairAccess
-          ? _value.hasWheelchairAccess
-          : hasWheelchairAccess // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasEmergencyEquipment: null == hasEmergencyEquipment
-          ? _value.hasEmergencyEquipment
-          : hasEmergencyEquipment // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emergencyEquipmentDetails: freezed == emergencyEquipmentDetails
-          ? _value.emergencyEquipmentDetails
-          : emergencyEquipmentDetails // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operatingHours: freezed == operatingHours
-          ? _value.operatingHours
-          : operatingHours // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      metadata: null == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as Location;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Location &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.name, _this.name) || other.name == _this.name) &&
+            (identical(other.code, _this.code) || other.code == _this.code) &&
+            (identical(other.category, _this.category) ||
+                other.category == _this.category) &&
+            (identical(other.description, _this.description) ||
+                other.description == _this.description) &&
+            (identical(other.latitude, _this.latitude) ||
+                other.latitude == _this.latitude) &&
+            (identical(other.longitude, _this.longitude) ||
+                other.longitude == _this.longitude) &&
+            (identical(other.floor, _this.floor) ||
+                other.floor == _this.floor) &&
+            (identical(other.roomNumber, _this.roomNumber) ||
+                other.roomNumber == _this.roomNumber) &&
+            (identical(other.isEvacuationPoint, _this.isEvacuationPoint) ||
+                other.isEvacuationPoint == _this.isEvacuationPoint) &&
+            (identical(other.isShelter, _this.isShelter) ||
+                other.isShelter == _this.isShelter) &&
+            (identical(other.hasWheelchairAccess, _this.hasWheelchairAccess) ||
+                other.hasWheelchairAccess == _this.hasWheelchairAccess) &&
+            (identical(
+                    other.hasEmergencyEquipment, _this.hasEmergencyEquipment) ||
+                other.hasEmergencyEquipment == _this.hasEmergencyEquipment) &&
+            (identical(other.emergencyEquipmentDetails,
+                    _this.emergencyEquipmentDetails) ||
+                other.emergencyEquipmentDetails ==
+                    _this.emergencyEquipmentDetails) &&
+            (identical(other.contactPhone, _this.contactPhone) ||
+                other.contactPhone == _this.contactPhone) &&
+            (identical(other.operatingHours, _this.operatingHours) ||
+                other.operatingHours == _this.operatingHours) &&
+            (identical(other.imageUrl, _this.imageUrl) ||
+                other.imageUrl == _this.imageUrl) &&
+            const DeepCollectionEquality().equals(other.tags, _this.tags) &&
+            (identical(other.createdAt, _this.createdAt) ||
+                other.createdAt == _this.createdAt) &&
+            (identical(other.updatedAt, _this.updatedAt) ||
+                other.updatedAt == _this.updatedAt) &&
+            const DeepCollectionEquality()
+                .equals(other.metadata, _this.metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as Location;
+    return Object.hashAll([
+      runtimeType,
+      _this.id,
+      _this.name,
+      _this.code,
+      _this.category,
+      _this.description,
+      _this.latitude,
+      _this.longitude,
+      _this.floor,
+      _this.roomNumber,
+      _this.isEvacuationPoint,
+      _this.isShelter,
+      _this.hasWheelchairAccess,
+      _this.hasEmergencyEquipment,
+      _this.emergencyEquipmentDetails,
+      _this.contactPhone,
+      _this.operatingHours,
+      _this.imageUrl,
+      const DeepCollectionEquality().hash(_this.tags),
+      _this.createdAt,
+      _this.updatedAt,
+      const DeepCollectionEquality().hash(_this.metadata)
+    ]);
+  }
+
+  @override
+  String toString() {
+    final _this = this as Location;
+    return 'Location(id: ${_this.id}, name: ${_this.name}, code: ${_this.code}, category: ${_this.category}, description: ${_this.description}, latitude: ${_this.latitude}, longitude: ${_this.longitude}, floor: ${_this.floor}, roomNumber: ${_this.roomNumber}, isEvacuationPoint: ${_this.isEvacuationPoint}, isShelter: ${_this.isShelter}, hasWheelchairAccess: ${_this.hasWheelchairAccess}, hasEmergencyEquipment: ${_this.hasEmergencyEquipment}, emergencyEquipmentDetails: ${_this.emergencyEquipmentDetails}, contactPhone: ${_this.contactPhone}, operatingHours: ${_this.operatingHours}, imageUrl: ${_this.imageUrl}, tags: ${_this.tags}, createdAt: ${_this.createdAt}, updatedAt: ${_this.updatedAt}, metadata: ${_this.metadata})';
   }
 }
 
 /// @nodoc
-abstract class _$$LocationImplCopyWith<$Res>
-    implements $LocationCopyWith<$Res> {
-  factory _$$LocationImplCopyWith(
-          _$LocationImpl value, $Res Function(_$LocationImpl) then) =
-      __$$LocationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LocationCopyWith<$Res> {
+  factory $LocationCopyWith(Location value, $Res Function(Location) _then) =
+      _$LocationCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -275,13 +204,14 @@ abstract class _$$LocationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LocationImplCopyWithImpl<$Res>
-    extends _$LocationCopyWithImpl<$Res, _$LocationImpl>
-    implements _$$LocationImplCopyWith<$Res> {
-  __$$LocationImplCopyWithImpl(
-      _$LocationImpl _value, $Res Function(_$LocationImpl) _then)
-      : super(_value, _then);
+class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
+  _$LocationCopyWithImpl(this._self, this._then);
 
+  final Location _self;
+  final $Res Function(Location) _then;
+
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -307,99 +237,385 @@ class __$$LocationImplCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? metadata = null,
   }) {
-    return _then(_$LocationImpl(
+    return _then(Location(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       category: null == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as LocationCategory,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       latitude: null == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
       longitude: null == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
       floor: freezed == floor
-          ? _value.floor
+          ? _self.floor
           : floor // ignore: cast_nullable_to_non_nullable
               as int?,
       roomNumber: freezed == roomNumber
-          ? _value.roomNumber
+          ? _self.roomNumber
           : roomNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       isEvacuationPoint: null == isEvacuationPoint
-          ? _value.isEvacuationPoint
+          ? _self.isEvacuationPoint
           : isEvacuationPoint // ignore: cast_nullable_to_non_nullable
               as bool,
       isShelter: null == isShelter
-          ? _value.isShelter
+          ? _self.isShelter
           : isShelter // ignore: cast_nullable_to_non_nullable
               as bool,
       hasWheelchairAccess: null == hasWheelchairAccess
-          ? _value.hasWheelchairAccess
+          ? _self.hasWheelchairAccess
           : hasWheelchairAccess // ignore: cast_nullable_to_non_nullable
               as bool,
       hasEmergencyEquipment: null == hasEmergencyEquipment
-          ? _value.hasEmergencyEquipment
+          ? _self.hasEmergencyEquipment
           : hasEmergencyEquipment // ignore: cast_nullable_to_non_nullable
               as bool,
       emergencyEquipmentDetails: freezed == emergencyEquipmentDetails
-          ? _value.emergencyEquipmentDetails
+          ? _self.emergencyEquipmentDetails
           : emergencyEquipmentDetails // ignore: cast_nullable_to_non_nullable
               as String?,
       contactPhone: freezed == contactPhone
-          ? _value.contactPhone
+          ? _self.contactPhone
           : contactPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       operatingHours: freezed == operatingHours
-          ? _value.operatingHours
+          ? _self.operatingHours
           : operatingHours // ignore: cast_nullable_to_non_nullable
               as String?,
       imageUrl: freezed == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       metadata: null == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Location].
+extension LocationPatterns on Location {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Location value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Location() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Location value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Location():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Location value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Location() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String code,
+            LocationCategory category,
+            String? description,
+            double latitude,
+            double longitude,
+            int? floor,
+            String? roomNumber,
+            bool isEvacuationPoint,
+            bool isShelter,
+            bool hasWheelchairAccess,
+            bool hasEmergencyEquipment,
+            String? emergencyEquipmentDetails,
+            String? contactPhone,
+            String? operatingHours,
+            String? imageUrl,
+            List<String> tags,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Location() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.category,
+            _that.description,
+            _that.latitude,
+            _that.longitude,
+            _that.floor,
+            _that.roomNumber,
+            _that.isEvacuationPoint,
+            _that.isShelter,
+            _that.hasWheelchairAccess,
+            _that.hasEmergencyEquipment,
+            _that.emergencyEquipmentDetails,
+            _that.contactPhone,
+            _that.operatingHours,
+            _that.imageUrl,
+            _that.tags,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String code,
+            LocationCategory category,
+            String? description,
+            double latitude,
+            double longitude,
+            int? floor,
+            String? roomNumber,
+            bool isEvacuationPoint,
+            bool isShelter,
+            bool hasWheelchairAccess,
+            bool hasEmergencyEquipment,
+            String? emergencyEquipmentDetails,
+            String? contactPhone,
+            String? operatingHours,
+            String? imageUrl,
+            List<String> tags,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Location():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.category,
+            _that.description,
+            _that.latitude,
+            _that.longitude,
+            _that.floor,
+            _that.roomNumber,
+            _that.isEvacuationPoint,
+            _that.isShelter,
+            _that.hasWheelchairAccess,
+            _that.hasEmergencyEquipment,
+            _that.emergencyEquipmentDetails,
+            _that.contactPhone,
+            _that.operatingHours,
+            _that.imageUrl,
+            _that.tags,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String code,
+            LocationCategory category,
+            String? description,
+            double latitude,
+            double longitude,
+            int? floor,
+            String? roomNumber,
+            bool isEvacuationPoint,
+            bool isShelter,
+            bool hasWheelchairAccess,
+            bool hasEmergencyEquipment,
+            String? emergencyEquipmentDetails,
+            String? contactPhone,
+            String? operatingHours,
+            String? imageUrl,
+            List<String> tags,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Location() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.code,
+            _that.category,
+            _that.description,
+            _that.latitude,
+            _that.longitude,
+            _that.floor,
+            _that.roomNumber,
+            _that.isEvacuationPoint,
+            _that.isShelter,
+            _that.hasWheelchairAccess,
+            _that.hasEmergencyEquipment,
+            _that.emergencyEquipmentDetails,
+            _that.contactPhone,
+            _that.operatingHours,
+            _that.imageUrl,
+            _that.tags,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$LocationImpl implements _Location {
-  const _$LocationImpl(
+class _Location implements Location {
+  const _Location(
       {required this.id,
       required this.name,
       required this.code,
@@ -417,15 +633,14 @@ class _$LocationImpl implements _Location {
       this.contactPhone,
       this.operatingHours,
       this.imageUrl,
-      final List<String> tags = const [],
+      List<String> tags = const [],
       required this.createdAt,
       required this.updatedAt,
-      final Map<String, dynamic> metadata = const {}})
+      Map<String, dynamic> metadata = const {}})
       : _tags = tags,
         _metadata = metadata;
-
-  factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LocationImplFromJson(json);
+  factory _Location.fromJson(Map<String, dynamic> json) =>
+      _$LocationFromJson(json);
 
   /// Unique location ID
   @override
@@ -531,16 +746,26 @@ class _$LocationImpl implements _Location {
     return EqualUnmodifiableMapView(_metadata);
   }
 
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Location(id: $id, name: $name, code: $code, category: $category, description: $description, latitude: $latitude, longitude: $longitude, floor: $floor, roomNumber: $roomNumber, isEvacuationPoint: $isEvacuationPoint, isShelter: $isShelter, hasWheelchairAccess: $hasWheelchairAccess, hasEmergencyEquipment: $hasEmergencyEquipment, emergencyEquipmentDetails: $emergencyEquipmentDetails, contactPhone: $contactPhone, operatingHours: $operatingHours, imageUrl: $imageUrl, tags: $tags, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LocationCopyWith<_Location> get copyWith =>
+      __$LocationCopyWithImpl<_Location>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LocationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationImpl &&
+            other is _Location &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -572,168 +797,201 @@ class _$LocationImpl implements _Location {
                 other.operatingHours == operatingHours) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            const DeepCollectionEquality().equals(other.tags, _tags) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            const DeepCollectionEquality().equals(other.metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        code,
-        category,
-        description,
-        latitude,
-        longitude,
-        floor,
-        roomNumber,
-        isEvacuationPoint,
-        isShelter,
-        hasWheelchairAccess,
-        hasEmergencyEquipment,
-        emergencyEquipmentDetails,
-        contactPhone,
-        operatingHours,
-        imageUrl,
-        const DeepCollectionEquality().hash(_tags),
-        createdAt,
-        updatedAt,
-        const DeepCollectionEquality().hash(_metadata)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      id,
+      name,
+      code,
+      category,
+      description,
+      latitude,
+      longitude,
+      floor,
+      roomNumber,
+      isEvacuationPoint,
+      isShelter,
+      hasWheelchairAccess,
+      hasEmergencyEquipment,
+      emergencyEquipmentDetails,
+      contactPhone,
+      operatingHours,
+      imageUrl,
+      const DeepCollectionEquality().hash(_tags),
+      createdAt,
+      updatedAt,
+      const DeepCollectionEquality().hash(_metadata)
+    ]);
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'Location(id: $id, name: $name, code: $code, category: $category, description: $description, latitude: $latitude, longitude: $longitude, floor: $floor, roomNumber: $roomNumber, isEvacuationPoint: $isEvacuationPoint, isShelter: $isShelter, hasWheelchairAccess: $hasWheelchairAccess, hasEmergencyEquipment: $hasEmergencyEquipment, emergencyEquipmentDetails: $emergencyEquipmentDetails, contactPhone: $contactPhone, operatingHours: $operatingHours, imageUrl: $imageUrl, tags: $tags, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$LocationCopyWith<$Res>
+    implements $LocationCopyWith<$Res> {
+  factory _$LocationCopyWith(_Location value, $Res Function(_Location) _then) =
+      __$LocationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      LocationCategory category,
+      String? description,
+      double latitude,
+      double longitude,
+      int? floor,
+      String? roomNumber,
+      bool isEvacuationPoint,
+      bool isShelter,
+      bool hasWheelchairAccess,
+      bool hasEmergencyEquipment,
+      String? emergencyEquipmentDetails,
+      String? contactPhone,
+      String? operatingHours,
+      String? imageUrl,
+      List<String> tags,
+      DateTime createdAt,
+      DateTime updatedAt,
+      Map<String, dynamic> metadata});
+}
+
+/// @nodoc
+class __$LocationCopyWithImpl<$Res> implements _$LocationCopyWith<$Res> {
+  __$LocationCopyWithImpl(this._self, this._then);
+
+  final _Location _self;
+  final $Res Function(_Location) _then;
+
+  /// Create a copy of Location
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
-      __$$LocationImplCopyWithImpl<_$LocationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LocationImplToJson(
-      this,
-    );
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? category = null,
+    Object? description = freezed,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? floor = freezed,
+    Object? roomNumber = freezed,
+    Object? isEvacuationPoint = null,
+    Object? isShelter = null,
+    Object? hasWheelchairAccess = null,
+    Object? hasEmergencyEquipment = null,
+    Object? emergencyEquipmentDetails = freezed,
+    Object? contactPhone = freezed,
+    Object? operatingHours = freezed,
+    Object? imageUrl = freezed,
+    Object? tags = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? metadata = null,
+  }) {
+    return _then(_Location(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as LocationCategory,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: null == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      floor: freezed == floor
+          ? _self.floor
+          : floor // ignore: cast_nullable_to_non_nullable
+              as int?,
+      roomNumber: freezed == roomNumber
+          ? _self.roomNumber
+          : roomNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isEvacuationPoint: null == isEvacuationPoint
+          ? _self.isEvacuationPoint
+          : isEvacuationPoint // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isShelter: null == isShelter
+          ? _self.isShelter
+          : isShelter // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasWheelchairAccess: null == hasWheelchairAccess
+          ? _self.hasWheelchairAccess
+          : hasWheelchairAccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasEmergencyEquipment: null == hasEmergencyEquipment
+          ? _self.hasEmergencyEquipment
+          : hasEmergencyEquipment // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emergencyEquipmentDetails: freezed == emergencyEquipmentDetails
+          ? _self.emergencyEquipmentDetails
+          : emergencyEquipmentDetails // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operatingHours: freezed == operatingHours
+          ? _self.operatingHours
+          : operatingHours // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageUrl: freezed == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      metadata: null == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
   }
 }
 
-abstract class _Location implements Location {
-  const factory _Location(
-      {required final String id,
-      required final String name,
-      required final String code,
-      required final LocationCategory category,
-      final String? description,
-      required final double latitude,
-      required final double longitude,
-      final int? floor,
-      final String? roomNumber,
-      final bool isEvacuationPoint,
-      final bool isShelter,
-      final bool hasWheelchairAccess,
-      final bool hasEmergencyEquipment,
-      final String? emergencyEquipmentDetails,
-      final String? contactPhone,
-      final String? operatingHours,
-      final String? imageUrl,
-      final List<String> tags,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final Map<String, dynamic> metadata}) = _$LocationImpl;
-
-  factory _Location.fromJson(Map<String, dynamic> json) =
-      _$LocationImpl.fromJson;
-
-  @override
-
-  /// Unique location ID
-  String get id;
-  @override
-
-  /// Location name
-  String get name;
-  @override
-
-  /// Location code (e.g., BLDG-A, BLDG-B)
-  String get code;
-  @override
-
-  /// Category
-  LocationCategory get category;
-  @override
-
-  /// Description
-  String? get description;
-  @override
-
-  /// Latitude
-  double get latitude;
-  @override
-
-  /// Longitude
-  double get longitude;
-  @override
-
-  /// Building floor (for multi-floor buildings)
-  int? get floor;
-  @override
-
-  /// Room number (for specific rooms)
-  String? get roomNumber;
-  @override
-
-  /// Whether this is an evacuation assembly point
-  bool get isEvacuationPoint;
-  @override
-
-  /// Whether this is a shelter location
-  bool get isShelter;
-  @override
-
-  /// Whether location has wheelchair access
-  bool get hasWheelchairAccess;
-  @override
-
-  /// Whether location has emergency equipment
-  bool get hasEmergencyEquipment;
-  @override
-
-  /// Emergency equipment details
-  String? get emergencyEquipmentDetails;
-  @override
-
-  /// Contact phone for this location
-  String? get contactPhone;
-  @override
-
-  /// Operating hours
-  String? get operatingHours;
-  @override
-
-  /// Image URL
-  String? get imageUrl;
-  @override
-
-  /// Tags for search/filtering
-  List<String> get tags;
-  @override
-
-  /// Creation timestamp
-  DateTime get createdAt;
-  @override
-
-  /// Last update timestamp
-  DateTime get updatedAt;
-  @override
-
-  /// Additional metadata
-  Map<String, dynamic> get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

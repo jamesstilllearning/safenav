@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'notification.dart';
@@ -9,301 +9,210 @@ part of 'notification.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Notification _$NotificationFromJson(Map<String, dynamic> json) {
-  return _Notification.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Notification {
   /// Unique notification ID
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Notification title
-  String get title => throw _privateConstructorUsedError;
+  String get title;
 
   /// Notification body/message
-  String get body => throw _privateConstructorUsedError;
+  String get body;
 
   /// Notification type
-  NotificationType get type => throw _privateConstructorUsedError;
+  NotificationType get type;
 
   /// Priority level
-  NotificationPriority get priority => throw _privateConstructorUsedError;
+  NotificationPriority get priority;
 
   /// Current status
-  NotificationStatus get status => throw _privateConstructorUsedError;
+  NotificationStatus get status;
 
   /// Target user ID (null for broadcast)
-  String? get userId => throw _privateConstructorUsedError;
+  String? get userId;
 
   /// Target role (for role-based notifications)
-  String? get targetRole => throw _privateConstructorUsedError;
+  String? get targetRole;
 
   /// Target building IDs
-  List<String> get targetBuildingIds => throw _privateConstructorUsedError;
+  List<String> get targetBuildingIds;
 
   /// Related alert ID (if from alert)
-  String? get alertId => throw _privateConstructorUsedError;
+  String? get alertId;
 
   /// Related location ID
-  String? get locationId => throw _privateConstructorUsedError;
+  String? get locationId;
 
   /// Action URL/deep link
-  String? get actionUrl => throw _privateConstructorUsedError;
+  String? get actionUrl;
 
   /// Action label
-  String? get actionLabel => throw _privateConstructorUsedError;
+  String? get actionLabel;
 
   /// Image URL
-  String? get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl;
 
   /// Data payload
-  Map<String, dynamic> get data => throw _privateConstructorUsedError;
+  Map<String, dynamic> get data;
 
   /// Whether notification was sent via FCM
-  bool get sentViaFcm => throw _privateConstructorUsedError;
+  bool get sentViaFcm;
 
   /// Whether notification was shown locally
-  bool get shownLocally => throw _privateConstructorUsedError;
+  bool get shownLocally;
 
   /// Local notification ID (for cancellation)
-  int? get localNotificationId => throw _privateConstructorUsedError;
+  int? get localNotificationId;
 
   /// Scheduled send time
-  DateTime? get scheduledAt => throw _privateConstructorUsedError;
+  DateTime? get scheduledAt;
 
   /// Sent timestamp
-  DateTime? get sentAt => throw _privateConstructorUsedError;
+  DateTime? get sentAt;
 
   /// Delivered timestamp
-  DateTime? get deliveredAt => throw _privateConstructorUsedError;
+  DateTime? get deliveredAt;
 
   /// Opened timestamp
-  DateTime? get openedAt => throw _privateConstructorUsedError;
+  DateTime? get openedAt;
 
   /// Dismissed timestamp
-  DateTime? get dismissedAt => throw _privateConstructorUsedError;
+  DateTime? get dismissedAt;
 
   /// Expires at
-  DateTime? get expiresAt => throw _privateConstructorUsedError;
+  DateTime? get expiresAt;
 
   /// Created at
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
 
   /// Updated at
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
   /// Metadata
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic> get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotificationCopyWith<Notification> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotificationCopyWith<$Res> {
-  factory $NotificationCopyWith(
-          Notification value, $Res Function(Notification) then) =
-      _$NotificationCopyWithImpl<$Res, Notification>;
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String body,
-      NotificationType type,
-      NotificationPriority priority,
-      NotificationStatus status,
-      String? userId,
-      String? targetRole,
-      List<String> targetBuildingIds,
-      String? alertId,
-      String? locationId,
-      String? actionUrl,
-      String? actionLabel,
-      String? imageUrl,
-      Map<String, dynamic> data,
-      bool sentViaFcm,
-      bool shownLocally,
-      int? localNotificationId,
-      DateTime? scheduledAt,
-      DateTime? sentAt,
-      DateTime? deliveredAt,
-      DateTime? openedAt,
-      DateTime? dismissedAt,
-      DateTime? expiresAt,
-      DateTime createdAt,
-      DateTime updatedAt,
-      Map<String, dynamic> metadata});
-}
-
-/// @nodoc
-class _$NotificationCopyWithImpl<$Res, $Val extends Notification>
-    implements $NotificationCopyWith<$Res> {
-  _$NotificationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Notification
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NotificationCopyWith<Notification> get copyWith =>
+      _$NotificationCopyWithImpl<Notification>(
+          this as Notification, _$identity);
+
+  /// Serializes this Notification to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? body = null,
-    Object? type = null,
-    Object? priority = null,
-    Object? status = null,
-    Object? userId = freezed,
-    Object? targetRole = freezed,
-    Object? targetBuildingIds = null,
-    Object? alertId = freezed,
-    Object? locationId = freezed,
-    Object? actionUrl = freezed,
-    Object? actionLabel = freezed,
-    Object? imageUrl = freezed,
-    Object? data = null,
-    Object? sentViaFcm = null,
-    Object? shownLocally = null,
-    Object? localNotificationId = freezed,
-    Object? scheduledAt = freezed,
-    Object? sentAt = freezed,
-    Object? deliveredAt = freezed,
-    Object? openedAt = freezed,
-    Object? dismissedAt = freezed,
-    Object? expiresAt = freezed,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? metadata = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      priority: null == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as NotificationPriority,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as NotificationStatus,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      targetRole: freezed == targetRole
-          ? _value.targetRole
-          : targetRole // ignore: cast_nullable_to_non_nullable
-              as String?,
-      targetBuildingIds: null == targetBuildingIds
-          ? _value.targetBuildingIds
-          : targetBuildingIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      alertId: freezed == alertId
-          ? _value.alertId
-          : alertId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actionUrl: freezed == actionUrl
-          ? _value.actionUrl
-          : actionUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actionLabel: freezed == actionLabel
-          ? _value.actionLabel
-          : actionLabel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      sentViaFcm: null == sentViaFcm
-          ? _value.sentViaFcm
-          : sentViaFcm // ignore: cast_nullable_to_non_nullable
-              as bool,
-      shownLocally: null == shownLocally
-          ? _value.shownLocally
-          : shownLocally // ignore: cast_nullable_to_non_nullable
-              as bool,
-      localNotificationId: freezed == localNotificationId
-          ? _value.localNotificationId
-          : localNotificationId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      scheduledAt: freezed == scheduledAt
-          ? _value.scheduledAt
-          : scheduledAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      sentAt: freezed == sentAt
-          ? _value.sentAt
-          : sentAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
-          : deliveredAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      openedAt: freezed == openedAt
-          ? _value.openedAt
-          : openedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      dismissedAt: freezed == dismissedAt
-          ? _value.dismissedAt
-          : dismissedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAt: freezed == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      metadata: null == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as Notification;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Notification &&
+            (identical(other.id, _this.id) || other.id == _this.id) &&
+            (identical(other.title, _this.title) ||
+                other.title == _this.title) &&
+            (identical(other.body, _this.body) || other.body == _this.body) &&
+            (identical(other.type, _this.type) || other.type == _this.type) &&
+            (identical(other.priority, _this.priority) ||
+                other.priority == _this.priority) &&
+            (identical(other.status, _this.status) ||
+                other.status == _this.status) &&
+            (identical(other.userId, _this.userId) ||
+                other.userId == _this.userId) &&
+            (identical(other.targetRole, _this.targetRole) ||
+                other.targetRole == _this.targetRole) &&
+            const DeepCollectionEquality()
+                .equals(other.targetBuildingIds, _this.targetBuildingIds) &&
+            (identical(other.alertId, _this.alertId) ||
+                other.alertId == _this.alertId) &&
+            (identical(other.locationId, _this.locationId) ||
+                other.locationId == _this.locationId) &&
+            (identical(other.actionUrl, _this.actionUrl) ||
+                other.actionUrl == _this.actionUrl) &&
+            (identical(other.actionLabel, _this.actionLabel) ||
+                other.actionLabel == _this.actionLabel) &&
+            (identical(other.imageUrl, _this.imageUrl) ||
+                other.imageUrl == _this.imageUrl) &&
+            const DeepCollectionEquality().equals(other.data, _this.data) &&
+            (identical(other.sentViaFcm, _this.sentViaFcm) ||
+                other.sentViaFcm == _this.sentViaFcm) &&
+            (identical(other.shownLocally, _this.shownLocally) ||
+                other.shownLocally == _this.shownLocally) &&
+            (identical(other.localNotificationId, _this.localNotificationId) ||
+                other.localNotificationId == _this.localNotificationId) &&
+            (identical(other.scheduledAt, _this.scheduledAt) ||
+                other.scheduledAt == _this.scheduledAt) &&
+            (identical(other.sentAt, _this.sentAt) ||
+                other.sentAt == _this.sentAt) &&
+            (identical(other.deliveredAt, _this.deliveredAt) ||
+                other.deliveredAt == _this.deliveredAt) &&
+            (identical(other.openedAt, _this.openedAt) ||
+                other.openedAt == _this.openedAt) &&
+            (identical(other.dismissedAt, _this.dismissedAt) ||
+                other.dismissedAt == _this.dismissedAt) &&
+            (identical(other.expiresAt, _this.expiresAt) ||
+                other.expiresAt == _this.expiresAt) &&
+            (identical(other.createdAt, _this.createdAt) ||
+                other.createdAt == _this.createdAt) &&
+            (identical(other.updatedAt, _this.updatedAt) ||
+                other.updatedAt == _this.updatedAt) &&
+            const DeepCollectionEquality()
+                .equals(other.metadata, _this.metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as Notification;
+    return Object.hashAll([
+      runtimeType,
+      _this.id,
+      _this.title,
+      _this.body,
+      _this.type,
+      _this.priority,
+      _this.status,
+      _this.userId,
+      _this.targetRole,
+      const DeepCollectionEquality().hash(_this.targetBuildingIds),
+      _this.alertId,
+      _this.locationId,
+      _this.actionUrl,
+      _this.actionLabel,
+      _this.imageUrl,
+      const DeepCollectionEquality().hash(_this.data),
+      _this.sentViaFcm,
+      _this.shownLocally,
+      _this.localNotificationId,
+      _this.scheduledAt,
+      _this.sentAt,
+      _this.deliveredAt,
+      _this.openedAt,
+      _this.dismissedAt,
+      _this.expiresAt,
+      _this.createdAt,
+      _this.updatedAt,
+      const DeepCollectionEquality().hash(_this.metadata)
+    ]);
+  }
+
+  @override
+  String toString() {
+    final _this = this as Notification;
+    return 'Notification(id: ${_this.id}, title: ${_this.title}, body: ${_this.body}, type: ${_this.type}, priority: ${_this.priority}, status: ${_this.status}, userId: ${_this.userId}, targetRole: ${_this.targetRole}, targetBuildingIds: ${_this.targetBuildingIds}, alertId: ${_this.alertId}, locationId: ${_this.locationId}, actionUrl: ${_this.actionUrl}, actionLabel: ${_this.actionLabel}, imageUrl: ${_this.imageUrl}, data: ${_this.data}, sentViaFcm: ${_this.sentViaFcm}, shownLocally: ${_this.shownLocally}, localNotificationId: ${_this.localNotificationId}, scheduledAt: ${_this.scheduledAt}, sentAt: ${_this.sentAt}, deliveredAt: ${_this.deliveredAt}, openedAt: ${_this.openedAt}, dismissedAt: ${_this.dismissedAt}, expiresAt: ${_this.expiresAt}, createdAt: ${_this.createdAt}, updatedAt: ${_this.updatedAt}, metadata: ${_this.metadata})';
   }
 }
 
 /// @nodoc
-abstract class _$$NotificationImplCopyWith<$Res>
-    implements $NotificationCopyWith<$Res> {
-  factory _$$NotificationImplCopyWith(
-          _$NotificationImpl value, $Res Function(_$NotificationImpl) then) =
-      __$$NotificationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotificationCopyWith<$Res> {
+  factory $NotificationCopyWith(
+          Notification value, $Res Function(Notification) _then) =
+      _$NotificationCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -336,13 +245,14 @@ abstract class _$$NotificationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NotificationImplCopyWithImpl<$Res>
-    extends _$NotificationCopyWithImpl<$Res, _$NotificationImpl>
-    implements _$$NotificationImplCopyWith<$Res> {
-  __$$NotificationImplCopyWithImpl(
-      _$NotificationImpl _value, $Res Function(_$NotificationImpl) _then)
-      : super(_value, _then);
+class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
+  _$NotificationCopyWithImpl(this._self, this._then);
 
+  final Notification _self;
+  final $Res Function(Notification) _then;
+
+  /// Create a copy of Notification
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -374,123 +284,445 @@ class __$$NotificationImplCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? metadata = null,
   }) {
-    return _then(_$NotificationImpl(
+    return _then(Notification(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       body: null == body
-          ? _value.body
+          ? _self.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType,
       priority: null == priority
-          ? _value.priority
+          ? _self.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as NotificationPriority,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as NotificationStatus,
       userId: freezed == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
       targetRole: freezed == targetRole
-          ? _value.targetRole
+          ? _self.targetRole
           : targetRole // ignore: cast_nullable_to_non_nullable
               as String?,
       targetBuildingIds: null == targetBuildingIds
-          ? _value._targetBuildingIds
+          ? _self.targetBuildingIds
           : targetBuildingIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       alertId: freezed == alertId
-          ? _value.alertId
+          ? _self.alertId
           : alertId // ignore: cast_nullable_to_non_nullable
               as String?,
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       actionUrl: freezed == actionUrl
-          ? _value.actionUrl
+          ? _self.actionUrl
           : actionUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       actionLabel: freezed == actionLabel
-          ? _value.actionLabel
+          ? _self.actionLabel
           : actionLabel // ignore: cast_nullable_to_non_nullable
               as String?,
       imageUrl: freezed == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       data: null == data
-          ? _value._data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       sentViaFcm: null == sentViaFcm
-          ? _value.sentViaFcm
+          ? _self.sentViaFcm
           : sentViaFcm // ignore: cast_nullable_to_non_nullable
               as bool,
       shownLocally: null == shownLocally
-          ? _value.shownLocally
+          ? _self.shownLocally
           : shownLocally // ignore: cast_nullable_to_non_nullable
               as bool,
       localNotificationId: freezed == localNotificationId
-          ? _value.localNotificationId
+          ? _self.localNotificationId
           : localNotificationId // ignore: cast_nullable_to_non_nullable
               as int?,
       scheduledAt: freezed == scheduledAt
-          ? _value.scheduledAt
+          ? _self.scheduledAt
           : scheduledAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       sentAt: freezed == sentAt
-          ? _value.sentAt
+          ? _self.sentAt
           : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       deliveredAt: freezed == deliveredAt
-          ? _value.deliveredAt
+          ? _self.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       openedAt: freezed == openedAt
-          ? _value.openedAt
+          ? _self.openedAt
           : openedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       dismissedAt: freezed == dismissedAt
-          ? _value.dismissedAt
+          ? _self.dismissedAt
           : dismissedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       expiresAt: freezed == expiresAt
-          ? _value.expiresAt
+          ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       metadata: null == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Notification].
+extension NotificationPatterns on Notification {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Notification value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Notification() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Notification value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Notification():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Notification value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Notification() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String title,
+            String body,
+            NotificationType type,
+            NotificationPriority priority,
+            NotificationStatus status,
+            String? userId,
+            String? targetRole,
+            List<String> targetBuildingIds,
+            String? alertId,
+            String? locationId,
+            String? actionUrl,
+            String? actionLabel,
+            String? imageUrl,
+            Map<String, dynamic> data,
+            bool sentViaFcm,
+            bool shownLocally,
+            int? localNotificationId,
+            DateTime? scheduledAt,
+            DateTime? sentAt,
+            DateTime? deliveredAt,
+            DateTime? openedAt,
+            DateTime? dismissedAt,
+            DateTime? expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Notification() when $default != null:
+        return $default(
+            _that.id,
+            _that.title,
+            _that.body,
+            _that.type,
+            _that.priority,
+            _that.status,
+            _that.userId,
+            _that.targetRole,
+            _that.targetBuildingIds,
+            _that.alertId,
+            _that.locationId,
+            _that.actionUrl,
+            _that.actionLabel,
+            _that.imageUrl,
+            _that.data,
+            _that.sentViaFcm,
+            _that.shownLocally,
+            _that.localNotificationId,
+            _that.scheduledAt,
+            _that.sentAt,
+            _that.deliveredAt,
+            _that.openedAt,
+            _that.dismissedAt,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String title,
+            String body,
+            NotificationType type,
+            NotificationPriority priority,
+            NotificationStatus status,
+            String? userId,
+            String? targetRole,
+            List<String> targetBuildingIds,
+            String? alertId,
+            String? locationId,
+            String? actionUrl,
+            String? actionLabel,
+            String? imageUrl,
+            Map<String, dynamic> data,
+            bool sentViaFcm,
+            bool shownLocally,
+            int? localNotificationId,
+            DateTime? scheduledAt,
+            DateTime? sentAt,
+            DateTime? deliveredAt,
+            DateTime? openedAt,
+            DateTime? dismissedAt,
+            DateTime? expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Notification():
+        return $default(
+            _that.id,
+            _that.title,
+            _that.body,
+            _that.type,
+            _that.priority,
+            _that.status,
+            _that.userId,
+            _that.targetRole,
+            _that.targetBuildingIds,
+            _that.alertId,
+            _that.locationId,
+            _that.actionUrl,
+            _that.actionLabel,
+            _that.imageUrl,
+            _that.data,
+            _that.sentViaFcm,
+            _that.shownLocally,
+            _that.localNotificationId,
+            _that.scheduledAt,
+            _that.sentAt,
+            _that.deliveredAt,
+            _that.openedAt,
+            _that.dismissedAt,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String title,
+            String body,
+            NotificationType type,
+            NotificationPriority priority,
+            NotificationStatus status,
+            String? userId,
+            String? targetRole,
+            List<String> targetBuildingIds,
+            String? alertId,
+            String? locationId,
+            String? actionUrl,
+            String? actionLabel,
+            String? imageUrl,
+            Map<String, dynamic> data,
+            bool sentViaFcm,
+            bool shownLocally,
+            int? localNotificationId,
+            DateTime? scheduledAt,
+            DateTime? sentAt,
+            DateTime? deliveredAt,
+            DateTime? openedAt,
+            DateTime? dismissedAt,
+            DateTime? expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic> metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Notification() when $default != null:
+        return $default(
+            _that.id,
+            _that.title,
+            _that.body,
+            _that.type,
+            _that.priority,
+            _that.status,
+            _that.userId,
+            _that.targetRole,
+            _that.targetBuildingIds,
+            _that.alertId,
+            _that.locationId,
+            _that.actionUrl,
+            _that.actionLabel,
+            _that.imageUrl,
+            _that.data,
+            _that.sentViaFcm,
+            _that.shownLocally,
+            _that.localNotificationId,
+            _that.scheduledAt,
+            _that.sentAt,
+            _that.deliveredAt,
+            _that.openedAt,
+            _that.dismissedAt,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$NotificationImpl implements _Notification {
-  const _$NotificationImpl(
+class _Notification implements Notification {
+  const _Notification(
       {required this.id,
       required this.title,
       required this.body,
@@ -499,13 +731,13 @@ class _$NotificationImpl implements _Notification {
       this.status = NotificationStatus.sent,
       this.userId,
       this.targetRole,
-      final List<String> targetBuildingIds = const [],
+      List<String> targetBuildingIds = const [],
       this.alertId,
       this.locationId,
       this.actionUrl,
       this.actionLabel,
       this.imageUrl,
-      final Map<String, dynamic> data = const {},
+      Map<String, dynamic> data = const {},
       this.sentViaFcm = false,
       this.shownLocally = false,
       this.localNotificationId,
@@ -517,13 +749,12 @@ class _$NotificationImpl implements _Notification {
       this.expiresAt,
       required this.createdAt,
       required this.updatedAt,
-      final Map<String, dynamic> metadata = const {}})
+      Map<String, dynamic> metadata = const {}})
       : _targetBuildingIds = targetBuildingIds,
         _data = data,
         _metadata = metadata;
-
-  factory _$NotificationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotificationImplFromJson(json);
+  factory _Notification.fromJson(Map<String, dynamic> json) =>
+      _$NotificationFromJson(json);
 
   /// Unique notification ID
   @override
@@ -662,16 +893,26 @@ class _$NotificationImpl implements _Notification {
     return EqualUnmodifiableMapView(_metadata);
   }
 
+  /// Create a copy of Notification
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Notification(id: $id, title: $title, body: $body, type: $type, priority: $priority, status: $status, userId: $userId, targetRole: $targetRole, targetBuildingIds: $targetBuildingIds, alertId: $alertId, locationId: $locationId, actionUrl: $actionUrl, actionLabel: $actionLabel, imageUrl: $imageUrl, data: $data, sentViaFcm: $sentViaFcm, shownLocally: $shownLocally, localNotificationId: $localNotificationId, scheduledAt: $scheduledAt, sentAt: $sentAt, deliveredAt: $deliveredAt, openedAt: $openedAt, dismissedAt: $dismissedAt, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotificationCopyWith<_Notification> get copyWith =>
+      __$NotificationCopyWithImpl<_Notification>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotificationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotificationImpl &&
+            other is _Notification &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.body, body) || other.body == body) &&
@@ -683,7 +924,7 @@ class _$NotificationImpl implements _Notification {
             (identical(other.targetRole, targetRole) ||
                 other.targetRole == targetRole) &&
             const DeepCollectionEquality()
-                .equals(other._targetBuildingIds, _targetBuildingIds) &&
+                .equals(other.targetBuildingIds, _targetBuildingIds) &&
             (identical(other.alertId, alertId) || other.alertId == alertId) &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
@@ -693,7 +934,7 @@ class _$NotificationImpl implements _Notification {
                 other.actionLabel == actionLabel) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, _data) &&
             (identical(other.sentViaFcm, sentViaFcm) ||
                 other.sentViaFcm == sentViaFcm) &&
             (identical(other.shownLocally, shownLocally) ||
@@ -715,398 +956,383 @@ class _$NotificationImpl implements _Notification {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            const DeepCollectionEquality().equals(other.metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        title,
-        body,
-        type,
-        priority,
-        status,
-        userId,
-        targetRole,
-        const DeepCollectionEquality().hash(_targetBuildingIds),
-        alertId,
-        locationId,
-        actionUrl,
-        actionLabel,
-        imageUrl,
-        const DeepCollectionEquality().hash(_data),
-        sentViaFcm,
-        shownLocally,
-        localNotificationId,
-        scheduledAt,
-        sentAt,
-        deliveredAt,
-        openedAt,
-        dismissedAt,
-        expiresAt,
-        createdAt,
-        updatedAt,
-        const DeepCollectionEquality().hash(_metadata)
-      ]);
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      id,
+      title,
+      body,
+      type,
+      priority,
+      status,
+      userId,
+      targetRole,
+      const DeepCollectionEquality().hash(_targetBuildingIds),
+      alertId,
+      locationId,
+      actionUrl,
+      actionLabel,
+      imageUrl,
+      const DeepCollectionEquality().hash(_data),
+      sentViaFcm,
+      shownLocally,
+      localNotificationId,
+      scheduledAt,
+      sentAt,
+      deliveredAt,
+      openedAt,
+      dismissedAt,
+      expiresAt,
+      createdAt,
+      updatedAt,
+      const DeepCollectionEquality().hash(_metadata)
+    ]);
+  }
 
-  @JsonKey(ignore: true)
+  @override
+  String toString() {
+    return 'Notification(id: $id, title: $title, body: $body, type: $type, priority: $priority, status: $status, userId: $userId, targetRole: $targetRole, targetBuildingIds: $targetBuildingIds, alertId: $alertId, locationId: $locationId, actionUrl: $actionUrl, actionLabel: $actionLabel, imageUrl: $imageUrl, data: $data, sentViaFcm: $sentViaFcm, shownLocally: $shownLocally, localNotificationId: $localNotificationId, scheduledAt: $scheduledAt, sentAt: $sentAt, deliveredAt: $deliveredAt, openedAt: $openedAt, dismissedAt: $dismissedAt, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$NotificationCopyWith<$Res>
+    implements $NotificationCopyWith<$Res> {
+  factory _$NotificationCopyWith(
+          _Notification value, $Res Function(_Notification) _then) =
+      __$NotificationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String title,
+      String body,
+      NotificationType type,
+      NotificationPriority priority,
+      NotificationStatus status,
+      String? userId,
+      String? targetRole,
+      List<String> targetBuildingIds,
+      String? alertId,
+      String? locationId,
+      String? actionUrl,
+      String? actionLabel,
+      String? imageUrl,
+      Map<String, dynamic> data,
+      bool sentViaFcm,
+      bool shownLocally,
+      int? localNotificationId,
+      DateTime? scheduledAt,
+      DateTime? sentAt,
+      DateTime? deliveredAt,
+      DateTime? openedAt,
+      DateTime? dismissedAt,
+      DateTime? expiresAt,
+      DateTime createdAt,
+      DateTime updatedAt,
+      Map<String, dynamic> metadata});
+}
+
+/// @nodoc
+class __$NotificationCopyWithImpl<$Res>
+    implements _$NotificationCopyWith<$Res> {
+  __$NotificationCopyWithImpl(this._self, this._then);
+
+  final _Notification _self;
+  final $Res Function(_Notification) _then;
+
+  /// Create a copy of Notification
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$NotificationImplCopyWith<_$NotificationImpl> get copyWith =>
-      __$$NotificationImplCopyWithImpl<_$NotificationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationImplToJson(
-      this,
-    );
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? body = null,
+    Object? type = null,
+    Object? priority = null,
+    Object? status = null,
+    Object? userId = freezed,
+    Object? targetRole = freezed,
+    Object? targetBuildingIds = null,
+    Object? alertId = freezed,
+    Object? locationId = freezed,
+    Object? actionUrl = freezed,
+    Object? actionLabel = freezed,
+    Object? imageUrl = freezed,
+    Object? data = null,
+    Object? sentViaFcm = null,
+    Object? shownLocally = null,
+    Object? localNotificationId = freezed,
+    Object? scheduledAt = freezed,
+    Object? sentAt = freezed,
+    Object? deliveredAt = freezed,
+    Object? openedAt = freezed,
+    Object? dismissedAt = freezed,
+    Object? expiresAt = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? metadata = null,
+  }) {
+    return _then(_Notification(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      body: null == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as NotificationType,
+      priority: null == priority
+          ? _self.priority
+          : priority // ignore: cast_nullable_to_non_nullable
+              as NotificationPriority,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as NotificationStatus,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      targetRole: freezed == targetRole
+          ? _self.targetRole
+          : targetRole // ignore: cast_nullable_to_non_nullable
+              as String?,
+      targetBuildingIds: null == targetBuildingIds
+          ? _self._targetBuildingIds
+          : targetBuildingIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      alertId: freezed == alertId
+          ? _self.alertId
+          : alertId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actionUrl: freezed == actionUrl
+          ? _self.actionUrl
+          : actionUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actionLabel: freezed == actionLabel
+          ? _self.actionLabel
+          : actionLabel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageUrl: freezed == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: null == data
+          ? _self._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      sentViaFcm: null == sentViaFcm
+          ? _self.sentViaFcm
+          : sentViaFcm // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shownLocally: null == shownLocally
+          ? _self.shownLocally
+          : shownLocally // ignore: cast_nullable_to_non_nullable
+              as bool,
+      localNotificationId: freezed == localNotificationId
+          ? _self.localNotificationId
+          : localNotificationId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      scheduledAt: freezed == scheduledAt
+          ? _self.scheduledAt
+          : scheduledAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      sentAt: freezed == sentAt
+          ? _self.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveredAt: freezed == deliveredAt
+          ? _self.deliveredAt
+          : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      openedAt: freezed == openedAt
+          ? _self.openedAt
+          : openedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      dismissedAt: freezed == dismissedAt
+          ? _self.dismissedAt
+          : dismissedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAt: freezed == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      metadata: null == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
   }
-}
-
-abstract class _Notification implements Notification {
-  const factory _Notification(
-      {required final String id,
-      required final String title,
-      required final String body,
-      required final NotificationType type,
-      final NotificationPriority priority,
-      final NotificationStatus status,
-      final String? userId,
-      final String? targetRole,
-      final List<String> targetBuildingIds,
-      final String? alertId,
-      final String? locationId,
-      final String? actionUrl,
-      final String? actionLabel,
-      final String? imageUrl,
-      final Map<String, dynamic> data,
-      final bool sentViaFcm,
-      final bool shownLocally,
-      final int? localNotificationId,
-      final DateTime? scheduledAt,
-      final DateTime? sentAt,
-      final DateTime? deliveredAt,
-      final DateTime? openedAt,
-      final DateTime? dismissedAt,
-      final DateTime? expiresAt,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final Map<String, dynamic> metadata}) = _$NotificationImpl;
-
-  factory _Notification.fromJson(Map<String, dynamic> json) =
-      _$NotificationImpl.fromJson;
-
-  @override
-
-  /// Unique notification ID
-  String get id;
-  @override
-
-  /// Notification title
-  String get title;
-  @override
-
-  /// Notification body/message
-  String get body;
-  @override
-
-  /// Notification type
-  NotificationType get type;
-  @override
-
-  /// Priority level
-  NotificationPriority get priority;
-  @override
-
-  /// Current status
-  NotificationStatus get status;
-  @override
-
-  /// Target user ID (null for broadcast)
-  String? get userId;
-  @override
-
-  /// Target role (for role-based notifications)
-  String? get targetRole;
-  @override
-
-  /// Target building IDs
-  List<String> get targetBuildingIds;
-  @override
-
-  /// Related alert ID (if from alert)
-  String? get alertId;
-  @override
-
-  /// Related location ID
-  String? get locationId;
-  @override
-
-  /// Action URL/deep link
-  String? get actionUrl;
-  @override
-
-  /// Action label
-  String? get actionLabel;
-  @override
-
-  /// Image URL
-  String? get imageUrl;
-  @override
-
-  /// Data payload
-  Map<String, dynamic> get data;
-  @override
-
-  /// Whether notification was sent via FCM
-  bool get sentViaFcm;
-  @override
-
-  /// Whether notification was shown locally
-  bool get shownLocally;
-  @override
-
-  /// Local notification ID (for cancellation)
-  int? get localNotificationId;
-  @override
-
-  /// Scheduled send time
-  DateTime? get scheduledAt;
-  @override
-
-  /// Sent timestamp
-  DateTime? get sentAt;
-  @override
-
-  /// Delivered timestamp
-  DateTime? get deliveredAt;
-  @override
-
-  /// Opened timestamp
-  DateTime? get openedAt;
-  @override
-
-  /// Dismissed timestamp
-  DateTime? get dismissedAt;
-  @override
-
-  /// Expires at
-  DateTime? get expiresAt;
-  @override
-
-  /// Created at
-  DateTime get createdAt;
-  @override
-
-  /// Updated at
-  DateTime get updatedAt;
-  @override
-
-  /// Metadata
-  Map<String, dynamic> get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$NotificationImplCopyWith<_$NotificationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-NotificationPreferences _$NotificationPreferencesFromJson(
-    Map<String, dynamic> json) {
-  return _NotificationPreferences.fromJson(json);
 }
 
 /// @nodoc
 mixin _$NotificationPreferences {
   /// User ID
-  String get userId => throw _privateConstructorUsedError;
+  String get userId;
 
   /// Enable push notifications
-  bool get pushEnabled => throw _privateConstructorUsedError;
+  bool get pushEnabled;
 
   /// Enable emergency alerts (cannot be disabled)
-  bool get emergencyAlertsEnabled => throw _privateConstructorUsedError;
+  bool get emergencyAlertsEnabled;
 
   /// Enable evacuation notices
-  bool get evacuationNoticesEnabled => throw _privateConstructorUsedError;
+  bool get evacuationNoticesEnabled;
 
   /// Enable announcements
-  bool get announcementsEnabled => throw _privateConstructorUsedError;
+  bool get announcementsEnabled;
 
   /// Enable personal messages
-  bool get personalMessagesEnabled => throw _privateConstructorUsedError;
+  bool get personalMessagesEnabled;
 
   /// Enable reminders
-  bool get remindersEnabled => throw _privateConstructorUsedError;
+  bool get remindersEnabled;
 
   /// Enable location alerts
-  bool get locationAlertsEnabled => throw _privateConstructorUsedError;
+  bool get locationAlertsEnabled;
 
   /// Enable safety tips
-  bool get safetyTipsEnabled => throw _privateConstructorUsedError;
+  bool get safetyTipsEnabled;
 
   /// Enable drill notifications
-  bool get drillNotificationsEnabled => throw _privateConstructorUsedError;
+  bool get drillNotificationsEnabled;
 
   /// Enable maintenance notifications
-  bool get maintenanceNotificationsEnabled =>
-      throw _privateConstructorUsedError;
+  bool get maintenanceNotificationsEnabled;
 
   /// Quiet hours start (24-hour format, e.g., 22 for 10 PM)
-  int? get quietHoursStart => throw _privateConstructorUsedError;
+  int? get quietHoursStart;
 
   /// Quiet hours end (24-hour format, e.g., 7 for 7 AM)
-  int? get quietHoursEnd => throw _privateConstructorUsedError;
+  int? get quietHoursEnd;
 
   /// Vibration enabled
-  bool get vibrationEnabled => throw _privateConstructorUsedError;
+  bool get vibrationEnabled;
 
   /// Sound enabled
-  bool get soundEnabled => throw _privateConstructorUsedError;
+  bool get soundEnabled;
 
   /// Updated at
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NotificationPreferencesCopyWith<NotificationPreferences> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $NotificationPreferencesCopyWith<$Res> {
-  factory $NotificationPreferencesCopyWith(NotificationPreferences value,
-          $Res Function(NotificationPreferences) then) =
-      _$NotificationPreferencesCopyWithImpl<$Res, NotificationPreferences>;
-  @useResult
-  $Res call(
-      {String userId,
-      bool pushEnabled,
-      bool emergencyAlertsEnabled,
-      bool evacuationNoticesEnabled,
-      bool announcementsEnabled,
-      bool personalMessagesEnabled,
-      bool remindersEnabled,
-      bool locationAlertsEnabled,
-      bool safetyTipsEnabled,
-      bool drillNotificationsEnabled,
-      bool maintenanceNotificationsEnabled,
-      int? quietHoursStart,
-      int? quietHoursEnd,
-      bool vibrationEnabled,
-      bool soundEnabled,
-      DateTime updatedAt});
-}
-
-/// @nodoc
-class _$NotificationPreferencesCopyWithImpl<$Res,
-        $Val extends NotificationPreferences>
-    implements $NotificationPreferencesCopyWith<$Res> {
-  _$NotificationPreferencesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of NotificationPreferences
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $NotificationPreferencesCopyWith<NotificationPreferences> get copyWith =>
+      _$NotificationPreferencesCopyWithImpl<NotificationPreferences>(
+          this as NotificationPreferences, _$identity);
+
+  /// Serializes this NotificationPreferences to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? userId = null,
-    Object? pushEnabled = null,
-    Object? emergencyAlertsEnabled = null,
-    Object? evacuationNoticesEnabled = null,
-    Object? announcementsEnabled = null,
-    Object? personalMessagesEnabled = null,
-    Object? remindersEnabled = null,
-    Object? locationAlertsEnabled = null,
-    Object? safetyTipsEnabled = null,
-    Object? drillNotificationsEnabled = null,
-    Object? maintenanceNotificationsEnabled = null,
-    Object? quietHoursStart = freezed,
-    Object? quietHoursEnd = freezed,
-    Object? vibrationEnabled = null,
-    Object? soundEnabled = null,
-    Object? updatedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      pushEnabled: null == pushEnabled
-          ? _value.pushEnabled
-          : pushEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emergencyAlertsEnabled: null == emergencyAlertsEnabled
-          ? _value.emergencyAlertsEnabled
-          : emergencyAlertsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      evacuationNoticesEnabled: null == evacuationNoticesEnabled
-          ? _value.evacuationNoticesEnabled
-          : evacuationNoticesEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      announcementsEnabled: null == announcementsEnabled
-          ? _value.announcementsEnabled
-          : announcementsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      personalMessagesEnabled: null == personalMessagesEnabled
-          ? _value.personalMessagesEnabled
-          : personalMessagesEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      remindersEnabled: null == remindersEnabled
-          ? _value.remindersEnabled
-          : remindersEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      locationAlertsEnabled: null == locationAlertsEnabled
-          ? _value.locationAlertsEnabled
-          : locationAlertsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      safetyTipsEnabled: null == safetyTipsEnabled
-          ? _value.safetyTipsEnabled
-          : safetyTipsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      drillNotificationsEnabled: null == drillNotificationsEnabled
-          ? _value.drillNotificationsEnabled
-          : drillNotificationsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      maintenanceNotificationsEnabled: null == maintenanceNotificationsEnabled
-          ? _value.maintenanceNotificationsEnabled
-          : maintenanceNotificationsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      quietHoursStart: freezed == quietHoursStart
-          ? _value.quietHoursStart
-          : quietHoursStart // ignore: cast_nullable_to_non_nullable
-              as int?,
-      quietHoursEnd: freezed == quietHoursEnd
-          ? _value.quietHoursEnd
-          : quietHoursEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
-      vibrationEnabled: null == vibrationEnabled
-          ? _value.vibrationEnabled
-          : vibrationEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      soundEnabled: null == soundEnabled
-          ? _value.soundEnabled
-          : soundEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+  bool operator ==(Object other) {
+    final _this = this as NotificationPreferences;
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is NotificationPreferences &&
+            (identical(other.userId, _this.userId) ||
+                other.userId == _this.userId) &&
+            (identical(other.pushEnabled, _this.pushEnabled) ||
+                other.pushEnabled == _this.pushEnabled) &&
+            (identical(other.emergencyAlertsEnabled, _this.emergencyAlertsEnabled) ||
+                other.emergencyAlertsEnabled == _this.emergencyAlertsEnabled) &&
+            (identical(other.evacuationNoticesEnabled, _this.evacuationNoticesEnabled) ||
+                other.evacuationNoticesEnabled ==
+                    _this.evacuationNoticesEnabled) &&
+            (identical(other.announcementsEnabled, _this.announcementsEnabled) ||
+                other.announcementsEnabled == _this.announcementsEnabled) &&
+            (identical(other.personalMessagesEnabled, _this.personalMessagesEnabled) ||
+                other.personalMessagesEnabled ==
+                    _this.personalMessagesEnabled) &&
+            (identical(other.remindersEnabled, _this.remindersEnabled) ||
+                other.remindersEnabled == _this.remindersEnabled) &&
+            (identical(other.locationAlertsEnabled, _this.locationAlertsEnabled) ||
+                other.locationAlertsEnabled == _this.locationAlertsEnabled) &&
+            (identical(other.safetyTipsEnabled, _this.safetyTipsEnabled) ||
+                other.safetyTipsEnabled == _this.safetyTipsEnabled) &&
+            (identical(other.drillNotificationsEnabled, _this.drillNotificationsEnabled) ||
+                other.drillNotificationsEnabled ==
+                    _this.drillNotificationsEnabled) &&
+            (identical(other.maintenanceNotificationsEnabled,
+                    _this.maintenanceNotificationsEnabled) ||
+                other.maintenanceNotificationsEnabled ==
+                    _this.maintenanceNotificationsEnabled) &&
+            (identical(other.quietHoursStart, _this.quietHoursStart) ||
+                other.quietHoursStart == _this.quietHoursStart) &&
+            (identical(other.quietHoursEnd, _this.quietHoursEnd) ||
+                other.quietHoursEnd == _this.quietHoursEnd) &&
+            (identical(other.vibrationEnabled, _this.vibrationEnabled) ||
+                other.vibrationEnabled == _this.vibrationEnabled) &&
+            (identical(other.soundEnabled, _this.soundEnabled) ||
+                other.soundEnabled == _this.soundEnabled) &&
+            (identical(other.updatedAt, _this.updatedAt) || other.updatedAt == _this.updatedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode {
+    final _this = this as NotificationPreferences;
+    return Object.hash(
+        runtimeType,
+        _this.userId,
+        _this.pushEnabled,
+        _this.emergencyAlertsEnabled,
+        _this.evacuationNoticesEnabled,
+        _this.announcementsEnabled,
+        _this.personalMessagesEnabled,
+        _this.remindersEnabled,
+        _this.locationAlertsEnabled,
+        _this.safetyTipsEnabled,
+        _this.drillNotificationsEnabled,
+        _this.maintenanceNotificationsEnabled,
+        _this.quietHoursStart,
+        _this.quietHoursEnd,
+        _this.vibrationEnabled,
+        _this.soundEnabled,
+        _this.updatedAt);
+  }
+
+  @override
+  String toString() {
+    final _this = this as NotificationPreferences;
+    return 'NotificationPreferences(userId: ${_this.userId}, pushEnabled: ${_this.pushEnabled}, emergencyAlertsEnabled: ${_this.emergencyAlertsEnabled}, evacuationNoticesEnabled: ${_this.evacuationNoticesEnabled}, announcementsEnabled: ${_this.announcementsEnabled}, personalMessagesEnabled: ${_this.personalMessagesEnabled}, remindersEnabled: ${_this.remindersEnabled}, locationAlertsEnabled: ${_this.locationAlertsEnabled}, safetyTipsEnabled: ${_this.safetyTipsEnabled}, drillNotificationsEnabled: ${_this.drillNotificationsEnabled}, maintenanceNotificationsEnabled: ${_this.maintenanceNotificationsEnabled}, quietHoursStart: ${_this.quietHoursStart}, quietHoursEnd: ${_this.quietHoursEnd}, vibrationEnabled: ${_this.vibrationEnabled}, soundEnabled: ${_this.soundEnabled}, updatedAt: ${_this.updatedAt})';
   }
 }
 
 /// @nodoc
-abstract class _$$NotificationPreferencesImplCopyWith<$Res>
-    implements $NotificationPreferencesCopyWith<$Res> {
-  factory _$$NotificationPreferencesImplCopyWith(
-          _$NotificationPreferencesImpl value,
-          $Res Function(_$NotificationPreferencesImpl) then) =
-      __$$NotificationPreferencesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $NotificationPreferencesCopyWith<$Res> {
+  factory $NotificationPreferencesCopyWith(NotificationPreferences value,
+          $Res Function(NotificationPreferences) _then) =
+      _$NotificationPreferencesCopyWithImpl;
   @useResult
   $Res call(
       {String userId,
@@ -1128,15 +1354,15 @@ abstract class _$$NotificationPreferencesImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NotificationPreferencesImplCopyWithImpl<$Res>
-    extends _$NotificationPreferencesCopyWithImpl<$Res,
-        _$NotificationPreferencesImpl>
-    implements _$$NotificationPreferencesImplCopyWith<$Res> {
-  __$$NotificationPreferencesImplCopyWithImpl(
-      _$NotificationPreferencesImpl _value,
-      $Res Function(_$NotificationPreferencesImpl) _then)
-      : super(_value, _then);
+class _$NotificationPreferencesCopyWithImpl<$Res>
+    implements $NotificationPreferencesCopyWith<$Res> {
+  _$NotificationPreferencesCopyWithImpl(this._self, this._then);
 
+  final NotificationPreferences _self;
+  final $Res Function(NotificationPreferences) _then;
+
+  /// Create a copy of NotificationPreferences
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1157,79 +1383,335 @@ class __$$NotificationPreferencesImplCopyWithImpl<$Res>
     Object? soundEnabled = null,
     Object? updatedAt = null,
   }) {
-    return _then(_$NotificationPreferencesImpl(
+    return _then(NotificationPreferences(
       userId: null == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
       pushEnabled: null == pushEnabled
-          ? _value.pushEnabled
+          ? _self.pushEnabled
           : pushEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       emergencyAlertsEnabled: null == emergencyAlertsEnabled
-          ? _value.emergencyAlertsEnabled
+          ? _self.emergencyAlertsEnabled
           : emergencyAlertsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       evacuationNoticesEnabled: null == evacuationNoticesEnabled
-          ? _value.evacuationNoticesEnabled
+          ? _self.evacuationNoticesEnabled
           : evacuationNoticesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       announcementsEnabled: null == announcementsEnabled
-          ? _value.announcementsEnabled
+          ? _self.announcementsEnabled
           : announcementsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       personalMessagesEnabled: null == personalMessagesEnabled
-          ? _value.personalMessagesEnabled
+          ? _self.personalMessagesEnabled
           : personalMessagesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       remindersEnabled: null == remindersEnabled
-          ? _value.remindersEnabled
+          ? _self.remindersEnabled
           : remindersEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       locationAlertsEnabled: null == locationAlertsEnabled
-          ? _value.locationAlertsEnabled
+          ? _self.locationAlertsEnabled
           : locationAlertsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       safetyTipsEnabled: null == safetyTipsEnabled
-          ? _value.safetyTipsEnabled
+          ? _self.safetyTipsEnabled
           : safetyTipsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       drillNotificationsEnabled: null == drillNotificationsEnabled
-          ? _value.drillNotificationsEnabled
+          ? _self.drillNotificationsEnabled
           : drillNotificationsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       maintenanceNotificationsEnabled: null == maintenanceNotificationsEnabled
-          ? _value.maintenanceNotificationsEnabled
+          ? _self.maintenanceNotificationsEnabled
           : maintenanceNotificationsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       quietHoursStart: freezed == quietHoursStart
-          ? _value.quietHoursStart
+          ? _self.quietHoursStart
           : quietHoursStart // ignore: cast_nullable_to_non_nullable
               as int?,
       quietHoursEnd: freezed == quietHoursEnd
-          ? _value.quietHoursEnd
+          ? _self.quietHoursEnd
           : quietHoursEnd // ignore: cast_nullable_to_non_nullable
               as int?,
       vibrationEnabled: null == vibrationEnabled
-          ? _value.vibrationEnabled
+          ? _self.vibrationEnabled
           : vibrationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       soundEnabled: null == soundEnabled
-          ? _value.soundEnabled
+          ? _self.soundEnabled
           : soundEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [NotificationPreferences].
+extension NotificationPreferencesPatterns on NotificationPreferences {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NotificationPreferences value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_NotificationPreferences value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_NotificationPreferences value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String userId,
+            bool pushEnabled,
+            bool emergencyAlertsEnabled,
+            bool evacuationNoticesEnabled,
+            bool announcementsEnabled,
+            bool personalMessagesEnabled,
+            bool remindersEnabled,
+            bool locationAlertsEnabled,
+            bool safetyTipsEnabled,
+            bool drillNotificationsEnabled,
+            bool maintenanceNotificationsEnabled,
+            int? quietHoursStart,
+            int? quietHoursEnd,
+            bool vibrationEnabled,
+            bool soundEnabled,
+            DateTime updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences() when $default != null:
+        return $default(
+            _that.userId,
+            _that.pushEnabled,
+            _that.emergencyAlertsEnabled,
+            _that.evacuationNoticesEnabled,
+            _that.announcementsEnabled,
+            _that.personalMessagesEnabled,
+            _that.remindersEnabled,
+            _that.locationAlertsEnabled,
+            _that.safetyTipsEnabled,
+            _that.drillNotificationsEnabled,
+            _that.maintenanceNotificationsEnabled,
+            _that.quietHoursStart,
+            _that.quietHoursEnd,
+            _that.vibrationEnabled,
+            _that.soundEnabled,
+            _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String userId,
+            bool pushEnabled,
+            bool emergencyAlertsEnabled,
+            bool evacuationNoticesEnabled,
+            bool announcementsEnabled,
+            bool personalMessagesEnabled,
+            bool remindersEnabled,
+            bool locationAlertsEnabled,
+            bool safetyTipsEnabled,
+            bool drillNotificationsEnabled,
+            bool maintenanceNotificationsEnabled,
+            int? quietHoursStart,
+            int? quietHoursEnd,
+            bool vibrationEnabled,
+            bool soundEnabled,
+            DateTime updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences():
+        return $default(
+            _that.userId,
+            _that.pushEnabled,
+            _that.emergencyAlertsEnabled,
+            _that.evacuationNoticesEnabled,
+            _that.announcementsEnabled,
+            _that.personalMessagesEnabled,
+            _that.remindersEnabled,
+            _that.locationAlertsEnabled,
+            _that.safetyTipsEnabled,
+            _that.drillNotificationsEnabled,
+            _that.maintenanceNotificationsEnabled,
+            _that.quietHoursStart,
+            _that.quietHoursEnd,
+            _that.vibrationEnabled,
+            _that.soundEnabled,
+            _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String userId,
+            bool pushEnabled,
+            bool emergencyAlertsEnabled,
+            bool evacuationNoticesEnabled,
+            bool announcementsEnabled,
+            bool personalMessagesEnabled,
+            bool remindersEnabled,
+            bool locationAlertsEnabled,
+            bool safetyTipsEnabled,
+            bool drillNotificationsEnabled,
+            bool maintenanceNotificationsEnabled,
+            int? quietHoursStart,
+            int? quietHoursEnd,
+            bool vibrationEnabled,
+            bool soundEnabled,
+            DateTime updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _NotificationPreferences() when $default != null:
+        return $default(
+            _that.userId,
+            _that.pushEnabled,
+            _that.emergencyAlertsEnabled,
+            _that.evacuationNoticesEnabled,
+            _that.announcementsEnabled,
+            _that.personalMessagesEnabled,
+            _that.remindersEnabled,
+            _that.locationAlertsEnabled,
+            _that.safetyTipsEnabled,
+            _that.drillNotificationsEnabled,
+            _that.maintenanceNotificationsEnabled,
+            _that.quietHoursStart,
+            _that.quietHoursEnd,
+            _that.vibrationEnabled,
+            _that.soundEnabled,
+            _that.updatedAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$NotificationPreferencesImpl implements _NotificationPreferences {
-  const _$NotificationPreferencesImpl(
+class _NotificationPreferences implements NotificationPreferences {
+  const _NotificationPreferences(
       {required this.userId,
       this.pushEnabled = true,
       this.emergencyAlertsEnabled = true,
@@ -1246,9 +1728,8 @@ class _$NotificationPreferencesImpl implements _NotificationPreferences {
       this.vibrationEnabled = true,
       this.soundEnabled = true,
       required this.updatedAt});
-
-  factory _$NotificationPreferencesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NotificationPreferencesImplFromJson(json);
+  factory _NotificationPreferences.fromJson(Map<String, dynamic> json) =>
+      _$NotificationPreferencesFromJson(json);
 
   /// User ID
   @override
@@ -1326,16 +1807,27 @@ class _$NotificationPreferencesImpl implements _NotificationPreferences {
   @override
   final DateTime updatedAt;
 
+  /// Create a copy of NotificationPreferences
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'NotificationPreferences(userId: $userId, pushEnabled: $pushEnabled, emergencyAlertsEnabled: $emergencyAlertsEnabled, evacuationNoticesEnabled: $evacuationNoticesEnabled, announcementsEnabled: $announcementsEnabled, personalMessagesEnabled: $personalMessagesEnabled, remindersEnabled: $remindersEnabled, locationAlertsEnabled: $locationAlertsEnabled, safetyTipsEnabled: $safetyTipsEnabled, drillNotificationsEnabled: $drillNotificationsEnabled, maintenanceNotificationsEnabled: $maintenanceNotificationsEnabled, quietHoursStart: $quietHoursStart, quietHoursEnd: $quietHoursEnd, vibrationEnabled: $vibrationEnabled, soundEnabled: $soundEnabled, updatedAt: $updatedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$NotificationPreferencesCopyWith<_NotificationPreferences> get copyWith =>
+      __$NotificationPreferencesCopyWithImpl<_NotificationPreferences>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$NotificationPreferencesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotificationPreferencesImpl &&
+            other is _NotificationPreferences &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.pushEnabled, pushEnabled) ||
                 other.pushEnabled == pushEnabled) &&
@@ -1373,130 +1865,159 @@ class _$NotificationPreferencesImpl implements _NotificationPreferences {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      userId,
-      pushEnabled,
-      emergencyAlertsEnabled,
-      evacuationNoticesEnabled,
-      announcementsEnabled,
-      personalMessagesEnabled,
-      remindersEnabled,
-      locationAlertsEnabled,
-      safetyTipsEnabled,
-      drillNotificationsEnabled,
-      maintenanceNotificationsEnabled,
-      quietHoursStart,
-      quietHoursEnd,
-      vibrationEnabled,
-      soundEnabled,
-      updatedAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NotificationPreferencesImplCopyWith<_$NotificationPreferencesImpl>
-      get copyWith => __$$NotificationPreferencesImplCopyWithImpl<
-          _$NotificationPreferencesImpl>(this, _$identity);
+  int get hashCode {
+    return Object.hash(
+        runtimeType,
+        userId,
+        pushEnabled,
+        emergencyAlertsEnabled,
+        evacuationNoticesEnabled,
+        announcementsEnabled,
+        personalMessagesEnabled,
+        remindersEnabled,
+        locationAlertsEnabled,
+        safetyTipsEnabled,
+        drillNotificationsEnabled,
+        maintenanceNotificationsEnabled,
+        quietHoursStart,
+        quietHoursEnd,
+        vibrationEnabled,
+        soundEnabled,
+        updatedAt);
+  }
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$NotificationPreferencesImplToJson(
-      this,
-    );
+  String toString() {
+    return 'NotificationPreferences(userId: $userId, pushEnabled: $pushEnabled, emergencyAlertsEnabled: $emergencyAlertsEnabled, evacuationNoticesEnabled: $evacuationNoticesEnabled, announcementsEnabled: $announcementsEnabled, personalMessagesEnabled: $personalMessagesEnabled, remindersEnabled: $remindersEnabled, locationAlertsEnabled: $locationAlertsEnabled, safetyTipsEnabled: $safetyTipsEnabled, drillNotificationsEnabled: $drillNotificationsEnabled, maintenanceNotificationsEnabled: $maintenanceNotificationsEnabled, quietHoursStart: $quietHoursStart, quietHoursEnd: $quietHoursEnd, vibrationEnabled: $vibrationEnabled, soundEnabled: $soundEnabled, updatedAt: $updatedAt)';
   }
 }
 
-abstract class _NotificationPreferences implements NotificationPreferences {
-  const factory _NotificationPreferences(
-      {required final String userId,
-      final bool pushEnabled,
-      final bool emergencyAlertsEnabled,
-      final bool evacuationNoticesEnabled,
-      final bool announcementsEnabled,
-      final bool personalMessagesEnabled,
-      final bool remindersEnabled,
-      final bool locationAlertsEnabled,
-      final bool safetyTipsEnabled,
-      final bool drillNotificationsEnabled,
-      final bool maintenanceNotificationsEnabled,
-      final int? quietHoursStart,
-      final int? quietHoursEnd,
-      final bool vibrationEnabled,
-      final bool soundEnabled,
-      required final DateTime updatedAt}) = _$NotificationPreferencesImpl;
-
-  factory _NotificationPreferences.fromJson(Map<String, dynamic> json) =
-      _$NotificationPreferencesImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$NotificationPreferencesCopyWith<$Res>
+    implements $NotificationPreferencesCopyWith<$Res> {
+  factory _$NotificationPreferencesCopyWith(_NotificationPreferences value,
+          $Res Function(_NotificationPreferences) _then) =
+      __$NotificationPreferencesCopyWithImpl;
   @override
-
-  /// User ID
-  String get userId;
-  @override
-
-  /// Enable push notifications
-  bool get pushEnabled;
-  @override
-
-  /// Enable emergency alerts (cannot be disabled)
-  bool get emergencyAlertsEnabled;
-  @override
-
-  /// Enable evacuation notices
-  bool get evacuationNoticesEnabled;
-  @override
-
-  /// Enable announcements
-  bool get announcementsEnabled;
-  @override
-
-  /// Enable personal messages
-  bool get personalMessagesEnabled;
-  @override
-
-  /// Enable reminders
-  bool get remindersEnabled;
-  @override
-
-  /// Enable location alerts
-  bool get locationAlertsEnabled;
-  @override
-
-  /// Enable safety tips
-  bool get safetyTipsEnabled;
-  @override
-
-  /// Enable drill notifications
-  bool get drillNotificationsEnabled;
-  @override
-
-  /// Enable maintenance notifications
-  bool get maintenanceNotificationsEnabled;
-  @override
-
-  /// Quiet hours start (24-hour format, e.g., 22 for 10 PM)
-  int? get quietHoursStart;
-  @override
-
-  /// Quiet hours end (24-hour format, e.g., 7 for 7 AM)
-  int? get quietHoursEnd;
-  @override
-
-  /// Vibration enabled
-  bool get vibrationEnabled;
-  @override
-
-  /// Sound enabled
-  bool get soundEnabled;
-  @override
-
-  /// Updated at
-  DateTime get updatedAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$NotificationPreferencesImplCopyWith<_$NotificationPreferencesImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String userId,
+      bool pushEnabled,
+      bool emergencyAlertsEnabled,
+      bool evacuationNoticesEnabled,
+      bool announcementsEnabled,
+      bool personalMessagesEnabled,
+      bool remindersEnabled,
+      bool locationAlertsEnabled,
+      bool safetyTipsEnabled,
+      bool drillNotificationsEnabled,
+      bool maintenanceNotificationsEnabled,
+      int? quietHoursStart,
+      int? quietHoursEnd,
+      bool vibrationEnabled,
+      bool soundEnabled,
+      DateTime updatedAt});
 }
+
+/// @nodoc
+class __$NotificationPreferencesCopyWithImpl<$Res>
+    implements _$NotificationPreferencesCopyWith<$Res> {
+  __$NotificationPreferencesCopyWithImpl(this._self, this._then);
+
+  final _NotificationPreferences _self;
+  final $Res Function(_NotificationPreferences) _then;
+
+  /// Create a copy of NotificationPreferences
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? userId = null,
+    Object? pushEnabled = null,
+    Object? emergencyAlertsEnabled = null,
+    Object? evacuationNoticesEnabled = null,
+    Object? announcementsEnabled = null,
+    Object? personalMessagesEnabled = null,
+    Object? remindersEnabled = null,
+    Object? locationAlertsEnabled = null,
+    Object? safetyTipsEnabled = null,
+    Object? drillNotificationsEnabled = null,
+    Object? maintenanceNotificationsEnabled = null,
+    Object? quietHoursStart = freezed,
+    Object? quietHoursEnd = freezed,
+    Object? vibrationEnabled = null,
+    Object? soundEnabled = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_NotificationPreferences(
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pushEnabled: null == pushEnabled
+          ? _self.pushEnabled
+          : pushEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emergencyAlertsEnabled: null == emergencyAlertsEnabled
+          ? _self.emergencyAlertsEnabled
+          : emergencyAlertsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      evacuationNoticesEnabled: null == evacuationNoticesEnabled
+          ? _self.evacuationNoticesEnabled
+          : evacuationNoticesEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      announcementsEnabled: null == announcementsEnabled
+          ? _self.announcementsEnabled
+          : announcementsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      personalMessagesEnabled: null == personalMessagesEnabled
+          ? _self.personalMessagesEnabled
+          : personalMessagesEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      remindersEnabled: null == remindersEnabled
+          ? _self.remindersEnabled
+          : remindersEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      locationAlertsEnabled: null == locationAlertsEnabled
+          ? _self.locationAlertsEnabled
+          : locationAlertsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      safetyTipsEnabled: null == safetyTipsEnabled
+          ? _self.safetyTipsEnabled
+          : safetyTipsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      drillNotificationsEnabled: null == drillNotificationsEnabled
+          ? _self.drillNotificationsEnabled
+          : drillNotificationsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      maintenanceNotificationsEnabled: null == maintenanceNotificationsEnabled
+          ? _self.maintenanceNotificationsEnabled
+          : maintenanceNotificationsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      quietHoursStart: freezed == quietHoursStart
+          ? _self.quietHoursStart
+          : quietHoursStart // ignore: cast_nullable_to_non_nullable
+              as int?,
+      quietHoursEnd: freezed == quietHoursEnd
+          ? _self.quietHoursEnd
+          : quietHoursEnd // ignore: cast_nullable_to_non_nullable
+              as int?,
+      vibrationEnabled: null == vibrationEnabled
+          ? _self.vibrationEnabled
+          : vibrationEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      soundEnabled: null == soundEnabled
+          ? _self.soundEnabled
+          : soundEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+// dart format on

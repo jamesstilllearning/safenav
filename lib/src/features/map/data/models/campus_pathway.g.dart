@@ -6,8 +6,8 @@ part of 'campus_pathway.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CampusPathwayImpl _$$CampusPathwayImplFromJson(Map<String, dynamic> json) =>
-    _$CampusPathwayImpl(
+_CampusPathway _$CampusPathwayFromJson(Map<String, dynamic> json) =>
+    _CampusPathway(
       id: json['id'] as String,
       name: json['name'] as String,
       highway: json['highway'] as String,
@@ -26,7 +26,7 @@ _$CampusPathwayImpl _$$CampusPathwayImplFromJson(Map<String, dynamic> json) =>
       additionalTags: json['additionalTags'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$CampusPathwayImplToJson(_$CampusPathwayImpl instance) =>
+Map<String, dynamic> _$CampusPathwayToJson(_CampusPathway instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
