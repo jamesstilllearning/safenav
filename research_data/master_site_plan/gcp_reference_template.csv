@@ -1,0 +1,11 @@
+gcp_id,latitude,longitude,description,source,date_collected,collector
+GCP_01,,,"Main Gate post",Google Earth Pro,,,
+GCP_02,,,"Main Building Hall NW corner",Google Earth Pro,,,
+GCP_03,,,"Faculty Building NE corner",Google Earth Pro,,,
+GCP_04,,,"Existing Quadrangle center",Google Earth Pro,,,
+GCP_05,,,"Creek crossing (if visible)",Google Earth Pro,,,
+GCP_06,,,"Congressional Road intersection",Google Earth Pro,,,
+GCP_07,,,"Central pathway junction",Google Earth Pro,,,
+GCP_08,,,"South boundary marker",Google Earth Pro,,,
+GCP_09,,,"Research Building SE corner",Google Earth Pro,,,
+GCP_10,,,"CHTM Building NW corner",Google Earth Pro,,,

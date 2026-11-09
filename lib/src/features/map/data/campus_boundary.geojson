@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "name": "EARIST Cavite Campus Boundary",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "earist_cavite_campus",
+        "name": "Eulogio \"Amang\" Rodriguez Institute of Science and Technology - Cavite Campus",
+        "short_name": "EARIST Cavite",
+        "amenity": "college",
+        "addr:city": "General Mariano Alvarez",
+        "addr:street": "Congressional Road",
+        "wikidata": "Q20577682",
+        "osm_relation_id": 16091159,
+        "source": "OpenStreetMap",
+        "source_date": "2025-01-15",
+        "verification_status": "verified_osm",
+        "description": "Main campus boundary for EARIST Cavite Campus in General Mariano Alvarez, Cavite, Philippines"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0076878, 14.3001565],
+            [121.0080856, 14.3005277],
+            [121.0083735, 14.3005396],
+            [121.0088450, 14.3009601],
+            [121.0092454, 14.3013173],
+            [121.0103422, 14.3007650],
+            [121.0095368, 14.2991580],
+            [121.0076878, 14.3001565]
+          ]
+        ]
+      }
+    }
+  ]
+}

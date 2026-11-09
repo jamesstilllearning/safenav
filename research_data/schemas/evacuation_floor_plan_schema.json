@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAFENAV CAVITE - Evacuation Floor Plan Schema",
+  "description": "Schema for structured evacuation data extracted from posted evacuation diagrams",
+  "type": "object",
+  "properties": {
+    "building_id": {
+      "type": "string",
+      "pattern": "^(building_|facility_)\\d+$",
+      "description": "Building ID from master plan (e.g., building_016)"
+    },
+    "building_name": {
+      "type": "string",
+      "description": "Official building name"
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "floor_id": {
+            "type": "string",
+            "pattern": "^FL\\d+$",
+            "description": "Floor identifier (FL01, FL02, etc.)"
+          },
+          "floor_label": {
+            "type": "string",
+            "description": "Human-readable floor label (e.g., Ground Floor, 2nd Floor)"
+          },
+          "source_photos": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Filenames of evacuation diagram photos for this floor"
+          },
+          "photo_types_found": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["full", "exits", "stairs", "assembly", "legend", "youarehere", "fireext", "firstaid", "corridors"]
+            },
+            "description": "Types of evacuation diagram photos available"
+          },
+          "exits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "exit_id": { "type": "string", "pattern": "^EXIT_.*$" },
+                "type": { "type": "string", "enum": ["main", "emergency", "fire_exit", "secondary", "service"] },
+                "description": { "type": "string" },
+                "accessibility": { "type": "string", "enum": ["wheelchair", "partial", "stairs_only", "unknown"] },
+                "leads_to": { "type": "string", "description": "Pathway ID, assembly point ID, or OUTSIDE" },
+                "signage": { "type": "string", "enum": ["illuminated", "standard", "none", "unknown"] },
+                "coordinates_estimate": { "type": ["object", "null"], "properties": { "latitude": { "type": "number" }, "longitude": { "type": "number" } } }
+              },
+              "required": ["exit_id", "type", "description", "accessibility", "leads_to", "signage"]
+            }
+          },
+          "staircases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stair_id": { "type": "string", "pattern": "^STAIR_.*$" },
+                "type": { "type": "string", "enum": ["enclosed", "open", "fire_exit", "emergency", "spiral"] },
+                "connects_floors": { "type": "array", "items": { "type": "string", "pattern": "^FL\\d+$" }, "minItems": 2, "maxItems": 2 },
+                "location_description": { "type": "string" },
+                "accessibility": { "type": "string", "enum": ["wheelchair", "partial", "none", "unknown"] },
+                "evacuation_direction": { "type": "string", "enum": ["up_only", "down_only", "bidirectional"] }
+              },
+              "required": ["stair_id", "type", "connects_floors", "location_description", "accessibility", "evacuation_direction"]
+            }
+          },
+          "corridors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "corridor_id": { "type": "string", "pattern": "^CORR_.*$" },
+                "description": { "type": "string" },
+                "width_m_estimate": { "type": "number", "minimum": 0.5 },
+                "connects": { "type": "array", "items": { "type": "string" }, "description": "IDs of exits, stairs, intersections this corridor connects" }
+              },
+              "required": ["corridor_id", "description", "connects"]
+            }
+          },
+          "evacuation_routes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "route_id": { "type": "string", "pattern": "^EVAC_ROUTE_.*$" },
+                "name": { "type": "string" },
+                "start_zone": { "type": "string", "description": "Area/rooms this route serves" },
+                "path": { "type": "array", "items": { "type": "string" }, "description": "Sequence of corridor/stair/exit IDs" },
+                "assembly_point": { "type": "string", "description": "Assembly point ID this route leads to" },
+                "direction": { "type": "string", "enum": ["one_way", "bidirectional"] }
+              },
+              "required": ["route_id", "name", "start_zone", "path", "assembly_point", "direction"]
+            }
+          },
+          "assembly_points_referenced": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^ASM_.*$" },
+            "description": "Assembly point IDs referenced on this floor's diagram"
+          },
+          "fire_equipment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "equipment_id": { "type": "string", "pattern": "^(EXT|HOSE|ALARM)_.*$" },
+                "type": { "type": "string", "enum": ["fire_extinguisher", "fire_hose_reel", "fire_alarm_call_point", "fire_blanket"] },
+                "subtype": { "type": ["string", "null"], "description": "e.g., ABC, CO2, Water for extinguishers" },
+                "location_description": { "type": "string" },
+                "mounting": { "type": "string", "enum": ["wall", "cabinet", "stand", "unknown"] }
+              },
+              "required": ["equipment_id", "type", "location_description", "mounting"]
+            }
+          },
+          "first_aid": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "station_id": { "type": "string", "pattern": "^FA_.*$" },
+                "location_description": { "type": "string" },
+                "type": { "type": "string", "enum": ["first_aid_cabinet", "first_aid_room", "aed", "emergency_phone"] }
+              },
+              "required": ["station_id", "location_description", "type"]
+            }
+          },
+          "legend_symbols": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "symbol": { "type": "string", "description": "Identifier for the symbol (e.g., green_arrow)" },
+                "meaning": { "type": "string" },
+                "color": { "type": "string" }
+              },
+              "required": ["symbol", "meaning", "color"]
+            }
+          },
+          "you_are_here": {
+            "type": "object",
+            "properties": {
+              "photo": { "type": "string" },
+              "location_description": { "type": "string" },
+              "orientation_note": { "type": "string", "description": "How the diagram is oriented relative to real building" }
+            }
+          },
+          "verification": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string", "enum": ["posted_diagram", "official_plan", "staff_interview", "field_observation"] },
+              "photo_date": { "type": "string", "format": "date" },
+              "diagram_date_posted": { "type": ["string", "null"], "format": "date" },
+              "confirmed_current_by": { "type": ["string", "null"] },
+              "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+              "notes": { "type": "string" }
+            },
+            "required": ["source", "photo_date", "confidence", "notes"]
+          }
+        },
+        "required": [
+          "floor_id",
+          "floor_label",
+          "source_photos",
+          "photo_types_found",
+          "exits",
+          "staircases",
+          "corridors",
+          "evacuation_routes",
+          "assembly_points_referenced",
+          "fire_equipment",
+          "first_aid",
+          "legend_symbols",
+          "you_are_here",
+          "verification"
+        ]
+      }
+    },
+    "building_level_notes": { "type": "string" },
+    "verification_summary": {
+      "type": "object",
+      "properties": {
+        "total_floors_photographed": { "type": "integer" },
+        "floors_with_full_diagram": { "type": "integer" },
+        "floors_with_exits": { "type": "integer" },
+        "floors_with_stairs": { "type": "integer" },
+        "floors_with_assembly": { "type": "integer" },
+        "last_updated": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["template_generated", "partial_data", "complete_pending_verification", "verified"] }
+      },
+      "required": ["total_floors_photographed", "last_updated", "status"]
+    }
+  },
+  "required": ["building_id", "building_name", "floors", "verification_summary"],
+  "additionalProperties": false
+}

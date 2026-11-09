@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAFENAV CAVITE - Building Information Schema",
+  "description": "Schema for structured building data extracted from master plan, field observations, and evacuation diagrams",
+  "type": "object",
+  "properties": {
+    "master_plan_id": {
+      "type": "string",
+      "pattern": "^(building_|facility_)\\d+$",
+      "description": "Unique ID from master plan analysis (e.g., building_016, facility_017)"
+    },
+    "official_name": {
+      "type": "string",
+      "description": "Exact name from master plan label"
+    },
+    "visible_name": {
+      "type": ["string", "null"],
+      "description": "Name from physical signage (if different from official)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["existing", "proposed", "on_going", "recently_accomplished", "facility_project", "unknown"],
+      "description": "Building status from master plan or field verification"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "academic", "multipurpose", "canteen", "clinic", "dormitory",
+        "library", "theater", "laboratory", "material_segregation",
+        "main_hall", "office", "hostel", "other"
+      ],
+      "description": "Building category for styling and filtering"
+    },
+    "floors": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Number of floors observed or from diagrams"
+    },
+    "entrances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entrance_id": {
+            "type": "string",
+            "pattern": "^ENT_.*$"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["main", "emergency", "secondary", "service", "accessible"]
+          },
+          "description": {
+            "type": "string"
+          },
+          "accessibility": {
+            "type": "string",
+            "enum": ["wheelchair", "partial", "stairs_only", "unknown"]
+          },
+          "leads_to": {
+            "type": "string",
+            "description": "Pathway ID or assembly point ID this entrance connects to"
+          },
+          "signage": {
+            "type": "string",
+            "enum": ["illuminated", "standard", "none", "unknown"]
+          },
+          "coordinates": {
+            "type": ["object", "null"],
+            "properties": {
+              "latitude": { "type": "number" },
+              "longitude": { "type": "number" },
+              "accuracy_m": { "type": "number" },
+              "source": { "type": "string", "enum": ["field_gps", "digitized", "estimated"] }
+            },
+            "required": ["latitude", "longitude"]
+          },
+          "verification": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string", "enum": ["master_plan", "field_observation", "staff_interview", "evacuation_diagram"] },
+              "date": { "type": "string", "format": "date" },
+              "status": { "type": "string", "enum": ["official", "field_verified", "staff_confirmed", "estimated", "unverified"] },
+              "notes": { "type": "string" }
+            },
+            "required": ["source", "date", "status"]
+          }
+        },
+        "required": ["entrance_id", "type", "description", "accessibility", "leads_to", "signage", "verification"]
+      }
+    },
+    "coordinates": {
+      "type": ["object", "null"],
+      "properties": {
+        "centroid_latitude": { "type": "number" },
+        "centroid_longitude": { "type": "number" },
+        "polygon": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "accuracy_m": { "type": "number" },
+        "source": { "type": "string", "enum": ["field_gps", "digitized_master_plan", "google_earth", "estimated"] },
+        "crs": { "type": "string", "const": "EPSG:4326" }
+      },
+      "required": ["centroid_latitude", "centroid_longitude"]
+    },
+    "source_metadata": {
+      "type": "object",
+      "properties": {
+        "master_plan_reference": { "type": "string" },
+        "collection_method": {
+          "type": "string",
+          "enum": ["digitized", "gps_average", "gps_single", "verbal", "photographed", "interpolated"]
+        },
+        "collection_date": { "type": "string", "format": "date" },
+        "estimated_accuracy_m": { "type": "number" },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "verification_status": { "type": "string", "enum": ["official", "field_verified", "staff_confirmed", "estimated", "unverified"] },
+        "notes": { "type": "string" }
+      },
+      "required": ["master_plan_reference", "collection_method", "collection_date", "estimated_accuracy_m", "confidence", "verification_status"]
+    }
+  },
+  "required": [
+    "master_plan_id",
+    "official_name",
+    "status",
+    "category",
+    "entrances",
+    "source_metadata"
+  ],
+  "additionalProperties": false
+}

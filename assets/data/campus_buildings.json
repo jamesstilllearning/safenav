@@ -1,0 +1,498 @@
+{
+  "source": "EARIST Cavite Official Master Site Plan (project image: EARIST CAVITE Master Site.png)",
+  "plan_title": "MASTER SITE DEVELOPMENT PLAN",
+  "image_dimensions_px": {
+    "width": 2048,
+    "height": 1391
+  },
+  "orientation": {
+    "north_arrow": "Points toward the upper-right of the image.",
+    "notes": "Page is rotated relative to north-up. Image-relative descriptions are used where compass bearings are uncertain."
+  },
+  "coordinate_policy": "No geographic coordinates or scaled measurements are inferred from this photographed plan.",
+  "inventory_definition": "Twenty label references are recorded: sixteen direct building/facility labels and four facility project-target references. This is not a verified count of separate physical structures.",
+  "buildings": [
+    {
+      "id": "building_001",
+      "official_name": "PROPOSED DORMITORY BUILDING",
+      "label_as_visible": "PROPOSED DORMITORY BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "proposed",
+      "relative_position": "Western part of plan, near the upper-left edge; near the northwest multipurpose label and proposed grass quadrangle.",
+      "nearby_buildings": [
+        "PROPOSED MULTIPURPOSE BUILDING (northwest label; visual proximity only)"
+      ],
+      "nearby_landmarks": [
+        "PROPOSED grass quadrangle"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Left callout column, uppermost label; orange proposed footprint appears in the northwest plan area.",
+      "notes": "Proposed access/path markings are nearby, but an entrance connection is not confirmed.",
+      "coordinates": null
+    },
+    {
+      "id": "building_002",
+      "official_name": "PROPOSED MULTIPURPOSE BUILDING",
+      "label_as_visible": "PROPOSED MULTIPURPOSE BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "proposed",
+      "relative_position": "Western/upper-left cluster; separate from the eastern multipurpose callout.",
+      "nearby_buildings": [
+        "PROPOSED DORMITORY BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [
+        "PROPOSED grass quadrangle"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Left callout column, upper portion; pointer and orange footprint are distinct from the eastern multipurpose label.",
+      "notes": "Proposed circulation is nearby; direct building access is not confirmed.",
+      "coordinates": null
+    },
+    {
+      "id": "building_003",
+      "official_name": "EXISTING CANTEEN STALLS",
+      "label_as_visible": "EXISTING CANTEEN STALLS",
+      "feature_type": "building_or_facility_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Western-central cluster.",
+      "nearby_buildings": [
+        "ON-GOING CHTM BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Left callout column, upper-middle.",
+      "notes": "A nearby project annotation reads: ON-GOING CONSTRUCTION OF CANTEEN ROOFING and floor drainage. It is not counted as a separate building.",
+      "coordinates": null
+    },
+    {
+      "id": "building_004",
+      "official_name": "PROPOSED ENGINEERING BUILDING",
+      "label_as_visible": "PROPOSED ENGINEERING BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "proposed",
+      "relative_position": "Western edge, below the canteen area and near the criminology/clinic cluster.",
+      "nearby_buildings": [
+        "EXISTING CRIMINOLOGY BUILDING (visual proximity only)",
+        "EXISTING MEDICAL AND DENTAL CLINIC (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Left callout column, middle-lower portion; proposed footprint is orange.",
+      "notes": "Small printed text and glare reduce legibility. The exact entrance/path relationship is not shown.",
+      "coordinates": null
+    },
+    {
+      "id": "building_005",
+      "official_name": "EXISTING CRIMINOLOGY BUILDING",
+      "label_as_visible": "EXISTING CRIMINOLOGY BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Western side, below the engineering label and near the clinic label.",
+      "nearby_buildings": [
+        "PROPOSED ENGINEERING BUILDING (visual proximity only)",
+        "EXISTING MEDICAL AND DENTAL CLINIC (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Left callout column, lower-middle; glare crosses part of the text.",
+      "notes": "Label is readable but partly obscured by reflected light.",
+      "coordinates": null
+    },
+    {
+      "id": "building_006",
+      "official_name": "EXISTING MEDICAL AND DENTAL CLINIC",
+      "label_as_visible": "EXISTING MEDICAL AND DENTAL CLINIC",
+      "feature_type": "building_or_facility_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Western/lower-middle cluster, near the criminology and research/faculty labels.",
+      "nearby_buildings": [
+        "EXISTING CRIMINOLOGY BUILDING (visual proximity only)",
+        "EXISTING RESEARCH BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Left callout column, lower-middle; two-line label.",
+      "notes": "Nearby circulation markings do not establish a connected entrance.",
+      "coordinates": null
+    },
+    {
+      "id": "building_007",
+      "official_name": "EXISTING RESEARCH BUILDING",
+      "label_as_visible": "EXISTING RESEARCH BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Central-west cluster, near the CHTM and Faculty Building labels.",
+      "nearby_buildings": [
+        "ON-GOING CHTM BUILDING (visual proximity only)",
+        "EXISTING FACULTY BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Lower-left callout group.",
+      "notes": "Small text is soft; a nearby pale corridor is visible, but no entrance or junction is explicitly linked.",
+      "coordinates": null
+    },
+    {
+      "id": "building_008",
+      "official_name": "ON-GOING CHTM BUILDING",
+      "label_as_visible": "ON-GOING CHTM BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "on-going construction (as labelled on undated plan; current status unverified)",
+      "relative_position": "Central-west cluster, near the Research and Faculty Building labels.",
+      "nearby_buildings": [
+        "EXISTING RESEARCH BUILDING (visual proximity only)",
+        "EXISTING FACULTY BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Lower-left callout group; cyan indicates on-going construction/repair in the legend.",
+      "notes": "Plan status is not current construction verification.",
+      "coordinates": null
+    },
+    {
+      "id": "building_009",
+      "official_name": "EXISTING FACULTY BUILDING",
+      "label_as_visible": "EXISTING FACULTY BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Central-west cluster, near the Research Building and CHTM Building labels.",
+      "nearby_buildings": [
+        "EXISTING RESEARCH BUILDING (visual proximity only)",
+        "ON-GOING CHTM BUILDING (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Lower-left callout group; label is split over two lines.",
+      "notes": "No direct path connection is identified.",
+      "coordinates": null
+    },
+    {
+      "id": "building_010",
+      "official_name": "ECC Library Extension - Learning Commons",
+      "label_as_visible": "Proposed Design and Construction of ECC Library Extension - Learning Commons",
+      "feature_type": "building_project_label",
+      "plan_status": "proposed design/construction (as labelled on undated plan; current status unverified)",
+      "relative_position": "Southwest part of plan, near the lower quadrangle/garden area.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [
+        "EXISTING QUADRANGLE (visual proximity only)",
+        "red fox garden (visual proximity only)"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Lower-left callout: Proposed Design and Construction of ECC Library Extension - Learning Commons.",
+      "notes": "The exact facility wording is transcribed from the callout; a separate entrance connection is not visible.",
+      "coordinates": null
+    },
+    {
+      "id": "building_011",
+      "official_name": null,
+      "label_as_visible": "PROPOSED STAFF HOUSING BUILDIN…",
+      "feature_type": "building_label_partial",
+      "plan_status": "proposed (partial label)",
+      "relative_position": "Upper/northern edge of plan; exact footprint association is unclear.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [
+        "Creek (nearby edge feature; exact relation uncertain)"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Upper-right callout is clipped at the image boundary after BUILDIN.",
+      "notes": "The final character(s) are not visible. Do not complete the official name from assumption.",
+      "coordinates": null
+    },
+    {
+      "id": "building_012",
+      "official_name": "PROPOSED THEATER AND ARTS BUILDING",
+      "label_as_visible": "PROPOSED THEATER AND ARTS BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "proposed",
+      "relative_position": "Upper/right part of plan near the Creek and other proposed northern/eastern facilities.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [
+        "Creek (nearby edge feature)"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Upper-right callout; precise footprint among nearby proposals is not certain.",
+      "notes": "Exact wording is readable; entrance connection and unique footprint association need confirmation.",
+      "coordinates": null
+    },
+    {
+      "id": "building_013",
+      "official_name": "PROPOSED CIT & ICT BUILDING",
+      "label_as_visible": "PROPOSED CIT & ICT BUILDING",
+      "feature_type": "building_label",
+      "plan_status": "proposed",
+      "relative_position": "Upper/right-central area near the Creek and other proposed northern/eastern facilities.",
+      "nearby_buildings": [
+        "PROPOSED MULTIPURPOSE BUILDING (eastern label; visual proximity only)"
+      ],
+      "nearby_landmarks": [
+        "Creek (nearby edge feature)"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Upper-right callout; label is legible.",
+      "notes": "The source does not establish a connected route to adjacent proposed footprints.",
+      "coordinates": null
+    },
+    {
+      "id": "building_014",
+      "official_name": "PROPOSED MULTIPURPOSE BUILDING",
+      "label_as_visible": "PROPOSED MULTIPURPOSE BUILDIN… (eastern callout)",
+      "feature_type": "building_label_partial",
+      "plan_status": "proposed",
+      "relative_position": "Eastern side, near the Material Segregation Facility and Main Building Hall area.",
+      "nearby_buildings": [
+        "PROPOSED MATERIAL SEGREGATION FACILITY (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Right-side callout is clipped at the edge; the complete wording appears in a separate northwest callout.",
+      "notes": "A separate footprint is indicated by the right-side leader. Its connecting pathway is not confirmed.",
+      "coordinates": null
+    },
+    {
+      "id": "building_015",
+      "official_name": "PROPOSED MATERIAL SEGREGATION FACILITY",
+      "label_as_visible": "PROPOSED MATERIAL SEGREGATION FACILITY",
+      "feature_type": "facility_label",
+      "plan_status": "proposed",
+      "relative_position": "Eastern edge near the eastern multipurpose label and Main Building Hall area.",
+      "nearby_buildings": [
+        "PROPOSED MULTIPURPOSE BUILDING (eastern label; visual proximity only)",
+        "EXISTING MAIN BUILDING HALL - (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Right/lower callout; facility wording is readable with softened small text.",
+      "notes": "The label identifies a facility; a distinct building footprint is not asserted.",
+      "coordinates": null
+    },
+    {
+      "id": "building_016",
+      "official_name": "EXISTING MAIN BUILDING HALL -",
+      "label_as_visible": "EXISTING MAIN BUILDING HALL -",
+      "feature_type": "building_label",
+      "plan_status": "existing (as labelled on plan; current status unverified)",
+      "relative_position": "Lower/southern part of drawing, below EXISTING QUADRANGLE and along Congressional Road frontage.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [
+        "EXISTING QUADRANGLE",
+        "congressional road"
+      ],
+      "visible_access_pathways": [],
+      "identification_confidence": "high",
+      "evidence": "Right/lower callout and text printed inside the dark-red footprint; trailing hyphen is visible.",
+      "notes": "A separate project note reads Rehabilitation and Improvement of Main Building Comfort Rooms; it is not counted as a separate building.",
+      "coordinates": null
+    },
+    {
+      "id": "facility_017",
+      "official_name": "ECC Guidance office",
+      "label_as_visible": "Repair and Improvement of ECC Guidance office",
+      "feature_type": "facility_project_target",
+      "plan_status": "repair/improvement project annotation",
+      "relative_position": "Western/central callout area near the Research/CHTM labels; exact target footprint unclear.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Cyan lower-left project callout.",
+      "notes": "The named facility is visible in a project description, but a separate building footprint is not confirmed.",
+      "coordinates": null
+    },
+    {
+      "id": "facility_018",
+      "official_name": "ECC Food Technology Laboratory",
+      "label_as_visible": "proposed Repair and Rehabilitation of ECC Food Technology Laboratory",
+      "feature_type": "facility_project_target",
+      "plan_status": "proposed repair/rehabilitation project annotation",
+      "relative_position": "Eastern/lower callout area near Main Building Hall project notes; separate footprint unclear.",
+      "nearby_buildings": [
+        "EXISTING MAIN BUILDING HALL - (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Right/lower project callout.",
+      "notes": "The project title contains the facility name. It is not confirmed as a distinct footprint.",
+      "coordinates": null
+    },
+    {
+      "id": "facility_019",
+      "official_name": "ecc beauty care facility",
+      "label_as_visible": "on-going construction of ecc beauty care facility",
+      "feature_type": "facility_project_target",
+      "plan_status": "on-going construction project annotation (current status unverified)",
+      "relative_position": "Eastern/lower project-callout area near Main Building Hall project notes; separate footprint unclear.",
+      "nearby_buildings": [
+        "EXISTING MAIN BUILDING HALL - (visual proximity only)"
+      ],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Right/lower project callout.",
+      "notes": "Lower-case spelling follows the image. A separate building footprint is not confirmed.",
+      "coordinates": null
+    },
+    {
+      "id": "facility_020",
+      "official_name": "chtm simulation hostel",
+      "label_as_visible": "newly rehabilitated chtm simulation hostel",
+      "feature_type": "facility_project_target",
+      "plan_status": "recently accomplished/rehabilitated project annotation (current status unverified)",
+      "relative_position": "Eastern/lower project-callout area; separate footprint unclear.",
+      "nearby_buildings": [],
+      "nearby_landmarks": [],
+      "visible_access_pathways": [],
+      "identification_confidence": "medium",
+      "evidence": "Right/lower project callout, printed in magenta project-status color.",
+      "notes": "Lower-case spelling follows the image. The color legend does not establish present operating status.",
+      "coordinates": null
+    }
+  ],
+  "related_project_annotations": [
+    {
+      "label_as_visible": "ON-GOING CONSTRUCTION OF CANTEEN ROOFING and floor drainage",
+      "nearby_reference": "EXISTING CANTEEN STALLS",
+      "notes": "Project note; not a separate building record. Current status is unverified."
+    },
+    {
+      "label_as_visible": "Rehabilitation and Improvement of Main Building Comfort Rooms",
+      "nearby_reference": "EXISTING MAIN BUILDING HALL -",
+      "notes": "Project note for a building component; not a separate building record."
+    }
+  ],
+  "roads": [
+    {
+      "id": "road_001",
+      "label_as_visible": "congressional road",
+      "relative_position": "Along the lower/southern edge of the plan.",
+      "confidence": "high",
+      "notes": "One named road reference; not georeferenced."
+    }
+  ],
+  "gates": [
+    {
+      "id": "gate_001",
+      "label_as_visible": "existingmaingate",
+      "relative_position": "Lower-left portion of the campus frontage.",
+      "status_as_labelled": "existing",
+      "confidence": "medium",
+      "notes": "Printed as a single run-together word; current operation is unverified."
+    },
+    {
+      "id": "gate_002",
+      "label_as_visible": "proposedSecondary Access gate",
+      "relative_position": "Lower-right portion of the campus frontage.",
+      "status_as_labelled": "proposed",
+      "confidence": "medium",
+      "notes": "Printed without a space between proposed and Secondary; status is not current access confirmation."
+    }
+  ],
+  "pathway_classes": [
+    {
+      "id": "path_class_001",
+      "label_as_visible": "PROPOSED ROAD ACCESS",
+      "legend_status": "proposed",
+      "individual_segments_count": null,
+      "notes": "Pale corridors appear around/among footprints. Individual geometry and connectivity cannot be reliably counted."
+    },
+    {
+      "id": "path_class_002",
+      "label_as_visible": "PROPOSED PATHWALK",
+      "legend_status": "proposed",
+      "individual_segments_count": null,
+      "notes": "Orange-red path markings appear in the plan. No confirmed walkable connection or current status is established."
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "landmark_001",
+      "label_as_visible": "Creek",
+      "feature_type": "waterway",
+      "relative_position": "Along the upper/right edge of the plan.",
+      "confidence": "high",
+      "notes": "No named crossing is shown."
+    },
+    {
+      "id": "landmark_002",
+      "label_as_visible": "PROPOSED grass quadrangle",
+      "feature_type": "open_space",
+      "relative_position": "Western/upper-left portion of the plan.",
+      "confidence": "high",
+      "notes": "Not designated as an evacuation area."
+    },
+    {
+      "id": "landmark_003",
+      "label_as_visible": "EXISTING QUADRANGLE",
+      "feature_type": "open_space",
+      "relative_position": "Central/lower-middle portion of the plan.",
+      "confidence": "high",
+      "notes": "Not designated as an evacuation area."
+    },
+    {
+      "id": "landmark_004",
+      "label_as_visible": "PROPOSED FRUIT AND VEGETABLE plantation",
+      "feature_type": "plantation/open_space",
+      "relative_position": "Upper/central green area.",
+      "confidence": "medium",
+      "notes": "Text is low-contrast; capitalization follows its visible appearance."
+    },
+    {
+      "id": "landmark_005",
+      "label_as_visible": "red fox garden",
+      "feature_type": "garden",
+      "relative_position": "Lower-left callout area.",
+      "confidence": "high",
+      "notes": "Label is lower-case in the plan."
+    },
+    {
+      "id": "landmark_006",
+      "label_as_visible": null,
+      "observed_text": "Appears to read: PROPOSED red fox dragon plantation",
+      "feature_type": "plantation/open_space",
+      "relative_position": "Interior green area, around the central/upper site.",
+      "confidence": "low",
+      "notes": "Shadow obscures the wording. Exact spelling and relation to red fox garden require confirmation."
+    },
+    {
+      "id": "landmark_007",
+      "label_as_visible": "PROPOSED OUTDOOR SWIMMING POOL",
+      "feature_type": "recreation_facility",
+      "relative_position": "Northern/eastern callout group.",
+      "confidence": "high",
+      "notes": "Facility, not a building. Exact footprint is difficult to distinguish from adjacent proposed features."
+    },
+    {
+      "id": "landmark_008",
+      "label_as_visible": "EXISTING WATER CISTERN TANK",
+      "feature_type": "utility",
+      "relative_position": "Lower-left area.",
+      "confidence": "high",
+      "notes": "Legend color denotes recently accomplished projects while the callout says existing; the plan date is unknown."
+    }
+  ],
+  "evacuation_observations": {
+    "official_evacuation_areas_identified": [],
+    "official_evacuation_routes_identified": [],
+    "candidate_open_spaces_for_authority_review": [
+      "EXISTING QUADRANGLE",
+      "PROPOSED grass quadrangle"
+    ],
+    "notes": "The plan does not designate an assembly point, shelter, emergency exit, or evacuation route. Candidate open spaces are not official destinations."
+  }
+}

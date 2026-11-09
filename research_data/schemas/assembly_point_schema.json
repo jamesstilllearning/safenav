@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAFENAV CAVITE - Assembly Point Schema",
+  "description": "Schema for campus evacuation assembly points",
+  "type": "object",
+  "properties": {
+    "assembly_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assembly_id": {
+            "type": "string",
+            "pattern": "^ASM_.*$",
+            "description": "Unique assembly point identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Official or candidate name"
+          },
+          "designation_status": {
+            "type": "string",
+            "enum": ["official", "candidate", "unverified"],
+            "description": "Official = designated in approved evacuation plan; Candidate = visible open space suggested by plan; Unverified = from posted diagram only"
+          },
+          "description": {
+            "type": "string",
+            "description": "Physical description and location context"
+          },
+          "capacity_estimate": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "Estimated capacity in people (standing)"
+          },
+          "surface": {
+            "type": "string",
+            "enum": ["grass", "concrete", "pavers", "mixed", "unknown"]
+          },
+          "shade": {
+            "type": "boolean"
+          },
+          "assigned_buildings": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^(building_|facility_)\\d+$" },
+            "description": "Building IDs assigned to this assembly point"
+          },
+          "access_routes": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^PATH_.*$" },
+            "description": "Pathway IDs providing access to this assembly point"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": { "type": "number" },
+              "longitude": { "type": "number" },
+              "source": { "type": "string", "enum": ["field_gps", "digitized_master_plan", "google_earth", "estimated"] },
+              "accuracy_m": { "type": "number" }
+            },
+            "required": ["latitude", "longitude"]
+          },
+          "source": {
+            "type": "string",
+            "enum": ["evacuation_plan", "posted_diagram", "master_plan_visual", "staff_interview", "field_observation"]
+          },
+          "official_designation": {
+            "type": ["object", "null"],
+            "properties": {
+              "document_reference": { "type": "string" },
+              "authorized_by": { "type": "string" },
+              "authorization_date": { "type": "string", "format": "date" }
+            }
+          },
+          "notes": { "type": "string" }
+        },
+        "required": [
+          "assembly_id",
+          "name",
+          "designation_status",
+          "description",
+          "surface",
+          "shade",
+          "assigned_buildings",
+          "access_routes",
+          "coordinates",
+          "source"
+        ]
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "building_id": { "type": "string" },
+          "floor_id": { "type": "string" },
+          "item_type": { "type": "string", "enum": ["exit", "staircase", "assembly_point", "route", "corridor", "fire_equipment", "first_aid", "legend"] },
+          "description": { "type": "string" },
+          "photo_reference": { "type": "string" },
+          "action_needed": { "type": "string" }
+        },
+        "required": ["building_id", "floor_id", "item_type", "description", "photo_reference", "action_needed"]
+      }
+    },
+    "last_updated": { "type": "string", "format": "date" },
+    "notes": { "type": "string" }
+  },
+  "required": ["assembly_points", "unresolved_items", "last_updated", "notes"],
+  "additionalProperties": false
+}

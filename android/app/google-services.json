@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "131210697374",
+    "project_id": "safenav-cavite",
+    "storage_bucket": "safenav-cavite.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131210697374:android:8e51f3249e94149ebdf98f",
+        "android_client_info": {
+          "package_name": "com.example.safenav"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC091fQUd7Y0W9h-79DQht5imHYVRidjFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

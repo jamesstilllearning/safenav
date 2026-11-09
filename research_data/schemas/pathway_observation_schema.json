@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SAFENAV CAVITE - Pathway Observation Schema",
+  "description": "Schema for structured pathway data from field GPS traces and visual observation",
+  "type": "object",
+  "properties": {
+    "pathway_id": {
+      "type": "string",
+      "pattern": "^PATH_.*$",
+      "description": "Unique pathway identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Descriptive name (e.g., Main Entrance Path, Central Spine)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["road_access", "pathwalk", "connector", "perimeter", "emergency", "service", "internal"],
+      "description": "Pathway classification"
+    },
+    "surface": {
+      "type": "string",
+      "enum": ["concrete", "asphalt", "pavers", "dirt", "grass", "mixed", "unknown"]
+    },
+    "width_m": {
+      "type": "number",
+      "minimum": 0.5,
+      "description": "Measured or estimated width in meters"
+    },
+    "condition": {
+      "type": "string",
+      "enum": ["good", "fair", "poor", "blocked", "under_construction"]
+    },
+    "accessibility": {
+      "type": "string",
+      "enum": ["wheelchair", "partial", "none", "unknown"]
+    },
+    "directionality": {
+      "type": "string",
+      "enum": ["bidirectional", "one_way", "varies"]
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "const": "LineString" },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2,
+          "description": "Array of [longitude, latitude] pairs in EPSG:4326"
+        }
+      },
+      "required": ["type", "coordinates"]
+    },
+    "nodes": {
+      "type": "array",
+      "description": "Junctions/endpoints along this pathway",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node_id": { "type": "string", "pattern": "^NODE_.*$" },
+          "node_type": { "type": "string", "enum": ["intersection", "building_entrance", "gate", "dead_end", "assembly_point_access"] },
+          "description": { "type": "string" },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": { "type": "number" },
+              "longitude": { "type": "number" },
+              "accuracy_m": { "type": "number" }
+            },
+            "required": ["latitude", "longitude"]
+          },
+          "connects_to": { "type": "array", "items": { "type": "string" }, "description": "Other pathway/node IDs this connects to" }
+        },
+        "required": ["node_id", "node_type", "coordinates"]
+      }
+    },
+    "lighting": {
+      "type": "object",
+      "properties": {
+        "present": { "type": "boolean" },
+        "type": { "type": "string", "enum": ["pole", "wall_mounted", "bollard", "none"] },
+        "spacing_m_estimate": { "type": "number" }
+      }
+    },
+    "ramps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": { "type": "string" },
+          "slope_ratio": { "type": "string", "description": "e.g., 1:12" },
+          "has_tactile_paving": { "type": "boolean" },
+          "has_handrails": { "type": "boolean" }
+        },
+        "required": ["location", "slope_ratio"]
+      }
+    },
+    "source_metadata": {
+      "type": "object",
+      "properties": {
+        "master_plan_reference": { "type": ["string", "null"] },
+        "collection_method": {
+          "type": "string",
+          "enum": ["gps_trace", "gps_waypoints", "digitized_master_plan", "estimated_from_photos", "staff_interview"]
+        },
+        "collection_date": { "type": "string", "format": "date" },
+        "estimated_accuracy_m": { "type": "number" },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "verification_status": { "type": "string", "enum": ["official", "field_verified", "staff_confirmed", "estimated", "unverified"] },
+        "notes": { "type": "string" }
+      },
+      "required": ["collection_method", "collection_date", "estimated_accuracy_m", "confidence", "verification_status"]
+    }
+  },
+  "required": [
+    "pathway_id",
+    "name",
+    "type",
+    "surface",
+    "width_m",
+    "condition",
+    "accessibility",
+    "directionality",
+    "geometry",
+    "nodes",
+    "source_metadata"
+  ],
+  "additionalProperties": false
+}
