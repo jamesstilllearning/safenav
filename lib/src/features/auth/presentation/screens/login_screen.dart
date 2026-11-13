@@ -6,9 +6,11 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../../core/core.dart';
 import '../../auth_state.dart';
+import '../../../../shared/models/user.dart';
 
 /// Login screen widget
 class LoginScreen extends ConsumerStatefulWidget {
@@ -30,6 +32,40 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  /// Handle Demo Mode login - debug only, creates a read-only demo user
+  Future<void> _handleDemoMode() async {
+    if (!kDebugMode) return;
+
+    setState(() => _isLoading = true);
+
+    try {
+      // Use the auth service to set a demo mock user
+      final authService = ref.read(authServiceProvider);
+      await authService.setMockUserForDev(
+        id: 'demo-user-001',
+        email: 'demo@earist.edu.ph',
+        firstName: 'Demo',
+        lastName: 'User',
+        role: UserRole.student, // Read-only student role
+        middleInitial: null,
+        studentId: 'DEMO-STU-001',
+        employeeId: null,
+        department: null,
+        phoneNumber: '09000000000',
+      );
+
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+
+      // Navigate to home
+      context.go(AppRoutes.home);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+      _showErrorSnackBar('Demo mode failed: $e');
+    }
   }
 
   Future<void> _handleLogin() async {
@@ -197,6 +233,31 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                   ],
                 ),
+
+                // Demo Mode Button (Debug Only)
+                if (kDebugMode) ...[
+                  const SizedBox(height: 24),
+                  const Divider(),
+                  const SizedBox(height: 16),
+                  OutlinedButton.icon(
+                    onPressed: _isLoading ? null : _handleDemoMode,
+                    icon: const Icon(Icons.science_outlined),
+                    label: const Text('Enter Demo Mode (Read-Only)'),
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      foregroundColor: colorScheme.primary,
+                      side: BorderSide(color: colorScheme.primary),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Demo mode provides read-only access to all features\nwithout requiring an account. Data is not saved.',
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

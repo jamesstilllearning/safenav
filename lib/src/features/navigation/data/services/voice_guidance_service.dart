@@ -221,24 +221,24 @@ class VoiceGuidanceService {
 /// Voice guidance failures
 class VoiceGuidanceInitializationFailure extends Failure {
   const VoiceGuidanceInitializationFailure({
-    required String message,
-    String? code,
-    Map<String, dynamic>? details,
-  }) : super(message: message, code: code, details: details);
+    required super.message,
+    super.code,
+    super.details,
+  });
 }
 
 class VoiceGuidanceSpeakFailure extends Failure {
   const VoiceGuidanceSpeakFailure({
-    required String message,
-    String? code,
-    Map<String, dynamic>? details,
-  }) : super(message: message, code: code, details: details);
+    required super.message,
+    super.code,
+    super.details,
+  });
 }
 
 class VoiceGuidanceLanguageFailure extends Failure {
   const VoiceGuidanceLanguageFailure({
-    required String message,
-    String? code,
-    Map<String, dynamic>? details,
-  }) : super(message: message, code: code, details: details);
+    required super.message,
+    super.code,
+    super.details,
+  });
 }

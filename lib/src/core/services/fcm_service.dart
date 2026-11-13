@@ -338,16 +338,16 @@ class FCMService {
 /// FCM failures
 class FCMPermissionDeniedFailure extends Failure {
   const FCMPermissionDeniedFailure({
-    required String message,
+    required super.message,
     super.code,
     super.details,
-  }) : super(message: message);
+  });
 }
 
 class FCMInitializationFailure extends Failure {
   const FCMInitializationFailure({
-    required String message,
+    required super.message,
     super.code,
     super.details,
-  }) : super(message: message);
+  });
 }

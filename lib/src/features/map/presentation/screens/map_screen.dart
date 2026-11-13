@@ -83,6 +83,35 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     final activeRoute = ref.watch(activeNavigationRouteProvider);
     final activeSession = ref.watch(activeNavigationSessionProvider);
 
+    // Build tile layer based on map type
+    final TileLayer tileLayer;
+    switch (viewState.mapType) {
+      case MapType.satellite:
+        tileLayer = TileLayer(
+          // ESRI World Imagery - free satellite imagery
+          urlTemplate: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          maxZoom: 19,
+          userAgentPackageName: 'com.earist.safenav',
+        );
+      case MapType.standard:
+        // Use cached OSM tiles if available, otherwise fallback to online
+        tileLayer = cachedTileLayerAsync.when(
+          data: (cachedTileLayer) => cachedTileLayer,
+          loading: () => TileLayer(
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            maxZoom: 19,
+            subdomains: const ['a', 'b', 'c'],
+            userAgentPackageName: 'com.earist.safenav',
+          ),
+          error: (_, __) => TileLayer(
+            urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            maxZoom: 19,
+            subdomains: const ['a', 'b', 'c'],
+            userAgentPackageName: 'com.earist.safenav',
+          ),
+        );
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -100,20 +129,10 @@ class _MapScreenState extends ConsumerState<MapScreen> {
               ),
             ),
             children: [
-              // Tile Layer (OpenStreetMap with offline caching)
-              cachedTileLayerAsync.when(
-                data: (tileLayer) => TileLayerWidget(tileLayers: [tileLayer]),
-                loading: () => TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  maxZoom: 19,
-                  subdomains: ['a', 'b', 'c'],
-                ),
-                error: (_, __) => TileLayer(
-                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  maxZoom: 19,
-                  subdomains: ['a', 'b', 'c'],
-                ),
-              ),
+              // Tile Layer (OpenStreetMap or Satellite)
+              tileLayer,
+
+              // Campus Boundary
 
               // Campus Boundary
               if (viewState.showBoundary)
@@ -548,6 +567,19 @@ class _LayerOptionsSheet extends ConsumerWidget {
             color: Color(0xFFFF9800),
           ),
           const SizedBox(height: 16),
+          // Map Type Selector
+          Text(
+            'Map Type',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          _MapTypeSelector(
+            currentType: viewState.mapType,
+            onChanged: (type) => ref.read(mapViewStateProvider.notifier).toggleMapType(),
+          ),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
             child: FilledButton(
@@ -557,6 +589,127 @@ class _LayerOptionsSheet extends ConsumerWidget {
           ),
           SizedBox(height: MediaQuery.of(context).padding.bottom),
         ],
+      ),
+    );
+  }
+}
+
+/// Map type selector widget
+class _MapTypeSelector extends StatelessWidget {
+  final MapType currentType;
+  final ValueChanged<MapType> onChanged;
+
+  const _MapTypeSelector({
+    required this.currentType,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Standard map option
+        _MapTypeTile(
+          title: 'Standard',
+          subtitle: 'OpenStreetMap view',
+          icon: Icons.map_outlined,
+          color: Color(0xFF2196F3),
+          isSelected: currentType == MapType.standard,
+          onTap: () => onChanged(MapType.standard),
+        ),
+        const SizedBox(height: 8),
+        // Satellite map option
+        _MapTypeTile(
+          title: 'Satellite',
+          subtitle: 'Aerial/satellite imagery (ESRI)',
+          icon: Icons.satellite_outlined,
+          color: Color(0xFF4CAF50),
+          isSelected: currentType == MapType.satellite,
+          onTap: () => onChanged(MapType.satellite),
+        ),
+      ],
+    );
+  }
+}
+
+/// Map type tile widget
+class _MapTypeTile extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final Color color;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _MapTypeTile({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.color,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isSelected ? color : colorScheme.outlineVariant,
+            width: isSelected ? 2 : 1,
+          ),
+          color: isSelected
+              ? color.withValues(alpha: 0.1)
+              : colorScheme.surfaceContainerHighest,
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(icon, color: color, size: 22),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: isSelected ? color : colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (isSelected)
+              Icon(
+                Icons.check_circle,
+                color: color,
+                size: 24,
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -598,6 +751,9 @@ class _LayerToggle extends StatelessWidget {
   }
 }
 
+/// Height of the bottom navigation bar in the main shell (Material 3 NavigationBar)
+const double _kBottomNavigationBarHeight = 80.0;
+
 /// Selection info bar at bottom
 class _SelectionInfoBar extends ConsumerWidget {
   final VoidCallback onClose;
@@ -611,7 +767,7 @@ class _SelectionInfoBar extends ConsumerWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Positioned(
-      bottom: 0,
+      bottom: _kBottomNavigationBarHeight,
       left: 0,
       right: 0,
       child: Material(

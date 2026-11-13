@@ -10,6 +10,10 @@ import 'package:flutter_map/flutter_map.dart';
 
 import '../../providers/navigation_providers.dart';
 import '../../../data/models/navigation_models.dart';
+import '../../../../map/presentation/providers/map_providers.dart';
+
+/// Height of the bottom navigation bar in the main shell (Material 3 NavigationBar)
+const double _kBottomNavigationBarHeight = 80.0;
 
 /// Full-screen active navigation view
 class ActiveNavigationView extends ConsumerStatefulWidget {
@@ -42,156 +46,174 @@ class _ActiveNavigationViewState extends ConsumerState<ActiveNavigationView> {
     final session = widget.session;
     final route = session.route;
     final currentInstruction = session.currentInstruction;
+    final viewState = ref.watch(mapViewStateProvider);
 
-    return Scaffold(
-      body: Stack(
-        children: [
-          // Map with route overlay
-          FlutterMap(
-            mapController: _mapController,
-            options: MapOptions(
-              initialCenter: session.currentPosition,
-              initialZoom: 18.0,
-              minZoom: 15.0,
-              maxZoom: 20.0,
-              interactionOptions: const InteractionOptions(
-                flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
-              ),
+    // Build tile layer based on map type
+    final tileLayer = switch (viewState.mapType) {
+      MapType.satellite => TileLayer(
+          // ESRI World Imagery - free satellite imagery
+          urlTemplate: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          maxZoom: 19,
+          userAgentPackageName: 'com.earist.safenav',
+        ),
+      MapType.standard => TileLayer(
+          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          maxZoom: 19,
+          subdomains: const ['a', 'b', 'c'],
+          userAgentPackageName: 'com.earist.safenav',
+        ),
+    };
+
+    // Use a Column layout instead of Stack with Positioned to naturally
+    // leave space for the parent shell's bottom NavigationBar.
+    // The map takes remaining space, and bottom cards are at the bottom
+    // above the navigation bar.
+    return Stack(
+      children: [
+        // Map with route overlay - fills the entire available space
+        FlutterMap(
+          mapController: _mapController,
+          options: MapOptions(
+            initialCenter: session.currentPosition,
+            initialZoom: 18.0,
+            minZoom: 15.0,
+            maxZoom: 20.0,
+            interactionOptions: const InteractionOptions(
+              flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
             ),
-            children: [
-              // Tile layer
-              TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                maxZoom: 19,
-                subdomains: const ['a', 'b', 'c'],
-              ),
-              // Route polyline
+          ),
+          children: [
+            // Tile layer
+            tileLayer,
+            // Route polyline
+            PolylineLayer(
+              polylines: [
+                Polyline(
+                  points: route.geometry,
+                  color: colorScheme.primary,
+                  strokeWidth: 5.0,
+                  // pattern: StrokePattern.solid, // Default is solid
+                ),
+              ],
+            ),
+            // Remaining route (from current position)
+            if (session.currentInstructionIndex < route.instructions.length - 1)
               PolylineLayer(
                 polylines: [
                   Polyline(
-                    points: route.geometry,
-                    color: colorScheme.primary,
-                    strokeWidth: 5.0,
-                    // pattern: StrokePattern.solid, // Default is solid
+                    points: _getRemainingRouteGeometry(session),
+                    color: colorScheme.primary.withValues(alpha: 0.5),
+                    strokeWidth: 3.0,
+                    pattern: StrokePattern.dashed(segments: [10, 5]),
                   ),
                 ],
               ),
-              // Remaining route (from current position)
-              if (session.currentInstructionIndex < route.instructions.length - 1)
-                PolylineLayer(
-                  polylines: [
-                    Polyline(
-                      points: _getRemainingRouteGeometry(session),
-                      color: colorScheme.primary.withValues(alpha: 0.5),
-                      strokeWidth: 3.0,
-                      pattern: StrokePattern.dashed(segments: [10, 5]),
+            // Current location marker
+            MarkerLayer(
+              markers: [
+                Marker(
+                  point: session.currentPosition,
+                  width: 48,
+                  height: 48,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: colorScheme.primary,
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: colorScheme.onPrimary,
+                        width: 3,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.3),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
                     ),
-                  ],
+                    child: const Icon(
+                      Icons.navigation,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
                 ),
-              // Current location marker
-              MarkerLayer(
-                markers: [
+                // Destination marker
+                if (session.currentInstructionIndex < route.instructions.length - 1)
                   Marker(
-                    point: session.currentPosition,
-                    width: 48,
-                    height: 48,
+                    point: route.end.coordinates,
+                    width: 40,
+                    height: 40,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: colorScheme.primary,
+                        color: Colors.red,
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: colorScheme.onPrimary,
+                          color: Colors.white,
                           width: 3,
                         ),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withValues(alpha: 0.3),
-                            blurRadius: 8,
-                            offset: const Offset(0, 3),
+                            blurRadius: 6,
+                            offset: const Offset(0, 2),
                           ),
                         ],
                       ),
                       child: const Icon(
-                        Icons.navigation,
+                        Icons.flag,
                         color: Colors.white,
-                        size: 24,
+                        size: 20,
                       ),
                     ),
                   ),
-                  // Destination marker
-                  if (session.currentInstructionIndex < route.instructions.length - 1)
-                    Marker(
-                      point: route.end.coordinates,
-                      width: 40,
-                      height: 40,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 3,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.3),
-                              blurRadius: 6,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                        child: const Icon(
-                          Icons.flag,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ),
-                    ),
-                ],
+              ],
+            ),
+          ],
+        ),
+
+        // Top bar with destination info
+        Positioned(
+          top: MediaQuery.of(context).padding.top,
+          left: 16,
+          right: 16,
+          child: _TopNavigationBar(
+            session: session,
+            onEndNavigation: widget.onEndNavigation,
+            onToggleFollow: () => setState(() => _isFollowing = !_isFollowing),
+            isFollowing: _isFollowing,
+          ),
+        ),
+
+        // Bottom instruction cards - positioned above the bottom navigation bar
+        Positioned(
+          bottom: _kBottomNavigationBarHeight,
+          left: 0,
+          right: 0,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Next instruction preview (above current)
+              if (session.currentInstructionIndex < route.instructions.length - 2)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: _NextInstructionPreview(
+                    instruction: route.instructions[session.currentInstructionIndex + 1],
+                  ),
+                ),
+              // Current instruction card (bottom)
+              _CurrentInstructionCard(
+                instruction: currentInstruction,
+                stepNumber: session.currentInstructionIndex + 1,
+                totalSteps: route.instructions.length,
+                distanceToNext: currentInstruction.distanceToNext,
+                onNextInstruction: _advanceInstruction,
+                onPreviousInstruction: _previousInstruction,
               ),
             ],
           ),
-
-          // Top bar with destination info
-          Positioned(
-            top: MediaQuery.of(context).padding.top,
-            left: 16,
-            right: 16,
-            child: _TopNavigationBar(
-              session: session,
-              onEndNavigation: widget.onEndNavigation,
-              onToggleFollow: () => setState(() => _isFollowing = !_isFollowing),
-              isFollowing: _isFollowing,
-            ),
-          ),
-
-          // Current instruction card (bottom)
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: _CurrentInstructionCard(
-              instruction: currentInstruction,
-              stepNumber: session.currentInstructionIndex + 1,
-              totalSteps: route.instructions.length,
-              distanceToNext: currentInstruction.distanceToNext,
-              onNextInstruction: _advanceInstruction,
-              onPreviousInstruction: _previousInstruction,
-            ),
-          ),
-
-          // Next instruction preview (above current)
-          if (session.currentInstructionIndex < route.instructions.length - 2)
-            Positioned(
-              bottom: 200, // Above current instruction card
-              left: 16,
-              right: 16,
-              child: _NextInstructionPreview(
-                instruction: route.instructions[session.currentInstructionIndex + 1],
-              ),
-            ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

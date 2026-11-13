@@ -192,7 +192,7 @@ final voiceGuidanceIntegrationProvider = Provider<void>((ref) {
         if (next.route.instructions.isNotEmpty) {
           await voiceGuidanceService.speakInstruction(next.route.instructions[0]);
         }
-      } else if (previous != null && previous.currentInstructionIndex != next.currentInstructionIndex) {
+      } else if (previous.currentInstructionIndex != next.currentInstructionIndex) {
         // Instruction changed, speak new instruction
         if (next.currentInstructionIndex < next.route.instructions.length) {
           await voiceGuidanceService.speakInstruction(next.route.instructions[next.currentInstructionIndex]);

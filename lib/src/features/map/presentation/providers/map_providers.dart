@@ -18,6 +18,14 @@ import '../../../../core/services/location_service.dart';
 import '../../../navigation/data/models/navigation_models.dart';
 import '../../../navigation/presentation/providers/navigation_providers.dart';
 
+/// Map type enumeration
+enum MapType {
+  /// Standard OpenStreetMap view
+  standard,
+  /// Satellite/aerial imagery view (ESRI World Imagery)
+  satellite,
+}
+
 // Map data service provider
 final mapDataServiceProvider = Provider<MapDataService>((ref) {
   return MapDataService.instance;
@@ -117,6 +125,7 @@ class MapViewState {
   final bool showUserLocation;
   final String? selectedBuildingId;
   final String? selectedPathwayId;
+  final MapType mapType;
 
   const MapViewState({
     this.center = const LatLng(14.3003421, 121.0090085), // EARIST Cavite center
@@ -127,6 +136,7 @@ class MapViewState {
     this.showUserLocation = true,
     this.selectedBuildingId,
     this.selectedPathwayId,
+    this.mapType = MapType.standard,
   });
 
   MapViewState copyWith({
@@ -139,6 +149,7 @@ class MapViewState {
     String? selectedBuildingId,
     String? selectedPathwayId,
     bool clearSelection = false,
+    MapType? mapType,
   }) {
     return MapViewState(
       center: center ?? this.center,
@@ -149,6 +160,7 @@ class MapViewState {
       showUserLocation: showUserLocation ?? this.showUserLocation,
       selectedBuildingId: clearSelection ? null : (selectedBuildingId ?? this.selectedBuildingId),
       selectedPathwayId: clearSelection ? null : (selectedPathwayId ?? this.selectedPathwayId),
+      mapType: mapType ?? this.mapType,
     );
   }
 }
@@ -187,6 +199,12 @@ class MapViewStateNotifier extends StateNotifier<MapViewState> {
 
   void toggleUserLocation() {
     state = state.copyWith(showUserLocation: !state.showUserLocation);
+  }
+
+  void toggleMapType() {
+    state = state.copyWith(
+      mapType: state.mapType == MapType.standard ? MapType.satellite : MapType.standard,
+    );
   }
 
   void selectBuilding(String? buildingId) {
