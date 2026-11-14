@@ -1,0 +1,112 @@
+name: Deploy Cloudflare Workers
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'workers/**'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - 'workers/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  # Lint and type-check Cloudflare Workers
+  workers-lint:
+    name: Workers Lint & Typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./workers
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: workers/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Type-check TypeScript
+        run: npm run typecheck
+
+  # Deploy to staging
+  deploy-staging:
+    name: Deploy Workers to Staging
+    needs: [workers-lint]
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/develop' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: workers/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./workers
+
+      - name: Deploy to Cloudflare Workers (Staging)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          environment: staging
+          workingDirectory: ./workers
+
+  # Deploy to production
+  deploy-production:
+    name: Deploy Workers to Production
+    needs: [workers-lint]
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: workers/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./workers
+
+      - name: Deploy to Cloudflare Workers (Production)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          environment: production
+          workingDirectory: ./workers

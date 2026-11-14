@@ -1,0 +1,43 @@
+name = "safenav-cavite-workers"
+main = "src/index.ts"
+compatibility_date = "2026-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Environment variables (non-secret)
+[vars]
+FIREBASE_PROJECT_ID = "safenav-cavite"
+FIREBASE_REGION = "us-central1"
+ENVIRONMENT = "production"
+
+# Cron triggers for scheduled functions
+[triggers]
+crons = [
+  "0 2 * * *",  # cleanupExpiredAlerts - Daily 02:00 UTC
+  "0 3 * * *",  # dailyAnalytics - Daily 03:00 UTC
+  "0 4 * * *",  # cleanupStaleTokens - Daily 04:00 UTC
+  "0 * * * *",  # refreshFCMTopics - Hourly
+]
+
+# KV namespace for caching (optional)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"
+# preview_id = "your-preview-kv-namespace-id"
+
+# Observability
+[observability]
+enabled = true
+head_sampling_rate = 0.1
+
+# Environment-specific overrides
+[env.staging]
+name = "safenav-cavite-workers-staging"
+vars = { ENVIRONMENT = "staging" }
+
+[env.production]
+name = "safenav-cavite-workers"
+vars = { ENVIRONMENT = "production" }
+
+# Build configuration
+[build]
+command = "echo 'No build step needed - TypeScript compiled by Wrangler'"
