@@ -61,9 +61,12 @@ async function importPrivateKey(privateKeyPem: string): Promise<CryptoKey> {
 
   const binaryDer = base64urlDecode(pemContents);
 
+  // Ensure we have a proper ArrayBuffer (not SharedArrayBuffer)
+  const arrayBuffer = binaryDer.buffer.slice(0) as ArrayBuffer;
+
   return crypto.subtle.importKey(
     'pkcs8',
-    binaryDer.buffer,
+    arrayBuffer,
     {
       name: 'RSASSA-PKCS1-v1_5',
       hash: 'SHA-256',

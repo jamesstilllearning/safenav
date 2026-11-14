@@ -38,6 +38,7 @@ export async function writeAuditLogBatch(
   if (entries.length === 0) return;
 
   try {
+    const now = new Date().toISOString();
     const writes = entries.map(entry => ({
       update: {
         name: `${client['baseUrl']}/documents/audit_logs`,
@@ -47,6 +48,8 @@ export async function writeAuditLogBatch(
             timestamp: FieldValue.serverTimestamp(),
           }).map(([k, v]) => [k, FirestoreRESTClient.toFirestoreValue(v)])
         ),
+        createTime: now,
+        updateTime: now,
       },
     }));
 

@@ -18,11 +18,12 @@ crons = [
   "0 * * * *",  # refreshFCMTopics - Hourly
 ]
 
-# KV namespace for caching (optional)
-# [[kv_namespaces]]
-# binding = "CACHE"
-# id = "your-kv-namespace-id"
-# preview_id = "your-preview-kv-namespace-id"
+# KV namespace for OAuth/JWKS caching
+# Create these with: npx wrangler kv:namespace create "KV" (production) and npx wrangler kv:namespace create "KV" --env staging (staging)
+[[kv_namespaces]]
+binding = "KV"
+id = "PRODUCTION_KV_NAMESPACE_ID"  # Replace after creating: npx wrangler kv:namespace create "KV"
+preview_id = "STAGING_KV_NAMESPACE_ID"  # Replace after creating: npx wrangler kv:namespace create "KV" --env staging
 
 # Observability
 [observability]

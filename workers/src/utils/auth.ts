@@ -92,7 +92,6 @@ class JWKSCache {
       'jwk',
       {
         kty: jwk.kty,
-        kid: jwk.kid,
         use: jwk.use,
         alg: jwk.alg,
         n: jwk.n,
@@ -178,16 +177,20 @@ export async function verifyIdToken(
     throw new Error('Invalid audience');
   }
 
-  if (payload.exp < now) {
+  const exp = Number(payload.exp);
+  const iat = Number(payload.iat);
+  const authTime = payload.auth_time ? Number(payload.auth_time) : undefined;
+
+  if (exp < now) {
     throw new Error('Token expired');
   }
 
-  if (payload.iat > now + 60) {
+  if (iat > now + 60) {
     throw new Error('Token issued in future');
   }
 
   // Verify auth_time if present (max 30 days)
-  if (payload.auth_time && payload.auth_time < now - 30 * 24 * 60 * 60) {
+  if (authTime && authTime < now - 30 * 24 * 60 * 60) {
     throw new Error('Authentication too old');
   }
 

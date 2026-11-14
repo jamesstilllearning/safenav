@@ -33,10 +33,10 @@ export async function cleanupExpiredAlerts(env: { FIREBASE_PROJECT_ID: string; K
       structuredQuery: {
         where: {
           compositeFilter: {
-            op: 'AND',
+            op: 'AND' as const,
             filters: [
-              { fieldFilter: { field: { fieldPath: 'status' }, op: 'EQUAL', value: { stringValue: 'active' } } },
-              { fieldFilter: { field: { fieldPath: 'expiresAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: now } } },
+              { fieldFilter: { field: { fieldPath: 'status' }, op: 'EQUAL' as const, value: { stringValue: 'active' } } },
+              { fieldFilter: { field: { fieldPath: 'expiresAt' }, op: 'LESS_THAN_OR_EQUAL' as const, value: { timestampValue: now } } },
             ],
           },
         },
@@ -53,6 +53,7 @@ export async function cleanupExpiredAlerts(env: { FIREBASE_PROJECT_ID: string; K
     // Batch update expired alerts (max 500 per batch)
     const batchSize = 500;
     let updatedCount = 0;
+    const nowISO = new Date().toISOString();
 
     for (let i = 0; i < snapshot.length; i += batchSize) {
       const batch = snapshot.slice(i, i + batchSize);
@@ -61,8 +62,10 @@ export async function cleanupExpiredAlerts(env: { FIREBASE_PROJECT_ID: string; K
           name: doc.name,
           fields: {
             status: { stringValue: 'expired' },
-            updatedAt: { timestampValue: new Date().toISOString() },
+            updatedAt: { timestampValue: nowISO },
           },
+          createTime: nowISO,
+          updateTime: nowISO,
         },
       }));
 

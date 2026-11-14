@@ -46,10 +46,10 @@ export async function dailyAnalytics(env: { FIREBASE_PROJECT_ID: string; KV: KVN
         structuredQuery: {
           where: {
             compositeFilter: {
-              op: 'AND',
+              op: 'AND' as const,
               filters: [
-                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
-                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'GREATER_THAN_OR_EQUAL' as const, value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'LESS_THAN_OR_EQUAL' as const, value: { timestampValue: endOfDay } } },
               ],
             },
           },
@@ -60,10 +60,10 @@ export async function dailyAnalytics(env: { FIREBASE_PROJECT_ID: string; KV: KVN
         structuredQuery: {
           where: {
             compositeFilter: {
-              op: 'AND',
+              op: 'AND' as const,
               filters: [
-                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
-                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL' as const, value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL' as const, value: { timestampValue: endOfDay } } },
               ],
             },
           },
@@ -74,10 +74,10 @@ export async function dailyAnalytics(env: { FIREBASE_PROJECT_ID: string; KV: KVN
         structuredQuery: {
           where: {
             compositeFilter: {
-              op: 'AND',
+              op: 'AND' as const,
               filters: [
-                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
-                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL' as const, value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL' as const, value: { timestampValue: endOfDay } } },
               ],
             },
           },

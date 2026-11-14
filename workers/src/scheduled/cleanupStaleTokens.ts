@@ -35,7 +35,7 @@ export async function cleanupStaleTokens(env: { FIREBASE_PROJECT_ID: string; KV:
         where: {
           fieldFilter: {
             field: { fieldPath: 'updatedAt' },
-            op: 'LESS_THAN_OR_EQUAL',
+            op: 'LESS_THAN_OR_EQUAL' as const,
             value: { timestampValue: cutoffISO },
           },
         },

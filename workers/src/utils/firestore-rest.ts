@@ -50,7 +50,7 @@ export interface FirestoreOrderBy {
 }
 
 export interface FirestoreWrite {
-  update?: FirestoreDocument;
+  update?: FirestoreDocument | { name: string; fields: Record<string, FirestoreValue> };
   delete?: string;
   updateMask?: { fieldPaths: string[] };
   currentDocument?: { exists?: boolean; updateTime?: string };
@@ -175,7 +175,7 @@ export class FirestoreRESTClient {
   }
 
   /** Convert document to plain object */
-  static documentToObject(doc: FirestoreDocument): Record<string, unknown> {
+  static documentToObject(doc: FirestoreDocument | { name: string; fields: Record<string, FirestoreValue> }): Record<string, unknown> {
     const obj: Record<string, unknown> = {};
     for (const [k, v] of Object.entries(doc.fields)) {
       obj[k] = FirestoreRESTClient.fromFirestoreValue(v);
@@ -304,7 +304,7 @@ export class FirestoreRESTClient {
   async queryDocuments(
     collectionPath: string,
     query: FirestoreQueryRequest
-  ): Promise<FirestoreDocument[]> {
+  ): Promise<Array<{ name: string; fields: Record<string, FirestoreValue> }>> {
     const url = `${this.baseUrl}/documents/${collectionPath}:runQuery`;
     const response = await fetch(url, {
       method: 'POST',
@@ -351,6 +351,7 @@ export class FirestoreRESTClient {
     collectionPath: string,
     docs: Array<{ id?: string; data: Record<string, unknown> }>
   ): Promise<void> {
+    const now = new Date().toISOString();
     const writes: FirestoreWrite[] = docs.map(doc => ({
       update: {
         name: doc.id
@@ -359,6 +360,8 @@ export class FirestoreRESTClient {
         fields: Object.fromEntries(
           Object.entries(doc.data).map(([k, v]) => [k, FirestoreRESTClient.toFirestoreValue(v)])
         ),
+        createTime: now,
+        updateTime: now,
       },
     }));
 
@@ -375,7 +378,7 @@ export class FirestoreRESTClient {
   }
 
   /** Build equality filter */
-  static where(fieldPath: string, op: FirestoreFilter['fieldFilter']['op'], value: unknown): FirestoreFilter {
+  static where(fieldPath: string, op: 'EQUAL' | 'LESS_THAN' | 'LESS_THAN_OR_EQUAL' | 'GREATER_THAN' | 'GREATER_THAN_OR_EQUAL' | 'ARRAY_CONTAINS' | 'ARRAY_CONTAINS_ANY' | 'IN' | 'NOT_IN', value: unknown): FirestoreFilter {
     return {
       fieldFilter: {
         field: { fieldPath },
