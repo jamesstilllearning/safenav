@@ -1,7 +1,18 @@
 /** Cloudflare Worker: Cleanup Stale FCM Tokens (Scheduled - Daily 04:00 UTC) */
 
-import { getFirestore, serverTimestamp } from '../utils/firestore';
+import { FirestoreRESTClient, FieldValue } from '../utils/firestore-rest';
 import { writeAuditLog } from '../utils/audit';
+import { createOAuthCache } from '../utils/oauth';
+
+let firestoreClient: FirestoreRESTClient | null = null;
+
+function getClient(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): FirestoreRESTClient {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  return firestoreClient;
+}
 
 /**
  * Scheduled handler for cleanupStaleTokens
@@ -9,38 +20,42 @@ import { writeAuditLog } from '../utils/audit';
  *
  * Removes FCM tokens that haven't been updated in 90 days
  */
-export async function cleanupStaleTokens(): Promise<{ success: boolean; deletedCount: number }> {
+export async function cleanupStaleTokens(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): Promise<{ success: boolean; deletedCount: number }> {
   console.log('[Scheduled] Running cleanupStaleTokens...');
 
-  const db = getFirestore();
-  const tokensCol = db.collection('fcm_tokens');
+  const db = getClient(env);
   const cutoffDate = new Date();
   cutoffDate.setDate(cutoffDate.getDate() - 90); // 90 days ago
+  const cutoffISO = cutoffDate.toISOString();
 
   try {
     // Query tokens older than 90 days
-    const snapshot = await tokensCol
-      .where('updatedAt', '<=', cutoffDate)
-      .get();
+    const query = {
+      structuredQuery: {
+        where: {
+          fieldFilter: {
+            field: { fieldPath: 'updatedAt' },
+            op: 'LESS_THAN_OR_EQUAL',
+            value: { timestampValue: cutoffISO },
+          },
+        },
+      },
+    };
 
-    if (snapshot.empty) {
+    const snapshot = await db.queryDocuments('fcm_tokens', query);
+
+    if (snapshot.length === 0) {
       console.log('[Scheduled] No stale tokens found');
       return { success: true, deletedCount: 0 };
     }
 
     // Batch delete stale tokens
-    const batch = db.batch();
-    let deletedCount = 0;
-
-    for (const doc of snapshot.docs) {
-      batch.delete(doc.ref);
-      deletedCount++;
-    }
-
-    await batch.commit();
+    const documentIds = snapshot.map(doc => doc.name.split('/').pop()!);
+    await db.batchDelete('fcm_tokens', documentIds);
+    const deletedCount = documentIds.length;
 
     // Write audit log
-    await writeAuditLog({
+    await writeAuditLog(db, {
       actorId: 'system',
       actorRole: 'system',
       action: 'fcm_tokens.cleanup_stale',
@@ -48,7 +63,7 @@ export async function cleanupStaleTokens(): Promise<{ success: boolean; deletedC
       targetId: 'bulk',
       after: {
         deletedCount,
-        cutoffDate: cutoffDate.toISOString(),
+        cutoffDate: cutoffISO,
         cleanedAt: new Date().toISOString(),
       },
     });
@@ -62,4 +77,4 @@ export async function cleanupStaleTokens(): Promise<{ success: boolean; deletedC
 }
 
 // For testing via HTTP
-export const handler = async () => cleanupStaleTokens();
+export const handler = async (c: any) => cleanupStaleTokens(c.env);

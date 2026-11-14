@@ -2,12 +2,12 @@
 
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import * as admin from 'firebase-admin';
 
-import { getFirestore, serverTimestamp } from '../utils/firestore';
+import { FirestoreRESTClient, FieldValue } from '../utils/firestore-rest';
 import { writeTokenRegistrationAudit } from '../utils/audit';
 import { validateRegisterTokenInput, RegisterTokenInput } from '../utils/validation';
-import { verifyIdToken } from '../utils/firebase';
+import { verifyIdToken, extractIdToken, createJWKSCache } from '../utils/auth';
+import { createOAuthCache } from '../utils/oauth';
 
 const app = new Hono();
 
@@ -16,6 +16,21 @@ app.use('*', cors({
   allowHeaders: ['Content-Type', 'Authorization'],
   allowMethods: ['POST', 'OPTIONS'],
 }));
+
+// Initialize clients lazily
+let firestoreClient: FirestoreRESTClient | null = null;
+let jwksCache: ReturnType<typeof createJWKSCache> | null = null;
+
+function getClients(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }) {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  if (!jwksCache) {
+    jwksCache = createJWKSCache(env.KV);
+  }
+  return { firestoreClient, jwksCache };
+}
 
 /**
  * POST /registerToken
@@ -36,17 +51,20 @@ app.use('*', cors({
  *   { success: boolean, message: string }
  */
 app.post('/registerToken', async (c) => {
+  const env = c.env as { FIREBASE_PROJECT_ID: string; KV: KVNamespace };
+  const { firestoreClient, jwksCache } = getClients(env);
+
   // 1. Verify authentication
   const authHeader = c.req.header('Authorization');
-  const idToken = authHeader?.replace('Bearer ', '');
+  const idToken = extractIdToken(authHeader);
 
   if (!idToken) {
     return c.json({ success: false, message: 'Authentication required' }, 401);
   }
 
-  let decodedToken: admin.auth.DecodedIdToken;
+  let decodedToken: { uid: string };
   try {
-    decodedToken = await verifyIdToken(idToken);
+    decodedToken = await verifyIdToken(idToken, env.FIREBASE_PROJECT_ID, jwksCache);
   } catch {
     return c.json({ success: false, message: 'Invalid or expired token' }, 403);
   }
@@ -59,20 +77,17 @@ app.post('/registerToken', async (c) => {
     const input = validateRegisterTokenInput(body);
 
     // 3. Save token to Firestore
-    const db = getFirestore();
-    const tokenRef = db.collection('fcm_tokens').doc(uid);
-
-    await tokenRef.set({
+    await firestoreClient.createDocument('fcm_tokens', {
       uid,
       token: input.token,
       platform: input.platform,
       appVersion: input.appVersion,
-      updatedAt: serverTimestamp(),
-      createdAt: serverTimestamp(),
-    }, { merge: true });
+      updatedAt: FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
+    }, uid);
 
     // 4. Write audit log
-    await writeTokenRegistrationAudit(uid, input.platform, true);
+    await writeTokenRegistrationAudit(firestoreClient, uid, input.platform, true);
 
     console.log(`FCM token registered for user ${uid} (${input.platform})`);
 
@@ -89,7 +104,7 @@ app.post('/registerToken', async (c) => {
 
     // Write failed audit log
     try {
-      await writeTokenRegistrationAudit(uid, 'unknown', false);
+      await writeTokenRegistrationAudit(firestoreClient, uid, 'unknown', false);
     } catch {}
 
     return c.json(

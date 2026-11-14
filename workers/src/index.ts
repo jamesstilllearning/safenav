@@ -20,6 +20,7 @@ interface Env {
   FIREBASE_REGION: string;
   ENVIRONMENT: string;
   FIREBASE_SERVICE_ACCOUNT_KEY: string;
+  KV: KVNamespace;
 }
 
 // Main app
@@ -49,22 +50,22 @@ app.route('/api', registerToken);
 
 // Scheduled function endpoints (for manual testing)
 app.get('/api/scheduled/cleanup-expired-alerts', async (c) => {
-  const result = await cleanupExpiredAlerts();
+  const result = await cleanupExpiredAlerts(c.env);
   return c.json(result);
 });
 
 app.get('/api/scheduled/daily-analytics', async (c) => {
-  const result = await dailyAnalytics();
+  const result = await dailyAnalytics(c.env);
   return c.json(result);
 });
 
 app.get('/api/scheduled/cleanup-stale-tokens', async (c) => {
-  const result = await cleanupStaleTokens();
+  const result = await cleanupStaleTokens(c.env);
   return c.json(result);
 });
 
 app.get('/api/scheduled/refresh-fcm-topics', async (c) => {
-  const result = await refreshFCMTopics();
+  const result = await refreshFCMTopics(c.env);
   return c.json(result);
 });
 
@@ -84,25 +85,25 @@ export default {
   fetch: app.fetch,
 
   // Scheduled event handlers (triggered by cron)
-  async scheduled(event: ScheduledEvent, env: any, ctx: ExecutionContext) {
+  async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
     console.log(`[Scheduled] Cron triggered: ${event.cron}`);
 
     try {
       switch (event.cron) {
         case '0 2 * * *': // Daily 02:00 UTC - Cleanup expired alerts
-          await cleanupExpiredAlerts();
+          await cleanupExpiredAlerts(env);
           break;
 
         case '0 3 * * *': // Daily 03:00 UTC - Daily analytics
-          await dailyAnalytics();
+          await dailyAnalytics(env);
           break;
 
         case '0 4 * * *': // Daily 04:00 UTC - Cleanup stale tokens
-          await cleanupStaleTokens();
+          await cleanupStaleTokens(env);
           break;
 
         case '0 * * * *': // Hourly - Refresh FCM topics
-          await refreshFCMTopics();
+          await refreshFCMTopics(env);
           break;
 
         default:

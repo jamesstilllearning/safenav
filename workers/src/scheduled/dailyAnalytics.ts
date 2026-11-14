@@ -1,7 +1,18 @@
 /** Cloudflare Worker: Daily Analytics Aggregation (Scheduled - Daily 03:00 UTC) */
 
-import { getFirestore, serverTimestamp } from '../utils/firestore';
+import { FirestoreRESTClient, FieldValue } from '../utils/firestore-rest';
 import { writeAuditLog } from '../utils/audit';
+import { createOAuthCache } from '../utils/oauth';
+
+let firestoreClient: FirestoreRESTClient | null = null;
+
+function getClient(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): FirestoreRESTClient {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  return firestoreClient;
+}
 
 /**
  * Scheduled handler for dailyAnalytics
@@ -9,17 +20,17 @@ import { writeAuditLog } from '../utils/audit';
  *
  * Aggregates daily statistics and stores in analytics/{date} collection
  */
-export async function dailyAnalytics(): Promise<{ success: boolean; date: string }> {
+export async function dailyAnalytics(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): Promise<{ success: boolean; date: string }> {
   console.log('[Scheduled] Running dailyAnalytics...');
 
-  const db = getFirestore();
+  const db = getClient(env);
   const now = new Date();
   const dateStr = now.toISOString().split('T')[0]; // YYYY-MM-DD
-  const startOfDay = new Date(dateStr + 'T00:00:00.000Z');
-  const endOfDay = new Date(dateStr + 'T23:59:59.999Z');
+  const startOfDay = new Date(dateStr + 'T00:00:00.000Z').toISOString();
+  const endOfDay = new Date(dateStr + 'T23:59:59.999Z').toISOString();
 
   try {
-    // Aggregate various metrics
+    // Aggregate various metrics using queries
     const [
       usersSnapshot,
       activeUsersSnapshot,
@@ -29,36 +40,63 @@ export async function dailyAnalytics(): Promise<{ success: boolean; date: string
       pathwaysSnapshot,
     ] = await Promise.all([
       // Total users
-      db.collection('users').get(),
+      db.listDocuments('users', { pageSize: 10000 }),
       // Active users today (signed in)
-      db.collection('users')
-        .where('lastSignInAt', '>=', startOfDay)
-        .where('lastSignInAt', '<=', endOfDay)
-        .get(),
+      db.queryDocuments('users', {
+        structuredQuery: {
+          where: {
+            compositeFilter: {
+              op: 'AND',
+              filters: [
+                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'lastSignInAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+              ],
+            },
+          },
+        },
+      }),
       // Alerts created today
-      db.collection('alerts')
-        .where('createdAt', '>=', startOfDay)
-        .where('createdAt', '<=', endOfDay)
-        .get(),
+      db.queryDocuments('alerts', {
+        structuredQuery: {
+          where: {
+            compositeFilter: {
+              op: 'AND',
+              filters: [
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+              ],
+            },
+          },
+        },
+      }),
       // Emergency reports created today
-      db.collection('emergency_reports')
-        .where('createdAt', '>=', startOfDay)
-        .where('createdAt', '<=', endOfDay)
-        .get(),
+      db.queryDocuments('emergency_reports', {
+        structuredQuery: {
+          where: {
+            compositeFilter: {
+              op: 'AND',
+              filters: [
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: startOfDay } } },
+                { fieldFilter: { field: { fieldPath: 'createdAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: endOfDay } } },
+              ],
+            },
+          },
+        },
+      }),
       // Total buildings
-      db.collection('buildings').get(),
+      db.listDocuments('buildings', { pageSize: 10000 }),
       // Total pathways
-      db.collection('pathways').get(),
+      db.listDocuments('pathways', { pageSize: 10000 }),
     ]);
 
     // Count alerts by type and severity
     const alertsByType: Record<string, number> = {};
     const alertsBySeverity: Record<string, number> = {};
 
-    for (const doc of alertsSnapshot.docs) {
-      const data = doc.data();
-      const type = data.type || 'unknown';
-      const severity = data.severity || 'unknown';
+    for (const doc of alertsSnapshot) {
+      const data = FirestoreRESTClient.documentToObject(doc);
+      const type = (data.type as string) || 'unknown';
+      const severity = (data.severity as string) || 'unknown';
       alertsByType[type] = (alertsByType[type] || 0) + 1;
       alertsBySeverity[severity] = (alertsBySeverity[severity] || 0) + 1;
     }
@@ -67,10 +105,10 @@ export async function dailyAnalytics(): Promise<{ success: boolean; date: string
     const reportsByType: Record<string, number> = {};
     const reportsByPriority: Record<string, number> = {};
 
-    for (const doc of reportsSnapshot.docs) {
-      const data = doc.data();
-      const type = data.type || 'unknown';
-      const priority = data.priority || 0;
+    for (const doc of reportsSnapshot) {
+      const data = FirestoreRESTClient.documentToObject(doc);
+      const type = (data.type as string) || 'unknown';
+      const priority = (data.priority as number) || 0;
       reportsByType[type] = (reportsByType[type] || 0) + 1;
       const priorityBucket = priority >= 8 ? 'critical' : priority >= 5 ? 'high' : 'low';
       reportsByPriority[priorityBucket] = (reportsByPriority[priorityBucket] || 0) + 1;
@@ -78,42 +116,42 @@ export async function dailyAnalytics(): Promise<{ success: boolean; date: string
 
     // Count users by role
     const usersByRole: Record<string, number> = {};
-    for (const doc of usersSnapshot.docs) {
-      const data = doc.data();
-      const role = data.role || 'student';
+    for (const doc of usersSnapshot.documents) {
+      const data = FirestoreRESTClient.documentToObject(doc);
+      const role = (data.role as string) || 'student';
       usersByRole[role] = (usersByRole[role] || 0) + 1;
     }
 
     // Prepare analytics document
     const analyticsData = {
       date: dateStr,
-      timestamp: serverTimestamp(),
+      timestamp: FieldValue.serverTimestamp(),
       users: {
-        total: usersSnapshot.size,
-        activeToday: activeUsersSnapshot.size,
+        total: usersSnapshot.documents.length,
+        activeToday: activeUsersSnapshot.length,
         byRole: usersByRole,
       },
       alerts: {
-        total: alertsSnapshot.size,
+        total: alertsSnapshot.length,
         byType: alertsByType,
         bySeverity: alertsBySeverity,
       },
       emergencyReports: {
-        total: reportsSnapshot.size,
+        total: reportsSnapshot.length,
         byType: reportsByType,
         byPriority: reportsByPriority,
       },
       campusData: {
-        buildings: buildingsSnapshot.size,
-        pathways: pathwaysSnapshot.size,
+        buildings: buildingsSnapshot.documents.length,
+        pathways: pathwaysSnapshot.documents.length,
       },
     };
 
     // Save to analytics collection
-    await db.collection('analytics').doc(dateStr).set(analyticsData);
+    await db.createDocument('analytics', analyticsData, dateStr);
 
     // Write audit log
-    await writeAuditLog({
+    await writeAuditLog(db, {
       actorId: 'system',
       actorRole: 'system',
       action: 'analytics.daily_aggregated',
@@ -121,9 +159,9 @@ export async function dailyAnalytics(): Promise<{ success: boolean; date: string
       targetId: dateStr,
       after: {
         date: dateStr,
-        usersTotal: usersSnapshot.size,
-        alertsTotal: alertsSnapshot.size,
-        reportsTotal: reportsSnapshot.size,
+        usersTotal: usersSnapshot.documents.length,
+        alertsTotal: alertsSnapshot.length,
+        reportsTotal: reportsSnapshot.length,
       },
     });
 
@@ -136,4 +174,4 @@ export async function dailyAnalytics(): Promise<{ success: boolean; date: string
 }
 
 // For testing via HTTP
-export const handler = async () => dailyAnalytics();
+export const handler = async (c: any) => dailyAnalytics(c.env);

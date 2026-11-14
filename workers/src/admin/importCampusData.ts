@@ -2,15 +2,13 @@
 
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import * as admin from 'firebase-admin';
 
 import {
-  getFirestore,
-  batchWrite,
-  batchDelete,
-  serverTimestamp,
-  nowISO,
-} from '../utils/firestore';
+  FirestoreRESTClient,
+  GeoPoint,
+  FieldValue,
+  FirestoreRESTClient as FirestoreClient,
+} from '../utils/firestore-rest';
 import { writeCampusDataImportAudit } from '../utils/audit';
 import {
   validateBuildingsGeoJSON,
@@ -19,7 +17,8 @@ import {
   validateImportCampusDataInput,
   ImportCampusDataInput,
 } from '../utils/validation';
-import { verifyAdminToken } from '../utils/firebase';
+import { verifyAdminToken, extractIdToken, createJWKSCache } from '../utils/auth';
+import { createOAuthCache } from '../utils/oauth';
 
 const app = new Hono();
 
@@ -29,6 +28,21 @@ app.use('*', cors({
   allowHeaders: ['Content-Type', 'Authorization'],
   allowMethods: ['POST', 'OPTIONS'],
 }));
+
+// Initialize clients lazily (need env.KV)
+let firestoreClient: FirestoreRESTClient | null = null;
+let jwksCache: ReturnType<typeof createJWKSCache> | null = null;
+
+function getClients(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }) {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  if (!jwksCache) {
+    jwksCache = createJWKSCache(env.KV);
+  }
+  return { firestoreClient, jwksCache };
+}
 
 /**
  * POST /importCampusData
@@ -54,9 +68,12 @@ app.use('*', cors({
  *   }
  */
 app.post('/importCampusData', async (c) => {
+  const env = c.env as { FIREBASE_PROJECT_ID: string; KV: KVNamespace };
+  const { firestoreClient, jwksCache } = getClients(env);
+
   // 1. Verify authentication and admin role via ID token
   const authHeader = c.req.header('Authorization');
-  const idToken = authHeader?.replace('Bearer ', '');
+  const idToken = extractIdToken(authHeader);
 
   if (!idToken) {
     return c.json(
@@ -65,9 +82,9 @@ app.post('/importCampusData', async (c) => {
     );
   }
 
-  let decodedToken: admin.auth.DecodedIdToken;
+  let decodedToken: { uid: string; role?: string };
   try {
-    decodedToken = await verifyAdminToken(idToken);
+    decodedToken = await verifyAdminToken(idToken, env.FIREBASE_PROJECT_ID, jwksCache);
   } catch (error) {
     return c.json(
       { success: false, message: error instanceof Error ? error.message : 'Invalid or expired token' },
@@ -82,11 +99,10 @@ app.post('/importCampusData', async (c) => {
     const body = await c.req.json();
     const input = validateImportCampusDataInput(body);
 
-    // 3. Get Firestore instance
-    const db = getFirestore();
-    const buildingsCol = db.collection('buildings');
-    const pathwaysCol = db.collection('pathways');
-    const boundaryCol = db.collection('campus_boundary');
+    // 3. Get collections
+    const buildingsCol = 'buildings';
+    const pathwaysCol = 'pathways';
+    const boundaryCol = 'campus_boundary';
 
     let buildingsCount = 0;
     let pathwaysCount = 0;
@@ -97,21 +113,21 @@ app.post('/importCampusData', async (c) => {
       console.log('Clearing existing campus data...');
 
       // Delete all buildings
-      const buildingsSnapshot = await buildingsCol.get();
-      if (!buildingsSnapshot.empty) {
-        await batchDelete(buildingsCol, buildingsSnapshot.docs.map(d => d.id));
+      const buildingsSnapshot = await firestoreClient.listDocuments(buildingsCol, { pageSize: 500 });
+      if (buildingsSnapshot.documents.length > 0) {
+        await firestoreClient.batchDelete(buildingsCol, buildingsSnapshot.documents.map(d => d.name.split('/').pop()!));
       }
 
       // Delete all pathways
-      const pathwaysSnapshot = await pathwaysCol.get();
-      if (!pathwaysSnapshot.empty) {
-        await batchDelete(pathwaysCol, pathwaysSnapshot.docs.map(d => d.id));
+      const pathwaysSnapshot = await firestoreClient.listDocuments(pathwaysCol, { pageSize: 500 });
+      if (pathwaysSnapshot.documents.length > 0) {
+        await firestoreClient.batchDelete(pathwaysCol, pathwaysSnapshot.documents.map(d => d.name.split('/').pop()!));
       }
 
       // Delete boundary
-      const boundarySnapshot = await boundaryCol.get();
-      if (!boundarySnapshot.empty) {
-        await batchDelete(boundaryCol, boundarySnapshot.docs.map(d => d.id));
+      const boundarySnapshot = await firestoreClient.listDocuments(boundaryCol, { pageSize: 500 });
+      if (boundarySnapshot.documents.length > 0) {
+        await firestoreClient.batchDelete(boundaryCol, boundarySnapshot.documents.map(d => d.name.split('/').pop()!));
       }
     }
 
@@ -125,15 +141,15 @@ app.post('/importCampusData', async (c) => {
 
       // Parse polygon coordinates (GeoJSON: [lng, lat] -> Firestore: GeoPoint(lat, lng))
       const polygon = geometry.coordinates[0].map(
-        (coord: number[]) => new admin.firestore.GeoPoint(coord[1], coord[0])
+        (coord: number[]) => new GeoPoint(coord[1], coord[0])
       );
 
       // Calculate centroid
-      let centroid: admin.firestore.GeoPoint | null = null;
+      let centroid: GeoPoint | null = null;
       if (polygon.length > 0) {
         const avgLat = polygon.reduce((sum, p) => sum + p.latitude, 0) / polygon.length;
         const avgLng = polygon.reduce((sum, p) => sum + p.longitude, 0) / polygon.length;
-        centroid = new admin.firestore.GeoPoint(avgLat, avgLng);
+        centroid = new GeoPoint(avgLat, avgLng);
       }
 
       // Calculate approximate area
@@ -148,7 +164,7 @@ app.post('/importCampusData', async (c) => {
         areaSqMeters = Math.abs(area * 111320 * 111320) / 2;
       }
 
-      await boundaryCol.doc('main').set({
+      await firestoreClient.createDocument(boundaryCol, {
         id: 'main',
         name: props.name as string,
         shortName: (props.short_name as string) || (props.name as string),
@@ -165,10 +181,10 @@ app.post('/importCampusData', async (c) => {
         centroid,
         areaSqMeters,
         additionalTags: props,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
+        createdAt: FieldValue.serverTimestamp(),
+        updatedAt: FieldValue.serverTimestamp(),
         updatedBy: adminUid,
-      });
+      }, 'main');
 
       boundaryImported = true;
       console.log('Campus boundary imported successfully');
@@ -185,19 +201,19 @@ app.post('/importCampusData', async (c) => {
 
         // Parse polygon
         const polygon = geometry.coordinates[0].map(
-          (coord: number[]) => new admin.firestore.GeoPoint(coord[1], coord[0])
+          (coord: number[]) => new GeoPoint(coord[1], coord[0])
         );
 
         // Parse centroid (from properties or calculate)
-        let centroid: admin.firestore.GeoPoint;
+        let centroid: GeoPoint;
         if (props.centroid_lat !== undefined && props.centroid_lng !== undefined) {
-          centroid = new admin.firestore.GeoPoint(props.centroid_lat as number, props.centroid_lng as number);
+          centroid = new GeoPoint(props.centroid_lat as number, props.centroid_lng as number);
         } else if (polygon.length > 0) {
           const avgLat = polygon.reduce((sum, p) => sum + p.latitude, 0) / polygon.length;
           const avgLng = polygon.reduce((sum, p) => sum + p.longitude, 0) / polygon.length;
-          centroid = new admin.firestore.GeoPoint(avgLat, avgLng);
+          centroid = new GeoPoint(avgLat, avgLng);
         } else {
-          centroid = new admin.firestore.GeoPoint(0, 0);
+          centroid = new GeoPoint(0, 0);
         }
 
         // Calculate area
@@ -232,14 +248,14 @@ app.post('/importCampusData', async (c) => {
             floors: null,
             address: null,
             additionalTags: props,
-            createdAt: serverTimestamp(),
-            updatedAt: serverTimestamp(),
+            createdAt: FieldValue.serverTimestamp(),
+            updatedAt: FieldValue.serverTimestamp(),
             updatedBy: adminUid,
           },
         };
       });
 
-      await batchWrite(buildingsCol, buildingDocs);
+      await firestoreClient.batchSet(buildingsCol, buildingDocs);
       buildingsCount = buildingDocs.length;
       console.log(`Imported ${buildingsCount} buildings`);
     }
@@ -254,19 +270,19 @@ app.post('/importCampusData', async (c) => {
         const geometry = feature.geometry as { type: 'LineString' | 'Polygon'; coordinates: number[][] };
 
         // Parse coordinates
-        let coordinates: admin.firestore.GeoPoint[];
+        let coordinates: GeoPoint[];
         let geometryType: 'LineString' | 'Polygon';
 
         if (geometry.type === 'LineString') {
           // LineString coordinates: number[][] (array of [lng, lat] pairs)
           coordinates = (geometry.coordinates as unknown as number[][]).map(
-            (coord: number[]) => new admin.firestore.GeoPoint(coord[1], coord[0])
+            (coord: number[]) => new GeoPoint(coord[1], coord[0])
           );
           geometryType = 'LineString';
         } else {
           // Polygon - use first ring: coordinates[0] is number[][]
           coordinates = (geometry.coordinates[0] as unknown as number[][]).map(
-            (coord: number[]) => new admin.firestore.GeoPoint(coord[1], coord[0])
+            (coord: number[]) => new GeoPoint(coord[1], coord[0])
           );
           geometryType = 'Polygon';
         }
@@ -289,20 +305,20 @@ app.post('/importCampusData', async (c) => {
             geometryType,
             capacity: (props.capacity as number) || null,
             additionalTags: props,
-            createdAt: serverTimestamp(),
-            updatedAt: serverTimestamp(),
+            createdAt: FieldValue.serverTimestamp(),
+            updatedAt: FieldValue.serverTimestamp(),
             updatedBy: adminUid,
           },
         };
       });
 
-      await batchWrite(pathwaysCol, pathwayDocs);
+      await firestoreClient.batchSet(pathwaysCol, pathwayDocs);
       pathwaysCount = pathwayDocs.length;
       console.log(`Imported ${pathwaysCount} pathways`);
     }
 
     // 8. Write audit log
-    await writeCampusDataImportAudit(adminUid, 'admin', {
+    await writeCampusDataImportAudit(firestoreClient, adminUid, 'admin', {
       buildings: buildingsCount,
       pathways: pathwaysCount,
       boundary: boundaryImported,

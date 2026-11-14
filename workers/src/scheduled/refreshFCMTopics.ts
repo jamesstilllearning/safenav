@@ -1,7 +1,24 @@
 /** Cloudflare Worker: Refresh FCM Topic Subscriptions (Scheduled - Hourly) */
 
-import { getFirestore, getMessaging, serverTimestamp } from '../utils/firestore';
+import { FirestoreRESTClient, FieldValue } from '../utils/firestore-rest';
+import { FCMRESTClient } from '../utils/fcm-rest';
 import { writeAuditLog } from '../utils/audit';
+import { createOAuthCache } from '../utils/oauth';
+
+let firestoreClient: FirestoreRESTClient | null = null;
+let fcmClient: FCMRESTClient | null = null;
+
+function getClients(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }) {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  if (!fcmClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/firebase.messaging');
+    fcmClient = new FCMRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  return { firestoreClient, fcmClient };
+}
 
 /**
  * Scheduled handler for refreshFCMTopics
@@ -14,42 +31,39 @@ import { writeAuditLog } from '../utils/audit';
  * - Security -> 'security' topic
  * - Admins -> 'admins' topic
  */
-export async function refreshFCMTopics(): Promise<{ success: boolean; subscribedCount: number; unsubscribedCount: number }> {
+export async function refreshFCMTopics(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): Promise<{ success: boolean; subscribedCount: number; unsubscribedCount: number }> {
   console.log('[Scheduled] Running refreshFCMTopics...');
 
-  const db = getFirestore();
-  const messaging = getMessaging();
-  const usersCol = db.collection('users');
-  const tokensCol = db.collection('fcm_tokens');
+  const { firestoreClient, fcmClient } = getClients(env);
 
   let subscribedCount = 0;
   let unsubscribedCount = 0;
 
   try {
     // Get all users with their roles
-    const usersSnapshot = await usersCol.get();
+    const usersSnapshot = await firestoreClient.listDocuments('users', { pageSize: 10000 });
 
-    for (const userDoc of usersSnapshot.docs) {
-      const userData = userDoc.data();
-      const uid = userDoc.id;
-      const role = userData.role || 'student';
+    for (const userDoc of usersSnapshot.documents) {
+      const userData = FirestoreRESTClient.documentToObject(userDoc);
+      const uid = userDoc.name.split('/').pop() || '';
+      const role = (userData.role as string) || 'student';
 
       // Determine topics for this user
       const topics = getTopicsForRole(role);
 
       // Get user's FCM token
-      const tokenDoc = await tokensCol.doc(uid).get();
-      if (!tokenDoc.exists) continue;
+      const tokenDoc = await firestoreClient.getDocument('fcm_tokens', uid);
+      if (!tokenDoc) continue;
 
-      const tokenData = tokenDoc.data();
+      const tokenData = FirestoreRESTClient.documentToObject(tokenDoc);
       if (!tokenData?.token) continue;
 
-      const token = tokenData.token;
+      const token = tokenData.token as string;
 
       try {
         // Subscribe to all relevant topics
         for (const topic of topics) {
-          await messaging.subscribeToTopic([token], topic);
+          await fcmClient.subscribeToTopic([token], topic);
           subscribedCount++;
         }
 
@@ -63,7 +77,7 @@ export async function refreshFCMTopics(): Promise<{ success: boolean; subscribed
     }
 
     // Write audit log
-    await writeAuditLog({
+    await writeAuditLog(firestoreClient, {
       actorId: 'system',
       actorRole: 'system',
       action: 'fcm_topics.refreshed',
@@ -71,12 +85,12 @@ export async function refreshFCMTopics(): Promise<{ success: boolean; subscribed
       targetId: 'bulk',
       after: {
         subscribedCount,
-        processedUsers: usersSnapshot.size,
+        processedUsers: usersSnapshot.documents.length,
         refreshedAt: new Date().toISOString(),
       },
     });
 
-    console.log(`[Scheduled] Refreshed FCM topics for ${usersSnapshot.size} users (${subscribedCount} subscriptions)`);
+    console.log(`[Scheduled] Refreshed FCM topics for ${usersSnapshot.documents.length} users (${subscribedCount} subscriptions)`);
     return { success: true, subscribedCount, unsubscribedCount };
   } catch (error) {
     console.error('[Scheduled] refreshFCMTopics error:', error);
@@ -98,4 +112,4 @@ function getTopicsForRole(role: string): string[] {
 }
 
 // For testing via HTTP
-export const handler = async () => refreshFCMTopics();
+export const handler = async (c: any) => refreshFCMTopics(c.env);

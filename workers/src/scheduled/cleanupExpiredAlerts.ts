@@ -1,7 +1,18 @@
 /** Cloudflare Worker: Cleanup Expired Alerts (Scheduled - Daily 02:00 UTC) */
 
-import { getFirestore, serverTimestamp } from '../utils/firestore';
+import { FirestoreRESTClient, FieldValue, FirestoreRESTClient as FirestoreClient } from '../utils/firestore-rest';
 import { writeAuditLog } from '../utils/audit';
+import { createOAuthCache } from '../utils/oauth';
+
+let firestoreClient: FirestoreRESTClient | null = null;
+
+function getClient(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): FirestoreRESTClient {
+  if (!firestoreClient) {
+    const oauthCache = createOAuthCache(env.KV, 'https://www.googleapis.com/auth/datastore');
+    firestoreClient = new FirestoreRESTClient(env.FIREBASE_PROJECT_ID, oauthCache);
+  }
+  return firestoreClient;
+}
 
 /**
  * Scheduled handler for cleanupExpiredAlerts
@@ -9,41 +20,58 @@ import { writeAuditLog } from '../utils/audit';
  *
  * Sets status=expired for alerts past their expiresAt timestamp
  */
-export async function cleanupExpiredAlerts(): Promise<{ success: boolean; updatedCount: number }> {
+export async function cleanupExpiredAlerts(env: { FIREBASE_PROJECT_ID: string; KV: KVNamespace }): Promise<{ success: boolean; updatedCount: number }> {
   console.log('[Scheduled] Running cleanupExpiredAlerts...');
 
-  const db = getFirestore();
-  const alertsCol = db.collection('alerts');
-  const now = new Date();
+  const db = getClient(env);
+  const now = new Date().toISOString();
 
   try {
     // Query alerts that are active and have expired
-    const snapshot = await alertsCol
-      .where('status', '==', 'active')
-      .where('expiresAt', '<=', now)
-      .get();
+    // Firestore REST API query for alerts where status == 'active' AND expiresAt <= now
+    const query = {
+      structuredQuery: {
+        where: {
+          compositeFilter: {
+            op: 'AND',
+            filters: [
+              { fieldFilter: { field: { fieldPath: 'status' }, op: 'EQUAL', value: { stringValue: 'active' } } },
+              { fieldFilter: { field: { fieldPath: 'expiresAt' }, op: 'LESS_THAN_OR_EQUAL', value: { timestampValue: now } } },
+            ],
+          },
+        },
+      },
+    };
 
-    if (snapshot.empty) {
+    const snapshot = await db.queryDocuments('alerts', query);
+
+    if (snapshot.length === 0) {
       console.log('[Scheduled] No expired alerts found');
       return { success: true, updatedCount: 0 };
     }
 
-    // Batch update expired alerts
-    const batch = db.batch();
+    // Batch update expired alerts (max 500 per batch)
+    const batchSize = 500;
     let updatedCount = 0;
 
-    for (const doc of snapshot.docs) {
-      batch.update(doc.ref, {
-        status: 'expired',
-        updatedAt: serverTimestamp(),
-      });
-      updatedCount++;
+    for (let i = 0; i < snapshot.length; i += batchSize) {
+      const batch = snapshot.slice(i, i + batchSize);
+      const writes = batch.map(doc => ({
+        update: {
+          name: doc.name,
+          fields: {
+            status: { stringValue: 'expired' },
+            updatedAt: { timestampValue: new Date().toISOString() },
+          },
+        },
+      }));
+
+      await db.batchWrite(writes);
+      updatedCount += batch.length;
     }
 
-    await batch.commit();
-
     // Write audit log
-    await writeAuditLog({
+    await writeAuditLog(db, {
       actorId: 'system',
       actorRole: 'system',
       action: 'alerts.expired_cleanup',
@@ -51,7 +79,7 @@ export async function cleanupExpiredAlerts(): Promise<{ success: boolean; update
       targetId: 'bulk',
       after: {
         updatedCount,
-        cleanedAt: now.toISOString(),
+        cleanedAt: now,
       },
     });
 
@@ -64,4 +92,4 @@ export async function cleanupExpiredAlerts(): Promise<{ success: boolean; update
 }
 
 // For testing via HTTP
-export const handler = async () => cleanupExpiredAlerts();
+export const handler = async (c: any) => cleanupExpiredAlerts(c.env);

@@ -1,6 +1,6 @@
 /** Audit logging utilities for Cloudflare Workers */
 
-import { getFirestore, serverTimestamp } from './firestore';
+import { FirestoreRESTClient, FieldValue } from './firestore-rest';
 
 export interface AuditLogEntry {
   actorId: string;
@@ -15,11 +15,14 @@ export interface AuditLogEntry {
 }
 
 /** Write an audit log entry */
-export async function writeAuditLog(entry: AuditLogEntry): Promise<void> {
+export async function writeAuditLog(
+  client: FirestoreRESTClient,
+  entry: AuditLogEntry
+): Promise<void> {
   try {
-    await getFirestore().collection('audit_logs').add({
+    await client.createDocument('audit_logs', {
       ...entry,
-      timestamp: serverTimestamp(),
+      timestamp: FieldValue.serverTimestamp(),
     });
   } catch (error) {
     // Log error but don't throw - audit logging should not break main flow
@@ -28,22 +31,26 @@ export async function writeAuditLog(entry: AuditLogEntry): Promise<void> {
 }
 
 /** Write multiple audit log entries in a batch */
-export async function writeAuditLogBatch(entries: AuditLogEntry[]): Promise<void> {
+export async function writeAuditLogBatch(
+  client: FirestoreRESTClient,
+  entries: AuditLogEntry[]
+): Promise<void> {
   if (entries.length === 0) return;
 
   try {
-    const batch = getFirestore().batch();
-    const collection = getFirestore().collection('audit_logs');
+    const writes = entries.map(entry => ({
+      update: {
+        name: `${client['baseUrl']}/documents/audit_logs`,
+        fields: Object.fromEntries(
+          Object.entries({
+            ...entry,
+            timestamp: FieldValue.serverTimestamp(),
+          }).map(([k, v]) => [k, FirestoreRESTClient.toFirestoreValue(v)])
+        ),
+      },
+    }));
 
-    for (const entry of entries) {
-      const docRef = collection.doc();
-      batch.set(docRef, {
-        ...entry,
-        timestamp: serverTimestamp(),
-      });
-    }
-
-    await batch.commit();
+    await client.batchWrite(writes);
   } catch (error) {
     console.error('Failed to write audit log batch:', error);
   }
@@ -51,11 +58,12 @@ export async function writeAuditLogBatch(entries: AuditLogEntry[]): Promise<void
 
 /** Create audit log for campus data import */
 export async function writeCampusDataImportAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   actorRole: string,
   counts: { buildings: number; pathways: number; boundary: boolean }
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole,
     action: 'campus_data.imported',
@@ -72,12 +80,13 @@ export async function writeCampusDataImportAudit(
 
 /** Create audit log for user role change */
 export async function writeRoleChangeAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   targetUid: string,
   oldRole: string,
   newRole: string
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole: 'admin',
     action: 'user.role_changed',
@@ -90,12 +99,13 @@ export async function writeRoleChangeAudit(
 
 /** Create audit log for alert creation */
 export async function writeAlertCreationAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   actorRole: string,
   alertId: string,
   alertData: Record<string, unknown>
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole,
     action: 'alert.created',
@@ -107,6 +117,7 @@ export async function writeAlertCreationAudit(
 
 /** Create audit log for alert sent via FCM */
 export async function writeAlertSentAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   actorRole: string,
   alertId: string,
@@ -114,7 +125,7 @@ export async function writeAlertSentAudit(
   successCount: number,
   failureCount: number
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole,
     action: 'alert.sent',
@@ -131,13 +142,14 @@ export async function writeAlertSentAudit(
 
 /** Create audit log for emergency report */
 export async function writeEmergencyReportAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   actorRole: string,
   reportId: string,
   action: 'created' | 'updated' | 'resolved' | 'escalated',
   data: Record<string, unknown>
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole,
     action: `emergency_report.${action}`,
@@ -149,11 +161,12 @@ export async function writeEmergencyReportAudit(
 
 /** Create audit log for token registration */
 export async function writeTokenRegistrationAudit(
+  client: FirestoreRESTClient,
   actorId: string,
   platform: string,
   success: boolean
 ): Promise<void> {
-  await writeAuditLog({
+  await writeAuditLog(client, {
     actorId,
     actorRole: 'user',
     action: 'fcm_token.registered',
