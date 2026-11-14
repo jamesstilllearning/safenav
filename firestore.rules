@@ -1,0 +1,197 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ============ HELPER FUNCTIONS ============
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    function getUserRole() {
+      return isAuthenticated() ? request.auth.token.role : null;
+    }
+
+    function hasRole(roles) {
+      return isAuthenticated() && request.auth.token.role in roles;
+    }
+
+    function isAdmin() {
+      return hasRole(['admin']);
+    }
+
+    function isSecurity() {
+      return hasRole(['security']);
+    }
+
+    function isAdminOrSecurity() {
+      return isAdmin() || isSecurity();
+    }
+
+    function isFacultyOrAdmin() {
+      return hasRole(['faculty', 'admin']);
+    }
+
+    function isActiveUser() {
+      return isAuthenticated() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isActive == true);
+    }
+
+    // Validate user document structure on create
+    function validUserCreateData() {
+      let allowedKeys = [
+        'email', 'firstName', 'lastName', 'middleInitial', 'role',
+        'studentId', 'employeeId', 'department', 'phoneNumber',
+        'isActive', 'emailVerified', 'createdAt', 'updatedAt',
+        'language', 'notificationPrefs', 'emergencyContactName',
+        'emergencyContactPhone'
+      ];
+      return request.resource.data.keys().hasOnly(allowedKeys);
+    }
+
+    // Validate user document updates (owner)
+    function validUserOwnerUpdate() {
+      let allowedKeys = [
+        'firstName', 'lastName', 'middleInitial', 'phoneNumber',
+        'photoUrl', 'emergencyContactName', 'emergencyContactPhone',
+        'language', 'notificationPrefs', 'fcmToken', 'lastLoginAt', 'updatedAt'
+      ];
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(allowedKeys);
+    }
+
+    // Validate user document updates (admin)
+    function validUserAdminUpdate() {
+      let allowedKeys = [
+        'firstName', 'lastName', 'middleInitial', 'phoneNumber',
+        'photoUrl', 'emergencyContactName', 'emergencyContactPhone',
+        'language', 'notificationPrefs', 'fcmToken', 'lastLoginAt', 'updatedAt',
+        'role', 'isActive', 'studentId', 'employeeId', 'department'
+      ];
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(allowedKeys);
+    }
+
+    // ============ COLLECTION RULES ============
+
+    // Users: own profile read/write; admins/security read all; admins write all
+    match /users/{userId} {
+      // Read: Owner, Admin, Security
+      allow read: if isOwner(userId) || isAdminOrSecurity();
+
+      // Create: Only on auth signup (owner), with validated fields
+      allow create: if isOwner(userId)
+        && validUserCreateData()
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.isActive == true
+        && request.resource.data.emailVerified == false;
+
+      // Update: Owner (limited fields) or Admin (all fields)
+      allow update: if (isOwner(userId) && validUserOwnerUpdate())
+        || (isAdmin() && validUserAdminUpdate());
+
+      // Delete: Admin only (soft delete via isActive=false preferred)
+      allow delete: if isAdmin();
+    }
+
+    // FCM Tokens: Owner manages own tokens; Admin/Security + Functions can read all
+    match /fcm_tokens/{userId} {
+      allow read, write: if isOwner(userId);
+      allow read: if isAdminOrSecurity();
+    }
+
+    // Buildings: public read for map rendering; admin write
+    match /buildings/{buildingId} {
+      allow read: if isAuthenticated() || request.auth == null;
+      allow write: if isAdmin();
+    }
+
+    // Pathways: public read for map rendering; admin write
+    match /pathways/{pathwayId} {
+      allow read: if isAuthenticated() || request.auth == null;
+      allow write: if isAdmin();
+    }
+
+    // Campus Boundary: public read; admin write
+    match /campus_boundary/{boundaryId} {
+      allow read: if isAuthenticated() || request.auth == null;
+      allow write: if isAdmin();
+    }
+
+    // Evacuation Graphs: all authenticated read; admin/security write
+    match /evacuation_graphs/{graphId} {
+      allow read: if isAuthenticated();
+
+      allow create: if isAdminOrSecurity()
+        && request.resource.data.version == 1
+        && request.resource.data.updatedBy == request.auth.uid;
+
+      allow update: if isAdminOrSecurity()
+        && request.resource.data.version == resource.data.version + 1
+        && request.resource.data.updatedBy == request.auth.uid;
+
+      allow delete: if isAdmin();
+    }
+
+    // Alerts: targeted users read; admin/security create/update
+    match /alerts/{alertId} {
+      // READ: Targeted users (by role + building)
+      allow read: if isAuthenticated() && (
+        (resource.data.targetRoles.hasAny([getUserRole()]) || resource.data.targetRoles.size() == 0)
+        && (resource.data.targetBuildingIds.hasAny(['all'])
+            || resource.data.targetBuildingIds.size() == 0
+            || resource.data.targetBuildingIds.hasAny([get(/databases/$(database)/documents/users/$(request.auth.uid)).data.buildingId]))
+      );
+
+      // CREATE: Security/Admin only, must set createdBy to self
+      allow create: if isAdminOrSecurity()
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.createdByRole in ['security', 'admin', 'system']
+        && request.resource.data.status == 'active';
+
+      // UPDATE: Security/Admin full; Users only add self to acknowledgedBy
+      allow update: if isAdminOrSecurity()
+        || (isAuthenticated()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['acknowledgedBy'])
+            && request.resource.data.acknowledgedBy.hasAll(resource.data.acknowledgedBy)
+            && request.resource.data.acknowledgedBy.hasOnly(resource.data.acknowledgedBy + [request.auth.uid]));
+
+      allow delete: if isAdmin();
+    }
+
+    // Emergency Reports: reporter creates; security/admin read all; security updates status
+    match /emergency_reports/{reportId} {
+      allow read: if isOwner(resource.data.reporterId) || isAdminOrSecurity();
+
+      allow create: if isAuthenticated()
+        && request.resource.data.reporterId == request.auth.uid
+        && request.resource.data.status == 'submitted'
+        && request.resource.data.priority >= 1 && request.resource.data.priority <= 10;
+
+      allow update: if isAdminOrSecurity()
+        || (isOwner(resource.data.reporterId)
+            && resource.data.status == 'submitted'
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['description', 'photos', 'audioUrl']));
+
+      allow delete: if false; // Immutable record
+    }
+
+    // Audit Logs: admin read only; write only via Functions (Admin SDK)
+    match /audit_logs/{logId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    // Settings: public read if isPublic; admin write
+    match /settings/{settingId} {
+      allow read: if isAuthenticated() && (resource.data.isPublic == true || isAdmin());
+      allow write: if isAdmin();
+    }
+
+    // Analytics: admin read only; write only via scheduled Functions
+    match /analytics/{docId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+  }
+}

@@ -1,1 +1,29 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"safenav-cavite","appId":"1:131210697374:android:8e51f3249e94149ebdf98f","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"safenav-cavite","configurations":{"android":"1:131210697374:android:8e51f3249e94149ebdf98f","ios":"1:131210697374:ios:8e425b60c86b2d3ebdf98f","macos":"1:131210697374:ios:8e425b60c86b2d3ebdf98f","web":"1:131210697374:web:a3deb7a5f34eee4bbdf98f","windows":"1:131210697374:web:f187211f0ba3be32bdf98f"}}}}}}
+
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "safenav-cavite",
+          "appId": "1:131210697374:android:8e51f3249e94149ebdf98f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "safenav-cavite",
+          "configurations": {
+            "android": "1:131210697374:android:8e51f3249e94149ebdf98f",
+            "ios": "1:131210697374:ios:8e425b60c86b2d3ebdf98f",
+            "macos": "1:131210697374:ios:8e425b60c86b2d3ebdf98f",
+            "web": "1:131210697374:web:a3deb7a5f34eee4bbdf98f",
+            "windows": "1:131210697374:web:f187211f0ba3be32bdf98f"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}
