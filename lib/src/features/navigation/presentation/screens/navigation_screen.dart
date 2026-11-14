@@ -8,11 +8,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../map/presentation/providers/map_providers.dart';
 import '../providers/navigation_providers.dart';
+import '../providers/navigation_controller.dart';
 import '../../data/models/navigation_models.dart';
 import 'widgets/route_preview_bottom_sheet.dart';
 import 'widgets/active_navigation_view.dart';
 import 'widgets/destination_search_bar.dart';
 import 'widgets/common_destinations_list.dart';
+import '../../../../shared/widgets/widgets.dart';
 
 /// Navigation screen - 2nd tab in bottom navigation
 class NavigationScreen extends ConsumerStatefulWidget {
@@ -38,18 +40,28 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
     // Watch voice guidance integration to activate the listener
     ref.watch(voiceGuidanceIntegrationProvider);
 
+    // Watch the new navigation controller state
+    final navState = ref.watch(navigationStateProvider);
     final routeAsync = ref.watch(navigationRouteProvider);
-    final session = ref.watch(navigationSessionProvider);
     final isSearching = ref.watch(searchQueryProvider).isNotEmpty;
 
-    // If active navigation session, show active navigation view
-    if (session != null) {
-      return ActiveNavigationView(
-        session: session,
-        onEndNavigation: () => ref.read(navigationSessionProvider.notifier).state = null,
-      );
-    }
+    // Handle navigation controller states using pattern matching
+    // Note: NavigationControllerState is abstract but not sealed, so add wildcard for exhaustiveness
+    return switch (navState) {
+      NavigationIdle() => _buildIdleState(context, routeAsync, isSearching),
+      NavigationInitializing() => _buildInitializingState(context, navState),
+      NavigationReady() => _buildReadyState(context, navState),
+      NavigationActive() => _buildActiveState(context, navState),
+      NavigationError() => _buildErrorState(context, navState),
+      _ => _buildIdleState(context, routeAsync, isSearching), // Fallback
+    };
+  }
 
+  Widget _buildIdleState(
+    BuildContext context,
+    AsyncValue<NavigationRoute?> routeAsync,
+    bool isSearching,
+  ) {
     return Scaffold(
       appBar: _buildAppBar(context, isSearching),
       body: Column(
@@ -77,7 +89,7 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
           // Route preview bottom bar (when route computed but not started)
           routeAsync.when(
             data: (NavigationRoute? route) {
-              if (route != null && session == null) {
+              if (route != null) {
                 return RoutePreviewBar(
                   route: route,
                   onStartNavigation: _startNavigation,
@@ -94,7 +106,139 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
     );
   }
 
+  Widget _buildInitializingState(BuildContext context, NavigationInitializing state) {
+    return Scaffold(
+      appBar: _buildAppBar(context, false),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            Text('Computing route to ${state.destination.name}...'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildReadyState(BuildContext context, NavigationReady state) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      appBar: _buildAppBar(context, false),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: colorScheme.primaryContainer,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Icon(
+                  Icons.navigation,
+                  size: 50,
+                  color: colorScheme.primary,
+                ),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                'Ready to navigate to ${state.route.end.name}',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '${state.route.formattedDistance} • ${state.route.formattedDuration}',
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: colorScheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 32),
+              AppFilledButton(
+                onPressed: () => _beginActiveNavigation(state.route),
+                label: 'Start Navigation',
+                icon: Icons.play_arrow,
+                iconPosition: IconPosition.leading,
+                size: ButtonSize.large,
+              ),
+              const SizedBox(height: 16),
+              AppTextButton(
+                onPressed: _clearRoute,
+                label: 'Cancel',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActiveState(BuildContext context, NavigationActive state) {
+    return ActiveNavigationView(
+      session: state.session,
+      onEndNavigation: () => ref.read(navigationControllerProvider.notifier).endNavigation(),
+    );
+  }
+
+  Widget _buildErrorState(BuildContext context, NavigationError state) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      appBar: _buildAppBar(context, false),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: colorScheme.errorContainer,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Icon(
+                  Icons.error_outline,
+                  size: 40,
+                  color: colorScheme.error,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Navigation Error',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                state.message,
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              AppFilledButton(
+                onPressed: () => ref.read(navigationControllerProvider.notifier).endNavigation(),
+                label: 'OK',
+                size: ButtonSize.large,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   PreferredSizeWidget _buildAppBar(BuildContext context, bool isSearching) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return AppBar(
       title: isSearching
           ? null
@@ -108,20 +252,20 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
       automaticallyImplyLeading: false,
       actions: [
         // GPS button to center on user location
-        IconButton(
-          icon: const Icon(Icons.my_location),
+        AppIconButton(
+          icon: Icons.my_location,
           onPressed: _centerOnUser,
           tooltip: 'My Location',
         ),
         // History button
-        IconButton(
-          icon: const Icon(Icons.history),
+        AppIconButton(
+          icon: Icons.history,
           onPressed: _showRouteHistory,
           tooltip: 'Route History',
         ),
         // Settings button
         PopupMenuButton<String>(
-          icon: const Icon(Icons.more_vert),
+          icon: Icon(Icons.more_vert, color: colorScheme.onSurface),
           onSelected: _handleMenuAction,
           itemBuilder: (context) => [
             const PopupMenuItem(
@@ -200,11 +344,10 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Quick Actions',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+        SectionHeader(
+          title: 'Quick Actions',
+          icon: Icons.flash_on,
+          style: SectionHeaderStyle.standard,
         ),
         const SizedBox(height: 12),
         Row(
@@ -240,31 +383,10 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
         return searchAsync.when(
           data: (destinations) {
             if (destinations.isEmpty) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.search_off,
-                      size: 64,
-                      color: Theme.of(context).colorScheme.outline,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'No destinations found',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Try a different search term',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.outline,
-                      ),
-                    ),
-                  ],
-                ),
+              return const ContentEmptyState(
+                icon: Icons.search_off,
+                title: 'No destinations found',
+                message: 'Try a different search term',
               );
             }
 
@@ -281,21 +403,24 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
             );
           },
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.error_outline, size: 64, color: Colors.red),
-                const SizedBox(height: 16),
-                Text('Error searching destinations'),
-                const SizedBox(height: 8),
-                Text(
-                  error.toString(),
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
+          error: (error, _) {
+            final colorScheme = Theme.of(context).colorScheme;
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.error_outline, size: 64, color: colorScheme.error),
+                  const SizedBox(height: 16),
+                  Text('Error searching destinations'),
+                  const SizedBox(height: 8),
+                  Text(
+                    error.toString(),
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ],
+              ),
+            );
+          },
         );
       },
     );
@@ -315,20 +440,17 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
   }
 
   void _startNavigation(NavigationRoute route) {
-    ref.read(navigationSessionProvider.notifier).state = NavigationSession(
-      id: 'session_${DateTime.now().millisecondsSinceEpoch}',
-      route: route,
-      currentInstructionIndex: 0,
-      currentPosition: route.start.coordinates,
-      startedAt: DateTime.now(),
-      isVoiceGuidanceEnabled: ref.read(voiceGuidanceProvider),
-      isRerouting: false,
-    );
+    ref.read(navigationControllerProvider.notifier).beginActiveNavigation(route);
+  }
+
+  void _beginActiveNavigation(NavigationRoute route) {
+    ref.read(navigationControllerProvider.notifier).beginActiveNavigation(route);
   }
 
   void _clearRoute() {
     ref.read(navigationDestinationProvider.notifier).state = null;
     ref.read(navigationStartProvider.notifier).state = null;
+    ref.read(navigationControllerProvider.notifier).endNavigation();
   }
 
   void _centerOnUser() {
@@ -378,6 +500,8 @@ class _NavigationScreenState extends ConsumerState<NavigationScreen> {
     showModalBottomSheet(
       context: context,
       builder: (context) => _SavedRoutesSheet(),
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
     );
   }
 
@@ -412,37 +536,31 @@ class _QuickActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 56,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Icon(icon, color: color, size: 28),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                label,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+    return AppOutlinedCard(
+      onTap: onTap,
+      padding: const EdgeInsets.all(20),
+      borderColor: color.withValues(alpha: 0.3),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 56,
+            height: 56,
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Icon(icon, color: color, size: 28),
           ),
-        ),
+          const SizedBox(height: 12),
+          Text(
+            label,
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
@@ -463,27 +581,48 @@ class _SearchResultTile extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final typeColor = _getTypeColor(destination.type);
 
-    return Card(
+    return AppCard(
       margin: const EdgeInsets.only(bottom: 8),
-      child: ListTile(
-        leading: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: typeColor.withValues(alpha: 0.15),
-            borderRadius: BorderRadius.circular(10),
+      padding: const EdgeInsets.all(16),
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: typeColor.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(_getTypeIcon(destination.type), color: typeColor, size: 20),
           ),
-          child: Icon(_getTypeIcon(destination.type), color: typeColor, size: 20),
-        ),
-        title: Text(
-          destination.name,
-          style: const TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: destination.description != null
-            ? Text(destination.description!, maxLines: 1, overflow: TextOverflow.ellipsis)
-            : null,
-        trailing: Icon(Icons.chevron_right, color: colorScheme.outline),
-        onTap: onTap,
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  destination.name,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                if (destination.description != null) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    destination.description!,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ],
+            ),
+          ),
+          Icon(Icons.chevron_right, color: colorScheme.outline),
+        ],
       ),
     );
   }
@@ -514,6 +653,7 @@ class _SavedRoutesSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final savedRoutes = ref.watch(savedRoutesProvider);
+    final colorScheme = Theme.of(context).colorScheme;
 
     return DraggableScrollableSheet(
       initialChildSize: 0.5,
@@ -522,92 +662,69 @@ class _SavedRoutesSheet extends ConsumerWidget {
       builder: (context, scrollController) {
         return Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
+            color: colorScheme.surface,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
           ),
-          child: Column(
+          child: ListView(
+            controller: scrollController,
+            padding: const EdgeInsets.all(20),
             children: [
               // Handle bar
-              Container(
-                margin: const EdgeInsets.only(top: 12),
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.outlineVariant,
-                  borderRadius: BorderRadius.circular(2),
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: colorScheme.outlineVariant,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
                 ),
               ),
+              const SizedBox(height: 20),
+
               // Header
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  children: [
-                    Text(
-                      'Saved Routes',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Spacer(),
-                    if (savedRoutes.isNotEmpty)
-                      TextButton(
+              SectionHeader(
+                title: 'Saved Routes',
+                icon: Icons.bookmark_outlined,
+                style: SectionHeaderStyle.standard,
+                action: savedRoutes.isNotEmpty
+                    ? TextButton(
                         onPressed: () {
                           // TODO: Clear all saved routes
                         },
                         child: const Text('Clear All'),
-                      ),
-                  ],
-                ),
-              ),
-              // List
-              Expanded(
-                child: savedRoutes.isEmpty
-                    ? Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.bookmark_outline,
-                              size: 64,
-                              color: Theme.of(context).colorScheme.outline,
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              'No saved routes yet',
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
-                        ),
                       )
-                    : ListView.builder(
-                        controller: scrollController,
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        itemCount: savedRoutes.length,
-                        itemBuilder: (context, index) {
-                          final route = savedRoutes[index];
-                          return _SavedRouteTile(
-                            route: route,
-                            onTap: () {
-                              // TODO: Load saved route
-                              Navigator.pop(context);
-                            },
-                            onDelete: () {
-                              final updated = List<SavedRoute>.from(savedRoutes);
-                              updated.removeAt(index);
-                              ref.read(savedRoutesProvider.notifier).state = updated;
-                            },
-                          );
-                        },
-                      ),
+                    : null,
               ),
+              const SizedBox(height: 16),
+
+              // List
+              savedRoutes.isEmpty
+                  ? ContentEmptyState(
+                      icon: Icons.bookmark_outline,
+                      title: 'No saved routes yet',
+                      message: 'Save routes from the route preview to access them here',
+                    )
+                  : Column(
+                      children: savedRoutes.map((route) => _SavedRouteTile(
+                        route: route,
+                        onTap: () {
+                          // TODO: Load saved route
+                          Navigator.pop(context);
+                        },
+                        onDelete: () {
+                          final updated = List<SavedRoute>.from(savedRoutes);
+                          updated.remove(route);
+                          ref.read(savedRoutesProvider.notifier).state = updated;
+                        },
+                      )).toList(),
+                    ),
             ],
           ),
         );
       },
-  );
-}
+    );
+  }
 }
 
 /// Saved route tile
@@ -626,56 +743,76 @@ class _SavedRouteTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Card(
+    return AppCard(
       margin: const EdgeInsets.only(bottom: 8),
-      child: ListTile(
-        leading: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: route.isFavorite
-                ? Colors.amber.withValues(alpha: 0.15)
-                : colorScheme.primary.withValues(alpha: 0.15),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Icon(
-            route.isFavorite ? Icons.star : Icons.route_outlined,
-            color: route.isFavorite ? Colors.amber : colorScheme.primary,
-            size: 20,
-          ),
-        ),
-        title: Text(route.name, style: const TextStyle(fontWeight: FontWeight.w600)),
-        subtitle: Text(
-          '${route.route.formattedDistance} • ${route.route.formattedDuration}',
-        ),
-        trailing: PopupMenuButton<String>(
-          onSelected: (value) {
-            if (value == 'delete') onDelete();
-          },
-          itemBuilder: (context) => [
-            PopupMenuItem(
-              value: 'delete',
-              child: Row(
-                children: [
-                  Icon(Icons.delete_outline, color: Colors.red),
-                  const SizedBox(width: 8),
-                  const Text('Delete'),
-                ],
-              ),
+      padding: const EdgeInsets.all(16),
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: route.isFavorite
+                  ? Colors.amber.withValues(alpha: 0.15)
+                  : colorScheme.primary.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(10),
             ),
-            PopupMenuItem(
-              value: 'favorite',
-              child: Row(
-                children: [
-                  Icon(route.isFavorite ? Icons.star_border : Icons.star),
-                  const SizedBox(width: 8),
-                  Text(route.isFavorite ? 'Remove Favorite' : 'Add to Favorites'),
-                ],
-              ),
+            child: Icon(
+              route.isFavorite ? Icons.star : Icons.route_outlined,
+              color: route.isFavorite ? Colors.amber : colorScheme.primary,
+              size: 20,
             ),
-          ],
-        ),
-        onTap: onTap,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  route.name,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  '${route.route.formattedDistance} • ${route.route.formattedDuration}',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'delete') onDelete();
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'delete',
+                child: Row(
+                  children: [
+                    Icon(Icons.delete_outline, color: Colors.red),
+                    const SizedBox(width: 8),
+                    const Text('Delete'),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'favorite',
+                child: Row(
+                  children: [
+                    Icon(route.isFavorite ? Icons.star_border : Icons.star),
+                    const SizedBox(width: 8),
+                    Text(route.isFavorite ? 'Remove Favorite' : 'Add to Favorites'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

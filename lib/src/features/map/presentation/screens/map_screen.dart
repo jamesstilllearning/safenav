@@ -16,7 +16,9 @@ import '../../data/models/campus_building.dart';
 import '../../data/models/campus_pathway.dart';
 import '../../../navigation/data/models/navigation_models.dart';
 import '../../../navigation/presentation/providers/navigation_providers.dart';
+import '../../../navigation/presentation/providers/navigation_controller.dart';
 import '../providers/map_providers.dart';
+import '../../../../shared/widgets/widgets.dart';
 
 /// Main campus map screen
 class MapScreen extends ConsumerStatefulWidget {
@@ -133,8 +135,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
               tileLayer,
 
               // Campus Boundary
-
-              // Campus Boundary
               if (viewState.showBoundary)
                 boundaryAsync.when(
                   data: (boundary) => _BoundaryLayer(boundary: boundary),
@@ -221,22 +221,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     showModalBottomSheet(
       context: context,
       builder: (context) => _LayerOptionsSheet(),
-    );
-  }
-}
-
-/// Tile layer widget
-class TileLayerWidget extends ConsumerWidget {
-  final List<TileLayer> tileLayers;
-
-  const TileLayerWidget({super.key, required this.tileLayers});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return TileLayer(
-      urlTemplate: tileLayers.first.urlTemplate,
-      maxZoom: tileLayers.first.maxZoom,
-      subdomains: tileLayers.first.subdomains,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
     );
   }
 }
@@ -411,7 +397,7 @@ class _UserLocationLayer extends ConsumerWidget {
 }
 
 /// Map toolbar at top
-class _MapToolbar extends StatelessWidget {
+class _MapToolbar extends ConsumerWidget {
   final VoidCallback onZoomIn;
   final VoidCallback onZoomOut;
   final VoidCallback onCenterUser;
@@ -425,8 +411,9 @@ class _MapToolbar extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
+    final viewState = ref.watch(mapViewStateProvider);
 
     return Positioned(
       top: MediaQuery.of(context).padding.top + 8,
@@ -434,31 +421,49 @@ class _MapToolbar extends StatelessWidget {
       right: 16,
       child: Row(
         children: [
-          // App title
+          // App title with map type indicator
           Expanded(
-            child: Container(
+            child: AppCard(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              decoration: BoxDecoration(
-                color: colorScheme.surfaceContainerHighest.withValues(alpha: 0.9),
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
+              elevation: 2,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.map_outlined, color: colorScheme.primary, size: 20),
-                  const SizedBox(width: 8),
-                  Text(
-                    'EARIST Cavite Campus',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: colorScheme.onSurface,
+                  Container(
+                    width: 32,
+                    height: 32,
+                    decoration: BoxDecoration(
+                      color: colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Icon(
+                      viewState.mapType == MapType.satellite
+                          ? Icons.satellite_outlined
+                          : Icons.map_outlined,
+                      color: colorScheme.primary,
+                      size: 18,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'EARIST Cavite Campus',
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: colorScheme.onSurface,
+                          ),
+                        ),
+                        Text(
+                          viewState.mapType == MapType.satellite ? 'Satellite View' : 'Standard View',
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: colorScheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -471,6 +476,35 @@ class _MapToolbar extends StatelessWidget {
             icon: Icons.layers_outlined,
             onPressed: onToggleLayers,
             tooltip: 'Map Layers',
+          ),
+          const SizedBox(width: 8),
+          // Zoom controls
+          AppCard(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+            elevation: 2,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                AppIconButton(
+                  icon: Icons.remove,
+                  size: IconButtonSize.small,
+                  onPressed: onZoomOut,
+                  tooltip: 'Zoom Out',
+                ),
+                Container(
+                  width: 1,
+                  height: 24,
+                  color: colorScheme.outlineVariant,
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                ),
+                AppIconButton(
+                  icon: Icons.add,
+                  size: IconButtonSize.small,
+                  onPressed: onZoomIn,
+                  tooltip: 'Zoom In',
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -496,19 +530,12 @@ class _ToolbarButton extends StatelessWidget {
 
     return Tooltip(
       message: tooltip,
-      child: Material(
-        color: colorScheme.surfaceContainerHighest.withValues(alpha: 0.9),
-        borderRadius: BorderRadius.circular(12),
-        child: InkWell(
-          onTap: onPressed,
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            width: 44,
-            height: 44,
-            alignment: Alignment.center,
-            child: Icon(icon, color: colorScheme.onSurface, size: 24),
-          ),
-        ),
+      child: AppIconButton(
+        icon: icon,
+        size: IconButtonSize.medium,
+        onPressed: onPressed,
+        backgroundColor: colorScheme.surfaceContainerHighest.withValues(alpha: 0.9),
+        foregroundColor: colorScheme.onSurface,
       ),
     );
   }
@@ -521,73 +548,258 @@ class _LayerOptionsSheet extends ConsumerWidget {
     final viewState = ref.watch(mapViewStateProvider);
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return DraggableScrollableSheet(
+      initialChildSize: 0.55,
+      minChildSize: 0.4,
+      maxChildSize: 0.9,
+      builder: (context, scrollController) {
+        return Container(
+          decoration: BoxDecoration(
+            color: colorScheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          child: ListView(
+            controller: scrollController,
+            padding: const EdgeInsets.all(20),
+            children: [
+              // Handle bar
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: colorScheme.outlineVariant,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              // Title
+              SectionHeader(
+                title: 'Map Layers',
+                icon: Icons.layers_outlined,
+                style: SectionHeaderStyle.standard,
+              ),
+              const SizedBox(height: 16),
+
+              // Layer toggles
+              _LayerToggleCard(
+                icon: Icons.apartment_outlined,
+                title: 'Buildings',
+                subtitle: 'Campus building footprints',
+                color: const Color(0xFF2196F3),
+                value: viewState.showBuildings,
+                onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleBuildings(),
+              ),
+              const SizedBox(height: 12),
+              _LayerToggleCard(
+                icon: Icons.directions_walk_outlined,
+                title: 'Pathways',
+                subtitle: 'Walkways and emergency routes',
+                color: const Color(0xFF4CAF50),
+                value: viewState.showPathways,
+                onChanged: (v) => ref.read(mapViewStateProvider.notifier).togglePathways(),
+              ),
+              const SizedBox(height: 12),
+              _LayerToggleCard(
+                icon: Icons.map_outlined,
+                title: 'Campus Boundary',
+                subtitle: 'EARIST Cavite campus perimeter',
+                color: colorScheme.primary,
+                value: viewState.showBoundary,
+                onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleBoundary(),
+              ),
+              const SizedBox(height: 12),
+              _LayerToggleCard(
+                icon: Icons.my_location_outlined,
+                title: 'My Location',
+                subtitle: 'Show current GPS position',
+                color: const Color(0xFFFF9800),
+                value: viewState.showUserLocation,
+                onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleUserLocation(),
+              ),
+
+              const SizedBox(height: 24),
+
+              // Map Type Selector
+              SectionHeader(
+                title: 'Map Type',
+                icon: Icons.map_outlined,
+                style: SectionHeaderStyle.standard,
+              ),
+              const SizedBox(height: 12),
+              _MapTypeSelector(
+                currentType: viewState.mapType,
+                onChanged: (type) => ref.read(mapViewStateProvider.notifier).setMapType(type),
+              ),
+
+              const SizedBox(height: 24),
+
+              // Legend
+              SectionHeader(
+                title: 'Legend',
+                icon: Icons.legend_toggle_outlined,
+                style: SectionHeaderStyle.standard,
+              ),
+              const SizedBox(height: 12),
+              _buildLegend(context),
+
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 20),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildLegend(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return AppCard(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: colorScheme.surface,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-      ),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Map Layers',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16),
-          _LayerToggle(
-            title: 'Buildings',
-            subtitle: 'Campus building footprints',
-            value: viewState.showBuildings,
-            onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleBuildings(),
-            color: Color(0xFF2196F3),
-          ),
-          _LayerToggle(
-            title: 'Pathways',
-            subtitle: 'Walkways and emergency routes',
-            value: viewState.showPathways,
-            onChanged: (v) => ref.read(mapViewStateProvider.notifier).togglePathways(),
-            color: Color(0xFF4CAF50),
-          ),
-          _LayerToggle(
-            title: 'Campus Boundary',
-            subtitle: 'EARIST Cavite campus perimeter',
-            value: viewState.showBoundary,
-            onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleBoundary(),
-            color: colorScheme.primary,
-          ),
-          _LayerToggle(
-            title: 'My Location',
-            subtitle: 'Show current GPS position',
-            value: viewState.showUserLocation,
-            onChanged: (v) => ref.read(mapViewStateProvider.notifier).toggleUserLocation(),
-            color: Color(0xFFFF9800),
-          ),
-          const SizedBox(height: 16),
-          // Map Type Selector
-          Text(
-            'Map Type',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+          _LegendItem(
+            color: const Color(0xFF2196F3),
+            label: 'Academic Buildings',
+            shape: LegendShape.square,
           ),
           const SizedBox(height: 8),
-          _MapTypeSelector(
-            currentType: viewState.mapType,
-            onChanged: (type) => ref.read(mapViewStateProvider.notifier).toggleMapType(),
+          _LegendItem(
+            color: const Color(0xFF4CAF50),
+            label: 'Pathways & Walkways',
+            shape: LegendShape.line,
           ),
-          const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-            child: FilledButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Done'),
+          const SizedBox(height: 8),
+          _LegendItem(
+            color: colorScheme.primary,
+            label: 'Campus Boundary',
+            shape: LegendShape.line,
+          ),
+          const SizedBox(height: 8),
+          _LegendItem(
+            color: const Color(0xFFFF9800),
+            label: 'Your Location',
+            shape: LegendShape.circle,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Legend item
+class _LegendItem extends StatelessWidget {
+  final Color color;
+  final String label;
+  final LegendShape shape;
+
+  const _LegendItem({
+    required this.color,
+    required this.label,
+    required this.shape,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 20,
+          height: 20,
+          decoration: BoxDecoration(
+            color: color,
+            shape: shape == LegendShape.circle ? BoxShape.circle : BoxShape.rectangle,
+            borderRadius: shape == LegendShape.square ? BorderRadius.circular(4) : null,
+          ),
+          child: shape == LegendShape.line
+              ? Center(
+                  child: Container(
+                    width: 12,
+                    height: 3,
+                    color: Colors.white,
+                  ),
+                )
+              : null,
+        ),
+        const SizedBox(width: 12),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ],
+    );
+  }
+}
+
+enum LegendShape { square, circle, line }
+
+/// Layer toggle card
+class _LayerToggleCard extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final Color color;
+  final bool value;
+  final ValueChanged<bool> onChanged;
+
+  const _LayerToggleCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.color,
+    required this.value,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return AppCard(
+      padding: const EdgeInsets.all(16),
+      onTap: () => onChanged(!value),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: color, width: 2),
+            ),
+            child: Icon(icon, color: color, size: 22),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  subtitle,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).padding.bottom),
+          Switch(
+            value: value,
+            onChanged: onChanged,
+            activeThumbColor: color,
+            activeTrackColor: color.withValues(alpha: 0.3),
+          ),
         ],
       ),
     );
@@ -611,9 +823,9 @@ class _MapTypeSelector extends StatelessWidget {
         // Standard map option
         _MapTypeTile(
           title: 'Standard',
-          subtitle: 'OpenStreetMap view',
+          subtitle: 'OpenStreetMap vector view',
           icon: Icons.map_outlined,
-          color: Color(0xFF2196F3),
+          color: const Color(0xFF2196F3),
           isSelected: currentType == MapType.standard,
           onTap: () => onChanged(MapType.standard),
         ),
@@ -623,7 +835,7 @@ class _MapTypeSelector extends StatelessWidget {
           title: 'Satellite',
           subtitle: 'Aerial/satellite imagery (ESRI)',
           icon: Icons.satellite_outlined,
-          color: Color(0xFF4CAF50),
+          color: const Color(0xFF4CAF50),
           isSelected: currentType == MapType.satellite,
           onTap: () => onChanged(MapType.satellite),
         ),
@@ -654,99 +866,55 @@ class _MapTypeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return InkWell(
+    return AppCard(
+      padding: const EdgeInsets.all(16),
       onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isSelected ? color : colorScheme.outlineVariant,
-            width: isSelected ? 2 : 1,
+      border: BorderSide(
+        color: isSelected ? color : colorScheme.outlineVariant,
+        width: isSelected ? 2 : 1,
+      ),
+      elevation: isSelected ? 2 : 0,
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: isSelected ? 0.2 : 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(icon, color: color, size: 24),
           ),
-          color: isSelected
-              ? color.withValues(alpha: 0.1)
-              : colorScheme.surfaceContainerHighest,
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(icon, color: color, size: 22),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: isSelected ? color : colorScheme.onSurface,
-                    ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: isSelected ? color : colorScheme.onSurface,
                   ),
-                  const SizedBox(height: 2),
-                  Text(
-                    subtitle,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                    ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  subtitle,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: colorScheme.onSurfaceVariant,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            if (isSelected)
-              Icon(
-                Icons.check_circle,
-                color: color,
-                size: 24,
-              ),
-          ],
-        ),
+          ),
+          if (isSelected)
+            Icon(
+              Icons.check_circle,
+              color: color,
+              size: 24,
+            ),
+        ],
       ),
-    );
-  }
-}
-
-/// Layer toggle tile
-class _LayerToggle extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final bool value;
-  final ValueChanged<bool> onChanged;
-  final Color color;
-
-  const _LayerToggle({
-    required this.title,
-    required this.subtitle,
-    required this.value,
-    required this.onChanged,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(
-        width: 24,
-        height: 24,
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.2),
-          borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: color, width: 2),
-        ),
-      ),
-      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-      subtitle: Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
-      trailing: Switch(value: value, onChanged: onChanged),
-      contentPadding: EdgeInsets.zero,
     );
   }
 }
@@ -770,89 +938,88 @@ class _SelectionInfoBar extends ConsumerWidget {
       bottom: _kBottomNavigationBarHeight,
       left: 0,
       right: 0,
-      child: Material(
+      child: AppElevatedCard(
+        margin: const EdgeInsets.all(16),
         elevation: 8,
-        color: colorScheme.surfaceContainerHighest,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            children: [
-              if (building != null) ...[
-                Container(
-                  width: 12,
-                  height: 12,
-                  decoration: BoxDecoration(
-                    color: Color(building.category.colorValue),
-                    shape: BoxShape.circle,
-                  ),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            if (building != null) ...[
+              Container(
+                width: 14,
+                height: 14,
+                decoration: BoxDecoration(
+                  color: Color(building.category.colorValue),
+                  shape: BoxShape.circle,
                 ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        building.name,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      building.name,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
-                      Text(
-                        building.category.label,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
+                    ),
+                    Text(
+                      building.category.label,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                TextButton.icon(
-                  onPressed: () {
-                    // TODO: Navigate to building detail screen
-                  },
-                  icon: const Icon(Icons.info_outline, size: 18),
-                  label: const Text('Details'),
+              ),
+              AppTextButton(
+                onPressed: () {
+                  // TODO: Navigate to building detail screen
+                },
+                label: 'Details',
+                icon: Icons.info_outline,
+                iconPosition: IconPosition.leading,
+              ),
+            ] else if (pathway != null) ...[
+              Container(
+                width: 14,
+                height: 14,
+                decoration: BoxDecoration(
+                  color: Color(pathway.category.colorValue),
+                  shape: BoxShape.circle,
                 ),
-              ] else if (pathway != null) ...[
-                Container(
-                  width: 12,
-                  height: 12,
-                  decoration: BoxDecoration(
-                    color: Color(pathway.category.colorValue),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        pathway.name,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      pathway.name,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
-                      Text(
-                        '${pathway.category.label} • ${pathway.lengthMeters.toStringAsFixed(0)}m',
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
+                    ),
+                    Text(
+                      '${pathway.category.label} • ${pathway.lengthMeters.toStringAsFixed(0)}m',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-              IconButton(
-                onPressed: onClose,
-                icon: const Icon(Icons.close),
-                tooltip: 'Clear selection',
               ),
             ],
-          ),
+            IconButton(
+              onPressed: onClose,
+              icon: const Icon(Icons.close),
+              tooltip: 'Clear selection',
+            ),
+          ],
         ),
       ),
     );
@@ -867,11 +1034,17 @@ class _MapFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return FloatingActionButton.extended(
       onPressed: onCenterUser,
       heroTag: 'map_center_user',
-      mini: true,
-      child: const Icon(Icons.my_location),
+      icon: const Icon(Icons.my_location),
+      label: const Text('My Location'),
+      backgroundColor: colorScheme.primary,
+      foregroundColor: colorScheme.onPrimary,
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     );
   }
 }
@@ -888,7 +1061,7 @@ class _BuildingBottomSheet extends ConsumerWidget {
     final categoryColor = Color(building.category.colorValue);
 
     void navigateToBuilding() {
-      // Set the building as navigation destination
+      // Set the building as navigation destination and start navigation
       final destination = NavigationDestination(
         id: 'building_${building.id}',
         name: building.name,
@@ -900,10 +1073,11 @@ class _BuildingBottomSheet extends ConsumerWidget {
       ref.read(navigationDestinationProvider.notifier).state = destination;
       Navigator.pop(context);
 
-      // Switch to navigation tab (index 1)
-      // The GoRouter will handle the tab switch when we navigate
+      // Start navigation using NavigationController (uses GPS as start position)
+      ref.read(navigationControllerProvider.notifier).startNavigation(destination: destination);
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Route to ${building.name} computed. Switch to Navigation tab to start.')),
+        SnackBar(content: Text('Starting navigation to ${building.name}...')),
       );
     }
 
@@ -919,7 +1093,7 @@ class _BuildingBottomSheet extends ConsumerWidget {
           ),
           child: ListView(
             controller: scrollController,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20),
             children: [
               // Handle bar
               Center(
@@ -932,25 +1106,25 @@ class _BuildingBottomSheet extends ConsumerWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
-              // Building icon and name
+              // Building header
               Row(
                 children: [
                   Container(
-                    width: 48,
-                    height: 48,
+                    width: 56,
+                    height: 56,
                     decoration: BoxDecoration(
-                      color: categoryColor.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(12),
+                      color: categoryColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: Icon(
                       Icons.apartment_outlined,
                       color: categoryColor,
-                      size: 24,
+                      size: 28,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -961,21 +1135,15 @@ class _BuildingBottomSheet extends ConsumerWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 4),
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: categoryColor.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(8),
+                        const SizedBox(height: 6),
+                        AppChip(
+                          label: building.category.label,
+                          backgroundColor: categoryColor.withValues(alpha: 0.15),
+                          labelStyle: TextStyle(
+                            color: categoryColor,
+                            fontWeight: FontWeight.w500,
                           ),
-                          child: Text(
-                            building.category.label,
-                            style: TextStyle(
-                              color: categoryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                          icon: Icons.apartment_outlined,
                         ),
                       ],
                     ),
@@ -983,76 +1151,88 @@ class _BuildingBottomSheet extends ConsumerWidget {
                 ],
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
               // Description
               if (building.description.isNotEmpty) ...[
-                Text(
-                  'About',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+                SectionHeader(
+                  title: 'About',
+                  style: SectionHeaderStyle.standard,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 Text(
                   building.description,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: colorScheme.onSurfaceVariant,
+                    height: 1.5,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
               ],
 
               // Details
+              SectionHeader(
+                title: 'Details',
+                style: SectionHeaderStyle.standard,
+              ),
+              const SizedBox(height: 10),
               _InfoRow(
                 icon: Icons.location_on_outlined,
                 label: 'Coordinates',
                 value:
                     '${building.centroid.latitude.toStringAsFixed(6)}, ${building.centroid.longitude.toStringAsFixed(6)}',
               ),
+              const SizedBox(height: 12),
               _InfoRow(
                 icon: Icons.straighten_outlined,
                 label: 'OSM Way ID',
                 value: building.osmWayId.toString(),
               ),
+              const SizedBox(height: 12),
               _InfoRow(
                 icon: Icons.verified_outlined,
                 label: 'Verification',
                 value: building.verificationStatus.replaceAll('_', ' '),
               ),
-              if (building.areaSqMeters != null)
+              if (building.areaSqMeters != null) ...[
+                const SizedBox(height: 12),
                 _InfoRow(
                   icon: Icons.square_foot_outlined,
                   label: 'Approx. Area',
                   value: '${building.areaSqMeters!.toStringAsFixed(0)} m²',
                 ),
+              ],
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 28),
 
               // Action buttons
               Row(
                 children: [
                   Expanded(
-                    child: OutlinedButton.icon(
+                    child: AppOutlinedButton(
                       onPressed: navigateToBuilding,
-                      icon: const Icon(Icons.directions),
-                      label: const Text('Navigate'),
+                      label: 'Navigate',
+                      icon: Icons.directions,
+                      iconPosition: IconPosition.leading,
+                      size: ButtonSize.large,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 16),
                   Expanded(
-                    child: FilledButton.icon(
+                    child: AppFilledButton(
                       onPressed: () {
                         // TODO: Show more details
                       },
-                      icon: const Icon(Icons.info_outline),
-                      label: const Text('Details'),
+                      label: 'Details',
+                      icon: Icons.info_outline,
+                      iconPosition: IconPosition.leading,
+                      size: ButtonSize.large,
                     ),
                   ),
                 ],
               ),
 
-              SizedBox(height: MediaQuery.of(context).padding.bottom + 16),
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 20),
             ],
           ),
         );
@@ -1088,8 +1268,11 @@ class _PathwayBottomSheet extends ConsumerWidget {
       ref.read(navigationDestinationProvider.notifier).state = destination;
       Navigator.pop(context);
 
+      // Start navigation using NavigationController (uses GPS as start position)
+      ref.read(navigationControllerProvider.notifier).startNavigation(destination: destination);
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Route to ${pathway.name} computed. Switch to Navigation tab to start.')),
+        SnackBar(content: Text('Starting navigation to ${pathway.name}...')),
       );
     }
 
@@ -1105,7 +1288,7 @@ class _PathwayBottomSheet extends ConsumerWidget {
           ),
           child: ListView(
             controller: scrollController,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20),
             children: [
               Center(
                 child: Container(
@@ -1117,24 +1300,24 @@ class _PathwayBottomSheet extends ConsumerWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
               Row(
                 children: [
                   Container(
-                    width: 48,
-                    height: 48,
+                    width: 56,
+                    height: 56,
                     decoration: BoxDecoration(
-                      color: categoryColor.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(12),
+                      color: categoryColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: Icon(
                       pathway.isPolygon ? Icons.park_outlined : Icons.directions_walk,
                       color: categoryColor,
-                      size: 24,
+                      size: 28,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1145,21 +1328,15 @@ class _PathwayBottomSheet extends ConsumerWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 4),
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: categoryColor.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(8),
+                        const SizedBox(height: 6),
+                        AppChip(
+                          label: pathway.category.label,
+                          backgroundColor: categoryColor.withValues(alpha: 0.15),
+                          labelStyle: TextStyle(
+                            color: categoryColor,
+                            fontWeight: FontWeight.w500,
                           ),
-                          child: Text(
-                            pathway.category.label,
-                            style: TextStyle(
-                              color: categoryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                          icon: pathway.isPolygon ? Icons.park_outlined : Icons.directions_walk,
                         ),
                       ],
                     ),
@@ -1167,25 +1344,29 @@ class _PathwayBottomSheet extends ConsumerWidget {
                 ],
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
 
               if (pathway.description.isNotEmpty) ...[
-                Text(
-                  'Description',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+                SectionHeader(
+                  title: 'Description',
+                  style: SectionHeaderStyle.standard,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 Text(
                   pathway.description,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: colorScheme.onSurfaceVariant,
+                    height: 1.5,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
               ],
 
+              SectionHeader(
+                title: 'Details',
+                style: SectionHeaderStyle.standard,
+              ),
+              const SizedBox(height: 10),
               _InfoRow(
                 icon: Icons.straighten_outlined,
                 label: pathway.isPolygon ? 'Area' : 'Length',
@@ -1193,32 +1374,36 @@ class _PathwayBottomSheet extends ConsumerWidget {
                     ? '${pathway.areaSqMeters.toStringAsFixed(0)} m²'
                     : '${pathway.lengthMeters.toStringAsFixed(0)} m',
               ),
+              const SizedBox(height: 12),
               _InfoRow(
                 icon: Icons.layers_outlined,
                 label: 'Surface',
                 value: pathway.surface,
               ),
+              const SizedBox(height: 12),
               _InfoRow(
                 icon: Icons.verified_outlined,
                 label: 'Verification',
                 value: pathway.verificationStatus.replaceAll('_', ' '),
               ),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 28),
 
               Row(
                 children: [
                   Expanded(
-                    child: OutlinedButton.icon(
+                    child: AppFilledButton(
                       onPressed: navigateUsingPathway,
-                      icon: const Icon(Icons.route),
-                      label: const Text('Use Route'),
+                      label: 'Use Route',
+                      icon: Icons.route,
+                      iconPosition: IconPosition.leading,
+                      size: ButtonSize.large,
                     ),
                   ),
                 ],
               ),
 
-              SizedBox(height: MediaQuery.of(context).padding.bottom + 16),
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 20),
             ],
           ),
         );
@@ -1243,27 +1428,39 @@ class _InfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          Icon(icon, size: 20, color: colorScheme.onSurfaceVariant),
-          const SizedBox(width: 12),
-          Text(
-            label,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: colorScheme.onSurfaceVariant,
-            ),
+    return Row(
+      children: [
+        Container(
+          width: 36,
+          height: 36,
+          decoration: BoxDecoration(
+            color: colorScheme.surfaceContainerHighest,
+            borderRadius: BorderRadius.circular(10),
           ),
-          const Spacer(),
-          Text(
-            value,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+          child: Icon(icon, size: 18, color: colorScheme.onSurfaceVariant),
+        ),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: colorScheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                value,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

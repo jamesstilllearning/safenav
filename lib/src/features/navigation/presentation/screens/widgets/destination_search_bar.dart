@@ -5,6 +5,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../../shared/widgets/widgets.dart';
 
 /// Search bar for navigation destinations
 class DestinationSearchBar extends ConsumerStatefulWidget {
@@ -50,16 +51,14 @@ class _DestinationSearchBarState extends ConsumerState<DestinationSearchBar> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return AppCard(
+      margin: EdgeInsets.zero,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        color: colorScheme.surface,
-        border: Border(
-          bottom: BorderSide(
-            color: colorScheme.outlineVariant.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
+      borderRadius: BorderRadius.zero,
+      elevation: 0,
+      border: BorderSide(
+        color: colorScheme.outlineVariant.withValues(alpha: 0.5),
+        width: 1,
       ),
       child: Row(
         children: [

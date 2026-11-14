@@ -12,8 +12,9 @@ _CampusBuilding _$CampusBuildingFromJson(Map<String, dynamic> json) =>
       osmWayId: (json['osmWayId'] as num).toInt(),
       name: json['name'] as String,
       buildingType: json['buildingType'] as String,
-      category: const BuildingCategoryConverter()
-          .fromJson(json['category'] as String),
+      category: const BuildingCategoryConverter().fromJson(
+        json['category'] as String,
+      ),
       description: json['description'] as String,
       source: json['source'] as String,
       sourceDate: json['sourceDate'] as String,

@@ -13,8 +13,9 @@ _CampusPathway _$CampusPathwayFromJson(Map<String, dynamic> json) =>
       highway: json['highway'] as String,
       surface: json['surface'] as String,
       width: (json['width'] as num).toDouble(),
-      category:
-          const PathwayCategoryConverter().fromJson(json['category'] as String),
+      category: const PathwayCategoryConverter().fromJson(
+        json['category'] as String,
+      ),
       description: json['description'] as String,
       source: json['source'] as String,
       verificationStatus: json['verificationStatus'] as String,

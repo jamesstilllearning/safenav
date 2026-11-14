@@ -11,8 +11,12 @@ import 'app_routes.dart';
 import '../../features/auth/auth.dart';
 import '../../features/map/presentation/screens/map_screen.dart';
 import '../../features/navigation/presentation/screens/navigation_screen.dart';
+import '../../features/emergency/presentation/screens/emergency_screen.dart';
+import '../../features/alerts/presentation/screens/alerts_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../shared/models/user.dart';
 import '../services/auth_service.dart';
+import '../services/connectivity_service.dart';
 import '../constants/dev_config.dart';
 
 /// Router configuration provider
@@ -250,7 +254,7 @@ List<RouteBase> _buildRoutes() {
             GoRoute(
               path: AppRoutes.emergency,
               name: 'emergency',
-              builder: (context, state) => const _EmergencyScreen(),
+              builder: (context, state) => const EmergencyScreen(),
               routes: [
                 GoRoute(
                   path: 'evacuation',
@@ -275,7 +279,7 @@ List<RouteBase> _buildRoutes() {
             GoRoute(
               path: AppRoutes.alerts,
               name: 'alerts',
-              builder: (context, state) => const _AlertsScreen(),
+              builder: (context, state) => const AlertsScreen(),
               routes: [
                 GoRoute(
                   path: ':alertId',
@@ -295,12 +299,12 @@ List<RouteBase> _buildRoutes() {
             GoRoute(
               path: AppRoutes.profile,
               name: 'profile',
-              builder: (context, state) => const _ProfileScreen(),
+              builder: (context, state) => const ProfileScreen(),
             ),
             GoRoute(
               path: AppRoutes.settings,
               name: 'settings',
-              builder: (context, state) => const _SettingsScreen(),
+              builder: (context, state) => const SettingsScreen(),
             ),
           ],
         ),
@@ -415,40 +419,236 @@ class _SplashScreen extends ConsumerWidget {
   }
 }
 
-class _MainShell extends StatelessWidget {
+/// Main app shell with bottom navigation and connectivity banner
+class _MainShell extends ConsumerWidget {
   const _MainShell({required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final currentIndex = navigationShell.currentIndex;
+    final connectivityStatus = ref.watch(currentConnectivityStatusProvider);
+
     return Scaffold(
-      body: navigationShell,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: navigationShell.currentIndex,
-        onDestinationSelected: navigationShell.goBranch,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.map),
-            label: 'Map',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.navigation),
-            label: 'Navigate',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.emergency),
-            label: 'Emergency',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.notifications),
-            label: 'Alerts',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+      body: Column(
+        children: [
+          // Connectivity status banner
+          _ConnectivityBanner(status: connectivityStatus),
+          // Main content
+          Expanded(child: navigationShell),
         ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: colorScheme.surface,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.08),
+              blurRadius: 16,
+              offset: const Offset(0, -4),
+            ),
+          ],
+          border: Border(
+            top: BorderSide(
+              color: colorScheme.outlineVariant,
+              width: 0.5,
+            ),
+          ),
+        ),
+        child: SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _NavItem(
+                  icon: Icons.map_outlined,
+                  activeIcon: Icons.map,
+                  label: 'Map',
+                  isSelected: currentIndex == 0,
+                  onTap: () => navigationShell.goBranch(0),
+                ),
+                _NavItem(
+                  icon: Icons.navigation_outlined,
+                  activeIcon: Icons.navigation,
+                  label: 'Navigate',
+                  isSelected: currentIndex == 1,
+                  onTap: () => navigationShell.goBranch(1),
+                ),
+                _NavItem(
+                  icon: Icons.emergency_outlined,
+                  activeIcon: Icons.emergency,
+                  label: 'Emergency',
+                  isSelected: currentIndex == 2,
+                  onTap: () => navigationShell.goBranch(2),
+                  isEmergency: true,
+                ),
+                _NavItem(
+                  icon: Icons.notifications_outlined,
+                  activeIcon: Icons.notifications,
+                  label: 'Alerts',
+                  isSelected: currentIndex == 3,
+                  onTap: () => navigationShell.goBranch(3),
+                ),
+                _NavItem(
+                  icon: Icons.person_outline,
+                  activeIcon: Icons.person,
+                  label: 'Profile',
+                  isSelected: currentIndex == 4,
+                  onTap: () => navigationShell.goBranch(4),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Connectivity status banner shown when offline
+class _ConnectivityBanner extends ConsumerWidget {
+  const _ConnectivityBanner({required this.status});
+
+  final ConnectivityStatus status;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (status.hasInternet) {
+      return const SizedBox.shrink();
+    }
+
+    final colorScheme = Theme.of(context).colorScheme;
+    final isOffline = status.isOffline;
+
+    return Semantics(
+      label: isOffline
+          ? 'No internet connection. Some features may be limited.'
+          : 'Limited connectivity: ${status.displayName}',
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        width: double.infinity,
+        color: isOffline ? colorScheme.errorContainer : colorScheme.tertiaryContainer,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        child: Row(
+          children: [
+            Icon(
+              isOffline ? Icons.wifi_off : Icons.wifi_tethering,
+              size: 18,
+              color: isOffline
+                  ? colorScheme.onErrorContainer
+                  : colorScheme.onTertiaryContainer,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                isOffline
+                    ? 'You\'re offline. Some features may be limited.'
+                    : 'Limited connectivity: ${status.displayName}',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: isOffline
+                          ? colorScheme.onErrorContainer
+                          : colorScheme.onTertiaryContainer,
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
+            ),
+            if (isOffline)
+              TextButton.icon(
+                onPressed: () {
+                  // Trigger a connectivity check
+                  ref.read(currentConnectivityStatusProvider.notifier).refresh();
+                },
+                icon: const Icon(Icons.refresh, size: 16),
+                label: const Text('Retry'),
+                style: TextButton.styleFrom(
+                  foregroundColor: colorScheme.onErrorContainer,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Custom navigation item for bottom navigation bar
+class _NavItem extends StatelessWidget {
+  const _NavItem({
+    required this.icon,
+    required this.activeIcon,
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+    this.isEmergency = false,
+  });
+
+  final IconData icon;
+  final IconData activeIcon;
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+  final bool isEmergency;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    final itemColor = isEmergency && isSelected
+        ? colorScheme.error
+        : isSelected
+            ? colorScheme.primary
+            : colorScheme.onSurfaceVariant;
+
+    final backgroundColor = isEmergency && isSelected
+        ? colorScheme.errorContainer
+        : isSelected
+            ? colorScheme.primaryContainer
+            : Colors.transparent;
+
+    return Expanded(
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                transitionBuilder: (child, animation) =>
+                    ScaleTransition(scale: animation, child: child),
+                child: Icon(
+                  isSelected ? activeIcon : icon,
+                  key: ValueKey(isSelected),
+                  color: itemColor,
+                  size: 24,
+                ),
+              ),
+              const SizedBox(height: 4),
+              AnimatedDefaultTextStyle(
+                duration: const Duration(milliseconds: 200),
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                  color: itemColor,
+                ),
+                child: Text(label),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -497,21 +697,6 @@ class _NavigationDetailScreen extends StatelessWidget {
   }
 }
 
-class _EmergencyScreen extends StatelessWidget {
-  const _EmergencyScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Emergency'),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
-      ),
-      body: const Center(child: Text('Emergency Screen - TODO')),
-    );
-  }
-}
 
 class _EvacuationScreen extends StatelessWidget {
   const _EvacuationScreen();
@@ -543,18 +728,6 @@ class _EvacuationDetailScreen extends StatelessWidget {
   }
 }
 
-class _AlertsScreen extends StatelessWidget {
-  const _AlertsScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Alerts')),
-      body: const Center(child: Text('Alerts Screen - TODO')),
-    );
-  }
-}
-
 class _AlertDetailScreen extends StatelessWidget {
   const _AlertDetailScreen({required this.alertId});
 
@@ -569,29 +742,6 @@ class _AlertDetailScreen extends StatelessWidget {
   }
 }
 
-class _ProfileScreen extends StatelessWidget {
-  const _ProfileScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
-      body: const Center(child: Text('Profile Screen - TODO')),
-    );
-  }
-}
-
-class _SettingsScreen extends StatelessWidget {
-  const _SettingsScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
-      body: const Center(child: Text('Settings Screen - TODO')),
-    );
-  }
-}
 
 class _AdminDashboardScreen extends StatelessWidget {
   const _AdminDashboardScreen();

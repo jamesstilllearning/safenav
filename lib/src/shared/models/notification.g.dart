@@ -12,15 +12,19 @@ _Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       body: json['body'] as String,
       type: $enumDecode(_$NotificationTypeEnumMap, json['type']),
-      priority: $enumDecodeNullable(
-              _$NotificationPriorityEnumMap, json['priority']) ??
+      priority:
+          $enumDecodeNullable(
+            _$NotificationPriorityEnumMap,
+            json['priority'],
+          ) ??
           NotificationPriority.normal,
       status:
           $enumDecodeNullable(_$NotificationStatusEnumMap, json['status']) ??
-              NotificationStatus.sent,
+          NotificationStatus.sent,
       userId: json['userId'] as String?,
       targetRole: json['targetRole'] as String?,
-      targetBuildingIds: (json['targetBuildingIds'] as List<dynamic>?)
+      targetBuildingIds:
+          (json['targetBuildingIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -116,47 +120,44 @@ const _$NotificationStatusEnumMap = {
 };
 
 _NotificationPreferences _$NotificationPreferencesFromJson(
-        Map<String, dynamic> json) =>
-    _NotificationPreferences(
-      userId: json['userId'] as String,
-      pushEnabled: json['pushEnabled'] as bool? ?? true,
-      emergencyAlertsEnabled: json['emergencyAlertsEnabled'] as bool? ?? true,
-      evacuationNoticesEnabled:
-          json['evacuationNoticesEnabled'] as bool? ?? true,
-      announcementsEnabled: json['announcementsEnabled'] as bool? ?? true,
-      personalMessagesEnabled: json['personalMessagesEnabled'] as bool? ?? true,
-      remindersEnabled: json['remindersEnabled'] as bool? ?? true,
-      locationAlertsEnabled: json['locationAlertsEnabled'] as bool? ?? true,
-      safetyTipsEnabled: json['safetyTipsEnabled'] as bool? ?? true,
-      drillNotificationsEnabled:
-          json['drillNotificationsEnabled'] as bool? ?? true,
-      maintenanceNotificationsEnabled:
-          json['maintenanceNotificationsEnabled'] as bool? ?? true,
-      quietHoursStart: (json['quietHoursStart'] as num?)?.toInt(),
-      quietHoursEnd: (json['quietHoursEnd'] as num?)?.toInt(),
-      vibrationEnabled: json['vibrationEnabled'] as bool? ?? true,
-      soundEnabled: json['soundEnabled'] as bool? ?? true,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+  Map<String, dynamic> json,
+) => _NotificationPreferences(
+  userId: json['userId'] as String,
+  pushEnabled: json['pushEnabled'] as bool? ?? true,
+  emergencyAlertsEnabled: json['emergencyAlertsEnabled'] as bool? ?? true,
+  evacuationNoticesEnabled: json['evacuationNoticesEnabled'] as bool? ?? true,
+  announcementsEnabled: json['announcementsEnabled'] as bool? ?? true,
+  personalMessagesEnabled: json['personalMessagesEnabled'] as bool? ?? true,
+  remindersEnabled: json['remindersEnabled'] as bool? ?? true,
+  locationAlertsEnabled: json['locationAlertsEnabled'] as bool? ?? true,
+  safetyTipsEnabled: json['safetyTipsEnabled'] as bool? ?? true,
+  drillNotificationsEnabled: json['drillNotificationsEnabled'] as bool? ?? true,
+  maintenanceNotificationsEnabled:
+      json['maintenanceNotificationsEnabled'] as bool? ?? true,
+  quietHoursStart: (json['quietHoursStart'] as num?)?.toInt(),
+  quietHoursEnd: (json['quietHoursEnd'] as num?)?.toInt(),
+  vibrationEnabled: json['vibrationEnabled'] as bool? ?? true,
+  soundEnabled: json['soundEnabled'] as bool? ?? true,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
 Map<String, dynamic> _$NotificationPreferencesToJson(
-        _NotificationPreferences instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'pushEnabled': instance.pushEnabled,
-      'emergencyAlertsEnabled': instance.emergencyAlertsEnabled,
-      'evacuationNoticesEnabled': instance.evacuationNoticesEnabled,
-      'announcementsEnabled': instance.announcementsEnabled,
-      'personalMessagesEnabled': instance.personalMessagesEnabled,
-      'remindersEnabled': instance.remindersEnabled,
-      'locationAlertsEnabled': instance.locationAlertsEnabled,
-      'safetyTipsEnabled': instance.safetyTipsEnabled,
-      'drillNotificationsEnabled': instance.drillNotificationsEnabled,
-      'maintenanceNotificationsEnabled':
-          instance.maintenanceNotificationsEnabled,
-      'quietHoursStart': instance.quietHoursStart,
-      'quietHoursEnd': instance.quietHoursEnd,
-      'vibrationEnabled': instance.vibrationEnabled,
-      'soundEnabled': instance.soundEnabled,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+  _NotificationPreferences instance,
+) => <String, dynamic>{
+  'userId': instance.userId,
+  'pushEnabled': instance.pushEnabled,
+  'emergencyAlertsEnabled': instance.emergencyAlertsEnabled,
+  'evacuationNoticesEnabled': instance.evacuationNoticesEnabled,
+  'announcementsEnabled': instance.announcementsEnabled,
+  'personalMessagesEnabled': instance.personalMessagesEnabled,
+  'remindersEnabled': instance.remindersEnabled,
+  'locationAlertsEnabled': instance.locationAlertsEnabled,
+  'safetyTipsEnabled': instance.safetyTipsEnabled,
+  'drillNotificationsEnabled': instance.drillNotificationsEnabled,
+  'maintenanceNotificationsEnabled': instance.maintenanceNotificationsEnabled,
+  'quietHoursStart': instance.quietHoursStart,
+  'quietHoursEnd': instance.quietHoursEnd,
+  'vibrationEnabled': instance.vibrationEnabled,
+  'soundEnabled': instance.soundEnabled,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};

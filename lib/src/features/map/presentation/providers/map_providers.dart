@@ -207,6 +207,10 @@ class MapViewStateNotifier extends StateNotifier<MapViewState> {
     );
   }
 
+  void setMapType(MapType mapType) {
+    state = state.copyWith(mapType: mapType);
+  }
+
   void selectBuilding(String? buildingId) {
     state = state.copyWith(
       selectedBuildingId: buildingId,

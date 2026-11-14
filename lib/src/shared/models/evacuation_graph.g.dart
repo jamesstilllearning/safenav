@@ -17,7 +17,8 @@ _EvacuationEdge _$EvacuationEdgeFromJson(Map<String, dynamic> json) =>
       isEmergencyRoute: json['isEmergencyRoute'] as bool? ?? false,
       floor: (json['floor'] as num?)?.toInt(),
       description: json['description'] as String?,
-      hazards: (json['hazards'] as List<dynamic>?)
+      hazards:
+          (json['hazards'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -62,15 +63,18 @@ _EvacuationNode _$EvacuationNodeFromJson(Map<String, dynamic> json) =>
       isShelter: json['isShelter'] as bool? ?? false,
       capacity: (json['capacity'] as num?)?.toInt(),
       currentOccupancy: (json['currentOccupancy'] as num?)?.toInt() ?? 0,
-      accessibilityFeatures: (json['accessibilityFeatures'] as List<dynamic>?)
+      accessibilityFeatures:
+          (json['accessibilityFeatures'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      emergencyEquipment: (json['emergencyEquipment'] as List<dynamic>?)
+      emergencyEquipment:
+          (json['emergencyEquipment'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      connectedEdgeIds: (json['connectedEdgeIds'] as List<dynamic>?)
+      connectedEdgeIds:
+          (json['connectedEdgeIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -125,10 +129,11 @@ _EvacuationGraph _$EvacuationGraphFromJson(Map<String, dynamic> json) =>
           .toList(),
       defaultAssemblyPointIds:
           (json['defaultAssemblyPointIds'] as List<dynamic>?)
-                  ?.map((e) => e as String)
-                  .toList() ??
-              const [],
-      defaultShelterIds: (json['defaultShelterIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      defaultShelterIds:
+          (json['defaultShelterIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],

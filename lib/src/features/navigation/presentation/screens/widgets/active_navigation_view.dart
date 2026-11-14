@@ -11,6 +11,7 @@ import 'package:flutter_map/flutter_map.dart';
 import '../../providers/navigation_providers.dart';
 import '../../../data/models/navigation_models.dart';
 import '../../../../map/presentation/providers/map_providers.dart';
+import '../../../../../shared/widgets/widgets.dart';
 
 /// Height of the bottom navigation bar in the main shell (Material 3 NavigationBar)
 const double _kBottomNavigationBarHeight = 80.0;
@@ -278,19 +279,10 @@ class _TopNavigationBar extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final route = session.route;
 
-    return Container(
+    return AppElevatedCard(
+      margin: EdgeInsets.zero,
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: colorScheme.surfaceContainerHighest.withValues(alpha: 0.95),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
+      elevation: 4,
       child: Row(
         children: [
           // Destination info
@@ -340,23 +332,20 @@ class _TopNavigationBar extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              IconButton(
-                icon: Icon(isFollowing ? Icons.gps_fixed : Icons.gps_not_fixed),
+              AppIconButton(
+                icon: isFollowing ? Icons.gps_fixed : Icons.gps_not_fixed,
                 onPressed: onToggleFollow,
                 tooltip: isFollowing ? 'Disable auto-follow' : 'Enable auto-follow',
-                style: IconButton.styleFrom(
-                  backgroundColor: isFollowing ? colorScheme.primary : colorScheme.surfaceContainerHighest,
-                  foregroundColor: isFollowing ? Colors.white : colorScheme.onSurface,
-                ),
+                backgroundColor: isFollowing ? colorScheme.primary : colorScheme.surfaceContainerHighest,
+                foregroundColor: isFollowing ? Colors.white : colorScheme.onSurface,
               ),
-              IconButton(
-                icon: const Icon(Icons.close),
+              const SizedBox(height: 4),
+              AppIconButton(
+                icon: Icons.close,
                 onPressed: onEndNavigation,
                 tooltip: 'End navigation',
-                style: IconButton.styleFrom(
-                  backgroundColor: Colors.red.withValues(alpha: 0.1),
-                  foregroundColor: Colors.red,
-                ),
+                backgroundColor: Colors.red.withValues(alpha: 0.1),
+                foregroundColor: Colors.red,
               ),
             ],
           ),
@@ -388,19 +377,11 @@ class _CurrentInstructionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return AppElevatedCard(
+      margin: EdgeInsets.zero,
+      elevation: 8,
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: colorScheme.surfaceContainerHighest,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
-            blurRadius: 12,
-            offset: const Offset(0, -3),
-          ),
-        ],
-      ),
       child: SafeArea(
         top: false,
         child: Column(
@@ -493,26 +474,24 @@ class _CurrentInstructionCard extends StatelessWidget {
               children: [
                 // Previous
                 Expanded(
-                  child: OutlinedButton.icon(
+                  child: AppOutlinedButton(
                     onPressed: stepNumber > 1 ? onPreviousInstruction : null,
-                    icon: const Icon(Icons.chevron_left),
-                    label: const Text('Previous'),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                    ),
+                    label: 'Previous',
+                    icon: Icons.chevron_left,
+                    iconPosition: IconPosition.leading,
+                    size: ButtonSize.large,
                   ),
                 ),
                 const SizedBox(width: 12),
                 // Next/Arrive
                 Expanded(
-                  child: FilledButton.icon(
+                  child: AppFilledButton(
                     onPressed: onNextInstruction,
-                    icon: Icon(_isArrive(instruction.type) ? Icons.check_circle : Icons.chevron_right),
-                    label: Text(_isArrive(instruction.type) ? 'Arrived' : 'Next'),
-                    style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      backgroundColor: _isArrive(instruction.type) ? Colors.green : null,
-                    ),
+                    label: _isArrive(instruction.type) ? 'Arrived' : 'Next',
+                    icon: _isArrive(instruction.type) ? Icons.check_circle : Icons.chevron_right,
+                    iconPosition: _isArrive(instruction.type) ? IconPosition.leading : IconPosition.trailing,
+                    size: ButtonSize.large,
+                    backgroundColor: _isArrive(instruction.type) ? Colors.green : null,
                   ),
                 ),
               ],
@@ -556,19 +535,11 @@ class _NextInstructionPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return AppCard(
+      margin: EdgeInsets.zero,
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: colorScheme.surfaceContainerHighest.withValues(alpha: 0.9),
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
+      elevation: 2,
+      borderRadius: BorderRadius.circular(12),
       child: Row(
         children: [
           Container(
@@ -633,4 +604,4 @@ class _NextInstructionPreview extends StatelessWidget {
         exitBuilding: () => Icons.exit_to_app,
       );
     }
-  }
+}
