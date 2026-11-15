@@ -7,12 +7,16 @@ import { logger } from 'hono/logger';
 // Import route handlers
 import importCampusData from './admin/importCampusData';
 import registerToken from './fcm/registerToken';
+import firebaseConnectivity from './diagnostics/firebaseConnectivity';
 
 // Import scheduled functions
 import { cleanupExpiredAlerts } from './scheduled/cleanupExpiredAlerts';
 import { dailyAnalytics } from './scheduled/dailyAnalytics';
 import { cleanupStaleTokens } from './scheduled/cleanupStaleTokens';
 import { refreshFCMTopics } from './scheduled/refreshFCMTopics';
+
+// Import auth utilities for middleware
+import { verifyAdminToken, extractIdToken, createJWKSCache } from './utils/auth';
 
 // Environment bindings type
 interface Env {
@@ -34,6 +38,38 @@ app.use('*', cors({
   allowMethods: ['GET', 'POST', 'OPTIONS'],
 }));
 
+// Initialize JWKS cache for admin authentication
+let jwksCache: ReturnType<typeof createJWKSCache> | null = null;
+function getJWKSCache(kv: KVNamespace) {
+  if (!jwksCache) {
+    jwksCache = createJWKSCache(kv);
+  }
+  return jwksCache;
+}
+
+// Admin authentication middleware
+async function requireAdminAuth(c: any, next: () => Promise<void>) {
+  const authHeader = c.req.header('Authorization');
+  const idToken = extractIdToken(authHeader);
+
+  if (!idToken) {
+    return c.json(
+      { success: false, message: 'Authentication required. Please provide Firebase ID token.' },
+      401
+    );
+  }
+
+  try {
+    await verifyAdminToken(idToken, c.env.FIREBASE_PROJECT_ID, getJWKSCache(c.env.KV));
+    await next();
+  } catch (error) {
+    return c.json(
+      { success: false, message: error instanceof Error ? error.message : 'Invalid or expired token' },
+      403
+    );
+  }
+}
+
 // Health check
 app.get('/health', (c) => {
   return c.json({
@@ -48,23 +84,27 @@ app.get('/health', (c) => {
 app.route('/api', importCampusData);
 app.route('/api', registerToken);
 
-// Scheduled function endpoints (for manual testing)
-app.get('/api/scheduled/cleanup-expired-alerts', async (c) => {
+// Diagnostics endpoint (admin only)
+app.route('/api/diagnostics', firebaseConnectivity);
+
+// Scheduled function endpoints (admin only for HTTP access)
+// Note: Cron triggers bypass HTTP and call functions directly via the scheduled handler
+app.get('/api/scheduled/cleanup-expired-alerts', requireAdminAuth, async (c) => {
   const result = await cleanupExpiredAlerts(c.env);
   return c.json(result);
 });
 
-app.get('/api/scheduled/daily-analytics', async (c) => {
+app.get('/api/scheduled/daily-analytics', requireAdminAuth, async (c) => {
   const result = await dailyAnalytics(c.env);
   return c.json(result);
 });
 
-app.get('/api/scheduled/cleanup-stale-tokens', async (c) => {
+app.get('/api/scheduled/cleanup-stale-tokens', requireAdminAuth, async (c) => {
   const result = await cleanupStaleTokens(c.env);
   return c.json(result);
 });
 
-app.get('/api/scheduled/refresh-fcm-topics', async (c) => {
+app.get('/api/scheduled/refresh-fcm-topics', requireAdminAuth, async (c) => {
   const result = await refreshFCMTopics(c.env);
   return c.json(result);
 });
