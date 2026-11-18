@@ -89,6 +89,9 @@ class AppRoutes {
   /// Building detail route
   static const String buildingDetail = '/building/:buildingId';
 
+  /// Digital Twin 3D view route
+  static const String digitalTwin = '/digital-twin/:buildingId';
+
   /// Alert detail route
   static const String alertDetail = '/alert/:alertId';
 
@@ -109,6 +112,10 @@ class AppRoutes {
   /// Gets the building detail route with ID
   static String buildingDetailRoute(String buildingId) =>
       '/building/$buildingId';
+
+  /// Gets the digital twin route with building ID
+  static String digitalTwinRoute(String buildingId) =>
+      '/digital-twin/$buildingId';
 
   /// Gets the alert detail route with ID
   static String alertDetailRoute(String alertId) =>

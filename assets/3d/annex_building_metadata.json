@@ -1,0 +1,2671 @@
+{
+  "buildingId": "annex_building",
+  "version": "1.0.0",
+  "generatedAt": "2026-11-18T07:08:03.349579",
+  "sourceDataHash": "db2e8eb785c8a72a",
+  "coordinateTransform": {
+    "buildingId": "annex_building",
+    "sourceCrs": "normalized_image",
+    "targetCrs": "local_cartesian",
+    "transformMatrix": {
+      "values": [
+        [
+          85.43743470424928,
+          0,
+          0,
+          -42.71871735212464
+        ],
+        [
+          0,
+          -200.0,
+          0,
+          100.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "scale": {
+      "x": 85.43743470424928,
+      "y": 200.0,
+      "z": 1
+    },
+    "rotation": 0,
+    "sourceBounds": {
+      "minX": 0,
+      "minY": 0,
+      "maxX": 1,
+      "maxY": 1
+    },
+    "targetBounds": {
+      "minX": -35.87304289644667,
+      "minY": -25.395199999999996,
+      "maxX": -18.335642424444234,
+      "maxY": 70.706
+    }
+  },
+  "rooms": {
+    "room_annex_building_ground_floor_room_ANNEX": {
+      "roomId": "annex_building_first_floor_room_001",
+      "meshName": "room_annex_building_ground_floor_room_ANNEX",
+      "floorIndex": 0,
+      "name": "ANNEX",
+      "number": "ANNEX",
+      "category": "other",
+      "bounds": {
+        "minX": -20.972327096852073,
+        "minY": 46.6104,
+        "minZ": 0.0,
+        "maxX": -18.335642424444234,
+        "maxY": 55.532199999999996,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -19.917653227888938,
+        "y": 51.96347999999999,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -20.972327096852073,
+          55.532199999999996,
+          0.0
+        ],
+        [
+          -20.972327096852073,
+          46.6104,
+          0.0
+        ],
+        [
+          -18.335642424444234,
+          46.6104,
+          0.0
+        ],
+        [
+          -18.335642424444234,
+          55.532199999999996,
+          0.0
+        ],
+        [
+          -20.972327096852073,
+          55.532199999999996,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_001",
+        "name": "ANNEX",
+        "original_label": "ANNEX",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.25453,
+          "y": 0.222339,
+          "width": 0.030861,
+          "height": 0.044608,
+          "center_x": 0.26996,
+          "center_y": 0.244643,
+          "polygon": [
+            [
+              0.25453,
+              0.222339
+            ],
+            [
+              0.285391,
+              0.222339
+            ],
+            [
+              0.285391,
+              0.266948
+            ],
+            [
+              0.25453,
+              0.266948
+            ],
+            [
+              0.25453,
+              0.222339
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.25453,
+                0.222339
+              ],
+              [
+                0.285391,
+                0.222339
+              ],
+              [
+                0.285391,
+                0.266948
+              ],
+              [
+                0.25453,
+                0.266948
+              ],
+              [
+                0.25453,
+                0.222339
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2107,
+            "y": 1484,
+            "width": 255,
+            "height": 298
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high",
+        "notes": "Unnumbered enclosed area labeled ANNEX in the first-floor inset."
+      }
+    },
+    "room_annex_building_ground_floor_room_ANNEX 101": {
+      "roomId": "annex_building_first_floor_room_002",
+      "meshName": "room_annex_building_ground_floor_room_ANNEX 101",
+      "floorIndex": 0,
+      "name": "ANNEX 101",
+      "number": "ANNEX 101",
+      "category": "other",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": -0.526800000000005,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": 10.010600000000004,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": 5.795640000000001,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          10.010600000000004,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -0.526800000000005,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -0.526800000000005,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          10.010600000000004,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          10.010600000000004,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_002",
+        "name": "ANNEX 101",
+        "original_label": "ANNEX 101",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.449947,
+          "width": 0.035957,
+          "height": 0.052687,
+          "center_x": 0.264298,
+          "center_y": 0.476291,
+          "polygon": [
+            [
+              0.246319,
+              0.449947
+            ],
+            [
+              0.282276,
+              0.449947
+            ],
+            [
+              0.282276,
+              0.502634
+            ],
+            [
+              0.246319,
+              0.502634
+            ],
+            [
+              0.246319,
+              0.449947
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.449947
+              ],
+              [
+                0.282276,
+                0.449947
+              ],
+              [
+                0.282276,
+                0.502634
+              ],
+              [
+                0.246319,
+                0.502634
+              ],
+              [
+                0.246319,
+                0.449947
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 3003,
+            "width": 298,
+            "height": 352
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_ANNEX 102": {
+      "roomId": "annex_building_first_floor_room_003",
+      "meshName": "room_annex_building_ground_floor_room_ANNEX 102",
+      "floorIndex": 0,
+      "name": "ANNEX 102",
+      "number": "ANNEX 102",
+      "category": "other",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": 10.010600000000004,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": 20.688399999999994,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": 16.417279999999998,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          20.688399999999994,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          10.010600000000004,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          10.010600000000004,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          20.688399999999994,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          20.688399999999994,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_003",
+        "name": "ANNEX 102",
+        "original_label": "ANNEX 102",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.396558,
+          "width": 0.035957,
+          "height": 0.05339,
+          "center_x": 0.264298,
+          "center_y": 0.423253,
+          "polygon": [
+            [
+              0.246319,
+              0.396558
+            ],
+            [
+              0.282276,
+              0.396558
+            ],
+            [
+              0.282276,
+              0.449947
+            ],
+            [
+              0.246319,
+              0.449947
+            ],
+            [
+              0.246319,
+              0.396558
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.396558
+              ],
+              [
+                0.282276,
+                0.396558
+              ],
+              [
+                0.282276,
+                0.449947
+              ],
+              [
+                0.246319,
+                0.449947
+              ],
+              [
+                0.246319,
+                0.396558
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 2647,
+            "width": 298,
+            "height": 356
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_ANNEX 103": {
+      "roomId": "annex_building_first_floor_room_004",
+      "meshName": "room_annex_building_ground_floor_room_ANNEX 103",
+      "floorIndex": 0,
+      "name": "ANNEX 103",
+      "number": "ANNEX 103",
+      "category": "other",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": 20.688399999999994,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": 31.225800000000003,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": 27.01084,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          31.225800000000003,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          20.688399999999994,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          20.688399999999994,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          31.225800000000003,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          31.225800000000003,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_004",
+        "name": "ANNEX 103",
+        "original_label": "ANNEX 103",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.343871,
+          "width": 0.035957,
+          "height": 0.052687,
+          "center_x": 0.264298,
+          "center_y": 0.370214,
+          "polygon": [
+            [
+              0.246319,
+              0.343871
+            ],
+            [
+              0.282276,
+              0.343871
+            ],
+            [
+              0.282276,
+              0.396558
+            ],
+            [
+              0.246319,
+              0.396558
+            ],
+            [
+              0.246319,
+              0.343871
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.343871
+              ],
+              [
+                0.282276,
+                0.343871
+              ],
+              [
+                0.282276,
+                0.396558
+              ],
+              [
+                0.246319,
+                0.396558
+              ],
+              [
+                0.246319,
+                0.343871
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 2295,
+            "width": 298,
+            "height": 352
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_GUIDANCE OFFICE": {
+      "roomId": "annex_building_first_floor_room_005",
+      "meshName": "room_annex_building_ground_floor_room_GUIDANCE OFFICE",
+      "floorIndex": 0,
+      "name": "GUIDANCE OFFICE",
+      "number": "GUIDANCE OFFICE",
+      "category": "office",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": -10.993999999999993,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": -0.526800000000005,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": -4.71368,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          -0.526800000000005,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -10.993999999999993,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -10.993999999999993,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -0.526800000000005,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -0.526800000000005,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_005",
+        "name": "GUIDANCE OFFICE",
+        "original_label": "GUIDANCE OFFICE",
+        "category": "office",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.502634,
+          "width": 0.035957,
+          "height": 0.052336,
+          "center_x": 0.264298,
+          "center_y": 0.528802,
+          "polygon": [
+            [
+              0.246319,
+              0.502634
+            ],
+            [
+              0.282276,
+              0.502634
+            ],
+            [
+              0.282276,
+              0.55497
+            ],
+            [
+              0.246319,
+              0.55497
+            ],
+            [
+              0.246319,
+              0.502634
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.502634
+              ],
+              [
+                0.282276,
+                0.502634
+              ],
+              [
+                0.282276,
+                0.55497
+              ],
+              [
+                0.246319,
+                0.55497
+              ],
+              [
+                0.246319,
+                0.502634
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 3355,
+            "width": 298,
+            "height": 349
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_ISG": {
+      "roomId": "annex_building_first_floor_room_006",
+      "meshName": "room_annex_building_ground_floor_room_ISG",
+      "floorIndex": 0,
+      "name": "ISG",
+      "number": "ISG",
+      "category": "other",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": -16.684199999999993,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": -10.993999999999993,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": -13.270079999999993,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          -10.993999999999993,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -16.684199999999993,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -16.684199999999993,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -10.993999999999993,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -10.993999999999993,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_006",
+        "name": "ISG",
+        "original_label": "ISG",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.55497,
+          "width": 0.035957,
+          "height": 0.028451,
+          "center_x": 0.264298,
+          "center_y": 0.569196,
+          "polygon": [
+            [
+              0.246319,
+              0.55497
+            ],
+            [
+              0.282276,
+              0.55497
+            ],
+            [
+              0.282276,
+              0.583421
+            ],
+            [
+              0.246319,
+              0.583421
+            ],
+            [
+              0.246319,
+              0.55497
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.55497
+              ],
+              [
+                0.282276,
+                0.55497
+              ],
+              [
+                0.282276,
+                0.583421
+              ],
+              [
+                0.246319,
+                0.583421
+              ],
+              [
+                0.246319,
+                0.55497
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 3704,
+            "width": 298,
+            "height": 190
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_OSA": {
+      "roomId": "annex_building_first_floor_room_007",
+      "meshName": "room_annex_building_ground_floor_room_OSA",
+      "floorIndex": 0,
+      "name": "OSA",
+      "number": "OSA",
+      "category": "other",
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": -21.5314,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": -16.684199999999993,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -20.445024337344385,
+        "y": -18.623079999999995,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -21.67385387320866,
+          -16.684199999999993,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -21.5314,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -21.5314,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -16.684199999999993,
+          0.0
+        ],
+        [
+          -21.67385387320866,
+          -16.684199999999993,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_007",
+        "name": "OSA",
+        "original_label": "OSA",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.246319,
+          "y": 0.583421,
+          "width": 0.035957,
+          "height": 0.024236,
+          "center_x": 0.264298,
+          "center_y": 0.595539,
+          "polygon": [
+            [
+              0.246319,
+              0.583421
+            ],
+            [
+              0.282276,
+              0.583421
+            ],
+            [
+              0.282276,
+              0.607657
+            ],
+            [
+              0.246319,
+              0.607657
+            ],
+            [
+              0.246319,
+              0.583421
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.246319,
+                0.583421
+              ],
+              [
+                0.282276,
+                0.583421
+              ],
+              [
+                0.282276,
+                0.607657
+              ],
+              [
+                0.246319,
+                0.607657
+              ],
+              [
+                0.246319,
+                0.583421
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2039,
+            "y": 3894,
+            "width": 298,
+            "height": 162
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_female comfort room": {
+      "roomId": "annex_building_first_floor_room_008",
+      "meshName": "room_annex_building_ground_floor_room_female comfort room",
+      "floorIndex": 0,
+      "name": "female comfort room",
+      "number": "female comfort room",
+      "category": "restroom",
+      "bounds": {
+        "minX": -20.754632513225648,
+        "minY": -25.395199999999996,
+        "minZ": 0.0,
+        "maxX": -18.601780033547968,
+        "maxY": -21.5314,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -19.893491521354576,
+        "y": -23.076919999999998,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -20.754632513225648,
+          -21.5314,
+          0.0
+        ],
+        [
+          -20.754632513225648,
+          -25.395199999999996,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -25.395199999999996,
+          0.0
+        ],
+        [
+          -18.601780033547968,
+          -21.5314,
+          0.0
+        ],
+        [
+          -20.754632513225648,
+          -21.5314,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_008",
+        "name": "female comfort room",
+        "original_label": "female comfort room",
+        "category": "restroom",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.257078,
+          "y": 0.607657,
+          "width": 0.025198,
+          "height": 0.019319,
+          "center_x": 0.269677,
+          "center_y": 0.617316,
+          "polygon": [
+            [
+              0.257078,
+              0.607657
+            ],
+            [
+              0.282276,
+              0.607657
+            ],
+            [
+              0.282276,
+              0.626976
+            ],
+            [
+              0.257078,
+              0.626976
+            ],
+            [
+              0.257078,
+              0.607657
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.257078,
+                0.607657
+              ],
+              [
+                0.282276,
+                0.607657
+              ],
+              [
+                0.282276,
+                0.626976
+              ],
+              [
+                0.257078,
+                0.626976
+              ],
+              [
+                0.257078,
+                0.607657
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2128,
+            "y": 4056,
+            "width": 209,
+            "height": 129
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_ground_floor_room_storage": {
+      "roomId": "annex_building_first_floor_room_009",
+      "meshName": "room_annex_building_ground_floor_room_storage",
+      "floorIndex": 0,
+      "name": "storage",
+      "number": "storage",
+      "category": "storage",
+      "bounds": {
+        "minX": -20.657831899705727,
+        "minY": 31.225800000000003,
+        "minZ": 0.0,
+        "maxX": -18.335642424444234,
+        "maxY": 33.895399999999995,
+        "maxZ": 3.5
+      },
+      "centroid": {
+        "x": -19.728956109601132,
+        "y": 32.82756,
+        "z": 1.75
+      },
+      "polygon": [
+        [
+          -20.657831899705727,
+          33.895399999999995,
+          0.0
+        ],
+        [
+          -20.657831899705727,
+          31.225800000000003,
+          0.0
+        ],
+        [
+          -18.335642424444234,
+          31.225800000000003,
+          0.0
+        ],
+        [
+          -18.335642424444234,
+          33.895399999999995,
+          0.0
+        ],
+        [
+          -20.657831899705727,
+          33.895399999999995,
+          0.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_first_floor_room_009",
+        "name": "storage",
+        "original_label": "storage",
+        "category": "storage",
+        "building_id": "annex_building",
+        "floor_id": "first_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.258211,
+          "y": 0.330523,
+          "width": 0.02718,
+          "height": 0.013347,
+          "center_x": 0.271801,
+          "center_y": 0.337197,
+          "polygon": [
+            [
+              0.258211,
+              0.330523
+            ],
+            [
+              0.285391,
+              0.330523
+            ],
+            [
+              0.285391,
+              0.343871
+            ],
+            [
+              0.258211,
+              0.343871
+            ],
+            [
+              0.258211,
+              0.330523
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.258211,
+                0.330523
+              ],
+              [
+                0.285391,
+                0.330523
+              ],
+              [
+                0.285391,
+                0.343871
+              ],
+              [
+                0.258211,
+                0.343871
+              ],
+              [
+                0.258211,
+                0.330523
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2138,
+            "y": 2206,
+            "width": 225,
+            "height": 89
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX": {
+      "roomId": "annex_building_second_floor_room_001",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX",
+      "floorIndex": 1,
+      "name": "ANNEX",
+      "number": "ANNEX",
+      "category": "other",
+      "bounds": {
+        "minX": -20.972327096852073,
+        "minY": 61.995,
+        "minZ": 3.5,
+        "maxX": -18.335642424444234,
+        "maxY": 70.706,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -19.917653227888938,
+        "y": 67.2216,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -20.972327096852073,
+          70.706,
+          3.5
+        ],
+        [
+          -20.972327096852073,
+          61.995,
+          3.5
+        ],
+        [
+          -18.335642424444234,
+          61.995,
+          3.5
+        ],
+        [
+          -18.335642424444234,
+          70.706,
+          3.5
+        ],
+        [
+          -20.972327096852073,
+          70.706,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_001",
+        "name": "ANNEX",
+        "original_label": "ANNEX",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.25453,
+          "y": 0.14647,
+          "width": 0.030861,
+          "height": 0.043555,
+          "center_x": 0.26996,
+          "center_y": 0.168247,
+          "polygon": [
+            [
+              0.25453,
+              0.14647
+            ],
+            [
+              0.285391,
+              0.14647
+            ],
+            [
+              0.285391,
+              0.190025
+            ],
+            [
+              0.25453,
+              0.190025
+            ],
+            [
+              0.25453,
+              0.14647
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.25453,
+                0.14647
+              ],
+              [
+                0.285391,
+                0.14647
+              ],
+              [
+                0.285391,
+                0.190025
+              ],
+              [
+                0.25453,
+                0.190025
+              ],
+              [
+                0.25453,
+                0.14647
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 2107,
+            "y": 978,
+            "width": 255,
+            "height": 291
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high",
+        "notes": "Unnumbered enclosed area labeled ANNEX in the second-floor inset."
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX 201": {
+      "roomId": "annex_building_second_floor_room_002",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX 201",
+      "floorIndex": 1,
+      "name": "ANNEX 201",
+      "number": "ANNEX 201",
+      "category": "other",
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": -21.601599999999998,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": -10.993999999999993,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.43577155715018,
+        "y": -15.237039999999997,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -28.664601093014454,
+          -10.993999999999993,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          -21.601599999999998,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -21.601599999999998,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -10.993999999999993,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          -10.993999999999993,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_002",
+        "name": "ANNEX 201",
+        "original_label": "ANNEX 201",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.164496,
+          "y": 0.55497,
+          "width": 0.035957,
+          "height": 0.053038,
+          "center_x": 0.182475,
+          "center_y": 0.581489,
+          "polygon": [
+            [
+              0.164496,
+              0.55497
+            ],
+            [
+              0.200453,
+              0.55497
+            ],
+            [
+              0.200453,
+              0.608008
+            ],
+            [
+              0.164496,
+              0.608008
+            ],
+            [
+              0.164496,
+              0.55497
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.164496,
+                0.55497
+              ],
+              [
+                0.200453,
+                0.55497
+              ],
+              [
+                0.200453,
+                0.608008
+              ],
+              [
+                0.164496,
+                0.608008
+              ],
+              [
+                0.164496,
+                0.55497
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1362,
+            "y": 3704,
+            "width": 298,
+            "height": 354
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX 202": {
+      "roomId": "annex_building_second_floor_room_003",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX 202",
+      "floorIndex": 1,
+      "name": "ANNEX 202",
+      "number": "ANNEX 202",
+      "category": "other",
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": -10.993999999999993,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": -0.456600000000007,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.43577155715018,
+        "y": -4.671560000000001,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -28.664601093014454,
+          -0.456600000000007,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          -10.993999999999993,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -10.993999999999993,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -0.456600000000007,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          -0.456600000000007,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_003",
+        "name": "ANNEX 202",
+        "original_label": "ANNEX 202",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.164496,
+          "y": 0.502283,
+          "width": 0.035957,
+          "height": 0.052687,
+          "center_x": 0.182475,
+          "center_y": 0.528627,
+          "polygon": [
+            [
+              0.164496,
+              0.502283
+            ],
+            [
+              0.200453,
+              0.502283
+            ],
+            [
+              0.200453,
+              0.55497
+            ],
+            [
+              0.164496,
+              0.55497
+            ],
+            [
+              0.164496,
+              0.502283
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.164496,
+                0.502283
+              ],
+              [
+                0.200453,
+                0.502283
+              ],
+              [
+                0.200453,
+                0.55497
+              ],
+              [
+                0.164496,
+                0.55497
+              ],
+              [
+                0.164496,
+                0.502283
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1362,
+            "y": 3353,
+            "width": 298,
+            "height": 352
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX 203": {
+      "roomId": "annex_building_second_floor_room_004",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX 203",
+      "floorIndex": 1,
+      "name": "ANNEX 203",
+      "number": "ANNEX 203",
+      "category": "other",
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": -0.456600000000007,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": 10.0808,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.43577155715018,
+        "y": 5.865839999999997,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -28.664601093014454,
+          10.0808,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          -0.456600000000007,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -0.456600000000007,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          10.0808,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          10.0808,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_004",
+        "name": "ANNEX 203",
+        "original_label": "ANNEX 203",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.164496,
+          "y": 0.449596,
+          "width": 0.035957,
+          "height": 0.052687,
+          "center_x": 0.182475,
+          "center_y": 0.47594,
+          "polygon": [
+            [
+              0.164496,
+              0.449596
+            ],
+            [
+              0.200453,
+              0.449596
+            ],
+            [
+              0.200453,
+              0.502283
+            ],
+            [
+              0.164496,
+              0.502283
+            ],
+            [
+              0.164496,
+              0.449596
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.164496,
+                0.449596
+              ],
+              [
+                0.200453,
+                0.449596
+              ],
+              [
+                0.200453,
+                0.502283
+              ],
+              [
+                0.164496,
+                0.502283
+              ],
+              [
+                0.164496,
+                0.449596
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1362,
+            "y": 3001,
+            "width": 298,
+            "height": 352
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX 204": {
+      "roomId": "annex_building_second_floor_room_005",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX 204",
+      "floorIndex": 1,
+      "name": "ANNEX 204",
+      "number": "ANNEX 204",
+      "category": "other",
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": 10.0808,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": 20.688399999999994,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.43577155715018,
+        "y": 16.445359999999997,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -28.664601093014454,
+          20.688399999999994,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          10.0808,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          10.0808,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          20.688399999999994,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          20.688399999999994,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_005",
+        "name": "ANNEX 204",
+        "original_label": "ANNEX 204",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.164496,
+          "y": 0.396558,
+          "width": 0.035957,
+          "height": 0.053038,
+          "center_x": 0.182475,
+          "center_y": 0.423077,
+          "polygon": [
+            [
+              0.164496,
+              0.396558
+            ],
+            [
+              0.200453,
+              0.396558
+            ],
+            [
+              0.200453,
+              0.449596
+            ],
+            [
+              0.164496,
+              0.449596
+            ],
+            [
+              0.164496,
+              0.396558
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.164496,
+                0.396558
+              ],
+              [
+                0.200453,
+                0.396558
+              ],
+              [
+                0.200453,
+                0.449596
+              ],
+              [
+                0.164496,
+                0.449596
+              ],
+              [
+                0.164496,
+                0.396558
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1362,
+            "y": 2647,
+            "width": 298,
+            "height": 354
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_ANNEX 205": {
+      "roomId": "annex_building_second_floor_room_006",
+      "meshName": "room_annex_building_2nd_floor_room_ANNEX 205",
+      "floorIndex": 1,
+      "name": "ANNEX 205",
+      "number": "ANNEX 205",
+      "category": "other",
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": 20.688399999999994,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": 31.225800000000003,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.43577155715018,
+        "y": 27.01084,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -28.664601093014454,
+          31.225800000000003,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          20.688399999999994,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          20.688399999999994,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          31.225800000000003,
+          3.5
+        ],
+        [
+          -28.664601093014454,
+          31.225800000000003,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_006",
+        "name": "ANNEX 205",
+        "original_label": "ANNEX 205",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.164496,
+          "y": 0.343871,
+          "width": 0.035957,
+          "height": 0.052687,
+          "center_x": 0.182475,
+          "center_y": 0.370214,
+          "polygon": [
+            [
+              0.164496,
+              0.343871
+            ],
+            [
+              0.200453,
+              0.343871
+            ],
+            [
+              0.200453,
+              0.396558
+            ],
+            [
+              0.164496,
+              0.396558
+            ],
+            [
+              0.164496,
+              0.343871
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.164496,
+                0.343871
+              ],
+              [
+                0.200453,
+                0.343871
+              ],
+              [
+                0.200453,
+                0.396558
+              ],
+              [
+                0.164496,
+                0.396558
+              ],
+              [
+                0.164496,
+                0.343871
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1362,
+            "y": 2295,
+            "width": 298,
+            "height": 352
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_male comfort room": {
+      "roomId": "annex_building_second_floor_room_007",
+      "meshName": "room_annex_building_2nd_floor_room_male comfort room",
+      "floorIndex": 1,
+      "name": "male comfort room",
+      "number": "male comfort room",
+      "category": "restroom",
+      "bounds": {
+        "minX": -27.914716728615254,
+        "minY": -25.395199999999996,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": -21.601599999999998,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -26.98584093851066,
+        "y": -23.119039999999995,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -27.914716728615254,
+          -21.601599999999998,
+          3.5
+        ],
+        [
+          -27.914716728615254,
+          -25.395199999999996,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -25.395199999999996,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          -21.601599999999998,
+          3.5
+        ],
+        [
+          -27.914716728615254,
+          -21.601599999999998,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_007",
+        "name": "male comfort room",
+        "original_label": "male comfort room",
+        "category": "restroom",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.173273,
+          "y": 0.608008,
+          "width": 0.02718,
+          "height": 0.018967,
+          "center_x": 0.186863,
+          "center_y": 0.617492,
+          "polygon": [
+            [
+              0.173273,
+              0.608008
+            ],
+            [
+              0.200453,
+              0.608008
+            ],
+            [
+              0.200453,
+              0.626976
+            ],
+            [
+              0.173273,
+              0.626976
+            ],
+            [
+              0.173273,
+              0.608008
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.173273,
+                0.608008
+              ],
+              [
+                0.200453,
+                0.608008
+              ],
+              [
+                0.200453,
+                0.626976
+              ],
+              [
+                0.173273,
+                0.626976
+              ],
+              [
+                0.173273,
+                0.608008
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1435,
+            "y": 4058,
+            "width": 225,
+            "height": 127
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_2nd_floor_room_storage": {
+      "roomId": "annex_building_second_floor_room_008",
+      "meshName": "room_annex_building_2nd_floor_room_storage",
+      "floorIndex": 1,
+      "name": "storage",
+      "number": "storage",
+      "category": "storage",
+      "bounds": {
+        "minX": -27.96307431665786,
+        "minY": 31.225800000000003,
+        "minZ": 3.5,
+        "maxX": -25.59252725335376,
+        "maxY": 33.895399999999995,
+        "maxZ": 7.0
+      },
+      "centroid": {
+        "x": -27.01485549133622,
+        "y": 32.82756,
+        "z": 5.25
+      },
+      "polygon": [
+        [
+          -27.96307431665786,
+          33.895399999999995,
+          3.5
+        ],
+        [
+          -27.96307431665786,
+          31.225800000000003,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          31.225800000000003,
+          3.5
+        ],
+        [
+          -25.59252725335376,
+          33.895399999999995,
+          3.5
+        ],
+        [
+          -27.96307431665786,
+          33.895399999999995,
+          3.5
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_second_floor_room_008",
+        "name": "storage",
+        "original_label": "storage",
+        "category": "storage",
+        "building_id": "annex_building",
+        "floor_id": "second_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.172707,
+          "y": 0.330523,
+          "width": 0.027746,
+          "height": 0.013347,
+          "center_x": 0.18658,
+          "center_y": 0.337197,
+          "polygon": [
+            [
+              0.172707,
+              0.330523
+            ],
+            [
+              0.200453,
+              0.330523
+            ],
+            [
+              0.200453,
+              0.343871
+            ],
+            [
+              0.172707,
+              0.343871
+            ],
+            [
+              0.172707,
+              0.330523
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.172707,
+                0.330523
+              ],
+              [
+                0.200453,
+                0.330523
+              ],
+              [
+                0.200453,
+                0.343871
+              ],
+              [
+                0.172707,
+                0.343871
+              ],
+              [
+                0.172707,
+                0.330523
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 1430,
+            "y": 2206,
+            "width": 230,
+            "height": 89
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_3rd_floor_room_ANNEX 301": {
+      "roomId": "annex_building_third_floor_room_001",
+      "meshName": "room_annex_building_3rd_floor_room_ANNEX 301",
+      "floorIndex": 2,
+      "name": "ANNEX 301",
+      "number": "ANNEX 301",
+      "category": "other",
+      "bounds": {
+        "minX": -35.87304289644667,
+        "minY": -21.601599999999998,
+        "minZ": 7.0,
+        "maxX": -32.849412082263285,
+        "maxY": -10.993999999999993,
+        "maxZ": 10.5
+      },
+      "centroid": {
+        "x": -34.663590570773316,
+        "y": -15.237039999999997,
+        "z": 8.75
+      },
+      "polygon": [
+        [
+          -35.87304289644667,
+          -10.993999999999993,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          -21.601599999999998,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -21.601599999999998,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -10.993999999999993,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          -10.993999999999993,
+          7.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_third_floor_room_001",
+        "name": "ANNEX 301",
+        "original_label": "ANNEX 301",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "third_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.080125,
+          "y": 0.55497,
+          "width": 0.035391,
+          "height": 0.053038,
+          "center_x": 0.09782,
+          "center_y": 0.581489,
+          "polygon": [
+            [
+              0.080125,
+              0.55497
+            ],
+            [
+              0.115515,
+              0.55497
+            ],
+            [
+              0.115515,
+              0.608008
+            ],
+            [
+              0.080125,
+              0.608008
+            ],
+            [
+              0.080125,
+              0.55497
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.080125,
+                0.55497
+              ],
+              [
+                0.115515,
+                0.55497
+              ],
+              [
+                0.115515,
+                0.608008
+              ],
+              [
+                0.080125,
+                0.608008
+              ],
+              [
+                0.080125,
+                0.55497
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 663,
+            "y": 3704,
+            "width": 293,
+            "height": 354
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_3rd_floor_room_ANNEX 302": {
+      "roomId": "annex_building_third_floor_room_002",
+      "meshName": "room_annex_building_3rd_floor_room_ANNEX 302",
+      "floorIndex": 2,
+      "name": "ANNEX 302",
+      "number": "ANNEX 302",
+      "category": "other",
+      "bounds": {
+        "minX": -35.87304289644667,
+        "minY": -10.993999999999993,
+        "minZ": 7.0,
+        "maxX": -32.849412082263285,
+        "maxY": -0.526800000000005,
+        "maxZ": 10.5
+      },
+      "centroid": {
+        "x": -34.663590570773316,
+        "y": -4.71368,
+        "z": 8.75
+      },
+      "polygon": [
+        [
+          -35.87304289644667,
+          -0.526800000000005,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          -10.993999999999993,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -10.993999999999993,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -0.526800000000005,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          -0.526800000000005,
+          7.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_third_floor_room_002",
+        "name": "ANNEX 302",
+        "original_label": "ANNEX 302",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "third_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.080125,
+          "y": 0.502634,
+          "width": 0.035391,
+          "height": 0.052336,
+          "center_x": 0.09782,
+          "center_y": 0.528802,
+          "polygon": [
+            [
+              0.080125,
+              0.502634
+            ],
+            [
+              0.115515,
+              0.502634
+            ],
+            [
+              0.115515,
+              0.55497
+            ],
+            [
+              0.080125,
+              0.55497
+            ],
+            [
+              0.080125,
+              0.502634
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.080125,
+                0.502634
+              ],
+              [
+                0.115515,
+                0.502634
+              ],
+              [
+                0.115515,
+                0.55497
+              ],
+              [
+                0.080125,
+                0.55497
+              ],
+              [
+                0.080125,
+                0.502634
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 663,
+            "y": 3355,
+            "width": 293,
+            "height": 349
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_3rd_floor_room_ANNEX 303": {
+      "roomId": "annex_building_third_floor_room_003",
+      "meshName": "room_annex_building_3rd_floor_room_ANNEX 303",
+      "floorIndex": 2,
+      "name": "ANNEX 303",
+      "number": "ANNEX 303",
+      "category": "other",
+      "bounds": {
+        "minX": -35.87304289644667,
+        "minY": -0.526800000000005,
+        "minZ": 7.0,
+        "maxX": -32.849412082263285,
+        "maxY": 10.221199999999996,
+        "maxZ": 10.5
+      },
+      "centroid": {
+        "x": -34.663590570773316,
+        "y": 5.921999999999995,
+        "z": 8.75
+      },
+      "polygon": [
+        [
+          -35.87304289644667,
+          10.221199999999996,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          -0.526800000000005,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -0.526800000000005,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          10.221199999999996,
+          7.0
+        ],
+        [
+          -35.87304289644667,
+          10.221199999999996,
+          7.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_third_floor_room_003",
+        "name": "ANNEX 303",
+        "original_label": "ANNEX 303",
+        "category": "other",
+        "building_id": "annex_building",
+        "floor_id": "third_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.080125,
+          "y": 0.448894,
+          "width": 0.035391,
+          "height": 0.053741,
+          "center_x": 0.09782,
+          "center_y": 0.475764,
+          "polygon": [
+            [
+              0.080125,
+              0.448894
+            ],
+            [
+              0.115515,
+              0.448894
+            ],
+            [
+              0.115515,
+              0.502634
+            ],
+            [
+              0.080125,
+              0.502634
+            ],
+            [
+              0.080125,
+              0.448894
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.080125,
+                0.448894
+              ],
+              [
+                0.115515,
+                0.448894
+              ],
+              [
+                0.115515,
+                0.502634
+              ],
+              [
+                0.080125,
+                0.502634
+              ],
+              [
+                0.080125,
+                0.448894
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 663,
+            "y": 2996,
+            "width": 293,
+            "height": 359
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    },
+    "room_annex_building_3rd_floor_room_vacant c.r.": {
+      "roomId": "annex_building_third_floor_room_004",
+      "meshName": "room_annex_building_3rd_floor_room_vacant c.r.",
+      "floorIndex": 2,
+      "name": "vacant c.r.",
+      "number": "vacant c.r.",
+      "category": "restroom",
+      "bounds": {
+        "minX": -35.14742276350348,
+        "minY": -25.395199999999996,
+        "minZ": 7.0,
+        "maxX": -32.849412082263285,
+        "maxY": -21.601599999999998,
+        "maxZ": 10.5
+      },
+      "centroid": {
+        "x": -34.228218491007404,
+        "y": -23.119039999999995,
+        "z": 8.75
+      },
+      "polygon": [
+        [
+          -35.14742276350348,
+          -21.601599999999998,
+          7.0
+        ],
+        [
+          -35.14742276350348,
+          -25.395199999999996,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -25.395199999999996,
+          7.0
+        ],
+        [
+          -32.849412082263285,
+          -21.601599999999998,
+          7.0
+        ],
+        [
+          -35.14742276350348,
+          -21.601599999999998,
+          7.0
+        ]
+      ],
+      "properties": {
+        "id": "annex_building_third_floor_room_004",
+        "name": "vacant c.r.",
+        "original_label": "vacant c.r.",
+        "category": "restroom",
+        "building_id": "annex_building",
+        "floor_id": "third_floor",
+        "geometry": {
+          "type": "Polygon",
+          "coordinate_space": "normalized_image",
+          "x": 0.088618,
+          "y": 0.608008,
+          "width": 0.026897,
+          "height": 0.018967,
+          "center_x": 0.102067,
+          "center_y": 0.617492,
+          "polygon": [
+            [
+              0.088618,
+              0.608008
+            ],
+            [
+              0.115515,
+              0.608008
+            ],
+            [
+              0.115515,
+              0.626976
+            ],
+            [
+              0.088618,
+              0.626976
+            ],
+            [
+              0.088618,
+              0.608008
+            ]
+          ],
+          "coordinates": [
+            [
+              [
+                0.088618,
+                0.608008
+              ],
+              [
+                0.115515,
+                0.608008
+              ],
+              [
+                0.115515,
+                0.626976
+              ],
+              [
+                0.088618,
+                0.626976
+              ],
+              [
+                0.088618,
+                0.608008
+              ]
+            ]
+          ],
+          "source_pixel_bbox": {
+            "x": 734,
+            "y": 4058,
+            "width": 223,
+            "height": 127
+          },
+          "approximate": true,
+          "geometry_confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    }
+  },
+  "floors": {
+    "0": {
+      "index": 0,
+      "name": "ground_floor",
+      "elevation": 0.0,
+      "height": 3.5,
+      "bounds": {
+        "minX": -21.67385387320866,
+        "minY": -25.395199999999996,
+        "maxX": -18.335642424444234,
+        "maxY": 55.532199999999996,
+        "minZ": 0.0,
+        "maxZ": 3.5
+      },
+      "nodeName": "floor_0",
+      "roomCount": 9
+    },
+    "1": {
+      "index": 1,
+      "name": "2nd_floor",
+      "elevation": 3.5,
+      "height": 3.5,
+      "bounds": {
+        "minX": -28.664601093014454,
+        "minY": -25.395199999999996,
+        "maxX": -18.335642424444234,
+        "maxY": 70.706,
+        "minZ": 3.5,
+        "maxZ": 7.0
+      },
+      "nodeName": "floor_1",
+      "roomCount": 8
+    },
+    "2": {
+      "index": 2,
+      "name": "3rd_floor",
+      "elevation": 7.0,
+      "height": 3.5,
+      "bounds": {
+        "minX": -35.87304289644667,
+        "minY": -25.395199999999996,
+        "maxX": -32.849412082263285,
+        "maxY": 10.221199999999996,
+        "minZ": 7.0,
+        "maxZ": 10.5
+      },
+      "nodeName": "floor_2",
+      "roomCount": 4
+    }
+  },
+  "bounds": {
+    "minX": -35.87304289644667,
+    "minY": -25.395199999999996,
+    "minZ": 0,
+    "maxX": -18.335642424444234,
+    "maxY": 70.706,
+    "maxZ": 10.5
+  },
+  "exportSettings": {
+    "includeInteriors": true,
+    "includeExteriors": true,
+    "compression": "draco",
+    "textureQuality": "medium"
+  }
+}

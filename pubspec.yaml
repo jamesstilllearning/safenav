@@ -21,12 +21,12 @@ dependencies:
   # Maps (OpenStreetMap via flutter_map)
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
-  flutter_map_tile_caching: ^9.0.1
+  flutter_map_tile_caching: ^9.1.4
   http: ^1.2.2
 
   # Google Maps & Location (kept for location services, not map display)
   geolocator: ^13.0.1
-  geocoding: ^3.0.0
+  geocoding: ^5.0.1
 
   # State Management
   flutter_riverpod: ^2.6.1
@@ -66,6 +66,11 @@ dependencies:
   lottie: ^3.1.2
   google_fonts: ^6.2.1
 
+  # WebView for 3D digital twin
+  webview_flutter: ^4.4.2
+  webview_flutter_android: ^3.16.1
+  webview_flutter_wkwebview: ^3.8.1
+
   # Code Generation (annotations)
   freezed_annotation: ^3.1.0
   json_annotation: ^4.12.0
@@ -88,3 +93,8 @@ flutter:
     - lib/src/features/map/data/campus_boundary.geojson
     - lib/src/features/map/data/campus_buildings.geojson
     - lib/src/features/map/data/campus_pathways.geojson
+    - assets/config/gcp_config.development.json
+    - assets/config/gcp_config.example.json
+    - assets/config/gcp_config.schema.json
+    - assets/threejs/digital_twin_scene.html
+    - assets/3d/

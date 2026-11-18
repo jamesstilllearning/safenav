@@ -1,0 +1,806 @@
+{
+  "project": {
+    "projectId": "safenav-cavite",
+    "projectNumber": "123456789012",
+    "projectName": "SAFENAV CAVITE",
+    "region": "us-central1",
+    "zone": "us-central1-a",
+    "organizationId": "123456789012",
+    "folderId": "987654321098",
+    "labels": {
+      "environment": "production",
+      "project": "safenav-cavite",
+      "team": "earist-capstone",
+      "managed-by": "terraform"
+    }
+  },
+  "firebase": {
+    "projectId": "safenav-cavite",
+    "appId": "1:123456789012:android:abcdef1234567890",
+    "apiKey": "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "authDomain": "safenav-cavite.firebaseapp.com",
+    "storageBucket": "safenav-cavite.appspot.com",
+    "messagingSenderId": "123456789012",
+    "measurementId": "G-XXXXXXXXXX",
+    "databaseUrl": "https://safenav-cavite-default-rtdb.firebaseio.com",
+    "tenantId": null,
+    "dynamicLinksDomain": "safenav-cavite.page.link"
+  },
+  "serviceAccount": {
+    "type": "service_account",
+    "projectId": "safenav-cavite",
+    "privateKeyId": "abcdef1234567890abcdef1234567890abcdef12",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD...\n-----END PRIVATE KEY-----\n",
+    "clientEmail": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+    "clientId": "123456789012345678901",
+    "authUri": "https://accounts.google.com/o/oauth2/auth",
+    "tokenUri": "https://oauth2.googleapis.com/token",
+    "authProviderX509CertUrl": "https://www.googleapis.com/oauth2/v1/certs",
+    "clientX509CertUrl": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-admin%40safenav-cavite.iam.gserviceaccount.com",
+    "universeDomain": "googleapis.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/firebase",
+      "https://www.googleapis.com/auth/datastore",
+      "https://www.googleapis.com/auth/devstorage.read_write"
+    ]
+  },
+  "storage": {
+    "buckets": {
+      "default": {
+        "name": "safenav-cavite.appspot.com",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": {
+          "purpose": "default",
+          "environment": "production"
+        },
+        "cors": [
+          {
+            "origin": ["https://safenav-cavite.web.app", "https://safenav-cavite-staging.web.app"],
+            "method": ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"],
+            "responseHeader": ["Content-Type", "Authorization", "x-goog-resumable"],
+            "maxAgeSeconds": 3600
+          }
+        ],
+        "lifecycleRules": [
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "NEARLINE" },
+            "condition": { "age": 30, "matchesStorageClass": ["STANDARD"] }
+          },
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "COLDLINE" },
+            "condition": { "age": 90, "matchesStorageClass": ["NEARLINE"] }
+          },
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "ARCHIVE" },
+            "condition": { "age": 365, "matchesStorageClass": ["COLDLINE"] }
+          }
+        ]
+      },
+      "uploads": {
+        "name": "safenav-cavite-uploads",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "uploads" },
+        "cors": [
+          {
+            "origin": ["https://safenav-cavite.web.app", "http://localhost:3000"],
+            "method": ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"],
+            "responseHeader": ["Content-Type", "Authorization"],
+            "maxAgeSeconds": 3600
+          }
+        ],
+        "lifecycleRules": [
+          {
+            "action": { "type": "Delete" },
+            "condition": { "age": 7, "matchesStorageClass": ["STANDARD"] }
+          }
+        ]
+      },
+      "exports": {
+        "name": "safenav-cavite-exports",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "exports" },
+        "cors": [],
+        "lifecycleRules": [
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "NEARLINE" },
+            "condition": { "age": 30 }
+          },
+          {
+            "action": { "type": "Delete" },
+            "condition": { "age": 365 }
+          }
+        ]
+      },
+      "backups": {
+        "name": "safenav-cavite-backups",
+        "location": "US-CENTRAL1",
+        "storageClass": "NEARLINE",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "backups" },
+        "cors": [],
+        "lifecycleRules": [
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "COLDLINE" },
+            "condition": { "age": 90 }
+          },
+          {
+            "action": { "type": "SetStorageClass", "storageClass": "ARCHIVE" },
+            "condition": { "age": 365 }
+          },
+          {
+            "action": { "type": "Delete" },
+            "condition": { "age": 2555 }
+          }
+        ]
+      },
+      "tiles": {
+        "name": "safenav-cavite-tiles",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": false,
+        "labels": { "purpose": "map-tiles" },
+        "cors": [
+          {
+            "origin": ["*"],
+            "method": ["GET", "HEAD"],
+            "responseHeader": ["Content-Type", "Cache-Control"],
+            "maxAgeSeconds": 86400
+          }
+        ],
+        "lifecycleRules": []
+      }
+    },
+    "defaultBucket": "safenav-cavite.appspot.com",
+    "cdnEnabled": true,
+    "uniformBucketLevelAccess": true,
+    "lifecycleRules": []
+  },
+  "firestore": {
+    "databaseId": "(default)",
+    "location": "nam5",
+    "indexes": [
+      {
+        "collectionGroup": "buildings",
+        "fields": [
+          { "fieldPath": "category", "order": "ASCENDING" },
+          { "fieldPath": "name", "order": "ASCENDING" }
+        ],
+        "queryScope": "COLLECTION"
+      },
+      {
+        "collectionGroup": "pathways",
+        "fields": [
+          { "fieldPath": "type", "order": "ASCENDING" },
+          { "fieldPath": "accessible", "order": "ASCENDING" }
+        ],
+        "queryScope": "COLLECTION"
+      },
+      {
+        "collectionGroup": "alerts",
+        "fields": [
+          { "fieldPath": "severity", "order": "DESCENDING" },
+          { "fieldPath": "createdAt", "order": "DESCENDING" }
+        ],
+        "queryScope": "COLLECTION_GROUP"
+      },
+      {
+        "collectionGroup": "evacuationRoutes",
+        "fields": [
+          { "fieldPath": "buildingId", "order": "ASCENDING" },
+          { "fieldPath": "exitId", "order": "ASCENDING" }
+        ],
+        "queryScope": "COLLECTION"
+      },
+      {
+        "collectionGroup": "userLocations",
+        "fields": [
+          { "fieldPath": "userId", "order": "ASCENDING" },
+          { "fieldPath": "timestamp", "order": "DESCENDING" }
+        ],
+        "queryScope": "COLLECTION_GROUP"
+      }
+    ],
+    "rules": "firestore.rules",
+    "ttlPolicies": [
+      {
+        "collectionGroup": "sosAlerts",
+        "fieldPath": "expiresAt",
+        "description": "Auto-delete SOS alerts after expiration"
+      },
+      {
+        "collectionGroup": "locationHistory",
+        "fieldPath": "expiresAt",
+        "description": "Auto-delete location history after 30 days"
+      },
+      {
+        "collectionGroup": "fcmTokens",
+        "fieldPath": "expiresAt",
+        "description": "Auto-delete stale FCM tokens"
+      }
+    ],
+    "settings": {
+      "ignoreUndefinedProperties": false,
+      "localCacheSizeBytes": 41943040
+    }
+  },
+  "functions": {
+    "region": "us-central1",
+    "runtime": "nodejs20",
+    "functions": {
+      "sendSosAlert": {
+        "name": "sendSosAlert",
+        "description": "Send SOS alert to security via FCM and email",
+        "entryPoint": "sendSosAlert",
+        "trigger": {
+          "type": "firestore",
+          "eventType": "providers/cloud.firestore/eventTypes/document.create",
+          "resource": "projects/safenav-cavite/databases/(default)/documents/sosAlerts/{alertId}"
+        },
+        "memoryMb": 256,
+        "timeoutSeconds": 60,
+        "minInstances": 0,
+        "maxInstances": 10,
+        "environmentVariables": {
+          "ALERT_EMAIL": "security@earist.edu.ph",
+          "FCM_TOPIC": "security-alerts"
+        },
+        "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+        "ingressSettings": "ALLOW_INTERNAL_ONLY"
+      },
+      "cleanupExpiredAlerts": {
+        "name": "cleanupExpiredAlerts",
+        "description": "Daily cleanup of expired SOS alerts",
+        "entryPoint": "cleanupExpiredAlerts",
+        "trigger": {
+          "type": "schedule",
+          "schedule": "0 2 * * *",
+          "timeZone": "Asia/Manila"
+        },
+        "memoryMb": 256,
+        "timeoutSeconds": 300,
+        "minInstances": 0,
+        "maxInstances": 1,
+        "environmentVariables": {},
+        "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+        "ingressSettings": "ALLOW_INTERNAL_ONLY"
+      },
+      "dailyAnalytics": {
+        "name": "dailyAnalytics",
+        "description": "Generate daily analytics reports",
+        "entryPoint": "dailyAnalytics",
+        "trigger": {
+          "type": "schedule",
+          "schedule": "0 3 * * *",
+          "timeZone": "Asia/Manila"
+        },
+        "memoryMb": 512,
+        "timeoutSeconds": 600,
+        "minInstances": 0,
+        "maxInstances": 1,
+        "environmentVariables": {
+          "BIGQUERY_DATASET": "safenav_analytics"
+        },
+        "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+        "ingressSettings": "ALLOW_INTERNAL_ONLY"
+      },
+      "registerFcmToken": {
+        "name": "registerFcmToken",
+        "description": "Register FCM token for push notifications",
+        "entryPoint": "registerFcmToken",
+        "trigger": {
+          "type": "https"
+        },
+        "memoryMb": 128,
+        "timeoutSeconds": 30,
+        "minInstances": 0,
+        "maxInstances": 100,
+        "environmentVariables": {},
+        "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+        "ingressSettings": "ALLOW_ALL"
+      },
+      "importCampusData": {
+        "name": "importCampusData",
+        "description": "Import campus GeoJSON data to Firestore",
+        "entryPoint": "importCampusData",
+        "trigger": {
+          "type": "https"
+        },
+        "memoryMb": 512,
+        "timeoutSeconds": 600,
+        "minInstances": 0,
+        "maxInstances": 5,
+        "environmentVariables": {
+          "GEOJSON_BUCKET": "safenav-cavite-exports"
+        },
+        "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+        "ingressSettings": "ALLOW_INTERNAL_ONLY"
+      }
+    },
+    "serviceAccount": "firebase-admin@safenav-cavite.iam.gserviceaccount.com",
+    "vpcConnector": null,
+    "minInstances": 0,
+    "maxInstances": 100,
+    "timeoutSeconds": 60,
+    "memoryMb": 256,
+    "environmentVariables": {
+      "FIREBASE_PROJECT_ID": "safenav-cavite",
+      "ENVIRONMENT": "production"
+    },
+    "ingressSettings": "ALLOW_INTERNAL_ONLY"
+  },
+  "monitoring": {
+    "enabled": true,
+    "logBucket": "safenav-cavite-logs",
+    "metrics": [
+      {
+        "name": "sos_alert_count",
+        "type": "CUMULATIVE",
+        "description": "Total number of SOS alerts triggered",
+        "labels": ["severity", "building"],
+        "unit": "1"
+      },
+      {
+        "name": "active_navigation_sessions",
+        "type": "GAUGE",
+        "description": "Currently active navigation sessions",
+        "labels": ["user_role"],
+        "unit": "1"
+      },
+      {
+        "name": "api_request_latency",
+        "type": "GAUGE",
+        "description": "API request latency in milliseconds",
+        "labels": ["endpoint", "method"],
+        "unit": "ms"
+      },
+      {
+        "name": "firestore_read_operations",
+        "type": "CUMULATIVE",
+        "description": "Firestore read operations count",
+        "labels": ["collection", "operation"],
+        "unit": "1"
+      },
+      {
+        "name": "fcm_notification_sent",
+        "type": "CUMULATIVE",
+        "description": "FCM notifications sent count",
+        "labels": ["topic", "status"],
+        "unit": "1"
+      },
+      {
+        "name": "map_tile_cache_hit_rate",
+        "type": "GAUGE",
+        "description": "Map tile cache hit rate percentage",
+        "labels": ["zoom_level"],
+        "unit": "%"
+      }
+    ],
+    "alerting": {
+      "enabled": true,
+      "notificationChannels": [
+        {
+          "type": "email",
+          "displayName": "Security Team Email",
+          "description": "Email notifications to security team",
+          "labels": { "email_address": "security@earist.edu.ph" }
+        },
+        {
+          "type": "email",
+          "displayName": "Admin Team Email",
+          "description": "Email notifications to admin team",
+          "labels": { "email_address": "admin@earist.edu.ph" }
+        },
+        {
+          "type": "webhook",
+          "displayName": "Slack Webhook",
+          "description": "Send alerts to Slack channel",
+          "labels": { "url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL_HERE" }
+        }
+      ],
+      "policies": [
+        {
+          "displayName": "High SOS Alert Rate",
+          "description": "Alert when SOS alerts exceed threshold",
+          "conditions": [
+            {
+              "displayName": "SOS alerts per minute > 10",
+              "conditionThreshold": {
+                "filter": "metric.type=\"custom.googleapis.com/sos_alert_count\"",
+                "comparison": "COMPARISON_GT",
+                "thresholdValue": 10,
+                "duration": "60s",
+                "aggregations": [
+                  {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_RATE",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": []
+                  }
+                ]
+              }
+            }
+          ],
+          "notificationChannels": ["security-team-email", "slack-webhook"],
+          "enabled": true
+        },
+        {
+          "displayName": "High API Latency",
+          "description": "Alert when API latency exceeds 5 seconds",
+          "conditions": [
+            {
+              "displayName": "API latency > 5s",
+              "conditionThreshold": {
+                "filter": "metric.type=\"custom.googleapis.com/api_request_latency\"",
+                "comparison": "COMPARISON_GT",
+                "thresholdValue": 5000,
+                "duration": "300s",
+                "aggregations": [
+                  {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_PERCENTILE_95",
+                    "crossSeriesReducer": "REDUCE_MEAN",
+                    "groupByFields": ["endpoint"]
+                  }
+                ]
+              }
+            }
+          ],
+          "notificationChannels": ["admin-team-email"],
+          "enabled": true
+        },
+        {
+          "displayName": "Firestore Read Quota Exhaustion",
+          "description": "Alert when Firestore reads approach daily quota",
+          "conditions": [
+            {
+              "displayName": "Reads > 40000/min",
+              "conditionThreshold": {
+                "filter": "metric.type=\"custom.googleapis.com/firestore_read_operations\"",
+                "comparison": "COMPARISON_GT",
+                "thresholdValue": 40000,
+                "duration": "60s",
+                "aggregations": [
+                  {
+                    "alignmentPeriod": "60s",
+                    "perSeriesAligner": "ALIGN_RATE",
+                    "crossSeriesReducer": "REDUCE_SUM",
+                    "groupByFields": []
+                  }
+                ]
+              }
+            }
+          ],
+          "notificationChannels": ["admin-team-email"],
+          "enabled": true
+        }
+      ]
+    },
+    "tracing": {
+      "enabled": true,
+      "samplingRate": 0.1
+    }
+  },
+  "cloudRun": {
+    "region": "us-central1",
+    "services": {
+      "api-gateway": {
+        "name": "api-gateway",
+        "image": "gcr.io/safenav-cavite/api-gateway:latest",
+        "region": "us-central1",
+        "memory": "1Gi",
+        "cpu": "1",
+        "minInstances": 1,
+        "maxInstances": 100,
+        "concurrency": 80,
+        "timeout": "300s",
+        "serviceAccount": "api-gateway@safenav-cavite.iam.gserviceaccount.com",
+        "vpcConnector": null,
+        "ingress": "all",
+        "environmentVariables": {
+          "FIREBASE_PROJECT_ID": "safenav-cavite",
+          "ENVIRONMENT": "production",
+          "LOG_LEVEL": "info"
+        },
+        "labels": {
+          "service": "api-gateway",
+          "team": "earist-capstone"
+        },
+        "annotations": {
+          "run.googleapis.com/launch-stage": "GA"
+        }
+      },
+      "tile-server": {
+        "name": "tile-server",
+        "image": "gcr.io/safenav-cavite/tile-server:latest",
+        "region": "us-central1",
+        "memory": "2Gi",
+        "cpu": "2",
+        "minInstances": 2,
+        "maxInstances": 50,
+        "concurrency": 100,
+        "timeout": "60s",
+        "serviceAccount": "tile-server@safenav-cavite.iam.gserviceaccount.com",
+        "vpcConnector": null,
+        "ingress": "all",
+        "environmentVariables": {
+          "TILE_BUCKET": "safenav-cavite-tiles",
+          "CACHE_TTL": "86400"
+        },
+        "labels": {
+          "service": "tile-server",
+          "team": "earist-capstone"
+        },
+        "annotations": {}
+      }
+    },
+    "defaultServiceAccount": "cloudrun-default@safenav-cavite.iam.gserviceaccount.com"
+  },
+  "iam": {
+    "roles": [
+      {
+        "title": "SAFENAV Admin",
+        "description": "Custom role for SAFENAV administrators",
+        "stage": "GA",
+        "includedPermissions": [
+          "datastore.documents.list",
+          "datastore.documents.get",
+          "datastore.documents.create",
+          "datastore.documents.update",
+          "datastore.documents.delete",
+          "storage.objects.list",
+          "storage.objects.get",
+          "storage.objects.create",
+          "storage.objects.delete",
+          "cloudfunctions.functions.invoke",
+          "run.services.invoke",
+          "monitoring.alertPolicies.get",
+          "monitoring.alertPolicies.list",
+          "logging.logEntries.list"
+        ]
+      },
+      {
+        "title": "SAFENAV Security",
+        "description": "Custom role for SAFENAV security personnel",
+        "stage": "GA",
+        "includedPermissions": [
+          "datastore.documents.list",
+          "datastore.documents.get",
+          "datastore.documents.create",
+          "datastore.documents.update",
+          "storage.objects.list",
+          "storage.objects.get",
+          "cloudfunctions.functions.invoke",
+          "run.services.invoke",
+          "monitoring.alertPolicies.get",
+          "monitoring.alertPolicies.list",
+          "logging.logEntries.list"
+        ]
+      }
+    ],
+    "bindings": [
+      {
+        "role": "projects/safenav-cavite/roles/safenavAdmin",
+        "members": [
+          "user:admin@earist.edu.ph",
+          "serviceAccount:firebase-admin@safenav-cavite.iam.gserviceaccount.com"
+        ],
+        "condition": null
+      },
+      {
+        "role": "projects/safenav-cavite/roles/safenavSecurity",
+        "members": [
+          "group:security@earist.edu.ph",
+          "serviceAccount:api-gateway@safenav-cavite.iam.gserviceaccount.com"
+        ],
+        "condition": null
+      },
+      {
+        "role": "roles/datastore.viewer",
+        "members": [
+          "serviceAccount:tile-server@safenav-cavite.iam.gserviceaccount.com"
+        ],
+        "condition": {
+          "title": "Tile server read access",
+          "description": "Tile server can only read building and pathway data",
+          "expression": "resource.name.startsWith('projects/safenav-cavite/databases/(default)/documents/buildings/') || resource.name.startsWith('projects/safenav-cavite/databases/(default)/documents/pathways/')"
+        }
+      },
+      {
+        "role": "roles/storage.objectViewer",
+        "members": [
+          "allUsers"
+        ],
+        "condition": {
+          "title": "Public tile access",
+          "description": "Public read access to map tiles bucket",
+          "expression": "resource.name.startsWith('projects/_/buckets/safenav-cavite-tiles/objects/')"
+        }
+      }
+    ],
+    "serviceAccounts": [
+      {
+        "accountId": "firebase-admin",
+        "displayName": "Firebase Admin SDK",
+        "description": "Service account for Firebase Admin SDK operations",
+        "roles": [
+          "roles/datastore.user",
+          "roles/storage.admin",
+          "roles/firebaseauth.admin",
+          "roles/cloudmessaging.admin"
+        ],
+        "disabled": false
+      },
+      {
+        "accountId": "api-gateway",
+        "displayName": "API Gateway",
+        "description": "Service account for Cloud Run API Gateway",
+        "roles": [
+          "roles/datastore.user",
+          "roles/storage.objectViewer",
+          "roles/cloudfunctions.invoker"
+        ],
+        "disabled": false
+      },
+      {
+        "accountId": "tile-server",
+        "displayName": "Tile Server",
+        "description": "Service account for map tile server",
+        "roles": [
+          "roles/datastore.viewer",
+          "roles/storage.objectViewer"
+        ],
+        "disabled": false
+      },
+      {
+        "accountId": "cloudrun-default",
+        "displayName": "Cloud Run Default",
+        "description": "Default service account for Cloud Run services",
+        "roles": [],
+        "disabled": false
+      }
+    ]
+  },
+  "networking": {
+    "vpcName": "safenav-vpc",
+    "subnets": [
+      {
+        "name": "safenav-subnet",
+        "region": "us-central1",
+        "ipCidrRange": "10.0.0.0/24",
+        "purpose": "PRIVATE",
+        "privateIpGoogleAccess": true
+      }
+    ],
+    "firewallRules": [
+      {
+        "name": "allow-internal-https",
+        "description": "Allow internal HTTPS traffic",
+        "direction": "INGRESS",
+        "action": "ALLOW",
+        "priority": 1000,
+        "sourceRanges": ["10.0.0.0/24"],
+        "destinationRanges": [],
+        "allowed": [
+          { "IPProtocol": "tcp", "ports": ["443", "8443"] }
+        ],
+        "denied": [],
+        "targetTags": ["safenav-internal"],
+        "sourceTags": []
+      },
+      {
+        "name": "allow-health-checks",
+        "description": "Allow GCP health checks",
+        "direction": "INGRESS",
+        "action": "ALLOW",
+        "priority": 1000,
+        "sourceRanges": ["130.211.0.0/22", "35.191.0.0/16"],
+        "destinationRanges": [],
+        "allowed": [
+          { "IPProtocol": "tcp", "ports": ["8080", "8081", "8082"] }
+        ],
+        "denied": [],
+        "targetTags": ["safenav-health-check"],
+        "sourceTags": []
+      },
+      {
+        "name": "deny-all-ingress",
+        "description": "Deny all other ingress traffic",
+        "direction": "INGRESS",
+        "action": "DENY",
+        "priority": 65534,
+        "sourceRanges": ["0.0.0.0/0"],
+        "destinationRanges": [],
+        "allowed": [],
+        "denied": [
+          { "IPProtocol": "all" }
+        ],
+        "targetTags": ["safenav-internal"],
+        "sourceTags": []
+      }
+    ],
+    "cloudNat": {
+      "enabled": true,
+      "region": "us-central1"
+    }
+  },
+  "secrets": {
+    "enabled": true,
+    "secrets": [
+      {
+        "secretId": "firebase-api-key",
+        "description": "Firebase Web API Key",
+        "replication": {
+          "type": "AUTOMATIC"
+        },
+        "labels": { "service": "firebase", "environment": "production" },
+        "annotations": { "rotation": "manual" },
+        "ttl": null,
+        "rotationPeriod": "7776000s",
+        "nextRotationTime": "2026-02-15T00:00:00Z"
+      },
+      {
+        "secretId": "fcm-server-key",
+        "description": "FCM Server Key for push notifications",
+        "replication": {
+          "type": "AUTOMATIC"
+        },
+        "labels": { "service": "fcm", "environment": "production" },
+        "annotations": { "rotation": "manual" },
+        "ttl": null,
+        "rotationPeriod": "7776000s",
+        "nextRotationTime": "2026-02-15T00:00:00Z"
+      },
+      {
+        "secretId": "slack-webhook-url",
+        "description": "Slack webhook URL for alerts",
+        "replication": {
+          "type": "AUTOMATIC"
+        },
+        "labels": { "service": "alerting", "environment": "production" },
+        "annotations": { "rotation": "manual" },
+        "ttl": null,
+        "rotationPeriod": "7776000s",
+        "nextRotationTime": "2026-02-15T00:00:00Z"
+      },
+      {
+        "secretId": "database-url",
+        "description": "Firestore/Realtime Database URL",
+        "replication": {
+          "type": "AUTOMATIC"
+        },
+        "labels": { "service": "database", "environment": "production" },
+        "annotations": { "rotation": "manual" },
+        "ttl": null,
+        "rotationPeriod": "7776000s",
+        "nextRotationTime": "2026-02-15T00:00:00Z"
+      },
+      {
+        "secretId": "service-account-key",
+        "description": "Firebase Admin SDK Service Account Key",
+        "replication": {
+          "type": "AUTOMATIC"
+        },
+        "labels": { "service": "firebase-admin", "environment": "production" },
+        "annotations": { "rotation": "automatic" },
+        "ttl": null,
+        "rotationPeriod": "2592000s",
+        "nextRotationTime": "2026-01-15T00:00:00Z"
+      }
+    ],
+    "rotationPolicy": {
+      "rotationPeriod": "7776000s"
+    }
+  }
+}

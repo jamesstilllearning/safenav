@@ -9,6 +9,7 @@ import 'package:flutter/material.dart'
 import 'package:flutter_map/flutter_map.dart'
     hide LatLngBounds; // Hide to avoid conflict with campus_boundary
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../../data/models/campus_boundary.dart';
@@ -16,6 +17,7 @@ import '../../data/models/campus_building.dart';
 import '../../data/models/campus_pathway.dart';
 import '../../../navigation/data/models/navigation_models.dart';
 import '../../../navigation/presentation/providers/navigation_providers.dart';
+import '../../../../core/router/app_routes.dart';
 import '../../../navigation/presentation/providers/navigation_controller.dart';
 import '../providers/map_providers.dart';
 import '../../../../shared/widgets/widgets.dart';
@@ -178,10 +180,13 @@ class _MapScreenState extends ConsumerState<MapScreen> {
 
           // Top Toolbar
           _MapToolbar(
+            onToggleLayers: _showLayerOptions,
+          ),
+
+          // Zoom Controls (lower-right)
+          _MapZoomControls(
             onZoomIn: () => ref.read(mapViewStateProvider.notifier).zoomIn(),
             onZoomOut: () => ref.read(mapViewStateProvider.notifier).zoomOut(),
-            onCenterUser: _centerOnUser,
-            onToggleLayers: _showLayerOptions,
           ),
 
           // Bottom Info Bar (when building/pathway selected)
@@ -398,15 +403,9 @@ class _UserLocationLayer extends ConsumerWidget {
 
 /// Map toolbar at top
 class _MapToolbar extends ConsumerWidget {
-  final VoidCallback onZoomIn;
-  final VoidCallback onZoomOut;
-  final VoidCallback onCenterUser;
   final VoidCallback onToggleLayers;
 
   const _MapToolbar({
-    required this.onZoomIn,
-    required this.onZoomOut,
-    required this.onCenterUser,
     required this.onToggleLayers,
   });
 
@@ -477,36 +476,57 @@ class _MapToolbar extends ConsumerWidget {
             onPressed: onToggleLayers,
             tooltip: 'Map Layers',
           ),
-          const SizedBox(width: 8),
-          // Zoom controls
-          AppCard(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-            elevation: 2,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                AppIconButton(
-                  icon: Icons.remove,
-                  size: IconButtonSize.small,
-                  onPressed: onZoomOut,
-                  tooltip: 'Zoom Out',
-                ),
-                Container(
-                  width: 1,
-                  height: 24,
-                  color: colorScheme.outlineVariant,
-                  margin: const EdgeInsets.symmetric(horizontal: 4),
-                ),
-                AppIconButton(
-                  icon: Icons.add,
-                  size: IconButtonSize.small,
-                  onPressed: onZoomIn,
-                  tooltip: 'Zoom In',
-                ),
-              ],
-            ),
-          ),
         ],
+      ),
+    );
+  }
+}
+
+/// Zoom controls positioned at lower-right of map
+class _MapZoomControls extends ConsumerWidget {
+  final VoidCallback onZoomIn;
+  final VoidCallback onZoomOut;
+
+  const _MapZoomControls({
+    required this.onZoomIn,
+    required this.onZoomOut,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Positioned(
+      right: 16,
+      bottom: _kBottomNavigationBarHeight + 16 + 56 + 12, // Above FAB: bottom nav (80) + margin (16) + FAB height (56) + spacing (12)
+      child: AppCard(
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+        elevation: 3,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AppIconButton(
+              icon: Icons.add,
+              size: IconButtonSize.medium,
+              onPressed: onZoomIn,
+              tooltip: 'Zoom In',
+              semanticLabel: 'Zoom in',
+            ),
+            Container(
+              width: 24,
+              height: 1,
+              color: colorScheme.outlineVariant,
+              margin: const EdgeInsets.symmetric(vertical: 4),
+            ),
+            AppIconButton(
+              icon: Icons.remove,
+              size: IconButtonSize.medium,
+              onPressed: onZoomOut,
+              tooltip: 'Zoom Out',
+              semanticLabel: 'Zoom out',
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -1026,7 +1046,7 @@ class _SelectionInfoBar extends ConsumerWidget {
   }
 }
 
-/// Floating action button for centering on user
+/// Floating action button for centering on user (icon only)
 class _MapFAB extends StatelessWidget {
   final VoidCallback onCenterUser;
 
@@ -1036,15 +1056,15 @@ class _MapFAB extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return FloatingActionButton.extended(
+    return FloatingActionButton(
       onPressed: onCenterUser,
       heroTag: 'map_center_user',
-      icon: const Icon(Icons.my_location),
-      label: const Text('My Location'),
       backgroundColor: colorScheme.primary,
       foregroundColor: colorScheme.onPrimary,
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      tooltip: 'My Location',
+      child: const Icon(Icons.my_location),
     );
   }
 }
@@ -1221,10 +1241,11 @@ class _BuildingBottomSheet extends ConsumerWidget {
                   Expanded(
                     child: AppFilledButton(
                       onPressed: () {
-                        // TODO: Show more details
+                        Navigator.pop(context);
+                        context.push(AppRoutes.digitalTwinRoute(building.id));
                       },
-                      label: 'Details',
-                      icon: Icons.info_outline,
+                      label: '3D View',
+                      icon: Icons.view_in_ar,
                       iconPosition: IconPosition.leading,
                       size: ButtonSize.large,
                     ),

@@ -71,6 +71,10 @@ CMakeFiles/
 # .env
 # .env.local
 
+# Production configuration files (contain secrets, should be loaded from Secret Manager/env vars)
+assets/config/gcp_config.production.json
+assets/config/gcp_config.json
+
 # IDE temporary files
 *.swp
 *.swo

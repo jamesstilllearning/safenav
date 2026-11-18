@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.example.safenav"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -27,7 +27,7 @@ android {
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION
-        // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
+        // is added automatically by Flutter. (https://flutter.dev/to/review-gradle-config.flutter)
         // You can force using the value of versionCode by specifying the `-P force-version-code-ignoring-abi=true`
         // flag during build.
         versionCode = flutter.versionCode
@@ -56,4 +56,18 @@ flutter {
 dependencies {
     // Core library desugaring for Java 8+ APIs (required by flutter_local_notifications)
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+}
+
+// Force older versions of transitive dependencies that have compileSdk requirements
+// incompatible with objectbox_flutter_libs 4.3.1 (compiled with compileSdk 31)
+configurations.all {
+    resolutionStrategy {
+        // androidx.arch.core:core-runtime 2.2.0 requires compileSdk 33+, force 2.1.0
+        force("androidx.arch.core:core-runtime:2.1.0")
+        // androidx.window:window 1.2.0+ requires compileSdk 33+, force 1.1.0
+        force("androidx.window:window:1.1.0")
+        force("androidx.window:window-core:1.1.0")
+        force("androidx.window:window-java:1.1.0")
+        force("androidx.window:window-runtime:1.1.0")
+    }
 }

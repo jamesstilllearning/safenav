@@ -156,7 +156,8 @@ class LocationService {
   /// Gets address from coordinates (reverse geocoding)
   Future<Result<String>> getAddressFromCoordinates(double latitude, double longitude) async {
     try {
-      final placemarks = await placemarkFromCoordinates(latitude, longitude);
+      final geocoding = Geocoding();
+      final placemarks = await geocoding.placemarkFromCoordinates(latitude, longitude);
       if (placemarks.isEmpty) {
         return FailureResult(LocationFailure(
           message: 'No address found for coordinates',
@@ -184,7 +185,8 @@ class LocationService {
   /// Gets coordinates from address (forward geocoding)
   Future<Result<Position>> getCoordinatesFromAddress(String address) async {
     try {
-      final locations = await locationFromAddress(address);
+      final geocoding = Geocoding();
+      final locations = await geocoding.locationFromAddress(address);
       if (locations.isEmpty) {
         return FailureResult(LocationFailure(
           message: 'No coordinates found for address',

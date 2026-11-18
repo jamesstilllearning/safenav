@@ -14,6 +14,7 @@ import '../../features/navigation/presentation/screens/navigation_screen.dart';
 import '../../features/emergency/presentation/screens/emergency_screen.dart';
 import '../../features/alerts/presentation/screens/alerts_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/digital_twin/presentation/screens/digital_twin_screen.dart';
 import '../../shared/models/user.dart';
 import '../services/auth_service.dart';
 import '../services/connectivity_service.dart';
@@ -220,6 +221,13 @@ List<RouteBase> _buildRoutes() {
                   path: 'building/:buildingId',
                   name: 'building-detail',
                   builder: (context, state) => _BuildingDetailScreen(
+                    buildingId: state.pathParameters['buildingId']!,
+                  ),
+                ),
+                GoRoute(
+                  path: 'digital-twin/:buildingId',
+                  name: 'digital-twin',
+                  builder: (context, state) => DigitalTwinScreen(
                     buildingId: state.pathParameters['buildingId']!,
                   ),
                 ),

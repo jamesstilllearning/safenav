@@ -8,3 +8,5 @@ export 'location.dart';
 export 'evacuation_graph.dart';
 export 'alert.dart';
 export 'notification.dart';
+export 'coordinate.dart';
+export 'gcp_config.dart';

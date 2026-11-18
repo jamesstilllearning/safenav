@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'src/core/firebase/firebase_init.dart';
 import 'src/core/router/app_router.dart';
 import 'src/core/theme/app_theme.dart';
+import 'src/core/theme/theme_provider.dart';
 
 /// Main application widget
 class SafeNavApp extends ConsumerWidget {
@@ -20,6 +21,13 @@ class SafeNavApp extends ConsumerWidget {
     debugPrint('[MAIN] SafeNavApp.build: Watching firebaseInitProvider...');
     final firebaseInit = ref.watch(firebaseInitProvider);
 
+    // Load theme preferences
+    ref.listen(themeControllerProvider, (previous, next) {
+      if (previous is! ThemeState || previous.themeMode != next.themeMode) {
+        debugPrint('[MAIN] Theme mode changed: ${next.themeMode}');
+      }
+    });
+
     return firebaseInit.when(
       data: (_) {
         debugPrint('[MAIN] SafeNavApp.build: firebaseInitProvider completed, watching routerProvider...');
@@ -27,12 +35,16 @@ class SafeNavApp extends ConsumerWidget {
         final router = ref.watch(routerProvider);
         debugPrint('[MAIN] SafeNavApp.build: routerProvider completed, building MaterialApp.router');
 
+        // Watch theme mode for dynamic theme switching
+        final themeMode = ref.watch(effectiveThemeModeProvider);
+        final isEmergency = ref.watch(isEmergencyModeProvider);
+
         return MaterialApp.router(
           title: 'SAFENAV CAVITE',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: ThemeMode.system,
+          darkTheme: isEmergency ? AppTheme.emergencyTheme : AppTheme.darkTheme,
+          themeMode: themeMode,
           routerConfig: router,
           builder: (context, child) => _AppBuilder(child: child),
         );
@@ -50,13 +62,16 @@ class SafeNavApp extends ConsumerWidget {
 }
 
 /// Wrapper for app-level providers and initialization
-class _AppBuilder extends StatelessWidget {
+class _AppBuilder extends ConsumerWidget {
   const _AppBuilder({required this.child});
 
   final Widget? child;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Ensure theme is loaded on first build
+    ref.listen(themeControllerProvider, (_, __) {});
+
     // Initialize services that need context
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(
@@ -71,9 +86,9 @@ class _AppBuilder extends StatelessWidget {
 }
 
 /// Loading screen while Firebase initializes
-class _LoadingApp extends StatelessWidget {
+class _LoadingApp extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'SAFENAV CAVITE',
       debugShowCheckedModeBanner: false,
@@ -104,13 +119,13 @@ class _LoadingApp extends StatelessWidget {
 }
 
 /// Error screen for initialization failures
-class _ErrorApp extends StatelessWidget {
+class _ErrorApp extends ConsumerWidget {
   const _ErrorApp({required this.error});
 
   final Object error;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'SAFENAV CAVITE',
       debugShowCheckedModeBanner: false,

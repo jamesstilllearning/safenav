@@ -1,0 +1,145 @@
+{
+  "project": {
+    "projectId": "safenav-cavite-dev",
+    "projectNumber": "123456789012",
+    "projectName": "SAFENAV CAVITE Development",
+    "region": "us-central1",
+    "zone": "us-central1-a",
+    "labels": {
+      "environment": "development",
+      "project": "safenav-cavite-dev"
+    }
+  },
+  "firebase": {
+    "projectId": "safenav-cavite-dev",
+    "appId": "1:123456789012:android:devabcdef1234567890",
+    "apiKey": "YOUR_DEV_FIREBASE_API_KEY",
+    "authDomain": "safenav-cavite-dev.firebaseapp.com",
+    "storageBucket": "safenav-cavite-dev.appspot.com",
+    "messagingSenderId": "123456789012",
+    "measurementId": "G-DEVXXXXXXX"
+  },
+  "serviceAccount": {
+    "type": "service_account",
+    "projectId": "safenav-cavite-dev",
+    "privateKeyId": "YOUR_DEV_PRIVATE_KEY_ID",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nYOUR_DEV_PRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+    "clientEmail": "firebase-admin@safenav-cavite-dev.iam.gserviceaccount.com",
+    "clientId": "123456789012345678901",
+    "authUri": "https://accounts.google.com/o/oauth2/auth",
+    "tokenUri": "https://oauth2.googleapis.com/token",
+    "authProviderX509CertUrl": "https://www.googleapis.com/oauth2/v1/certs",
+    "clientX509CertUrl": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-admin%40safenav-cavite-dev.iam.gserviceaccount.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/firebase",
+      "https://www.googleapis.com/auth/datastore",
+      "https://www.googleapis.com/auth/devstorage.read_write"
+    ]
+  },
+  "storage": {
+    "buckets": {
+      "default": {
+        "name": "safenav-cavite-dev.appspot.com",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "default", "environment": "development" }
+      },
+      "uploads": {
+        "name": "safenav-cavite-dev-uploads",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "uploads", "environment": "development" }
+      },
+      "exports": {
+        "name": "safenav-cavite-dev-exports",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "exports", "environment": "development" }
+      },
+      "backups": {
+        "name": "safenav-cavite-dev-backups",
+        "location": "US-CENTRAL1",
+        "storageClass": "STANDARD",
+        "publicAccessPrevention": "enforced",
+        "versioning": true,
+        "labels": { "purpose": "backups", "environment": "development" }
+      }
+    },
+    "defaultBucket": "safenav-cavite-dev.appspot.com",
+    "cdnEnabled": false,
+    "uniformBucketLevelAccess": true
+  },
+  "firestore": {
+    "databaseId": "(default)",
+    "location": "nam5",
+    "indexes": [],
+    "rules": "firestore.rules",
+    "ttlPolicies": [],
+    "settings": {
+      "ignoreUndefinedProperties": false,
+      "localCacheSizeBytes": 41943040
+    }
+  },
+  "functions": {
+    "region": "us-central1",
+    "runtime": "nodejs20",
+    "functions": {},
+    "serviceAccount": "firebase-admin@safenav-cavite-dev.iam.gserviceaccount.com",
+    "minInstances": 0,
+    "maxInstances": 10,
+    "timeoutSeconds": 60,
+    "memoryMb": 256,
+    "environmentVariables": {
+      "FIREBASE_PROJECT_ID": "safenav-cavite-dev",
+      "ENVIRONMENT": "development"
+    },
+    "ingressSettings": "ALLOW_ALL"
+  },
+  "monitoring": {
+    "enabled": false,
+    "logBucket": "safenav-cavite-dev-logs",
+    "metrics": [],
+    "alerting": {
+      "enabled": false,
+      "notificationChannels": [],
+      "policies": []
+    },
+    "tracing": {
+      "enabled": true,
+      "samplingRate": 1.0
+    }
+  },
+  "cloudRun": {
+    "region": "us-central1",
+    "services": {},
+    "defaultServiceAccount": "cloudrun-default@safenav-cavite-dev.iam.gserviceaccount.com"
+  },
+  "iam": {
+    "roles": [],
+    "bindings": [],
+    "serviceAccounts": []
+  },
+  "networking": {
+    "vpcName": "safenav-vpc-dev",
+    "subnets": [],
+    "firewallRules": [],
+    "cloudNat": {
+      "enabled": false,
+      "region": "us-central1"
+    }
+  },
+  "secrets": {
+    "enabled": true,
+    "secrets": [],
+    "rotationPolicy": {
+      "rotationPeriod": "7776000s"
+    }
+  }
+}
