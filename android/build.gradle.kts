@@ -1,24 +1,10 @@
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+// Top-level build file for SAFENAV CAVITE
+// This file is required for the Flutter tool to detect Gradle usage
+
+plugins {
+    // No plugins applied at root level - plugin management is in settings.gradle.kts
 }
 
-val newBuildDir: Directory =
-    rootProject.layout.buildDirectory
-        .dir("../../build")
-        .get()
-rootProject.layout.buildDirectory.value(newBuildDir)
-
-subprojects {
-    val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
-    project.layout.buildDirectory.value(newSubprojectBuildDir)
-}
-subprojects {
-    project.evaluationDependsOn(":app")
-}
-
-tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
-}
+// This file exists to satisfy the Flutter tool's isUsingGradle check
+// which looks for build.gradle or build.gradle.kts in the android directory.
+// The actual build configuration is in settings.gradle.kts and app/build.gradle.kts.

@@ -45,7 +45,7 @@ class DevConfig {
   /// - Users must log in to access protected routes
   ///
   /// ⚠️ CANNOT BE ENABLED IN PRODUCTION - guarded by kReleaseMode check
-  static const bool enableAuthBypass = false;
+  static const bool enableAuthBypass = true;
 
   /// Mock user ID for development bypass
   static const String mockUserId = 'dev-user-001';
