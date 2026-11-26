@@ -13,6 +13,7 @@ import '../../features/onboarding/onboarding.dart';
 import '../../features/map/presentation/screens/map_screen.dart';
 import '../../features/navigation/presentation/screens/navigation_screen.dart';
 import '../../features/emergency/presentation/screens/emergency_screen.dart';
+import '../../features/emergency/presentation/screens/evacuation_route_screen.dart';
 import '../../features/alerts/presentation/screens/alerts_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/digital_twin/presentation/screens/digital_twin_screen.dart';
@@ -127,7 +128,7 @@ List<RouteBase> _buildRoutes() {
                 GoRoute(
                   path: 'evacuation',
                   name: 'evacuation',
-                  builder: (context, state) => const _EvacuationScreen(),
+                  builder: (context, state) => const EvacuationRouteScreen(),
                 ),
                 GoRoute(
                   path: 'evacuation/:routeId',
@@ -152,14 +153,14 @@ List<RouteBase> _buildRoutes() {
                 GoRoute(
                   path: ':alertId',
                   name: 'alert-detail',
-                  builder: (context, state) => _AlertDetailScreen(
+                  builder: (context, state) => AlertDetailScreen(
                     alertId: state.pathParameters['alertId']!,
                   ),
                 ),
                 GoRoute(
                   path: 'create',
                   name: 'create-alert',
-                  builder: (context, state) => const _CreateAlertScreen(),
+                  builder: (context, state) => const CreateAlertScreen(),
                 ),
               ],
             ),
@@ -660,22 +661,6 @@ class _NavigationDetailScreen extends StatelessWidget {
   }
 }
 
-class _EvacuationScreen extends StatelessWidget {
-  const _EvacuationScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Evacuation Routes'),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
-      ),
-      body: const Center(child: Text('Evacuation Screen - TODO')),
-    );
-  }
-}
-
 class _EvacuationDetailScreen extends StatelessWidget {
   const _EvacuationDetailScreen({required this.routeId});
 
@@ -811,30 +796,3 @@ class _ErrorScreen extends StatelessWidget {
   }
 }
 
-/// Create alert placeholder screen
-class _CreateAlertScreen extends StatelessWidget {
-  const _CreateAlertScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Create Alert')),
-      body: const Center(child: Text('Create Alert - TODO')),
-    );
-  }
-}
-
-/// Alert detail placeholder screen
-class _AlertDetailScreen extends StatelessWidget {
-  const _AlertDetailScreen({required this.alertId});
-
-  final String alertId;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Alert: $alertId')),
-      body: Center(child: Text('Alert Detail: $alertId - TODO')),
-    );
-  }
-}

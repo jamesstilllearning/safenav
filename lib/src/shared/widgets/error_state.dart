@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// Full-screen error state
 class ErrorState extends StatelessWidget {
   const ErrorState({
@@ -19,7 +21,7 @@ class ErrorState extends StatelessWidget {
     this.iconColor,
     this.titleStyle,
     this.messageStyle,
-    this.padding = const EdgeInsets.all(24),
+    this.padding = const EdgeInsets.all(AppSpacing.lg),
     this.semanticLabel,
     this.excludeFromSemantics = false,
   });
@@ -62,14 +64,14 @@ class ErrorState extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ExcludeSemantics(
-              child: Icon(icon ?? Icons.error_outline, size: 64, color: effectiveIconColor),
+              child: Icon(icon ?? Icons.error_outline, size: AppSpacing.xxxl, color: effectiveIconColor),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.md),
             if (title != null)
               Text(title!, style: effectiveTitleStyle, textAlign: TextAlign.center),
-            if (title != null) const SizedBox(height: 8),
+            if (title != null) const SizedBox(height: AppSpacing.sm),
             Text(message, style: effectiveMessageStyle, textAlign: TextAlign.center),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppSpacing.lg),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -79,7 +81,7 @@ class ErrorState extends StatelessWidget {
                     icon: ExcludeSemantics(child: const Icon(Icons.refresh)),
                     label: Text(retryLabel ?? 'Try again'),
                     style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: 12),
                     ),
                   ),
                   if (onDismiss != null) const SizedBox(width: 12),
@@ -122,7 +124,7 @@ class InlineError extends StatelessWidget {
     this.onRetry,
     this.retryLabel,
     this.iconColor,
-    this.padding = const EdgeInsets.all(16),
+    this.padding = const EdgeInsets.all(AppSpacing.md),
     this.semanticLabel,
     this.excludeFromSemantics = false,
   });
@@ -160,12 +162,12 @@ class InlineError extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ExcludeSemantics(child: Icon(icon ?? Icons.error_outline, size: 20, color: effectiveIconColor)),
-              const SizedBox(width: 8),
+              const SizedBox(width: AppSpacing.sm),
               if (title != null)
                 Text(title!, style: effectiveTitleStyle),
             ],
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: AppSpacing.sm),
           Text(message, style: effectiveMessageStyle, textAlign: TextAlign.center),
           if (onRetry != null) ...[
             const SizedBox(height: 12),
@@ -246,10 +248,10 @@ class ErrorBanner extends StatelessWidget {
       child: SafeArea(
         bottom: false,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: 12),
           child: Row(
             children: [
-              ExcludeSemantics(child: Icon(icon ?? Icons.error_outline, color: effectiveIconColor, size: 24)),
+              ExcludeSemantics(child: Icon(icon ?? Icons.error_outline, color: effectiveIconColor, size: AppSpacing.lg)),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
@@ -273,7 +275,7 @@ class ErrorBanner extends StatelessWidget {
                 ),
               ],
               if (onDismiss != null) ...[
-                const SizedBox(width: 8),
+                const SizedBox(width: AppSpacing.sm),
                 IconButton(
                   onPressed: onDismiss,
                   icon: ExcludeSemantics(child: Icon(Icons.close, color: effectiveIconColor, size: 20)),

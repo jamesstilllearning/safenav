@@ -1,0 +1,1319 @@
+{
+  "generated_from": "assets/maps/navigation_graph.svg",
+  "total_nodes": 164,
+  "id_sequence": "N001..N164",
+  "mapping": [
+    {
+      "node_id": "N001",
+      "svg_x": 188.501,
+      "svg_y": 239.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N002",
+      "svg_x": 638.501,
+      "svg_y": 241.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N003",
+      "svg_x": 1077.5,
+      "svg_y": 244.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N004",
+      "svg_x": 188.501,
+      "svg_y": 506.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N005",
+      "svg_x": 638.501,
+      "svg_y": 507.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N006",
+      "svg_x": 1076.5,
+      "svg_y": 508.5,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N007",
+      "svg_x": 1694.52,
+      "svg_y": 670.52,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N008",
+      "svg_x": 2026.52,
+      "svg_y": 670.52,
+      "building_id": "AB",
+      "floor_id": "AB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N009",
+      "svg_x": 2331.52,
+      "svg_y": 869.52,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N010",
+      "svg_x": 1083.52,
+      "svg_y": 870.52,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N011",
+      "svg_x": 2029.52,
+      "svg_y": 872.52,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N012",
+      "svg_x": 2331.52,
+      "svg_y": 1058.52,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N013",
+      "svg_x": 1384.5,
+      "svg_y": 1100.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N014",
+      "svg_x": 1923.5,
+      "svg_y": 1102.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N015",
+      "svg_x": 1385.5,
+      "svg_y": 1176.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N016",
+      "svg_x": 1543.5,
+      "svg_y": 1178.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N017",
+      "svg_x": 1924.5,
+      "svg_y": 1178.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N018",
+      "svg_x": 2082.5,
+      "svg_y": 1180.5,
+      "building_id": "AB",
+      "floor_id": "AB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N019",
+      "svg_x": 1338.5,
+      "svg_y": 1243.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N020",
+      "svg_x": 1543.5,
+      "svg_y": 1243.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N021",
+      "svg_x": 1877.5,
+      "svg_y": 1245.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N022",
+      "svg_x": 2082.5,
+      "svg_y": 1245.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N023",
+      "svg_x": 1543.5,
+      "svg_y": 1350.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N024",
+      "svg_x": 2082.5,
+      "svg_y": 1352.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N025",
+      "svg_x": 1438.5,
+      "svg_y": 1353.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N026",
+      "svg_x": 1977.5,
+      "svg_y": 1355.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N027",
+      "svg_x": 1541.5,
+      "svg_y": 1474.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N028",
+      "svg_x": 1439.5,
+      "svg_y": 1475.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N029",
+      "svg_x": 2080.5,
+      "svg_y": 1476.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N030",
+      "svg_x": 1978.5,
+      "svg_y": 1477.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N031",
+      "svg_x": 1540.5,
+      "svg_y": 1594.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N032",
+      "svg_x": 1439.5,
+      "svg_y": 1595.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N033",
+      "svg_x": 984.501,
+      "svg_y": 1596.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N034",
+      "svg_x": 2079.5,
+      "svg_y": 1596.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N035",
+      "svg_x": 883.501,
+      "svg_y": 1597.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N036",
+      "svg_x": 1978.5,
+      "svg_y": 1597.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N037",
+      "svg_x": 2080.5,
+      "svg_y": 1691.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N038",
+      "svg_x": 1979.5,
+      "svg_y": 1694.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N039",
+      "svg_x": 1539.5,
+      "svg_y": 1730.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N040",
+      "svg_x": 983.501,
+      "svg_y": 1732.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N041",
+      "svg_x": 1440.5,
+      "svg_y": 1732.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N042",
+      "svg_x": 884.501,
+      "svg_y": 1734.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N043",
+      "svg_x": 2078.5,
+      "svg_y": 1756.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N044",
+      "svg_x": 1979.5,
+      "svg_y": 1758.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N045",
+      "svg_x": 2079.5,
+      "svg_y": 1819.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N046",
+      "svg_x": 1979.5,
+      "svg_y": 1822.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N047",
+      "svg_x": 1437.5,
+      "svg_y": 1857.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N048",
+      "svg_x": 1539.5,
+      "svg_y": 1857.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N049",
+      "svg_x": 881.501,
+      "svg_y": 1859.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N050",
+      "svg_x": 983.501,
+      "svg_y": 1859.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N051",
+      "svg_x": 1979.5,
+      "svg_y": 1886.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N052",
+      "svg_x": 2081.5,
+      "svg_y": 1886.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N053",
+      "svg_x": 1337.5,
+      "svg_y": 1948.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N054",
+      "svg_x": 1541.5,
+      "svg_y": 1948.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N055",
+      "svg_x": 781.501,
+      "svg_y": 1950.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N056",
+      "svg_x": 985.501,
+      "svg_y": 1950.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N057",
+      "svg_x": 1876.5,
+      "svg_y": 1950.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N058",
+      "svg_x": 2080.5,
+      "svg_y": 1950.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N059",
+      "svg_x": 1541.5,
+      "svg_y": 2014.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N060",
+      "svg_x": 1384.5,
+      "svg_y": 2015.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N061",
+      "svg_x": 985.501,
+      "svg_y": 2016.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N062",
+      "svg_x": 2080.5,
+      "svg_y": 2016.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N063",
+      "svg_x": 828.501,
+      "svg_y": 2017.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N064",
+      "svg_x": 1923.5,
+      "svg_y": 2017.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N065",
+      "svg_x": 828.501,
+      "svg_y": 2065.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N066",
+      "svg_x": 1384.5,
+      "svg_y": 2065.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N067",
+      "svg_x": 1923.5,
+      "svg_y": 2113.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N068",
+      "svg_x": 2287.5,
+      "svg_y": 2117.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N069",
+      "svg_x": 1653.5,
+      "svg_y": 2772.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N070",
+      "svg_x": 1381.5,
+      "svg_y": 2775.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N071",
+      "svg_x": 1381.5,
+      "svg_y": 2825.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N072",
+      "svg_x": 1653.5,
+      "svg_y": 2828.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N073",
+      "svg_x": 1737.5,
+      "svg_y": 2828.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N074",
+      "svg_x": 1736.5,
+      "svg_y": 2964.5,
+      "building_id": "AB",
+      "floor_id": "AB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N075",
+      "svg_x": 2914.91,
+      "svg_y": 985.606,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N076",
+      "svg_x": 2628.89,
+      "svg_y": 993.143,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N077",
+      "svg_x": 2628.52,
+      "svg_y": 1061.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N078",
+      "svg_x": 2914.52,
+      "svg_y": 1061.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N079",
+      "svg_x": 2914.57,
+      "svg_y": 1191.61,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N080",
+      "svg_x": 2628.57,
+      "svg_y": 1192.14,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N081",
+      "svg_x": 2915.81,
+      "svg_y": 1662.61,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N082",
+      "svg_x": 2628.81,
+      "svg_y": 1663.14,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N083",
+      "svg_x": 3407.81,
+      "svg_y": 1663.41,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N084",
+      "svg_x": 5128.77,
+      "svg_y": 2061.77,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N085",
+      "svg_x": 2625.52,
+      "svg_y": 2114.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N086",
+      "svg_x": 2917.52,
+      "svg_y": 2116.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N087",
+      "svg_x": 3407.52,
+      "svg_y": 2119.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N088",
+      "svg_x": 3851.52,
+      "svg_y": 2120.52,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N089",
+      "svg_x": 5254.77,
+      "svg_y": 2245.77,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N090",
+      "svg_x": 2958.5,
+      "svg_y": 2316.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N091",
+      "svg_x": 2958.5,
+      "svg_y": 2404.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N092",
+      "svg_x": 5258.77,
+      "svg_y": 2423.77,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N093",
+      "svg_x": 5873.5,
+      "svg_y": 2489.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N094",
+      "svg_x": 5130.5,
+      "svg_y": 2565.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N095",
+      "svg_x": 5260.77,
+      "svg_y": 2565.76,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N096",
+      "svg_x": 2864.5,
+      "svg_y": 2650.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N097",
+      "svg_x": 5128.5,
+      "svg_y": 2693.5,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N098",
+      "svg_x": 5258.77,
+      "svg_y": 2693.76,
+      "building_id": "MB",
+      "floor_id": "MB_3F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N099",
+      "svg_x": 5128.5,
+      "svg_y": 2745.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N100",
+      "svg_x": 5872.5,
+      "svg_y": 2753.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N101",
+      "svg_x": 5935.5,
+      "svg_y": 2753.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N102",
+      "svg_x": 5079.5,
+      "svg_y": 2804.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N103",
+      "svg_x": 5381.77,
+      "svg_y": 2806.76,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N104",
+      "svg_x": 3003.5,
+      "svg_y": 2867.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N105",
+      "svg_x": 3185.5,
+      "svg_y": 2867.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N106",
+      "svg_x": 3368.5,
+      "svg_y": 2867.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N107",
+      "svg_x": 4946.5,
+      "svg_y": 2950.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N108",
+      "svg_x": 3003.5,
+      "svg_y": 2960.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N109",
+      "svg_x": 2867.5,
+      "svg_y": 2962.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N110",
+      "svg_x": 5872.5,
+      "svg_y": 2966.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N111",
+      "svg_x": 5935.5,
+      "svg_y": 2967.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N112",
+      "svg_x": 4858.5,
+      "svg_y": 3047.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N113",
+      "svg_x": 4066.17,
+      "svg_y": 3048.17,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N114",
+      "svg_x": 4238.17,
+      "svg_y": 3048.17,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N115",
+      "svg_x": 3003.5,
+      "svg_y": 3048.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N116",
+      "svg_x": 3368.5,
+      "svg_y": 3048.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N117",
+      "svg_x": 3538.5,
+      "svg_y": 3048.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N118",
+      "svg_x": 3715.5,
+      "svg_y": 3048.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N119",
+      "svg_x": 3892.5,
+      "svg_y": 3048.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N120",
+      "svg_x": 4416.17,
+      "svg_y": 3049.17,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N121",
+      "svg_x": 2841.5,
+      "svg_y": 3049.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N122",
+      "svg_x": 3185.5,
+      "svg_y": 3049.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N123",
+      "svg_x": 4592.17,
+      "svg_y": 3050.17,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N124",
+      "svg_x": 2933.5,
+      "svg_y": 3053.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N125",
+      "svg_x": 3272.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N126",
+      "svg_x": 3538.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N127",
+      "svg_x": 3715.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N128",
+      "svg_x": 3892.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N129",
+      "svg_x": 4238.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N130",
+      "svg_x": 4416.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N131",
+      "svg_x": 4592.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N132",
+      "svg_x": 4769.5,
+      "svg_y": 3130.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N133",
+      "svg_x": 5871.5,
+      "svg_y": 3178.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N134",
+      "svg_x": 5935.5,
+      "svg_y": 3178.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N135",
+      "svg_x": 4065.5,
+      "svg_y": 3209.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N136",
+      "svg_x": 4946.5,
+      "svg_y": 3209.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N137",
+      "svg_x": 2933.5,
+      "svg_y": 3213.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N138",
+      "svg_x": 5872.5,
+      "svg_y": 3389.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N139",
+      "svg_x": 5936.5,
+      "svg_y": 3389.5,
+      "building_id": "MB",
+      "floor_id": "MB_2F",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N140",
+      "svg_x": 5874.5,
+      "svg_y": 3583.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N141",
+      "svg_x": 6151.5,
+      "svg_y": 3583.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N142",
+      "svg_x": 3767.5,
+      "svg_y": 3663.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N143",
+      "svg_x": 3767.5,
+      "svg_y": 3752.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N144",
+      "svg_x": 4023.5,
+      "svg_y": 3752.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N145",
+      "svg_x": 4279.5,
+      "svg_y": 3752.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N146",
+      "svg_x": 4535.5,
+      "svg_y": 3752.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N147",
+      "svg_x": 3548.5,
+      "svg_y": 3753.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N148",
+      "svg_x": 4761.5,
+      "svg_y": 3755.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N149",
+      "svg_x": 4966.5,
+      "svg_y": 3755.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N150",
+      "svg_x": 5509.5,
+      "svg_y": 3755.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N151",
+      "svg_x": 5717.5,
+      "svg_y": 3755.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N152",
+      "svg_x": 5241.5,
+      "svg_y": 3756.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N153",
+      "svg_x": 4966.5,
+      "svg_y": 3844.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N154",
+      "svg_x": 3767.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N155",
+      "svg_x": 4023.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N156",
+      "svg_x": 4279.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N157",
+      "svg_x": 4535.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N158",
+      "svg_x": 5241.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N159",
+      "svg_x": 5509.5,
+      "svg_y": 3847.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N160",
+      "svg_x": 3376.5,
+      "svg_y": 3898.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N161",
+      "svg_x": 3548.5,
+      "svg_y": 3898.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "junction"
+    },
+    {
+      "node_id": "N162",
+      "svg_x": 3548.5,
+      "svg_y": 3952.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N163",
+      "svg_x": 4761.5,
+      "svg_y": 4004.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    },
+    {
+      "node_id": "N164",
+      "svg_x": 5716.5,
+      "svg_y": 4009.55,
+      "building_id": "MB",
+      "floor_id": "MB_GF",
+      "node_type": "pathway"
+    }
+  ]
+}

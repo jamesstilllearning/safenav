@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// Standard chip with consistent styling
 class AppChip extends StatelessWidget {
   const AppChip({
@@ -56,7 +58,7 @@ class AppChip extends StatelessWidget {
       label: Text(label, style: effectiveLabelStyle),
       avatar: avatar != null ? ExcludeSemantics(child: avatar!) : null,
       labelPadding: EdgeInsets.zero,
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: padding ?? const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
       backgroundColor: effectiveBackground,
       side: isSelected
           ? BorderSide(color: colorScheme.primary, width: 2)
@@ -140,7 +142,7 @@ class AppFilterChip extends StatelessWidget {
       backgroundColor: backgroundColor,
       selectedColor: selectedColor,
       labelPadding: EdgeInsets.zero,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
       side: BorderSide(
         color: selected ? colorScheme.primary : colorScheme.outlineVariant,
         width: selected ? 2 : 1,
@@ -222,7 +224,7 @@ class AppChoiceChip<T> extends StatelessWidget {
       backgroundColor: backgroundColor,
       selectedColor: selectedColor,
       labelPadding: EdgeInsets.zero,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
       side: BorderSide(
         color: selected ? colorScheme.primary : colorScheme.outlineVariant,
         width: selected ? 2 : 1,
@@ -301,7 +303,7 @@ class AppInputChip extends StatelessWidget {
       deleteIconColor: colorScheme.onPrimaryContainer,
       backgroundColor: effectiveBackground,
       labelPadding: EdgeInsets.zero,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
       side: BorderSide(color: colorScheme.primary.withValues(alpha: 0.3), width: 1),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     );
@@ -391,7 +393,7 @@ class AppStatusChip extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding),
       decoration: BoxDecoration(
         color: bgColor,
-        borderRadius: BorderRadius.circular(compact ? 8 : 20),
+        borderRadius: BorderRadius.circular(compact ? AppSpacing.radiusSm : 20),
         border: severity == ChipSeverity.emergency
             ? Border.all(color: colorScheme.error, width: 2)
             : null,

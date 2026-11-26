@@ -122,12 +122,12 @@ class AppAvatar extends StatelessWidget {
       colorScheme.secondaryContainer,
       colorScheme.tertiaryContainer,
       colorScheme.errorContainer,
-      Color(0xFFE8EAF6), // Indigo
-      Color(0xFFF3E5F5), // Purple
-      Color(0xFFE0F2F1), // Teal
-      Color(0xFFF1F8E9), // Light Green
-      Color(0xFFFFF3E0), // Orange
-      Color(0xFFFCE4EC), // Pink
+      colorScheme.surfaceContainerHigh,
+      colorScheme.surfaceContainerHighest,
+      colorScheme.surfaceContainer,
+      colorScheme.outlineVariant,
+      colorScheme.primaryContainer,
+      colorScheme.errorContainer,
     ];
     return colors[hash.abs() % colors.length];
   }
@@ -226,11 +226,11 @@ class AppAvatarWithStatus extends StatelessWidget {
   Color _getStatusColor(AvatarStatus status, ColorScheme colorScheme) {
     switch (status) {
       case AvatarStatus.online:
-        return Colors.green;
+        return colorScheme.secondary;
       case AvatarStatus.busy:
-        return Colors.red;
+        return colorScheme.error;
       case AvatarStatus.away:
-        return Colors.orange;
+        return colorScheme.tertiary;
       case AvatarStatus.offline:
         return colorScheme.outline;
       case AvatarStatus.emergency:

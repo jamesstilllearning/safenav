@@ -163,7 +163,6 @@ class MapViewState {
   final bool showPathways;
   final bool showBoundary;
   final bool showUserLocation;
-  final bool showLayoutImage; // Campus layout image overlay
   final String? selectedBuildingId;
   final String? selectedPathwayId;
   final String? selectedFloorId; // For indoor mode
@@ -178,7 +177,6 @@ class MapViewState {
     this.showPathways = true,
     this.showBoundary = true,
     this.showUserLocation = true,
-    this.showLayoutImage = false,
     this.selectedBuildingId,
     this.selectedPathwayId,
     this.selectedFloorId,
@@ -194,7 +192,6 @@ class MapViewState {
     bool? showPathways,
     bool? showBoundary,
     bool? showUserLocation,
-    bool? showLayoutImage,
     String? selectedBuildingId,
     String? selectedPathwayId,
     String? selectedFloorId,
@@ -210,7 +207,6 @@ class MapViewState {
       showPathways: showPathways ?? this.showPathways,
       showBoundary: showBoundary ?? this.showBoundary,
       showUserLocation: showUserLocation ?? this.showUserLocation,
-      showLayoutImage: showLayoutImage ?? this.showLayoutImage,
       selectedBuildingId: clearSelection ? null : (selectedBuildingId ?? this.selectedBuildingId),
       selectedPathwayId: clearSelection ? null : (selectedPathwayId ?? this.selectedPathwayId),
       selectedFloorId: clearSelection ? null : (selectedFloorId ?? this.selectedFloorId),
@@ -275,14 +271,6 @@ class MapViewStateNotifier extends StateNotifier<MapViewState> {
     state = state.copyWith(showUserLocation: !state.showUserLocation);
   }
 
-  void toggleLayoutImage() {
-    state = state.copyWith(showLayoutImage: !state.showLayoutImage);
-  }
-
-  void setShowLayoutImage(bool show) {
-    state = state.copyWith(showLayoutImage: show);
-  }
-
   void toggleMapType() {
     state = state.copyWith(
       mapType: state.mapType == MapType.standard ? MapType.satellite : MapType.standard,
@@ -322,7 +310,6 @@ class MapViewStateNotifier extends StateNotifier<MapViewState> {
       showBuildings: false,
       showPathways: false,
       showBoundary: false,
-      showLayoutImage: false,
     );
   }
 

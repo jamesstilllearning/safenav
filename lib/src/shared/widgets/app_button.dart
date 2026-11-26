@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart' hide NavigationDestination;
 
+import '../../core/theme/app_theme.dart';
+
 /// Primary filled button with consistent styling
 class AppFilledButton extends StatelessWidget {
   const AppFilledButton({
@@ -19,6 +21,7 @@ class AppFilledButton extends StatelessWidget {
     this.size = ButtonSize.medium,
     this.backgroundColor,
     this.foregroundColor,
+    this.borderRadius,
     this.tooltip,
     this.semanticLabel,
     this.excludeFromSemantics = false,
@@ -34,6 +37,7 @@ class AppFilledButton extends StatelessWidget {
   final ButtonSize size;
   final Color? backgroundColor;
   final Color? foregroundColor;
+  final BorderRadius? borderRadius;
   final String? tooltip;
   final String? semanticLabel;
   final bool excludeFromSemantics;
@@ -55,9 +59,9 @@ class AppFilledButton extends StatelessWidget {
         foregroundColor: foregroundColor ?? colorScheme.onPrimary,
         textStyle: textStyle,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: borderRadius ?? BorderRadius.circular(AppSpacing.radiusMd),
         ),
-        elevation: 1,
+        elevation: AppElevation.level1,
       ),
       child: _buildChild(iconSize, context),
     );
@@ -186,7 +190,7 @@ class AppOutlinedButton extends StatelessWidget {
         textStyle: textStyle,
         side: BorderSide(color: effectiveBorderColor, width: 1.5),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         ),
       ),
       child: _buildChild(iconSize, context),
@@ -308,7 +312,7 @@ class AppTextButton extends StatelessWidget {
         foregroundColor: effectiveForeground,
         textStyle: textStyle,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         ),
       ),
       child: _buildChild(iconSize, context),
@@ -604,7 +608,7 @@ class AppSegmentedButton<T> extends StatelessWidget {
       multiSelectionEnabled: multiSelectionEnabled,
       style: ButtonStyle(
         shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSpacing.radiusMd)),
         ),
       ),
     );

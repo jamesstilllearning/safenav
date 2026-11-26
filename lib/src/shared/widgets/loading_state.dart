@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// Full-screen loading overlay
 class LoadingOverlay extends StatelessWidget {
   const LoadingOverlay({
@@ -45,7 +47,7 @@ class LoadingOverlay extends StatelessWidget {
                 ),
               ),
               if (message != null) ...[
-                const SizedBox(height: 16),
+                const SizedBox(height: AppSpacing.md),
                 Text(
                   message!,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -81,10 +83,10 @@ class InlineLoading extends StatelessWidget {
   const InlineLoading({
     super.key,
     this.message,
-    this.size = 24,
+    this.size = AppSpacing.lg,
     this.strokeWidth = 2,
     this.color,
-    this.padding = const EdgeInsets.all(16),
+    this.padding = const EdgeInsets.all(AppSpacing.md),
     this.semanticLabel,
     this.excludeFromSemantics = false,
   });
@@ -227,7 +229,7 @@ class SkeletonCard extends StatelessWidget {
     super.key,
     this.height,
     this.width,
-    this.borderRadius = 12,
+    this.borderRadius = AppSpacing.radiusMd,
     this.showAvatar = false,
     this.showTitle = true,
     this.showSubtitle = true,
@@ -255,7 +257,7 @@ class SkeletonCard extends StatelessWidget {
     Widget content = Container(
       height: height,
       width: width,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: colorScheme.surface,
         borderRadius: BorderRadius.circular(borderRadius),
@@ -267,21 +269,21 @@ class SkeletonCard extends StatelessWidget {
           if (showAvatar) ...[
             Row(
               children: [
-                ExcludeSemantics(child: _SkeletonLine(width: 48, height: 48, borderRadius: 24)),
+                ExcludeSemantics(child: _SkeletonLine(width: AppSpacing.xxl, height: AppSpacing.xxl, borderRadius: AppSpacing.radiusXl)),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _SkeletonLine(width: 120, height: 16),
-                      const SizedBox(height: 8),
+                      _SkeletonLine(width: 120, height: AppSpacing.md),
+                      const SizedBox(height: AppSpacing.sm),
                       _SkeletonLine(width: 80, height: 12),
                     ],
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.md),
           ],
           if (showTitle)
             _SkeletonLine(width: double.infinity, height: 20),
@@ -291,18 +293,18 @@ class SkeletonCard extends StatelessWidget {
               children: List.generate(
                 lines,
                 (index) => Padding(
-                  padding: EdgeInsets.only(bottom: index == lines - 1 ? 0 : 8),
+                  padding: EdgeInsets.only(bottom: index == lines - 1 ? 0 : AppSpacing.sm),
                   child: _SkeletonLine(
                     width: double.infinity,
                     height: 14,
-                    borderRadius: 4,
+                    borderRadius: AppSpacing.radiusXs,
                   ),
                 ),
               ),
             ),
           if (showAction) ...[
-            const SizedBox(height: 16),
-            _SkeletonLine(width: 100, height: 40, borderRadius: 8),
+            const SizedBox(height: AppSpacing.md),
+            _SkeletonLine(width: 100, height: 40, borderRadius: AppSpacing.radiusSm),
           ],
         ],
       ),

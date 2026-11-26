@@ -8,7 +8,6 @@ library;
 import 'package:material_ui/material_ui.dart' hide NavigationDestination;
 import 'package:flutter_map/flutter_map.dart'
     hide LatLngBounds; // Hide to avoid conflict with campus_boundary
-import 'package:flutter_map/flutter_map.dart' as fm_latlong show LatLngBounds;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
@@ -17,7 +16,6 @@ import '../../data/models/campus_boundary.dart';
 import '../../data/models/campus_building.dart';
 import '../../data/models/campus_pathway.dart';
 import '../../data/models/campus_room.dart';
-import '../../data/services/campus_map_parser.dart';
 import '../../../navigation/data/models/navigation_models.dart';
 import '../../../navigation/presentation/providers/navigation_providers.dart';
 import '../../../../core/router/app_routes.dart';
@@ -189,15 +187,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             )
           : Stack(
               children: [
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  child: PageHeader(
-                    title: 'Campus Map',
-                    subtitle: 'EARIST CAVITE CAMPUS',
-                  ),
-                ),
                 // Map
                 FlutterMap(
                   mapController: _mapController,
@@ -214,10 +203,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   children: [
                     // Tile Layer (OpenStreetMap or Satellite) - only in outdoor mode
                     if (!viewState.isIndoor) tileLayer,
-
-                    // Campus Layout Image Overlay - only in outdoor mode when enabled
-                    if (!viewState.isIndoor && viewState.showLayoutImage)
-                      _CampusLayoutImageOverlay(),
 
                     // Campus Boundary - only in outdoor mode
                     if (viewState.showBoundary && !viewState.isIndoor)
@@ -295,9 +280,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   ],
                 ),
 
-                // Top Toolbar
+                // Top Toolbar (header + actions)
                 _MapToolbar(
-                  onToggleLayers: _showLayerOptions,
                   onBuildingSearch: _showBuildingSelector,
                   onOpenPlanReference: () =>
                       setState(() => _showPlanReference = true),
@@ -309,12 +293,14 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                       : null,
                 ),
 
-                // Zoom Controls (lower-right)
-                _MapZoomControls(
+                // Right-edge controls: layers, zoom, compass (Figma)
+                _MapRightControls(
+                  onToggleLayers: _showLayerOptions,
                   onZoomIn: () =>
                       ref.read(mapViewStateProvider.notifier).zoomIn(),
                   onZoomOut: () =>
                       ref.read(mapViewStateProvider.notifier).zoomOut(),
+                  onCenterUser: _centerOnUser,
                 ),
 
                 // Bottom Info Bar (when building/pathway/room selected)
@@ -331,9 +317,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                 if (viewState.isIndoor) _IndoorFloorSelector(),
               ],
             ),
-      floatingActionButton: _showPlanReference
-          ? null
-          : _MapFAB(onCenterUser: _centerOnUser),
+      floatingActionButton: null,
     );
   }
 
@@ -809,14 +793,12 @@ class _UserLocationLayer extends ConsumerWidget {
 
 /// Map toolbar at top
 class _MapToolbar extends ConsumerWidget {
-  final VoidCallback onToggleLayers;
   final VoidCallback onBuildingSearch;
   final VoidCallback onOpenPlanReference;
   final MapViewState viewState;
   final VoidCallback? onToggleIndoorMode;
 
   const _MapToolbar({
-    required this.onToggleLayers,
     required this.onBuildingSearch,
     required this.onOpenPlanReference,
     required this.viewState,
@@ -868,7 +850,7 @@ class _MapToolbar extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'EARIST Cavite Campus',
+                            'EARIST CAVITE CAMPUS',
                             style: Theme.of(context).textTheme.titleSmall
                                 ?.copyWith(
                                   fontWeight: FontWeight.w700,
@@ -905,12 +887,6 @@ class _MapToolbar extends ConsumerWidget {
               tooltip: 'Master Site Plan Reference',
             ),
             const SizedBox(width: 8),
-            // Layer toggle button
-            _ToolbarButton(
-              icon: Icons.layers_outlined,
-              onPressed: onToggleLayers,
-              tooltip: 'Map Layers',
-            ),
             // Indoor/Outdoor toggle
             if (onToggleIndoorMode != null) ...[
               const SizedBox(width: 8),
@@ -983,59 +959,98 @@ class _ToolbarButton extends StatelessWidget {
   }
 }
 
-/// Zoom controls positioned at lower-right of map
-class _MapZoomControls extends ConsumerWidget {
+/// Right-edge map controls: layers, zoom in/out, compass (Figma)
+class _MapRightControls extends ConsumerWidget {
+  final VoidCallback onToggleLayers;
   final VoidCallback onZoomIn;
   final VoidCallback onZoomOut;
+  final VoidCallback onCenterUser;
 
-  const _MapZoomControls({required this.onZoomIn, required this.onZoomOut});
+  const _MapRightControls({
+    required this.onToggleLayers,
+    required this.onZoomIn,
+    required this.onZoomOut,
+    required this.onCenterUser,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Positioned(
-      right: 16,
-      bottom:
-          _kBottomNavigationBarHeight +
-          16 +
-          56 +
-          12, // Above FAB: bottom nav (80) + margin (16) + FAB height (56) + spacing (12)
-      child: AppCard(
-        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-        elevation: 3,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            AppIconButton(
-              icon: Icons.add,
-              size: IconButtonSize.medium,
-              onPressed: onZoomIn,
-              tooltip: 'Zoom In',
-              semanticLabel: 'Zoom in',
-            ),
-            Container(
-              width: 24,
-              height: 1,
-              color: colorScheme.outlineVariant,
-              margin: const EdgeInsets.symmetric(vertical: 4),
-            ),
-            AppIconButton(
-              icon: Icons.remove,
-              size: IconButtonSize.medium,
-              onPressed: onZoomOut,
-              tooltip: 'Zoom Out',
-              semanticLabel: 'Zoom out',
-            ),
-          ],
-        ),
+      right: 12,
+      top: MediaQuery.of(context).padding.top + 96,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _RightControlButton(
+            icon: Icons.layers_outlined,
+            onPressed: onToggleLayers,
+            tooltip: 'Map Layers',
+            semanticLabel: 'Map layers',
+            color: colorScheme.primary,
+          ),
+          const SizedBox(height: 8),
+          _RightControlButton(
+            icon: Icons.add,
+            onPressed: onZoomIn,
+            tooltip: 'Zoom In',
+            semanticLabel: 'Zoom in',
+            color: colorScheme.primary,
+          ),
+          const SizedBox(height: 4),
+          _RightControlButton(
+            icon: Icons.remove,
+            onPressed: onZoomOut,
+            tooltip: 'Zoom Out',
+            semanticLabel: 'Zoom out',
+            color: colorScheme.primary,
+          ),
+          const SizedBox(height: 8),
+          _RightControlButton(
+            icon: Icons.my_location,
+            onPressed: onCenterUser,
+            tooltip: 'My Location / Compass',
+            semanticLabel: 'Center on my location',
+            color: colorScheme.primary,
+          ),
+        ],
       ),
     );
   }
 }
 
-/// Height of the bottom navigation bar in the main shell (Material 3 NavigationBar)
-const double _kBottomNavigationBarHeight = 80.0;
+/// Single circular control button on the right edge
+class _RightControlButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onPressed;
+  final String tooltip;
+  final String semanticLabel;
+  final Color color;
+
+  const _RightControlButton({
+    required this.icon,
+    required this.onPressed,
+    required this.tooltip,
+    required this.semanticLabel,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Tooltip(
+      message: tooltip,
+      child: AppIconButton(
+        icon: icon,
+        size: IconButtonSize.medium,
+        onPressed: onPressed,
+        backgroundColor: Colors.white.withValues(alpha: 0.95),
+        foregroundColor: color,
+        semanticLabel: semanticLabel,
+      ),
+    );
+  }
+}
 
 /// Selection info bar at bottom
 class _SelectionInfoBar extends ConsumerWidget {
@@ -1065,7 +1080,7 @@ class _SelectionInfoBar extends ConsumerWidget {
     }
 
     return Positioned(
-      bottom: _kBottomNavigationBarHeight,
+      bottom: 80.0,
       left: 0,
       right: 0,
       child: AppElevatedCard(
@@ -1229,29 +1244,6 @@ class _SelectionInfoBar extends ConsumerWidget {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (context) => _RoomBottomSheet(room: room),
-    );
-  }
-}
-
-/// Floating action button for centering on user (icon only)
-class _MapFAB extends StatelessWidget {
-  final VoidCallback onCenterUser;
-
-  const _MapFAB({required this.onCenterUser});
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
-    return FloatingActionButton(
-      onPressed: onCenterUser,
-      heroTag: 'map_center_user',
-      backgroundColor: colorScheme.primary,
-      foregroundColor: colorScheme.onPrimary,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      tooltip: 'My Location',
-      child: const Icon(Icons.my_location),
     );
   }
 }
@@ -2841,17 +2833,6 @@ class _LayerOptionsSheet extends ConsumerWidget {
                     .read(mapViewStateProvider.notifier)
                     .toggleUserLocation(),
               ),
-              const SizedBox(height: 12),
-              _LayerToggleCard(
-                icon: Icons.image_outlined,
-                title: 'Campus Layout Image',
-                subtitle: 'Master site plan overlay',
-                color: const Color(0xFF9C27B0),
-                value: viewState.showLayoutImage,
-                onChanged: (v) =>
-                    ref.read(mapViewStateProvider.notifier).toggleLayoutImage(),
-              ),
-
               const SizedBox(height: 24),
 
               // Map Type Selector
@@ -3314,32 +3295,3 @@ class _ActiveRouteLayer extends StatelessWidget {
   }
 }
 
-/// Campus layout image overlay layer
-/// Displays the campus master plan image as an overlay on the map
-class _CampusLayoutImageOverlay extends ConsumerWidget {
-  const _CampusLayoutImageOverlay();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // Get reference points from campus map parser
-    final referencePoints = CampusMapParser.instance.referencePoints;
-    if (referencePoints == null) return const SizedBox.shrink();
-
-    // Create bounds from the four corner reference points
-    // flutter_map's LatLngBounds takes two opposite corners as positional arguments
-    final bounds = fm_latlong.LatLngBounds(
-      referencePoints.topLeft,
-      referencePoints.bottomRight,
-    );
-
-    return OverlayImageLayer(
-      overlayImages: [
-        OverlayImage(
-          bounds: bounds,
-          opacity: 0.7,
-          imageProvider: const AssetImage('assets/maps/campus_layout.png'),
-        ),
-      ],
-    );
-  }
-}

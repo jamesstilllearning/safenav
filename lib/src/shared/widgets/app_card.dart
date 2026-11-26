@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// A card with consistent elevation, shape, and styling
 class AppCard extends StatelessWidget {
   const AppCard({
@@ -41,7 +43,7 @@ class AppCard extends StatelessWidget {
 
     final effectiveElevation = elevation ?? cardTheme.elevation ?? 1;
     final effectiveColor = color ?? cardTheme.color ?? colorScheme.surface;
-    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(12);
+    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(AppSpacing.radiusMd);
     final effectiveBorder = border ??
         BorderSide(
           color: colorScheme.outlineVariant,
@@ -125,7 +127,7 @@ class AppOutlinedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(12);
+    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(AppSpacing.radiusMd);
     final effectiveBorderColor = borderColor ?? colorScheme.outlineVariant;
 
     Widget card = Container(
@@ -190,7 +192,7 @@ class AppElevatedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(16);
+    final effectiveBorderRadius = borderRadius ?? BorderRadius.circular(AppSpacing.radiusLg);
 
     Widget card = Card(
       elevation: elevation,

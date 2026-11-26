@@ -105,9 +105,10 @@ flutter:
     - assets/config/gcp_config.example.json
     - assets/config/gcp_config.schema.json
     - assets/threejs/digital_twin_scene.html
-    - assets/3d/
-    - assets/maps/campus_layout.png
-    - assets/maps/earist_master_site_plan.png
-    - assets/data/campus_buildings.json
-    - assets/data/campus_graph_draft.json
-    - assets/maps/EARIST_Cavite_Interactive_Campus_Map.html
+    - assets/maps/campus_illustration.svg
+    - assets/maps/navigation_graph.svg
+    - assets/maps/navigation/edge_mapping.json
+    - assets/maps/navigation/graph_validation_report.json
+    - assets/maps/navigation/navigation_graph.json
+    - assets/maps/navigation/node_mapping.json
+    - "assets/earist_logo/earist logo.jpg"

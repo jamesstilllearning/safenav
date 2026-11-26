@@ -211,7 +211,7 @@ class ProfileScreen extends ConsumerWidget {
                   width: 32,
                   height: 32,
                   decoration: BoxDecoration(
-                    color: user.isActive ? Colors.green : colorScheme.outline,
+                    color: user.isActive ? colorScheme.secondary : colorScheme.outline,
                     shape: BoxShape.circle,
                     border: Border.all(color: colorScheme.surface, width: 3),
                   ),
@@ -232,7 +232,7 @@ class ProfileScreen extends ConsumerWidget {
                       border: Border.all(color: colorScheme.surface, width: 3),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.2),
+                          color: colorScheme.onSurface.withValues(alpha: 0.2),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),
@@ -382,6 +382,7 @@ class ProfileScreen extends ConsumerWidget {
   }
 
   Widget _buildQuickStats(BuildContext context, WidgetRef ref, User user) {
+    final colorScheme = Theme.of(context).colorScheme;
     // Watch providers for real-time stats
     final placesVisitedAsync = ref.watch(placesVisitedCountProvider(user.id));
     final routesTakenAsync = ref.watch(routesTakenCountProvider(user.id));
@@ -393,29 +394,29 @@ class ProfileScreen extends ConsumerWidget {
         icon: Icons.map,
         label: 'Places Visited',
         valueAsync: placesVisitedAsync,
-        color: Colors.blue,
-        onTap: () => context.push('/profile/activity/history?tab=places'),
+        color: colorScheme.primary,
+        onTap: () => context.push('${AppRoutes.activityHistory}?tab=1'),
       ),
       _StatItem(
         icon: Icons.route,
         label: 'Routes Taken',
         valueAsync: routesTakenAsync,
-        color: Colors.green,
-        onTap: () => context.push('/profile/activity/history?tab=routes'),
+        color: colorScheme.secondary,
+        onTap: () => context.push('${AppRoutes.activityHistory}?tab=2'),
       ),
       _StatItem(
         icon: Icons.notifications,
         label: 'Alerts Received',
         valueAsync: alertsReceivedAsync,
-        color: Colors.orange,
+        color: colorScheme.tertiary,
         onTap: () => context.push(AppRoutes.alerts),
       ),
       _StatItem(
         icon: Icons.emergency,
         label: 'Safety Score',
         valueAsync: safetyScoreAsync,
-        color: Colors.red,
-        onTap: () => context.push('/profile/activity/history?tab=safety'),
+        color: colorScheme.error,
+        onTap: () => context.push('${AppRoutes.activityHistory}?tab=3'),
       ),
     ];
 
@@ -448,6 +449,7 @@ class ProfileScreen extends ConsumerWidget {
   }
 
   Widget _buildSafetySection(BuildContext context, WidgetRef ref, User user) {
+    final colorScheme = Theme.of(context).colorScheme;
     // Watch location sharing preference
     final locationSharingAsync = ref.watch(locationSharingProvider(user.id));
 
@@ -481,9 +483,8 @@ class ProfileScreen extends ConsumerWidget {
             child: CircularProgressIndicator(strokeWidth: 2),
           ),
           error: (_, __) =>
-              const Icon(Icons.error, color: Colors.red, size: 20),
+              Icon(Icons.error, color: colorScheme.error, size: 20),
         ),
-        onTap: () => _navigateToLocationSharing(context),
       ),
       _SettingsItem(
         icon: Icons.warning,
@@ -591,13 +592,13 @@ class ProfileScreen extends ConsumerWidget {
   Color _getRoleColor(UserRole role, ColorScheme colorScheme) {
     switch (role) {
       case UserRole.admin:
-        return Colors.purple;
+        return colorScheme.primary;
       case UserRole.security:
-        return Colors.red;
+        return colorScheme.error;
       case UserRole.faculty:
-        return Colors.blue;
+        return colorScheme.secondary;
       case UserRole.student:
-        return Colors.green;
+        return colorScheme.tertiary;
     }
   }
 
@@ -624,51 +625,47 @@ class ProfileScreen extends ConsumerWidget {
 
   // Navigation methods
   void _navigateToEditProfile(BuildContext context) {
-    context.push('/profile/edit');
+    context.push(AppRoutes.editProfile);
   }
 
   void _navigateToIdCard(BuildContext context) {
-    context.push('/profile/id-card');
+    context.push(AppRoutes.digitalIdCard);
   }
 
   void _navigateToSecurity(BuildContext context) {
-    context.push('/profile/security');
+    context.push(AppRoutes.securitySettings);
   }
 
   void _navigateToLanguage(BuildContext context) {
-    context.push('/profile/preferences/language');
+    context.push(AppRoutes.languagePreferences);
   }
 
   void _navigateToTheme(BuildContext context) {
-    context.push('/profile/preferences/theme');
+    context.push(AppRoutes.themePreferences);
   }
 
   void _navigateToNotifications(BuildContext context) {
-    context.push('/profile/preferences/notifications');
+    context.push(AppRoutes.notificationPreferences);
   }
 
   void _navigateToMapPrefs(BuildContext context) {
-    context.push('/profile/preferences/map');
+    context.push(AppRoutes.mapPreferences);
   }
 
   void _navigateToAccessibility(BuildContext context) {
-    context.push('/profile/preferences/accessibility');
+    context.push(AppRoutes.accessibilityPreferences);
   }
 
   void _navigateToEmergencyContacts(BuildContext context) {
-    context.push('/profile/emergency-contacts');
+    context.push(AppRoutes.emergencyContacts);
   }
 
   void _navigateToMedicalInfo(BuildContext context) {
-    context.push('/profile/medical-info');
-  }
-
-  void _navigateToLocationSharing(BuildContext context) {
-    context.push('/profile/location-sharing');
+    context.push(AppRoutes.medicalInfo);
   }
 
   void _navigateToSafetyCheckins(BuildContext context) {
-    context.push('/profile/safety-checkins');
+    context.push(AppRoutes.safetyCheckins);
   }
 
   void _openUrl(BuildContext context, String url) {
@@ -698,7 +695,7 @@ class ProfileScreen extends ConsumerWidget {
       context: context,
       applicationName: 'SAFENAV CAVITE',
       applicationVersion: '1.0.0',
-      applicationIcon: const Icon(Icons.map, size: 48, color: Colors.blue),
+      applicationIcon: Icon(Icons.map, size: 48, color: Theme.of(context).colorScheme.primary),
       children: [
         const Text('Campus Navigation & Emergency Evacuation'),
         const SizedBox(height: 16),
@@ -788,7 +785,7 @@ class ProfileScreen extends ConsumerWidget {
       SnackBar(
         content: Text(message),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.green,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }
@@ -1242,10 +1239,10 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text('Profile updated successfully'),
             behavior: SnackBarBehavior.floating,
-            backgroundColor: Colors.green,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
         Navigator.pop(context);
@@ -1634,13 +1631,16 @@ class DigitalIDCardScreen extends ConsumerWidget {
                             width: 80,
                             height: 80,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: colorScheme.surface,
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Center(
                               child: CustomPaint(
                                 size: const Size(70, 70),
-                                painter: _QRCodePainter(qrData.toString()),
+                                painter: _QRCodePainter(
+                                  qrData.toString(),
+                                  color: colorScheme.onSurface,
+                                ),
                               ),
                             ),
                           ),
@@ -1653,7 +1653,7 @@ class DigitalIDCardScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: colorScheme.surface,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Column(
@@ -1672,6 +1672,7 @@ class DigitalIDCardScreen extends ConsumerWidget {
                               size: const Size(double.infinity, 40),
                               painter: _BarcodePainter(
                                 user.idNumber ?? user.id,
+                                color: colorScheme.onSurface,
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -1854,12 +1855,13 @@ class _IDInfoRow extends StatelessWidget {
 
 class _QRCodePainter extends CustomPainter {
   final String data;
-  _QRCodePainter(this.data);
+  final Color color;
+  _QRCodePainter(this.data, {this.color = Colors.black});
 
   @override
   void paint(Canvas canvas, Size size) {
     // Draw a QR code-like pattern
-    final paint = Paint()..color = Colors.black;
+    final paint = Paint()..color = color;
     final cellSize = size.width / 25;
 
     // Simple pattern based on data hash
@@ -1919,11 +1921,12 @@ class _QRCodePainter extends CustomPainter {
 
 class _BarcodePainter extends CustomPainter {
   final String data;
-  _BarcodePainter(this.data);
+  final Color color;
+  _BarcodePainter(this.data, {this.color = Colors.black});
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Colors.black;
+    final paint = Paint()..color = color;
     final barWidth = size.width / (data.length * 4);
 
     for (int i = 0; i < data.length; i++) {
@@ -2086,7 +2089,7 @@ class SecuritySettingsScreen extends ConsumerWidget {
                         subtitle: 'Enabled',
                         trailing: Icon(
                           Icons.check_circle,
-                          color: Colors.green,
+                          color: colorScheme.secondary,
                           size: 20,
                         ),
                         onTap: null,
@@ -2173,10 +2176,10 @@ class SecuritySettingsScreen extends ConsumerWidget {
               Navigator.pop(context);
               // todo: Implement revoke all tokens via Cloud Function
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
+                SnackBar(
                   content: Text('Signed out of all other devices'),
                   behavior: SnackBarBehavior.floating,
-                  backgroundColor: Colors.green,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               );
             },
@@ -2656,12 +2659,12 @@ class _MedicalInfoScreenState extends ConsumerState<MedicalInfoScreen> {
                               width: 44,
                               height: 44,
                               decoration: BoxDecoration(
-                                color: Colors.red.withValues(alpha: 0.1),
+                                color: colorScheme.error.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.favorite,
-                                color: Colors.red,
+                                color: colorScheme.error,
                                 size: 22,
                               ),
                             ),
@@ -2700,7 +2703,7 @@ class _MedicalInfoScreenState extends ConsumerState<MedicalInfoScreen> {
                                   true,
                               onChanged: (value) =>
                                   _toggleOrganDonor(context, value),
-                              activeThumbColor: Colors.red,
+                              activeThumbColor: colorScheme.error,
                             ),
                           ],
                         ),
@@ -3062,7 +3065,7 @@ class LocationSharingScreen extends ConsumerWidget {
                               subtitle: 'Always shares location when enabled',
                               trailing: Icon(
                                 Icons.check_circle,
-                                color: Colors.green,
+                                color: colorScheme.secondary,
                                 size: 20,
                               ),
                               onTap: null,
@@ -3241,7 +3244,7 @@ class SafetyCheckinsScreen extends ConsumerWidget {
                       ),
                       title: const Text('Primary Emergency Contact'),
                       subtitle: const Text('Always notified'),
-                      trailing: Icon(Icons.check_circle, color: Colors.green),
+                      trailing: Icon(Icons.check_circle, color: colorScheme.secondary),
                     ),
                     ListTile(
                       leading: CircleAvatar(
@@ -3278,19 +3281,19 @@ class SafetyCheckinsScreen extends ConsumerWidget {
                     _CheckinHistoryItem(
                       time: 'Today, 10:00 PM',
                       status: 'Completed',
-                      statusColor: Colors.green,
+                      statusColor: colorScheme.secondary,
                     ),
                     const Divider(),
                     _CheckinHistoryItem(
                       time: 'Yesterday, 10:00 PM',
                       status: 'Completed',
-                      statusColor: Colors.green,
+                      statusColor: colorScheme.secondary,
                     ),
                     const Divider(),
                     _CheckinHistoryItem(
                       time: '2 days ago, 11:30 PM',
                       status: 'Missed - Alert sent',
-                      statusColor: Colors.red,
+                      statusColor: colorScheme.error,
                     ),
                   ],
                 ),
@@ -3318,10 +3321,10 @@ class SafetyCheckinsScreen extends ConsumerWidget {
 
   void _sendManualCheckin(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+      SnackBar(
         content: Text('Check-in sent to emergency contacts'),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.green,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }
@@ -3449,6 +3452,7 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
   }
 
   Widget _buildOverviewTab(BuildContext context, WidgetRef ref, String userId) {
+    final colorScheme = Theme.of(context).colorScheme;
     final statsAsync = ref.watch(activityStatsProvider(userId));
 
     return SingleChildScrollView(
@@ -3469,19 +3473,19 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
                   title: 'Total Activities',
                   value: stats['totalActivities'].toString(),
                   icon: Icons.analytics,
-                  color: Colors.blue,
+                  color: colorScheme.primary,
                 ),
                 _StatSummaryCard(
                   title: 'Total Distance',
                   value: _formatDistance(stats['totalDistance'] as double),
                   icon: Icons.straighten,
-                  color: Colors.green,
+                  color: colorScheme.secondary,
                 ),
                 _StatSummaryCard(
                   title: 'Total Time',
                   value: _formatDuration(stats['totalDuration'] as int),
                   icon: Icons.timer,
-                  color: Colors.orange,
+                  color: colorScheme.tertiary,
                 ),
                 _StatSummaryCard(
                   title: 'Avg Safety Score',
@@ -3489,7 +3493,7 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
                     stats['averageSafetyScore'] as double,
                   ),
                   icon: Icons.emergency,
-                  color: Colors.red,
+                  color: colorScheme.error,
                 ),
               ],
             ),
@@ -3760,6 +3764,7 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
   }
 
   Widget _buildSafetyTab(BuildContext context, WidgetRef ref, String userId) {
+    final colorScheme = Theme.of(context).colorScheme;
     final safetyScoreAsync = ref.watch(userSafetyScoreProvider(userId));
 
     return safetyScoreAsync.when(
@@ -3795,7 +3800,9 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
                           backgroundColor: Theme.of(
                             context,
                           ).colorScheme.surfaceContainerHighest,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Theme.of(context).colorScheme.error,
+                          ),
                         ),
                       ),
                       Column(
@@ -3805,7 +3812,7 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
                             style: Theme.of(context).textTheme.displayMedium
                                 ?.copyWith(
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.red,
+                                  color: Theme.of(context).colorScheme.error,
                                 ),
                           ),
                           Text(
@@ -3849,27 +3856,27 @@ class _ActivityHistoryScreenState extends ConsumerState<ActivityHistoryScreen>
                   _ScoreBreakdownRow(
                     label: 'Navigation',
                     score: 0.8,
-                    color: Colors.blue,
+                    color: colorScheme.primary,
                   ),
                   _ScoreBreakdownRow(
                     label: 'Emergency Preparedness',
                     score: 0.7,
-                    color: Colors.red,
+                    color: colorScheme.error,
                   ),
                   _ScoreBreakdownRow(
                     label: 'Building Familiarity',
                     score: 0.6,
-                    color: Colors.green,
+                    color: colorScheme.secondary,
                   ),
                   _ScoreBreakdownRow(
                     label: 'Drill Participation',
                     score: 0.5,
-                    color: Colors.orange,
+                    color: colorScheme.tertiary,
                   ),
                   _ScoreBreakdownRow(
                     label: 'Alert Responsiveness',
                     score: 0.9,
-                    color: Colors.purple,
+                    color: colorScheme.primary,
                   ),
                 ],
               ),
@@ -5536,7 +5543,7 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       applicationName: 'SAFENAV CAVITE',
       applicationVersion: '1.0.0',
-      applicationIcon: const Icon(Icons.map, size: 48, color: Colors.blue),
+      applicationIcon: Icon(Icons.map, size: 48, color: Theme.of(context).colorScheme.primary),
       children: [
         const Text('Campus Navigation & Emergency Evacuation'),
         const SizedBox(height: 16),

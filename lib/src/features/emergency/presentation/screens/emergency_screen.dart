@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../shared/widgets/widgets.dart';
+import '../../../../core/theme/app_theme.dart';
 import '../../data/models/emergency_report.dart';
 import '../providers/emergency_providers.dart';
 import '../../../navigation/data/models/navigation_models.dart';
@@ -226,14 +227,20 @@ class _EmergencyMainScreenState extends ConsumerState<EmergencyMainScreen>
 
                   const SizedBox(height: 24),
 
-                  // Quick Actions Section (Fire, Medical, Security)
+                  // Call for help section (per Figma Emergency screen)
                   SectionHeader(
-                    title: 'Quick Actions',
-                    icon: Icons.flash_on,
+                    title: 'Call for help',
+                    subtitle: 'Your location is sent in every call',
+                    icon: Icons.phone,
                     style: SectionHeaderStyle.standard,
                   ),
                   const SizedBox(height: 12),
-                  _buildQuickActions(context),
+                  _buildCallForHelp(context, ref, contactsAsync),
+
+                  const SizedBox(height: 24),
+
+                  // Bottom action buttons: Send Alert + Enter evacuation route
+                  _buildBottomActionButtons(context, ref),
 
                   const SizedBox(height: 24),
 
@@ -463,44 +470,167 @@ class _EmergencyMainScreenState extends ConsumerState<EmergencyMainScreen>
     );
   }
 
-  Widget _buildQuickActions(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: _QuickActionCard(
-            icon: Icons.local_fire_department,
-            label: 'Fire',
-            color: Colors.red,
-            onTap: () => _handleQuickAction(context, EmergencyType.fire()),
-          ),
+  Widget _buildCallForHelp(
+    BuildContext context,
+    WidgetRef ref,
+    AsyncValue<List<CampusEmergencyContact>> contactsAsync,
+  ) {
+    return contactsAsync.when(
+      data: (contacts) {
+        // Look up the four campus service contacts by role from Firestore only.
+        // No fallback phone numbers are invented — if a contact is not in Firestore,
+        // an unavailable state is shown instead of a hardcoded number.
+        final fireStation = _findContactByRole(
+          contacts,
+          (c) => c.role.toLowerCase().contains('fire'),
+        );
+        final hospital = _findContactByRole(
+          contacts,
+          (c) => c.role.toLowerCase().contains('medical') || c.role.toLowerCase().contains('health'),
+        );
+        final policeStation = _findContactByRole(
+          contacts,
+          (c) => c.role.toLowerCase().contains('police'),
+        );
+        final campusSecurity = _findContactByRole(
+          contacts,
+          (c) => c.isCampusSecurity || c.role.toLowerCase().contains('security'),
+        );
+
+        return Column(
+          children: [
+            // Row 1: Fire Station + Hospital
+            Row(
+              children: [
+                Expanded(
+                  child: fireStation != null
+                      ? _CallButton(
+                          label: 'Fire Station',
+                          subtitle: 'Nearest',
+                          icon: Icons.local_fire_department,
+                          color: AppColors.emergency,
+                          phone: fireStation.phone,
+                          isAvailable: fireStation.isActive,
+                          onCall: () => _makePhoneCall(fireStation.phone),
+                        )
+                      : _CallButtonUnavailable(
+                          label: 'Fire Station',
+                          icon: Icons.local_fire_department,
+                          color: AppColors.emergency,
+                        ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: hospital != null
+                      ? _CallButton(
+                          label: 'Hospital',
+                          subtitle: 'Nearest',
+                          icon: Icons.medical_services,
+                          color: AppColors.primary,
+                          phone: hospital.phone,
+                          isAvailable: hospital.isActive,
+                          onCall: () => _makePhoneCall(hospital.phone),
+                        )
+                      : _CallButtonUnavailable(
+                          label: 'Hospital',
+                          icon: Icons.medical_services,
+                          color: AppColors.primary,
+                        ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            // Row 2: Police Station + Campus Security
+            Row(
+              children: [
+                Expanded(
+                  child: policeStation != null
+                      ? _CallButton(
+                          label: 'Police Station',
+                          subtitle: 'Nearest',
+                          icon: Icons.local_police,
+                          color: AppColors.secondary,
+                          phone: policeStation.phone,
+                          isAvailable: policeStation.isActive,
+                          onCall: () => _makePhoneCall(policeStation.phone),
+                        )
+                      : _CallButtonUnavailable(
+                          label: 'Police Station',
+                          icon: Icons.local_police,
+                          color: AppColors.secondary,
+                        ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: campusSecurity != null
+                      ? _CallButton(
+                          label: 'Campus Security',
+                          subtitle: 'Nearest',
+                          icon: Icons.security,
+                          color: Colors.purple,
+                          phone: campusSecurity.phone,
+                          isAvailable: campusSecurity.isActive,
+                          onCall: () => _makePhoneCall(campusSecurity.phone),
+                        )
+                      : _CallButtonUnavailable(
+                          label: 'Campus Security',
+                          icon: Icons.security,
+                          color: Colors.purple,
+                        ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+      loading: () => const Center(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: InlineLoading(message: 'Loading emergency contacts...'),
         ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: _QuickActionCard(
-            icon: Icons.medical_services,
-            label: 'Medical',
-            color: Colors.blue,
-            onTap: () => _handleQuickAction(context, EmergencyType.medical()),
-          ),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: _QuickActionCard(
-            icon: Icons.security,
-            label: 'Security',
-            color: Colors.purple,
-            onTap: () => _handleQuickAction(context, EmergencyType.security()),
-          ),
-        ),
-      ],
+      ),
+      error: (error, _) => _buildErrorContacts(
+        context,
+        error.toString(),
+        onRetry: () => ref.refresh(campusEmergencyContactsStreamProvider),
+      ),
     );
   }
 
-  Future<void> _handleQuickAction(BuildContext context, EmergencyType type) async {
-    // For quick actions, we could pre-select the type and then trigger the same flow
-    // For now, just trigger the confirmation dialog with the type pre-selected
-    // In a full implementation, we'd store the selected type in the state
-    _showConfirmationDialog();
+  Widget _buildBottomActionButtons(BuildContext context, WidgetRef ref) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: AppFilledButton(
+                onPressed: () => _showConfirmationDialog(),
+                label: 'Send Alert',
+                icon: Icons.send_rounded,
+                backgroundColor: colorScheme.error,
+                foregroundColor: colorScheme.onError,
+                size: ButtonSize.large,
+                semanticLabel: 'Send emergency alert',
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: AppOutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/emergency/evacuation'),
+                label: 'Enter evacuation route',
+                icon: Icons.route,
+                borderColor: colorScheme.primary,
+                foregroundColor: colorScheme.primary,
+                size: ButtonSize.large,
+                semanticLabel: 'Enter evacuation route',
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 
   Widget _buildEmergencyContacts(
@@ -773,6 +903,18 @@ class _EmergencyMainScreenState extends ConsumerState<EmergencyMainScreen>
     );
   }
 
+  /// Finds a campus emergency contact by role predicate, returning null if none matches.
+  /// No fallback phone numbers are invented — absence of a contact means unavailable.
+  CampusEmergencyContact? _findContactByRole(
+    List<CampusEmergencyContact> contacts,
+    bool Function(CampusEmergencyContact) test,
+  ) {
+    for (final contact in contacts) {
+      if (test(contact)) return contact;
+    }
+    return null;
+  }
+
   Future<void> _makePhoneCall(String phoneNumber) async {
     final uri = Uri.parse('tel:$phoneNumber');
     if (await canLaunchUrl(uri)) {
@@ -835,45 +977,143 @@ class _SosConfirmationDialog extends StatelessWidget {
   }
 }
 
-/// Quick action card for emergency screen
-class _QuickActionCard extends StatelessWidget {
-  final IconData icon;
+/// Call button for direct emergency service calls (per Figma "Call for help")
+class _CallButton extends StatelessWidget {
   final String label;
+  final String subtitle;
+  final IconData icon;
   final Color color;
-  final VoidCallback onTap;
+  final String phone;
+  final bool isAvailable;
+  final VoidCallback onCall;
 
-  const _QuickActionCard({
-    required this.icon,
+  const _CallButton({
     required this.label,
+    required this.subtitle,
+    required this.icon,
     required this.color,
-    required this.onTap,
+    required this.phone,
+    required this.isAvailable,
+    required this.onCall,
   });
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return AppOutlinedCard(
-      onTap: onTap,
-      padding: const EdgeInsets.all(20),
+      onTap: isAvailable ? onCall : null,
+      padding: const EdgeInsets.all(16),
       borderColor: color.withValues(alpha: 0.3),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 56,
-            height: 56,
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Icon(icon, color: color, size: 28),
+          Row(
+            children: [
+              Container(
+                width: 48,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(icon, color: color, size: 24),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      label,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.call, color: color, size: 20),
+            ],
           ),
-          const SizedBox(height: 12),
-          Text(
-            label,
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-            textAlign: TextAlign.center,
+        ],
+      ),
+    );
+  }
+}
+
+/// Call button shown when no verified contact is available from Firestore.
+/// Displays an unavailable state instead of a hardcoded fallback phone number.
+class _CallButtonUnavailable extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final Color color;
+
+  const _CallButtonUnavailable({
+    required this.label,
+    required this.icon,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return AppOutlinedCard(
+      onTap: null, // Disabled — no verified phone number available
+      padding: const EdgeInsets.all(16),
+      borderColor: color.withValues(alpha: 0.3),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 48,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(icon, color: color.withValues(alpha: 0.4), size: 24),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      label,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: colorScheme.onSurfaceVariant.withValues(alpha: 0.6),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      'Not available',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: colorScheme.onSurfaceVariant.withValues(alpha: 0.5),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.call, color: color.withValues(alpha: 0.3), size: 20),
+            ],
           ),
         ],
       ),

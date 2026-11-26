@@ -151,7 +151,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Display Styles (Large headlines)
   // ===========================================================================
-  static TextStyle displayLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle displayLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 57,
     fontWeight: FontWeight.w400,
     letterSpacing: -0.25,
@@ -159,7 +159,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle displayMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle displayMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 45,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
@@ -167,7 +167,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle displaySmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle displaySmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 36,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
@@ -178,7 +178,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Headline Styles
   // ===========================================================================
-  static TextStyle headlineLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle headlineLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 32,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -186,7 +186,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle headlineMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle headlineMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -194,7 +194,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle headlineSmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle headlineSmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -205,7 +205,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Title Styles
   // ===========================================================================
-  static TextStyle titleLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle titleLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 22,
     fontWeight: FontWeight.w500,
     letterSpacing: 0,
@@ -213,7 +213,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle titleMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle titleMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.15,
@@ -221,7 +221,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle titleSmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle titleSmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.1,
@@ -232,7 +232,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Body Styles
   // ===========================================================================
-  static TextStyle bodyLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle bodyLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.5,
@@ -240,7 +240,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle bodyMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle bodyMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.25,
@@ -248,7 +248,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle bodySmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle bodySmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.4,
@@ -259,7 +259,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Label Styles
   // ===========================================================================
-  static TextStyle labelLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle labelLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.1,
@@ -267,7 +267,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle labelMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle labelMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.5,
@@ -275,7 +275,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle labelSmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle labelSmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.5,
@@ -286,7 +286,7 @@ abstract class AppTextStyles {
   // ===========================================================================
   // Special Styles
   // ===========================================================================
-  static TextStyle monoLarge(BuildContext context) => GoogleFonts.robotoMono(
+  static TextStyle monoLarge(BuildContext context) => AppTextStyleBuilder.monoTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
@@ -294,7 +294,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle monoMedium(BuildContext context) => GoogleFonts.robotoMono(
+  static TextStyle monoMedium(BuildContext context) => AppTextStyleBuilder.monoTextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
@@ -302,7 +302,7 @@ abstract class AppTextStyles {
     color: Theme.of(context).colorScheme.onSurface,
   );
 
-  static TextStyle monoSmall(BuildContext context) => GoogleFonts.robotoMono(
+  static TextStyle monoSmall(BuildContext context) => AppTextStyleBuilder.monoTextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     letterSpacing: 0,
@@ -311,7 +311,7 @@ abstract class AppTextStyles {
   );
 
   // Emergency mode - high visibility
-  static TextStyle emergencyLarge(BuildContext context) => GoogleFonts.inter(
+  static TextStyle emergencyLarge(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w700,
     letterSpacing: 0,
@@ -319,7 +319,7 @@ abstract class AppTextStyles {
     color: AppColors.emergencyText,
   );
 
-  static TextStyle emergencyMedium(BuildContext context) => GoogleFonts.inter(
+  static TextStyle emergencyMedium(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w600,
     letterSpacing: 0,
@@ -327,7 +327,7 @@ abstract class AppTextStyles {
     color: AppColors.emergencyText,
   );
 
-  static TextStyle emergencySmall(BuildContext context) => GoogleFonts.inter(
+  static TextStyle emergencySmall(BuildContext context) => AppTextStyleBuilder.interTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     letterSpacing: 0,
@@ -397,6 +397,44 @@ abstract class AppDurations {
   static const Duration emergency = Duration(
     milliseconds: 100,
   ); // Faster for emergency
+}
+
+/// Shared text-style builders used by both [AppTextStyles] and
+/// [AppTheme._buildTextTheme] so typography is defined in one place.
+abstract class AppTextStyleBuilder {
+  AppTextStyleBuilder._();
+
+  static TextStyle interTextStyle({
+    required double fontSize,
+    required FontWeight fontWeight,
+    double letterSpacing = 0,
+    double height = 1.0,
+    required Color color,
+  }) {
+    return GoogleFonts.inter(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      letterSpacing: letterSpacing,
+      height: height,
+      color: color,
+    );
+  }
+
+  static TextStyle monoTextStyle({
+    required double fontSize,
+    required FontWeight fontWeight,
+    double letterSpacing = 0,
+    double height = 1.0,
+    required Color color,
+  }) {
+    return GoogleFonts.robotoMono(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      letterSpacing: letterSpacing,
+      height: height,
+      color: color,
+    );
+  }
 }
 
 /// Light Color Scheme
@@ -900,105 +938,105 @@ class AppTheme {
         : AppColors.onSurfaceVariantDark;
 
     return TextTheme(
-      displayLarge: GoogleFonts.inter(
+      displayLarge: AppTextStyleBuilder.interTextStyle(
         fontSize: 57,
         fontWeight: FontWeight.w400,
         letterSpacing: -0.25,
         height: 1.12,
         color: onSurface,
       ),
-      displayMedium: GoogleFonts.inter(
+      displayMedium: AppTextStyleBuilder.interTextStyle(
         fontSize: 45,
         fontWeight: FontWeight.w400,
         letterSpacing: 0,
         height: 1.16,
         color: onSurface,
       ),
-      displaySmall: GoogleFonts.inter(
+      displaySmall: AppTextStyleBuilder.interTextStyle(
         fontSize: 36,
         fontWeight: FontWeight.w400,
         letterSpacing: 0,
         height: 1.22,
         color: onSurface,
       ),
-      headlineLarge: GoogleFonts.inter(
+      headlineLarge: AppTextStyleBuilder.interTextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w600,
         letterSpacing: 0,
         height: 1.25,
         color: onSurface,
       ),
-      headlineMedium: GoogleFonts.inter(
+      headlineMedium: AppTextStyleBuilder.interTextStyle(
         fontSize: 28,
         fontWeight: FontWeight.w600,
         letterSpacing: 0,
         height: 1.29,
         color: onSurface,
       ),
-      headlineSmall: GoogleFonts.inter(
+      headlineSmall: AppTextStyleBuilder.interTextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w600,
         letterSpacing: 0,
         height: 1.33,
         color: onSurface,
       ),
-      titleLarge: GoogleFonts.inter(
+      titleLarge: AppTextStyleBuilder.interTextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w500,
         letterSpacing: 0,
         height: 1.27,
         color: onSurface,
       ),
-      titleMedium: GoogleFonts.inter(
+      titleMedium: AppTextStyleBuilder.interTextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.15,
         height: 1.50,
         color: onSurface,
       ),
-      titleSmall: GoogleFonts.inter(
+      titleSmall: AppTextStyleBuilder.interTextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.1,
         height: 1.43,
         color: onSurface,
       ),
-      bodyLarge: GoogleFonts.inter(
+      bodyLarge: AppTextStyleBuilder.interTextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.5,
         height: 1.50,
         color: onSurface,
       ),
-      bodyMedium: GoogleFonts.inter(
+      bodyMedium: AppTextStyleBuilder.interTextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.25,
         height: 1.43,
         color: onSurface,
       ),
-      bodySmall: GoogleFonts.inter(
+      bodySmall: AppTextStyleBuilder.interTextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.4,
         height: 1.33,
         color: onSurfaceVariant,
       ),
-      labelLarge: GoogleFonts.inter(
+      labelLarge: AppTextStyleBuilder.interTextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.1,
         height: 1.43,
         color: onSurface,
       ),
-      labelMedium: GoogleFonts.inter(
+      labelMedium: AppTextStyleBuilder.interTextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.5,
         height: 1.33,
         color: onSurface,
       ),
-      labelSmall: GoogleFonts.inter(
+      labelSmall: AppTextStyleBuilder.interTextStyle(
         fontSize: 11,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.5,

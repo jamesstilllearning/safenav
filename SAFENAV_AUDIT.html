@@ -1,0 +1,798 @@
+<title>SAFENAV CAVITE — Phase 1 UI/UX Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Design plan
+ * Color: 6 named tokens (bg, fg, muted, accent, accent-inverse, border) plus semantic
+ *         success/warning/error/info tokens, redefined for dark theme.
+ * Type:   Space Grotesk (display/headings), Inter (body/data), system-ui fallback.
+ * Layout: single-column readable container with safe-area side gutters; tables/code
+ *         in overflow-x: auto wrappers; severity chips as inline role markers.
+ */
+
+/* Token definitions — light on bare :root */
+:root {
+  --bg: #ffffff;
+  --fg: #171a20;
+  --muted: #5c5f66;
+  --accent: #0b5ed6;
+  --accent-inverse: #ffffff;
+  --border: #d9dde3;
+  --surface: #f4f6f9;
+  --surface-2: #e9edf2;
+  --success: #157a3d;
+  --success-bg: #e7f4ec;
+  --warning: #b45309;
+  --warning-bg: #fdf3e3;
+  --error: #c0392b;
+  --error-bg: #fbeae8;
+  --info: #0b6e9e;
+  --info-bg: #e4f0f6;
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-data: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* Dark theme — OS preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1117;
+    --fg: #e8eaf0;
+    --muted: #9aa0aa;
+    --accent: #3b8cf6;
+    --border: #2a2f38;
+    --surface: #161a22;
+    --surface-2: #202530;
+    --success: #3fb95f;
+    --success-bg: #163322;
+    --warning: #d9822b;
+    --warning-bg: #3b240f;
+    --error: #e8645c;
+    --error-bg: #3d1f1b;
+    --info: #5fb4d8;
+    --info-bg: #17303d;
+    color-scheme: dark;
+  }
+}
+
+/* Dark theme — explicit override */
+:root[data-theme="dark"] {
+  --bg: #0e1117;
+  --fg: #e8eaf0;
+  --muted: #9aa0aa;
+  --accent: #3b8cf6;
+  --border: #2a2f38;
+  --surface: #161a22;
+  --surface-2: #202530;
+  --success: #3fb95f;
+  --success-bg: #163322;
+  --warning: #d9822b;
+  --warning-bg: #3b240f;
+  --error: #e8645c;
+  --error-bg: #3d1f1b;
+  --info: #5fb4d8;
+  --info-bg: #17303d;
+  color-scheme: dark;
+}
+
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--fg);
+  text-wrap: balance;
+}
+h1 { font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.01em; }
+h2 { font-size: 1.45rem; margin: 40px 0 12px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.15rem; margin: 24px 0 8px 0; }
+h4 { font-size: 1rem; margin: 16px 0 6px 0; color: var(--muted); }
+
+p { margin: 0 0 12px 0; }
+ul, ol { margin: 6px 0 14px 0; padding-left: 20px; }
+li { margin-bottom: 4px; }
+
+code, pre {
+  font-family: var(--font-data);
+  font-size: 0.875em;
+  background: var(--surface-2);
+  border-radius: 6px;
+}
+code { padding: 1px 6px; color: var(--fg); }
+pre { padding: 12px 14px; overflow-x: auto; margin: 12px 0; }
+pre code { background: transparent; padding: 0; font-size: 1em; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--surface); font-weight: 600; color: var(--fg); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tr:nth-child(even) td { background: var(--surface-2); }
+table, pre { overflow-x: auto; display: block; }
+
+.section {
+  max-width: 900px;
+  margin: 0 auto 46px auto;
+}
+
+.hero {
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  padding-top: calc(env(safe-area-inset-top, 0px) + 3rem);
+  padding-bottom: 24px;
+  background: var(--accent);
+  color: var(--accent-inverse);
+}
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.hero .kicker {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 10px;
+}
+.hero h1 {
+  color: var(--accent-inverse);
+  font-size: 1.9rem;
+  margin: 0 0 10px 0;
+  text-wrap: balance;
+}
+.hero .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 720px;
+  margin: 0 0 16px 0;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0 0 18px 0;
+}
+.meta-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.meta-card .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+.meta-card .value { font-size: 0.95rem; color: var(--fg); font-family: var(--font-display); font-weight: 600; }
+
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 0.92rem;
+}
+.toc h3 { margin-top: 0; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.toc ul { margin: 8px 0 0 0; padding-left: 18px; }
+.toc li { margin-bottom: 5px; font-size: 0.9rem; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--accent); text-decoration: underline; }
+
+.callout {
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin: 18px 0;
+  border-left: 4px solid;
+}
+.callout p { margin: 0; font-size: 0.95rem; }
+.callout.info { background: var(--info-bg); border-left-color: var(--info); color: var(--fg); }
+.callout.warn { background: var(--warning-bg); border-left-color: var(--warning); color: var(--fg); }
+.callout.error { background: var(--error-bg); border-left-color: var(--error); color: var(--fg); }
+
+.chip {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin: 2px 4px 2px 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.chip.critical { background: var(--error-bg); color: var(--error); border: 1px solid var(--error); }
+.chip.high { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning); }
+.chip.medium { background: var(--info-bg); color: var(--info); border: 1px solid var(--info); }
+.chip.low { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+
+.severity-tag { font-weight: 700; }
+.status-implemented { color: var(--success); }
+.status-placeholder { color: var(--warning); }
+.status-missing { color: var(--error); }
+
+.filepath {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  background: var(--surface-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 50px;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  .hero h1 { font-size: 1.55rem; }
+  table { font-size: 0.82rem; }
+  th, td { padding: 6px 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">SAFENAV CAVITE &middot; Phase 1</div>
+    <h1>UI/UX Audit Report</h1>
+    <div class="subtitle">A read-only inspection of the campus navigation and emergency evacuation app for EARIST Cavite Campus, with per-screen assessments, a findings register, and a phased implementation plan. Nothing in this report changes code.</div>
+  </div>
+</header>
+
+<div class="section">
+  <div class="meta-grid">
+    <div class="meta-card"><div class="label">Status</div><div class="value">Read-only &middot; advisory</div></div>
+    <div class="meta-card"><div class="label">App</div><div class="value">SAFENAV CAVITE</div></div>
+    <div class="meta-card"><div class="label">Framework</div><div class="value">Flutter 3.8.0+ &middot; Material 3</div></div>
+    <div class="meta-card"><div class="label">Router</div><div class="value">go_router 14.3.0</div></div>
+    <div class="meta-card"><div class="label">State</div><div class="value">flutter_riverpod 2.6.1</div></div>
+    <div class="meta-card"><div class="label">Map</div><div class="value">flutter_map 7.0.2 &middot; latlong2</div></div>
+  </div>
+
+  <div class="toc">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#executive-summary">1. Executive summary</a></li>
+      <li><a href="#screen-inventory">2. Complete screen inventory</a></li>
+      <li><a href="#per-screen-assessment">3. Per-screen UI/UX assessment</a></li>
+      <li><a href="#widgets">4. Reusable widgets &amp; components</a></li>
+      <li><a href="#theme">5. Theme &amp; color system</a></li>
+      <li><a href="#a11y">6. Responsiveness &amp; accessibility</a></li>
+      <li><a href="#problems">7. Problems &amp; inconsistencies</a></li>
+      <li><a href="#redesign">8. Recommended redesign per screen</a></li>
+      <li><a href="#design-system">9. Suggested reusable design system</a></li>
+      <li><a href="#roadmap">10. Prioritized implementation roadmap</a></li>
+      <li><a href="#phases">11. Phase-by-phase plan</a></li>
+      <li><a href="#approval">12. Approval required</a></li>
+      <li><a href="#appendix">Appendix. File reference</a></li>
+    </ul>
+  </div>
+
+  <section id="executive-summary">
+    <h2>Executive summary</h2>
+    <p>SAFENAV CAVITE has solid design-system bones: a Material 3 theme system (<span class="filepath">lib/src/core/theme/app_theme.dart</span>), a comprehensive shared widget library (<span class="filepath">lib/src/shared/widgets/</span>), and a go_router + flutter_riverpod architecture built around a 5-tab bottom-nav shell (Map, Navigate, Emergency, Alerts, Profile) with a Begin entry screen replacing login.</p>
+    <p>The app is incomplete and inconsistent. Several screens are TODOs or placeholders, the router references screens that do not exist, duplicated helper logic appears across files, and accessibility/responsiveness are unevenly implemented. The strongest assets are the shared widget library and theme system &mdash; both are reusable and well-typed. The weakest area is the profile feature (~5,838 inline lines, mostly stubbed), followed by missing router routes and duplicated severity/color/instruction-icon switch functions.</p>
+    <div class="callout info"><p><strong>Core recommendation:</strong> Do not start by redesigning individual screens. Lock down the shared design system first (theme tokens, component library, navigation patterns, bottom sheets, empty/error/loading states), then bring each screen up to that standard one at a time.</p></div>
+    <div class="callout error"><p><strong>Preservation constraints honored:</strong> This is a read-only audit. No files were created, modified, deleted, renamed, or moved. Firebase config, Firestore rules, navigation algorithms, routing logic, campus map SVGs, navigation graph JSON, node/edge IDs, and coordinates were not touched. Authentication was not reintroduced. No new features were implemented.</p></div>
+  </section>
+
+  <section id="screen-inventory">
+    <h2>Complete screen inventory</h2>
+    <p>Routes are defined in <span class="filepath">lib/src/core/router/app_routes.dart</span> and wired in <span class="filepath">lib/src/core/router/app_router.dart</span>. The shell uses <code>StatefulShellRoute.indexedStack</code> with five branches.</p>
+    <h3>Public / onboarding</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/</code></td><td>Splash &rarr; Begin</td><td><span class="filepath">app_router.dart</span> (<code>_SplashScreen</code>)</td><td class="status-placeholder">Placeholder (inline)</td></tr>
+        <tr><td><code>/begin</code></td><td>BeginScreen (entry, replaces login)</td><td><span class="filepath">onboarding/.../begin_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+      </tbody>
+    </table>
+    <h3>Main shell &mdash; Map branch (0)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/home</code></td><td>MapScreen</td><td><span class="filepath">map/.../map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/location/:locationId</code></td><td>_LocationDetailScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/building/:buildingId</code></td><td>_BuildingDetailScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/digital-twin/:buildingId</code></td><td>DigitalTwinScreen</td><td><span class="filepath">digital_twin/.../digital_twin_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+      </tbody>
+    </table>
+    <h3>Main shell &mdash; Navigate branch (1)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/navigation</code></td><td>NavigationScreen</td><td><span class="filepath">navigation/.../navigation_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/:routeId</code></td><td>_NavigationDetailScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+      </tbody>
+    </table>
+    <h3>Main shell &mdash; Emergency branch (2)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/emergency</code></td><td>EmergencyScreen</td><td><span class="filepath">emergency/.../emergency_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/evacuation</code></td><td>_EvacuationScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/evacuation/:routeId</code></td><td>_EvacuationDetailScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+      </tbody>
+    </table>
+    <h3>Main shell &mdash; Alerts branch (3)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/alerts</code></td><td>AlertsScreen</td><td><span class="filepath">alerts/.../alerts_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/alert/:alertId</code></td><td>_AlertDetailScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/alerts/create</code></td><td>_CreateAlertScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-placeholder">TODO</td></tr>
+      </tbody>
+    </table>
+    <h3>Main shell &mdash; Profile branch (4)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/profile</code></td><td>ProfileScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (large)</td></tr>
+        <tr><td><code>/profile/edit</code></td><td>EditProfileScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (stubbed)</td></tr>
+        <tr><td><code>/profile/id-card</code></td><td>DigitalIDCardScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (placeholder QR/barcode)</td></tr>
+        <tr><td><code>/profile/security</code></td><td>SecuritySettingsScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (mostly stubbed)</td></tr>
+        <tr><td><code>/profile/emergency-contacts</code></td><td>EmergencyContactsScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/profile/medical-info</code></td><td>MedicalInfoScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (mostly stubbed)</td></tr>
+        <tr><td><code>/profile/location-sharing</code></td><td>LocationSharingScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (stubbed)</td></tr>
+        <tr><td><code>/profile/safety-checkins</code></td><td>SafetyCheckinsScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td><code>/profile/activity/history</code></td><td>ActivityHistoryScreen</td><td><span class="filepath">profile/.../profile_screen.dart</span></td><td class="status-implemented">Implemented (partial tabs)</td></tr>
+        <tr><td><code>/profile/preferences/language</code></td><td>LanguagePreferencesScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/profile/preferences/theme</code></td><td>ThemePreferencesScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/profile/preferences/notifications</code></td><td>NotificationPreferencesScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/profile/preferences/map</code></td><td>MapPreferencesScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/profile/preferences/accessibility</code></td><td>AccessibilityPreferencesScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/settings</code></td><td>SettingsScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+        <tr><td><code>/help</code></td><td>HelpScreen</td><td><span class="filepath">app_router.dart</span></td><td class="status-missing">Missing &mdash; referenced but no file</td></tr>
+      </tbody>
+    </table>
+    <h3>Admin routes (all placeholders)</h3>
+    <table>
+      <thead><tr><th>Route</th><th>Screen</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><code>/admin</code></td><td>_AdminDashboardScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/users</code></td><td>_AdminUsersScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/locations</code></td><td>_AdminLocationsScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/evacuation-graph</code></td><td>_AdminEvacuationGraphScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/alerts</code></td><td>_AdminAlertsScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/analytics</code></td><td>_AdminAnalyticsScreen</td><td class="status-placeholder">TODO</td></tr>
+        <tr><td><code>/admin/settings</code></td><td>_AdminSettingsScreen</td><td class="status-placeholder">TODO</td></tr>
+      </tbody>
+    </table>
+    <h3>Reusable bottom sheets &amp; modals (navigation)</h3>
+    <table>
+      <thead><tr><th>Component</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>_BuildingBottomSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_PathwayBottomSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_RoomBottomSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_MarkerBottomSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_BuildingSelectorSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_LayerOptionsSheet</td><td><span class="filepath">map_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>RoutePreviewBottomSheet</td><td><span class="filepath">route_preview_bottom_sheet.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>DestinationDetailsBottomSheet</td><td><span class="filepath">destination_details_bottom_sheet.dart</span></td><td class="status-implemented">Implemented</td></tr>
+        <tr><td>_SosConfirmationDialog</td><td><span class="filepath">emergency_screen.dart</span></td><td class="status-implemented">Implemented</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="per-screen-assessment">
+    <h2>Per-screen UI/UX assessment</h2>
+    <p>Each assessment distinguishes visual, layout, interaction, functional, and backend-dependent concerns.</p>
+    <h3>BeginScreen &mdash; entry (replaces login)</h3>
+    <p><span class="filepath">lib/src/features/onboarding/presentation/screens/begin_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> Large AppFilledButton "BEGIN" &rarr; <code>AppRoutes.home</code>. Clean, minimal, appropriate entry point.</li>
+      <li><strong>Layout:</strong> Centered, single primary action; good use of space.</li>
+      <li><strong>Interaction:</strong> One clear call-to-action; no sign-up/sign-in noise.</li>
+      <li><strong>Functional:</strong> Correctly replaces the removed login system.</li>
+      <li><strong>Accessibility:</strong> Button supports <code>semanticLabel</code> via AppFilledButton.</li>
+      <li><strong>Assessment:</strong> Strong &mdash; this is the pattern the rest of the app should follow.</li>
+    </ul>
+    <h3>MapScreen &mdash; home tab</h3>
+    <p><span class="filepath">lib/src/features/map/presentation/screens/map_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> flutter_map with indoor/outdoor modes, building/pathway/room/marker/polyline layers. Map-first design is correct for this app.</li>
+      <li><strong>Layout:</strong> Full-screen map with bottom sheets, toolbar, zoom controls, selection info bar, FAB, indoor floor selector. Dense but map-centric.</li>
+      <li><strong>Interaction:</strong> Six bottom sheet types for different feature types; building selector; layer options; floor selector.</li>
+      <li><strong>Functional:</strong> Backend-dependent (map tiles, building data, graph). Indoor floor switching is a key differentiator.</li>
+      <li><strong>Accessibility:</strong> Map markers have no screen-reader alternative; bottom sheets need explicit semantic labels.</li>
+      <li><strong>Responsiveness:</strong> <code>DraggableScrollableSheet</code> adapts to screen height; FAB may collide with bottom nav on small phones.</li>
+      <li><strong>Assessment:</strong> Good map-first foundation; six sheet types create UI fragmentation.</li>
+    </ul>
+    <h3>NavigationScreen &mdash; navigate tab</h3>
+    <p><span class="filepath">lib/src/features/navigation/presentation/screens/navigation_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> State machine (Idle/Initializing/Ready/Active/Error). DestinationSearchBar, RoutePreviewBar, RoutePreviewCard, CommonDestinationsList, quick action cards, stat chips.</li>
+      <li><strong>Layout:</strong> Search bar at top; common destinations horizontal scroll; route preview bar/card. Information-dense.</li>
+      <li><strong>Interaction:</strong> Start-location mode selector (GPS/Indoor/Outdoor); destination search; saved routes sheet. Voice search stubbed ("coming soon").</li>
+      <li><strong>Functional:</strong> Haversine distance helpers inline; duplicated in <code>destination_details_bottom_sheet.dart</code>; imperative Riverpod provider usage.</li>
+      <li><strong>Assessment:</strong> Functional core, but duplicated helpers and stubbed voice guidance are liabilities.</li>
+    </ul>
+    <h3>EmergencyScreen</h3>
+    <p><span class="filepath">lib/src/features/emergency/presentation/screens/emergency_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> 3-second SOS hold via Timer + AnimationController pulse + progress ring; confirmation dialog; Fire/Medical/Security quick actions; emergency red theme.</li>
+      <li><strong>Layout:</strong> Full-screen status view with <code>PopScope canPop:false</code>; timeline, responder info, cancel dialog.</li>
+      <li><strong>Interaction:</strong> Long-press SOS hold is correct for preventing accidental triggers; confirmation dialog adds safety.</li>
+      <li><strong>Functional:</strong> Firestore emergency contacts; assembly point &amp; evacuation route cards. <strong>Critical issue:</strong> <code>_activateSos</code> requires <code>userId</code> and shows "Please log in" despite the app having no login.</li>
+      <li><strong>Accessibility:</strong> SOS hold needs haptic/audio fallback; progress ring needs a text equivalent.</li>
+      <li><strong>Assessment:</strong> Strong interaction design; the login contradiction is a functional bug that blocks launch.</li>
+    </ul>
+    <h3>AlertsScreen</h3>
+    <p><span class="filepath">lib/src/features/alerts/presentation/screens/alerts_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> TabBar (All/Unread/Critical); <code>_AlertTile</code>, AlertDetailScreen, CreateAlertScreen, related-alerts section; filter chips.</li>
+      <li><strong>Layout:</strong> List-based standard alert pattern; FCM init/registerToken; Firestore stream providers.</li>
+      <li><strong>Interaction:</strong> <code>FilterParams</code> equality/hashCode implemented. Severity/color switch functions duplicated in 3 places.</li>
+      <li><strong>Functional:</strong> Real-time Firestore stream; unread-count stream; critical filtering. Create alert is admin/security only (placeholder).</li>
+      <li><strong>Accessibility:</strong> Color-coded severity must not rely on color alone; alert tiles need semantic labels for unread/critical status.</li>
+      <li><strong>Assessment:</strong> Solid pattern, but duplicated severity/color logic is a maintenance risk.</li>
+    </ul>
+    <h3>ProfileScreen &mdash; profile tab</h3>
+    <p><span class="filepath">lib/src/features/profile/presentation/screens/profile_screen.dart</span> (~5,838 lines)</p>
+    <ul>
+      <li><strong>Visual:</strong> SectionHeader-gated sections: Account, Safety &amp; Emergency, Preferences, About. Edit profile, digital ID card (CustomPaint QR/barcode placeholders), security settings, emergency contacts, medical info, location sharing, safety check-ins, activity history.</li>
+      <li><strong>Layout:</strong> Massive single file. Sections gated by authentication state (&mdash; but the app has no login, so the authenticated branch may be dead or inconsistent code).</li>
+      <li><strong>Interaction:</strong> ~15 string-route pushes (e.g. <code>context.push('/profile/edit')</code>) mixed with typed <code>AppRoutes</code>; most editors stubbed "coming soon".</li>
+      <li><strong>Functional:</strong> Inline providers (placesVisitedCountProvider, routesTakenCountProvider, userSafetyScoreProvider, etc.). Digital ID QR/barcode are CustomPaint placeholders (non-functional).</li>
+      <li><strong>Assessment:</strong> Over-scoped and incomplete; the weakest screen in the app.</li>
+    </ul>
+    <h3>DigitalTwinScreen</h3>
+    <p><span class="filepath">lib/src/features/digital_twin/presentation/screens/digital_twin_screen.dart</span></p>
+    <ul>
+      <li><strong>Visual:</strong> 3D WebView (Three.js) via webview_flutter. Floor selector (left), room search panel (right), room info panel (bottom), highlighted-rooms badge. Theme toggle (light/dark/emergency); exploded-view toggle.</li>
+      <li><strong>Layout:</strong> Stack-based overlay on full-screen WebView; dense overlay UI.</li>
+      <li><strong>Interaction:</strong> Room hover/select; floor change; fly-to-room; 300ms-debounced search.</li>
+      <li><strong>Functional:</strong> Building3D model loading; coordinate transform; model loader service. "Navigate" button stubbed ("Coming soon").</li>
+      <li><strong>Accessibility:</strong> WebView content is inaccessible to screen readers; color-coded room categories rely on color alone.</li>
+      <li><strong>Responsiveness:</strong> Fixed-width panels (280px search, 60px floor selector) may break on small phones.</li>
+      <li><strong>Assessment:</strong> Technically ambitious but accessibility-poor; 3D twin is secondary to core map navigation.</li>
+    </ul>
+    <h3>_MainShell &mdash; bottom navigation</h3>
+    <p><span class="filepath">lib/src/core/router/app_router.dart</span> (inline)</p>
+    <ul>
+      <li><strong>Visual:</strong> Five destinations (Map, Navigate, Emergency, Alerts, Profile); Emergency tab highlighted in error color when selected; unread-alert badge on Alerts.</li>
+      <li><strong>Layout:</strong> Connectivity banner above content. Custom InkWell-based nav items (comment references Material 3 NavigationBar but uses a custom build).</li>
+      <li><strong>Interaction:</strong> Branch-based navigation via <code>navigationShell.goBranch(index)</code>.</li>
+      <li><strong>Accessibility:</strong> Nav items lack explicit semantics; badge is visual-only (no screen-reader announcement of count).</li>
+      <li><strong>Responsiveness:</strong> Five tabs is at the upper limit for bottom nav on small phones; labels are 11px.</li>
+      <li><strong>Assessment:</strong> Functional but custom-built rather than using Material 3 NavigationBar.</li>
+    </ul>
+  </section>
+
+  <section id="widgets">
+    <h2>Reusable widgets &amp; components inventory</h2>
+    <p>The shared widget library (<span class="filepath">lib/src/shared/widgets/</span>) is the strongest asset in the codebase &mdash; comprehensive, well-typed, and theming-aware.</p>
+    <table>
+      <thead><tr><th>Widget</th><th>File</th><th>Type</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>AppFilledButton / AppOutlinedButton / AppTextButton</td><td><span class="filepath">app_button.dart</span></td><td>Button</td><td>ButtonSize {sm/md/lg}, IconPosition {leading/trailing}, isLoading/isDisabled/semanticLabel</td></tr>
+        <tr><td>AppSosButton</td><td><span class="filepath">app_button.dart</span></td><td>Button</td><td>Pulse animation via AnimationController; SosButtonSize</td></tr>
+        <tr><td>AppIconButton</td><td><span class="filepath">app_button.dart</span></td><td>Button</td><td>IconButtonSize enum</td></tr>
+        <tr><td>AppSegmentedButton</td><td><span class="filepath">app_button.dart</span></td><td>Button</td><td>Material segmented button wrapper</td></tr>
+        <tr><td>navigatorKey</td><td><span class="filepath">app_button.dart</span></td><td>Global</td><td>GlobalKey&lt;NavigatorState&gt;</td></tr>
+        <tr><td>AppCard / AppOutlinedCard / AppElevatedCard</td><td><span class="filepath">app_card.dart</span></td><td>Card</td><td>onTap/inkWell/semanticLabel/excludeFromSemantics</td></tr>
+        <tr><td>AppChip / AppFilterChip / AppChoiceChip / AppInputChip / AppStatusChip</td><td><span class="filepath">app_chip.dart</span></td><td>Chip</td><td>ChipSeverity {info, success, warning, error, emergency}</td></tr>
+        <tr><td>SectionHeader / SectionTitle / SectionHeaderWithCount</td><td><span class="filepath">section_header.dart</span></td><td>Header</td><td>SectionHeaderStyle {standard, large, small, divider}</td></tr>
+        <tr><td>PageHeader</td><td><span class="filepath">page_header.dart</span></td><td>Header</td><td>{standard, compact}; uses AppSpacing</td></tr>
+        <tr><td>AppAvatar / AppAvatarWithStatus / AppAvatarGroup</td><td><span class="filepath">app_avatar.dart</span></td><td>Avatar</td><td>color-from-name-hash; AvatarShape/AvatarStatus enums</td></tr>
+        <tr><td>EmptyState ×6 variants</td><td><span class="filepath">empty_state.dart</span></td><td>Empty</td><td>Icon/title/message/action pattern</td></tr>
+        <tr><td>LoadingOverlay / InlineLoading / SkeletonLoader / SkeletonCard / LoadingButton / RefreshIndicatorWrapper</td><td><span class="filepath">loading_state.dart</span></td><td>Loading</td><td>Skeleton with animation controller</td></tr>
+        <tr><td>ErrorState / InlineError / ErrorBanner / NetworkErrorState / PermissionErrorState</td><td><span class="filepath">error_state.dart</span></td><td>Error</td><td>Retry/dismiss actions; auto-dismiss banner</td></tr>
+        <tr><td>AppDivider ×7 variants</td><td><span class="filepath">app_divider.dart</span></td><td>Divider</td><td>Consistent divider family</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn"><p><strong>Library issues:</strong> <code>empty_state.dart</code>, <code>loading_state.dart</code>, <code>error_state.dart</code>, and <code>app_divider.dart</code> import <code>package:material_ui/material_ui.dart</code> &mdash; a suspicious <code>^0.0.1</code> dependency that may not exist or publish properly (potential build blocker). Empty/error states use raw <code>FilledButton</code>/<code>OutlinedButton</code>/<code>TextButton</code> instead of the <code>App*</code> wrappers &mdash; inconsistent within the library itself.</p></div>
+    <h3>Navigation-specific widgets</h3>
+    <table>
+      <thead><tr><th>Widget</th><th>File</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>DestinationSearchBar</td><td><span class="filepath">destination_search_bar.dart</span></td><td>Search + start-location mode</td></tr>
+        <tr><td>_StartLocationButton / _ModeOptionTile</td><td><span class="filepath">destination_search_bar.dart</span></td><td>GPS/Indoor/Outdoor badge; mode tile</td></tr>
+        <tr><td>_DestinationCard</td><td><span class="filepath">common_destinations_list.dart</span></td><td>Horizontal destination card</td></tr>
+        <tr><td>RoutePreviewCard / RoutePreviewBar / _StatChip / _InstructionPreviewCard</td><td><span class="filepath">route_preview_bottom_sheet.dart</span></td><td>Route preview</td></tr>
+        <tr><td>ActiveNavigationView / _TopNavigationBar / _CurrentInstructionCard / _NextInstructionPreview</td><td><span class="filepath">active_navigation_view.dart</span></td><td>Turn-by-turn view</td></tr>
+        <tr><td>DestinationDetailsBottomSheet / _DetailRow / _DistanceInfo</td><td><span class="filepath">destination_details_bottom_sheet.dart</span></td><td>Destination detail</td></tr>
+        <tr><td><code>_getInstructionIcon</code></td><td><span class="filepath">route_preview_bottom_sheet.dart</span> + <span class="filepath">active_navigation_view.dart</span></td><td>Defined identically twice &mdash; duplicated</td></tr>
+        <tr><td>Haversine + <code>_formatDistance</code>/<code>_formatDuration</code></td><td><span class="filepath">navigation_screen.dart</span> + <span class="filepath">destination_details_bottom_sheet.dart</span></td><td>Duplicated helpers</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="theme">
+    <h2>Theme &amp; color system assessment</h2>
+    <p><span class="filepath">lib/src/core/theme/app_theme.dart</span> and <span class="filepath">lib/src/core/theme/theme_provider.dart</span></p>
+    <h3>Strengths</h3>
+    <ul>
+      <li><strong>AppColors, AppTextStyles, AppSpacing, AppElevation, AppDurations</strong> &mdash; complete token system.</li>
+      <li><strong>Inter + RobotoMono</strong> via Google Fonts &mdash; good sans + mono pairing for technical data.</li>
+      <li><strong>Three ColorSchemes:</strong> light, dark, emergency. Emergency is a full-screen red emergency mode &mdash; appropriate for this app.</li>
+      <li><strong>ThemeData builder</strong> with Material 3 component themes (elevatedButton, filledButton, outlinedButton, textButton, card, chip, bottomSheet, dialog, appBar, etc.).</li>
+      <li><strong>Zoom / Cupertino page transitions</strong> &mdash; nice touch.</li>
+      <li><strong>textScaler clamped 0.8&ndash;1.3</strong> in <code>_AppBuilder</code> &mdash; good accessibility guardrail.</li>
+      <li><strong>ThemeProvider</strong> with SharedPreferences persistence; AppThemeMode {system, light, dark, emergency}; emergency-mode toggle.</li>
+    </ul>
+    <h3>Weaknesses</h3>
+    <ul>
+      <li>Emergency ColorScheme can be activated independently of actual emergencies &mdash; potential for confusing UI state.</li>
+      <li>Several widgets use hardcoded <code>Colors.red</code>/<code>Colors.green</code>/<code>Colors.blue</code>/<code>Colors.orange</code> instead of theme color scheme (e.g. <code>digital_twin_screen.dart</code>, emergency badges in <code>destination_details_bottom_sheet.dart</code>). This breaks dark/emergency theme consistency.</li>
+      <li><code>_AppBuilder</code> clamps text scaler but there is no evidence of large-text layout testing (text overflow at 1.3&times; scale).</li>
+    </ul>
+  </section>
+
+  <section id="a11y">
+    <h2>Responsiveness &amp; accessibility assessment</h2>
+    <h3>Responsiveness</h3>
+    <ul>
+      <li>Bottom sheets use <code>DraggableScrollableSheet</code> with min/max child sizes &mdash; good adaptive behavior.</li>
+      <li>Digital twin has fixed-width panels (280px search, 60px floor selector) &mdash; poor small-phone adaptation.</li>
+      <li>Bottom navigation has 5 tabs at 11px labels &mdash; crowded on small phones (&lt;360dp width).</li>
+      <li>No evidence of breakpoint-based layout changes (no <code>LayoutBuilder</code>/<code>MediaQuery</code> adaptive patterns outside the map screen).</li>
+      <li>Map-screen FAB and bottom sheets may collide with bottom nav on small phones.</li>
+      <li><strong>Verdict:</strong> Partially responsive; needs breakpoint-based adaptation and safe-area awareness.</li>
+    </ul>
+    <h3>Accessibility</h3>
+    <ul>
+      <li><strong>Strengths:</strong> semanticLabel support on AppFilledButton, AppCard, AppChip, AppAvatar, EmptyState, LoadingOverlay, ErrorState, ErrorBanner; ExcludeSemantics on decorative icons; textScaler clamp (0.8&ndash;1.3); PopScope canPop:false on emergency status; liveRegion on loading/error semantics.</li>
+      <li><strong>Gaps:</strong> map markers and FlutterMap layers have no screen-reader alternative; color-coded severity (alerts, destination types, room categories) relies on color alone; SOS hold has no documented haptic/audio fallback; bottom-nav badge is visual-only; Digital Twin WebView is inaccessible; instruction icons unlabeled.</li>
+      <li><strong>Verdict:</strong> Good semantic infrastructure exists but is inconsistently applied. Map and Digital Twin are the biggest accessibility gaps.</li>
+    </ul>
+  </section>
+
+  <section id="problems">
+    <h2>Problems &amp; inconsistencies</h2>
+    <p>Each finding is categorized as Visual / Layout / Interaction / Functional / Backend-dependent.</p>
+    <table>
+      <thead><tr><th>#</th><th>Problem</th><th>Category</th><th>Location</th><th>Severity</th></tr></thead>
+      <tbody>
+        <tr><td>P1</td><td><code>_activateSos</code> requires userId and shows "Please log in" despite no-login design</td><td>Functional</td><td><span class="filepath">emergency_screen.dart</span></td><td><span class="chip critical">Critical</span></td></tr>
+        <tr><td>P2</td><td>Router references 8 screens that do not exist (5 profile preferences + Settings + Help + admin)</td><td>Functional</td><td><span class="filepath">app_router.dart</span></td><td><span class="chip critical">Critical</span></td></tr>
+        <tr><td>P3</td><td><code>material_ui: ^0.0.1</code> and <code>cupertino_ui: ^0.0.1</code> imported app-wide</td><td>Functional / Build</td><td><span class="filepath">pubspec.yaml</span>, all widget files</td><td><span class="chip critical">Critical</span></td></tr>
+        <tr><td>P4</td><td>Digital ID QR/barcode are CustomPaint placeholders (non-functional)</td><td>Functional</td><td><span class="filepath">profile_screen.dart</span></td><td><span class="chip critical">Critical</span></td></tr>
+        <tr><td>P5</td><td><code>_getInstructionIcon</code> duplicated identically in 2 files</td><td>Layout / Code</td><td><span class="filepath">route_preview_bottom_sheet.dart</span>:512, <span class="filepath">active_navigation_view.dart</span>:512</td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P6</td><td>Haversine + <code>_formatDistance</code>/<code>_formatDuration</code> duplicated</td><td>Layout / Code</td><td><span class="filepath">navigation_screen.dart</span>, <span class="filepath">destination_details_bottom_sheet.dart</span></td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P7</td><td>Severity/color switch functions duplicated in 3 places</td><td>Layout / Code</td><td><span class="filepath">alerts_screen.dart</span></td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P8</td><td>~15 string-route pushes mixed with typed <code>AppRoutes</code> in profile</td><td>Interaction</td><td><span class="filepath">profile_screen.dart</span></td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P9</td><td>ProfileScreen ~5,838 lines in one file; mostly stubbed "coming soon" editors</td><td>Layout / Functional</td><td><span class="filepath">profile_screen.dart</span></td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P10</td><td>Hardcoded <code>Colors.red/green/blue/orange</code> instead of theme color scheme</td><td>Visual</td><td><span class="filepath">digital_twin_screen.dart</span>, <span class="filepath">destination_details_bottom_sheet.dart</span>, <span class="filepath">emergency_screen.dart</span></td><td><span class="chip high">High</span></td></tr>
+        <tr><td>P11</td><td>6 different bottom sheet types in map screen with inconsistent patterns</td><td>Layout</td><td><span class="filepath">map_screen.dart</span></td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P12</td><td>Voice search and voice guidance stubbed with "coming soon" SnackBars</td><td>Interaction</td><td><span class="filepath">destination_search_bar.dart</span>, <span class="filepath">navigation_screen.dart</span></td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P13</td><td>5-tab bottom nav crowded on small phones</td><td>Layout / Responsive</td><td><span class="filepath">app_router.dart</span> (_MainShell)</td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P14</td><td>Digital twin fixed-width panels (280px/60px)</td><td>Layout / Responsive</td><td><span class="filepath">digital_twin_screen.dart</span></td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P15</td><td>Empty/error/loading states use raw Material buttons instead of <code>App*</code> wrappers</td><td>Visual</td><td><span class="filepath">empty_state.dart</span>, <span class="filepath">error_state.dart</span></td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P16</td><td>No breakpoint-based responsive layout patterns</td><td>Layout / Responsive</td><td>App-wide</td><td><span class="chip medium">Medium</span></td></tr>
+        <tr><td>P17</td><td>Map markers have no screen-reader alternative</td><td>Accessibility</td><td><span class="filepath">map_screen.dart</span>, <span class="filepath">active_navigation_view.dart</span></td><td><span class="chip low">Low</span></td></tr>
+        <tr><td>P18</td><td>Color-coded severity relies on color alone</td><td>Accessibility</td><td><span class="filepath">alerts_screen.dart</span>, <span class="filepath">app_chip.dart</span></td><td><span class="chip low">Low</span></td></tr>
+        <tr><td>P19</td><td>SOS hold has no haptic/audio fallback</td><td>Accessibility / Interaction</td><td><span class="filepath">emergency_screen.dart</span></td><td><span class="chip low">Low</span></td></tr>
+        <tr><td>P20</td><td>Bottom-nav badge is visual-only</td><td>Accessibility</td><td><span class="filepath">app_router.dart</span> (_MainShell)</td><td><span class="chip low">Low</span></td></tr>
+        <tr><td>P21</td><td>Digital twin WebView is inaccessible</td><td>Accessibility</td><td><span class="filepath">digital_twin_screen.dart</span></td><td><span class="chip low">Low</span></td></tr>
+        <tr><td>P22</td><td><code>_getInstructionIcon</code> icons unlabeled</td><td>Accessibility</td><td><span class="filepath">active_navigation_view.dart</span></td><td><span class="chip low">Low</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="redesign">
+    <h2>Recommended redesign per screen</h2>
+    <h3>BeginScreen &mdash; keep as-is (visual/layout only)</h3>
+    <p>The best-designed screen in the app. Keep the single-primary-action pattern. Consider adding a subtle campus wordmark or illustration for brand. No structural change needed.</p>
+    <h3>MapScreen &mdash; map-first, consolidate bottom sheets</h3>
+    <ul>
+      <li>Keep full-screen map. Consolidate the 6 bottom sheet types into 2: a generic <code>FeatureBottomSheet</code> (building/room/pathway/marker) with a type-driven header chip, and a <code>LayerOptionsSheet</code>.</li>
+      <li>Unify handle bar, header, and action-button pattern across all sheets using shared EmptyState/LoadingState/ErrorState components.</li>
+      <li><strong>Visual:</strong> Unified sheet header with type color from AppChip / ChipSeverity.</li>
+      <li><strong>Functional/backend:</strong> No change to map layers or graph data.</li>
+    </ul>
+    <h3>NavigationScreen &mdash; extract duplicated helpers, finish stubs</h3>
+    <ul>
+      <li>Move Haversine + format helpers to a shared <code>NavigationUtils</code> class.</li>
+      <li>Replace "coming soon" voice search/guidance SnackBars with disabled states or remove until implemented.</li>
+      <li>Unify start-location mode selector with shared AppChip/AppSegmentedButton pattern.</li>
+      <li><strong>Functional:</strong> Haversine moved to shared util (no behavior change).</li>
+    </ul>
+    <h3>EmergencyScreen &mdash; fix SOS auth contradiction, add fallbacks</h3>
+    <ul>
+      <li>Remove the <code>userId</code>/login requirement from <code>_activateSos</code> &mdash; SOS must work for any user in a no-login app. (<strong>Critical fix.</strong>)</li>
+      <li>Add haptic feedback and audio cues to the SOS hold; add a non-color indicator (text percentage) to the progress ring.</li>
+      <li><strong>Visual:</strong> Emergency red theme retained; progress ring gets a text label.</li>
+    </ul>
+    <h3>AlertsScreen &mdash; centralize severity/color logic</h3>
+    <ul>
+      <li>Extract the 3 duplicated severity/color switch functions into a shared <code>AlertSeverity</code> helper (color + icon + label).</li>
+      <li>Use AppChip with ChipSeverity.emergency for critical alerts; ensure color is never the only indicator of severity (add text label + icon).</li>
+      <li><strong>Backend:</strong> No change to Firestore streams or FCM.</li>
+    </ul>
+    <h3>ProfileScreen &mdash; split into feature files, remove stubs</h3>
+    <ul>
+      <li>Split <code>profile_screen.dart</code> (5,838 lines) into per-section screens, each in its own file under <code>profile/presentation/screens/</code>: EditProfileScreen, DigitalIDCardScreen, SecuritySettingsScreen, EmergencyContactsScreen, MedicalInfoScreen, LocationSharingScreen, SafetyCheckinsScreen, ActivityHistoryScreen.</li>
+      <li>Remove or gate all "coming soon" stubs; replace string-route pushes with typed <code>AppRoutes</code>; make Digital ID QR/barcode functional or remove.</li>
+      <li><strong>Functional:</strong> Remove dead authenticated/unauthenticated branching if no login exists.</li>
+    </ul>
+    <h3>DigitalTwinScreen &mdash; make accessible, responsive</h3>
+    <ul>
+      <li>Replace fixed-width panels with responsive width (percentage-based or LayoutBuilder).</li>
+      <li>Add a non-3D fallback view (2D floor-plan list) for users who cannot use WebView; add room-category labels alongside icons/colors.</li>
+      <li><strong>Backend:</strong> 3D model loading unchanged.</li>
+    </ul>
+    <h3>_MainShell &mdash; consider Material 3 NavigationBar</h3>
+    <ul>
+      <li>Evaluate replacing the custom InkWell nav with Material 3 <code>NavigationBar</code>, or keep custom but add semantics labels and screen-reader announcement for the badge.</li>
+      <li>Consider merging Alerts into Profile or Map to reduce to 4 tabs if 5 feels crowded.</li>
+    </ul>
+  </section>
+
+  <section id="design-system">
+    <h2>Suggested reusable design system</h2>
+    <h3>Foundation layer (build first)</h3>
+    <ol>
+      <li><strong>Theme tokens</strong> &mdash; already exists in <code>app_theme.dart</code> (<code>AppColors</code>, <code>AppTextStyles</code>, <code>AppSpacing</code>, <code>AppElevation</code>, <code>AppDurations</code>). Lock it down; add a <code>ThemeTokens</code> class exposing <code>ColorScheme</code>-derived values so widgets never reference raw <code>Colors.*</code>.</li>
+      <li><strong>Color usage rule</strong> &mdash; no widget may reference <code>Colors.red</code>/<code>Colors.blue</code>/etc. directly; all color must come from <code>Theme.of(context).colorScheme</code> or <code>AppColors</code>.</li>
+      <li><strong>Component library</strong> &mdash; fix the <code>material_ui</code>/<code>cupertino_ui</code> import (replace with Flutter Material or remove); replace raw <code>FilledButton</code>/<code>OutlinedButton</code> in empty/error states with <code>AppFilledButton</code>/<code>AppOutlinedButton</code>.</li>
+      <li><strong>Navigation pattern</strong> &mdash; typed <code>AppRoutes</code> only; ban string-route pushes; centralize in <code>app_router.dart</code>.</li>
+      <li><strong>Bottom-sheet pattern</strong> &mdash; one <code>AppBottomSheet</code> wrapper with handle bar, header, action row; all feature sheets use it.</li>
+      <li><strong>Empty/error/loading pattern</strong> &mdash; use the shared EmptyState/ErrorState/LoadingOverlay consistently; no inline <code>Center(child: Text(...))</code> fallbacks.</li>
+    </ol>
+    <h3>Component specifications</h3>
+    <table>
+      <thead><tr><th>Component</th><th>Spec</th><th>File</th></tr></thead>
+      <tbody>
+        <tr><td>AppButton</td><td>Filled/Outlined/Text, size {sm/md/lg}, loading/disabled states, semanticLabel</td><td><span class="filepath">app_button.dart</span></td></tr>
+        <tr><td>AppSosButton</td><td>Pulse animation, emergency red, haptic-ready</td><td><span class="filepath">app_button.dart</span></td></tr>
+        <tr><td>AppCard</td><td>onTap/inkWell, elevation variants, semanticLabel</td><td><span class="filepath">app_card.dart</span></td></tr>
+        <tr><td>AppChip</td><td>Severity {info/success/warning/error/emergency}, color from theme</td><td><span class="filepath">app_chip.dart</span></td></tr>
+        <tr><td>SectionHeader</td><td>Style {standard/large/small/divider}, with count/action</td><td><span class="filepath">section_header.dart</span></td></tr>
+        <tr><td>PageHeader</td><td>Style {standard/compact}</td><td><span class="filepath">page_header.dart</span></td></tr>
+        <tr><td>AppAvatar</td><td>Shape/status/position, color-from-name-hash</td><td><span class="filepath">app_avatar.dart</span></td></tr>
+        <tr><td>EmptyState</td><td>Icon/title/message/action, semanticLabel</td><td><span class="filepath">empty_state.dart</span></td></tr>
+        <tr><td>ErrorState</td><td>Retry/dismiss, semanticLabel, liveRegion</td><td><span class="filepath">error_state.dart</span></td></tr>
+        <tr><td>LoadingOverlay / InlineLoading / Skeleton</td><td>Animation, semanticLabel, liveRegion</td><td><span class="filepath">loading_state.dart</span></td></tr>
+      </tbody>
+    </table>
+    <h3>Shared utilities to create</h3>
+    <ul>
+      <li><span class="filepath">lib/src/shared/utils/distance.dart</span> &mdash; Haversine + <code>_formatDistance</code>/<code>_formatDuration</code> (single source)</li>
+      <li><span class="filepath">lib/src/shared/utils/instruction_icons.dart</span> &mdash; <code>_getInstructionIcon</code> (single source)</li>
+      <li><span class="filepath">lib/src/shared/utils/alert_severity.dart</span> &mdash; severity color/icon/label (single source)</li>
+      <li><span class="filepath">lib/src/shared/widgets/app_bottom_sheet.dart</span> &mdash; unified bottom-sheet wrapper</li>
+    </ul>
+  </section>
+
+  <section id="roadmap">
+    <h2>Prioritized implementation roadmap</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Phase</th><th>Scope</th><th>Read-only?</th></tr></thead>
+      <tbody>
+        <tr><td>P0</td><td>Fix SOS auth contradiction (<code>_activateSos</code> userId/login)</td><td><span class="filepath">emergency_screen.dart</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P0</td><td>Remove/fix broken router routes (8 missing screens)</td><td><span class="filepath">app_router.dart</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P0</td><td>Resolve <code>material_ui</code>/<code>cupertino_ui</code> dependency</td><td><span class="filepath">pubspec.yaml</span> + imports</td><td>No &mdash; config change</td></tr>
+        <tr><td>P1</td><td>Build shared design system (theme lock, color rule, shared utils)</td><td><span class="filepath">shared/widgets/</span>, <span class="filepath">shared/utils/</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P1</td><td>Consolidate bottom sheets (map)</td><td><span class="filepath">map_screen.dart</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P2</td><td>Redesign NavigationScreen (extract duplicated helpers, finish/remove stubs)</td><td><span class="filepath">navigation/...</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P2</td><td>Redesign AlertsScreen (centralize severity)</td><td><span class="filepath">alerts/...</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P3</td><td>Split ProfileScreen into per-section files; remove stubs</td><td><span class="filepath">profile/...</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P3</td><td>Redesign DigitalTwinScreen (responsive + 2D fallback)</td><td><span class="filepath">digital_twin/...</span></td><td>No &mdash; code change</td></tr>
+        <tr><td>P4</td><td>Accessibility pass (map a11y, color-not-only, SOS fallbacks, nav-badge semantics)</td><td>App-wide</td><td>No &mdash; code change</td></tr>
+        <tr><td>P4</td><td>Responsiveness pass (breakpoints, small-phone nav)</td><td>App-wide</td><td>No &mdash; code change</td></tr>
+      </tbody>
+    </table>
+    <div class="callout error"><p><strong>This report is Phase 0 (read-only).</strong> Implementation begins at P0 only after user approval.</p></div>
+  </section>
+
+  <section id="phases">
+    <h2>Phase-by-phase plan (starting with the shared design system)</h2>
+    <h3>Phase 1 &mdash; Shared design system (foundation)</h3>
+    <p><strong>Goal:</strong> Lock the design system so all later screen work is consistent.</p>
+    <ol>
+      <li>Fix the <code>material_ui</code>/<code>cupertino_ui</code> dependency (replace with Flutter Material or remove).</li>
+      <li>Lock <code>app_theme.dart</code> tokens; add a <code>ThemeTokens</code> color accessor; ban raw <code>Colors.*</code> in widgets.</li>
+      <li>Fix shared-widget-library inconsistencies (raw buttons &rarr; <code>App*</code> wrappers in empty/error states).</li>
+      <li>Create shared utils: <code>distance.dart</code> (Haversine + format), <code>instruction_icons.dart</code>, <code>alert_severity.dart</code>.</li>
+      <li>Create <code>app_bottom_sheet.dart</code> unified wrapper.</li>
+      <li>Establish navigation rule: typed <code>AppRoutes</code> only; no string-route pushes.</li>
+    </ol>
+    <p><strong>Deliverable:</strong> A consistent, locked design system with zero raw-color references and no duplicated helpers.</p>
+    <h3>Phase 2 &mdash; Critical fixes (P0)</h3>
+    <p><strong>Goal:</strong> Make the app functional and safe.</p>
+    <ol>
+      <li>Remove userId/login requirement from <code>_activateSos</code> in EmergencyScreen; add haptic/audio fallback.</li>
+      <li>Remove or stub out the 8 missing router routes so navigation does not break.</li>
+      <li>Make Digital ID QR/barcode functional or remove the feature.</li>
+    </ol>
+    <h3>Phase 3 &mdash; Core screens (P1/P2)</h3>
+    <p><strong>Goal:</strong> Bring Map, Navigate, Alerts to design-system standard.</p>
+    <ol>
+      <li>Consolidate map bottom sheets into <code>FeatureBottomSheet</code> + <code>LayerOptionsSheet</code>.</li>
+      <li>Redesign NavigationScreen: extract duplicated helpers; replace "coming soon" stubs.</li>
+      <li>Redesign AlertsScreen: centralize severity/color via AppChip/ChipSeverity; add non-color severity indicators.</li>
+    </ol>
+    <h3>Phase 4 &mdash; Profile &amp; Digital Twin (P3)</h3>
+    <p><strong>Goal:</strong> Complete or de-scope incomplete features.</p>
+    <ol>
+      <li>Split <code>profile_screen.dart</code> into per-section screens; remove "coming soon" stubs; replace string routes with <code>AppRoutes</code>.</li>
+      <li>Redesign DigitalTwinScreen: responsive panels, 2D fallback, accessibility labels.</li>
+    </ol>
+    <h3>Phase 5 &mdash; Accessibility &amp; responsiveness (P4)</h3>
+    <p><strong>Goal:</strong> WCAG-aligned, adaptive experience.</p>
+    <ol>
+      <li>Map screen-reader alternatives; Digital Twin 2D fallback (already done).</li>
+      <li>Color-not-only severity indicators; SOS haptic/audio (already done).</li>
+      <li>Bottom-nav semantics + badge announcement.</li>
+      <li>Breakpoint-based layouts; small-phone nav (4 vs 5 tabs).</li>
+    </ol>
+  </section>
+
+  <section id="approval">
+    <h2>Approval required</h2>
+    <p>This report is <strong>read-only and advisory</strong>. No code has been modified. Before any implementation begins (starting with Phase 1 design-system work), approval is needed for:</p>
+    <ol>
+      <li>The prioritized roadmap (Section 10).</li>
+      <li>The decision to fix the SOS auth contradiction (P0) &mdash; this changes behavior of the core emergency feature.</li>
+      <li>Whether to remove missing router routes or implement them.</li>
+      <li>Whether to de-scope stubbed profile features or implement them.</li>
+    </ol>
+    <p>Please confirm approval and which phase to start with, or share adjustments to the roadmap.</p>
+  </section>
+
+  <section id="appendix">
+    <h2>Appendix &mdash; file reference</h2>
+    <table>
+      <thead><tr><th>File</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td><span class="filepath">lib/main.dart</span></td><td>App entry, Firebase init gate, theme mode</td></tr>
+        <tr><td><span class="filepath">lib/src/core/router/app_router.dart</span></td><td>GoRouter config, _MainShell, all placeholder screens</td></tr>
+        <tr><td><span class="filepath">lib/src/core/router/app_routes.dart</span></td><td>Route name constants, <code>requiresAuth</code>/<code>requiresAdmin</code></td></tr>
+        <tr><td><span class="filepath">lib/src/core/theme/app_theme.dart</span></td><td>AppColors, AppTextStyles, AppSpacing, theme builder</td></tr>
+        <tr><td><span class="filepath">lib/src/core/theme/theme_provider.dart</span></td><td>ThemeController, AppThemeMode persistence</td></tr>
+        <tr><td><span class="filepath">lib/src/features/onboarding/.../begin_screen.dart</span></td><td>BeginScreen entry</td></tr>
+        <tr><td><span class="filepath">lib/src/features/map/.../map_screen.dart</span></td><td>MapScreen + 6 bottom sheets</td></tr>
+        <tr><td><span class="filepath">lib/src/features/navigation/.../navigation_screen.dart</span></td><td>NavigationScreen state machine</td></tr>
+        <tr><td><span class="filepath">lib/src/features/navigation/.../widgets/*.dart</span></td><td>5 navigation widgets</td></tr>
+        <tr><td><span class="filepath">lib/src/features/emergency/.../emergency_screen.dart</span></td><td>EmergencyScreen, SOS, status view</td></tr>
+        <tr><td><span class="filepath">lib/src/features/alerts/.../alerts_screen.dart</span></td><td>AlertsScreen, tabs, filter</td></tr>
+        <tr><td><span class="filepath">lib/src/features/profile/.../profile_screen.dart</span></td><td>ProfileScreen (~5,838 lines, all sub-screens inline)</td></tr>
+        <tr><td><span class="filepath">lib/src/features/digital_twin/.../digital_twin_screen.dart</span></td><td>DigitalTwinScreen + 6 view widgets</td></tr>
+        <tr><td><span class="filepath">lib/src/shared/widgets/*.dart</span></td><td>Shared component library (8 files)</td></tr>
+        <tr><td><span class="filepath">pubspec.yaml</span></td><td>Dependencies, assets</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  SAFENAV CAVITE &mdash; Phase 1 UI/UX Audit (read-only). Prepared as an advisory deliverable; no implementation performed. Approval required before any code changes.
+</footer>
+
+</body>
+</html>

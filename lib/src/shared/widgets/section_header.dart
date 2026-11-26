@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// Section header with title, optional subtitle, and trailing action
 class SectionHeader extends StatelessWidget {
   const SectionHeader({
@@ -19,7 +21,7 @@ class SectionHeader extends StatelessWidget {
     this.style = SectionHeaderStyle.standard,
     this.titleStyle,
     this.subtitleStyle,
-    this.spacing = 4.0,
+    this.spacing = AppSpacing.xs,
     this.padding = EdgeInsets.zero,
     this.semanticLabel,
     this.excludeFromSemantics = false,
@@ -63,7 +65,7 @@ class SectionHeader extends StatelessWidget {
                 size: _getIconSize(style),
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: AppSpacing.sm),
           ],
           Expanded(
             child: Column(
@@ -89,7 +91,7 @@ class SectionHeader extends StatelessWidget {
             ),
           ),
           if (action != null) ...[
-            const SizedBox(width: 12),
+            const SizedBox(width: AppSpacing.sm),
             _wrapAction(action!, context),
           ],
         ],
@@ -102,7 +104,7 @@ class SectionHeader extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           header,
-          const SizedBox(height: 8),
+          const SizedBox(height: AppSpacing.sm),
           ExcludeSemantics(
             child: Divider(
               color: colorScheme.outlineVariant,
@@ -239,7 +241,7 @@ class SectionTitle extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           titleWidget,
-          const SizedBox(height: 8),
+          const SizedBox(height: AppSpacing.sm),
           ExcludeSemantics(
             child: Divider(
               color: colorScheme.outlineVariant,
@@ -321,13 +323,13 @@ class SectionHeaderWithCount extends StatelessWidget {
                 Row(
                   children: [
                     Text(title, style: effectiveTitleStyle, maxLines: 1, overflow: TextOverflow.ellipsis),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: AppSpacing.sm),
                     ExcludeSemantics(
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: 2),
                         decoration: BoxDecoration(
                           color: colorScheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
                         ),
                         child: Text(
                           count.toString(),
@@ -342,7 +344,7 @@ class SectionHeaderWithCount extends StatelessWidget {
                   ],
                 ),
                 if (subtitle != null) ...[
-                  const SizedBox(height: 4),
+                  const SizedBox(height: AppSpacing.xs),
                   Text(
                     subtitle!,
                     style: effectiveSubtitleStyle,

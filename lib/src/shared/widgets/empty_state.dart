@@ -5,6 +5,8 @@ library;
 
 import 'package:material_ui/material_ui.dart';
 
+import '../../core/theme/app_theme.dart';
+
 /// Empty state with icon, title, message, and optional action
 class EmptyState extends StatelessWidget {
   const EmptyState({
@@ -15,12 +17,12 @@ class EmptyState extends StatelessWidget {
     this.action,
     this.actionLabel,
     this.actionTooltip,
-    this.iconSize = 64,
+    this.iconSize = AppSpacing.xxxl,
     this.iconColor,
     this.titleStyle,
     this.messageStyle,
-    this.spacing = 16,
-    this.padding = const EdgeInsets.all(24),
+    this.spacing = AppSpacing.md,
+    this.padding = const EdgeInsets.all(AppSpacing.lg),
     this.semanticLabel,
     this.excludeFromSemantics = false,
   });

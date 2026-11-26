@@ -1,0 +1,1431 @@
+{
+  "generated_from": "assets/maps/navigation_graph.svg",
+  "total_edges": 178,
+  "id_sequence": "E001..E178",
+  "mapping": [
+    {
+      "edge_id": "E001",
+      "from": "N001",
+      "to": "N004",
+      "distance": 262.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E002",
+      "from": "N002",
+      "to": "N005",
+      "distance": 263.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E003",
+      "from": "N003",
+      "to": "N006",
+      "distance": 264.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E004",
+      "from": "N004",
+      "to": "N005",
+      "distance": 450,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E005",
+      "from": "N004",
+      "to": "N006",
+      "distance": 896,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E006",
+      "from": "N005",
+      "to": "N006",
+      "distance": 440.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E007",
+      "from": "N006",
+      "to": "N010",
+      "distance": 357.6,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E008",
+      "from": "N008",
+      "to": "N007",
+      "distance": 329,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E009",
+      "from": "N009",
+      "to": "N012",
+      "distance": 191.53,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E010",
+      "from": "N010",
+      "to": "N009",
+      "distance": 1239,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E011",
+      "from": "N010",
+      "to": "N011",
+      "distance": 940.52,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E012",
+      "from": "N011",
+      "to": "N008",
+      "distance": 196.55,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E013",
+      "from": "N011",
+      "to": "N009",
+      "distance": 298.48,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E014",
+      "from": "N012",
+      "to": "N077",
+      "distance": 296,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E015",
+      "from": "N013",
+      "to": "N014",
+      "distance": 534.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E016",
+      "from": "N014",
+      "to": "N017",
+      "distance": 70.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E017",
+      "from": "N015",
+      "to": "N013",
+      "distance": 70.57,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E018",
+      "from": "N016",
+      "to": "N015",
+      "distance": 158,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E019",
+      "from": "N016",
+      "to": "N020",
+      "distance": 65,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E020",
+      "from": "N016",
+      "to": "N059",
+      "distance": 837,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E021",
+      "from": "N018",
+      "to": "N017",
+      "distance": 158,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E022",
+      "from": "N018",
+      "to": "N022",
+      "distance": 64.52,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E023",
+      "from": "N018",
+      "to": "N062",
+      "distance": 837,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E024",
+      "from": "N020",
+      "to": "N019",
+      "distance": 206,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E025",
+      "from": "N020",
+      "to": "N023",
+      "distance": 107,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E026",
+      "from": "N022",
+      "to": "N021",
+      "distance": 206,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E027",
+      "from": "N022",
+      "to": "N024",
+      "distance": 107,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E028",
+      "from": "N023",
+      "to": "N025",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E029",
+      "from": "N023",
+      "to": "N027",
+      "distance": 124.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E030",
+      "from": "N024",
+      "to": "N026",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E031",
+      "from": "N024",
+      "to": "N029",
+      "distance": 124.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E032",
+      "from": "N027",
+      "to": "N028",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E033",
+      "from": "N027",
+      "to": "N031",
+      "distance": 120,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E034",
+      "from": "N029",
+      "to": "N030",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E035",
+      "from": "N029",
+      "to": "N034",
+      "distance": 120,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E036",
+      "from": "N031",
+      "to": "N032",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E037",
+      "from": "N031",
+      "to": "N039",
+      "distance": 136,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E038",
+      "from": "N033",
+      "to": "N035",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E039",
+      "from": "N033",
+      "to": "N040",
+      "distance": 130.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E040",
+      "from": "N033",
+      "to": "N061",
+      "distance": 407,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E041",
+      "from": "N034",
+      "to": "N036",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E042",
+      "from": "N034",
+      "to": "N037",
+      "distance": 95.01,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E043",
+      "from": "N037",
+      "to": "N038",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E044",
+      "from": "N037",
+      "to": "N043",
+      "distance": 65.03,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E045",
+      "from": "N039",
+      "to": "N041",
+      "distance": 96.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E046",
+      "from": "N039",
+      "to": "N048",
+      "distance": 127,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E047",
+      "from": "N040",
+      "to": "N042",
+      "distance": 96.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E048",
+      "from": "N040",
+      "to": "N050",
+      "distance": 127,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E049",
+      "from": "N043",
+      "to": "N044",
+      "distance": 96.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E050",
+      "from": "N043",
+      "to": "N045",
+      "distance": 63.01,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E051",
+      "from": "N045",
+      "to": "N046",
+      "distance": 97.53,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E052",
+      "from": "N045",
+      "to": "N052",
+      "distance": 67.03,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E053",
+      "from": "N048",
+      "to": "N047",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E054",
+      "from": "N048",
+      "to": "N054",
+      "distance": 91.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E055",
+      "from": "N050",
+      "to": "N049",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E056",
+      "from": "N050",
+      "to": "N056",
+      "distance": 91.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E057",
+      "from": "N052",
+      "to": "N051",
+      "distance": 100,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E058",
+      "from": "N052",
+      "to": "N058",
+      "distance": 64.01,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E059",
+      "from": "N054",
+      "to": "N053",
+      "distance": 201.49,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E060",
+      "from": "N054",
+      "to": "N059",
+      "distance": 58.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E061",
+      "from": "N056",
+      "to": "N055",
+      "distance": 201.48,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E062",
+      "from": "N056",
+      "to": "N061",
+      "distance": 58.49,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E063",
+      "from": "N058",
+      "to": "N057",
+      "distance": 201.49,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E064",
+      "from": "N058",
+      "to": "N062",
+      "distance": 67.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E065",
+      "from": "N059",
+      "to": "N060",
+      "distance": 153.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E066",
+      "from": "N060",
+      "to": "N066",
+      "distance": 33,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E067",
+      "from": "N061",
+      "to": "N063",
+      "distance": 153.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E068",
+      "from": "N062",
+      "to": "N064",
+      "distance": 153.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E069",
+      "from": "N063",
+      "to": "N065",
+      "distance": 33,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E070",
+      "from": "N065",
+      "to": "N060",
+      "distance": 546.2,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E071",
+      "from": "N066",
+      "to": "N064",
+      "distance": 533.08,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E072",
+      "from": "N067",
+      "to": "N064",
+      "distance": 93.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E073",
+      "from": "N067",
+      "to": "N068",
+      "distance": 368.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E074",
+      "from": "N067",
+      "to": "N085",
+      "distance": 712,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E075",
+      "from": "N068",
+      "to": "N085",
+      "distance": 338.03,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E076",
+      "from": "N071",
+      "to": "N070",
+      "distance": 49.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E077",
+      "from": "N072",
+      "to": "N069",
+      "distance": 52.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E078",
+      "from": "N072",
+      "to": "N071",
+      "distance": 267.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E079",
+      "from": "N073",
+      "to": "N068",
+      "distance": 891.97,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E080",
+      "from": "N073",
+      "to": "N071",
+      "distance": 356,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E081",
+      "from": "N073",
+      "to": "N072",
+      "distance": 84,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E082",
+      "from": "N074",
+      "to": "N073",
+      "distance": 131.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E083",
+      "from": "N075",
+      "to": "N078",
+      "distance": 75.92,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E084",
+      "from": "N075",
+      "to": "N086",
+      "distance": 1139.9,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E085",
+      "from": "N076",
+      "to": "N077",
+      "distance": 64.88,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E086",
+      "from": "N076",
+      "to": "N080",
+      "distance": 201,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E087",
+      "from": "N077",
+      "to": "N078",
+      "distance": 278,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E088",
+      "from": "N077",
+      "to": "N080",
+      "distance": 130.62,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E089",
+      "from": "N078",
+      "to": "N079",
+      "distance": 130.09,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E090",
+      "from": "N079",
+      "to": "N081",
+      "distance": 471,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E091",
+      "from": "N080",
+      "to": "N079",
+      "distance": 286,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E092",
+      "from": "N080",
+      "to": "N082",
+      "distance": 471,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E093",
+      "from": "N080",
+      "to": "N085",
+      "distance": 937.37,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E094",
+      "from": "N081",
+      "to": "N083",
+      "distance": 492,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E095",
+      "from": "N081",
+      "to": "N086",
+      "distance": 453.91,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E096",
+      "from": "N082",
+      "to": "N081",
+      "distance": 287,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E097",
+      "from": "N082",
+      "to": "N085",
+      "distance": 451.39,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E098",
+      "from": "N085",
+      "to": "N086",
+      "distance": 294.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E099",
+      "from": "N085",
+      "to": "N088",
+      "distance": 1236.01,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E100",
+      "from": "N086",
+      "to": "N087",
+      "distance": 490.01,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E101",
+      "from": "N087",
+      "to": "N083",
+      "distance": 457.59,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E102",
+      "from": "N087",
+      "to": "N088",
+      "distance": 444,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E103",
+      "from": "N090",
+      "to": "N091",
+      "distance": 90.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E104",
+      "from": "N094",
+      "to": "N084",
+      "distance": 504.49,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E105",
+      "from": "N094",
+      "to": "N095",
+      "distance": 114.01,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E106",
+      "from": "N096",
+      "to": "N073",
+      "distance": 1135.22,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E107",
+      "from": "N097",
+      "to": "N094",
+      "distance": 128.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E108",
+      "from": "N097",
+      "to": "N098",
+      "distance": 114.01,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E109",
+      "from": "N099",
+      "to": "N084",
+      "distance": 689,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E110",
+      "from": "N099",
+      "to": "N097",
+      "distance": 52,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E111",
+      "from": "N100",
+      "to": "N093",
+      "distance": 261.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E112",
+      "from": "N100",
+      "to": "N101",
+      "distance": 61,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E113",
+      "from": "N102",
+      "to": "N099",
+      "distance": 76.69,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E114",
+      "from": "N102",
+      "to": "N103",
+      "distance": 303,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E115",
+      "from": "N104",
+      "to": "N108",
+      "distance": 93.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E116",
+      "from": "N104",
+      "to": "N115",
+      "distance": 187,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E117",
+      "from": "N105",
+      "to": "N122",
+      "distance": 182.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E118",
+      "from": "N106",
+      "to": "N116",
+      "distance": 181.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E119",
+      "from": "N107",
+      "to": "N102",
+      "distance": 197.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E120",
+      "from": "N107",
+      "to": "N136",
+      "distance": 258,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E121",
+      "from": "N108",
+      "to": "N074",
+      "distance": 1262.01,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E122",
+      "from": "N108",
+      "to": "N109",
+      "distance": 136.54,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E123",
+      "from": "N108",
+      "to": "N115",
+      "distance": 88,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E124",
+      "from": "N109",
+      "to": "N074",
+      "distance": 1125.48,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E125",
+      "from": "N109",
+      "to": "N096",
+      "distance": 307.51,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E126",
+      "from": "N110",
+      "to": "N100",
+      "distance": 213,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E127",
+      "from": "N110",
+      "to": "N111",
+      "distance": 61,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E128",
+      "from": "N112",
+      "to": "N099",
+      "distance": 408.52,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E129",
+      "from": "N112",
+      "to": "N107",
+      "distance": 133.38,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E130",
+      "from": "N113",
+      "to": "N114",
+      "distance": 172,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E131",
+      "from": "N113",
+      "to": "N135",
+      "distance": 155,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E132",
+      "from": "N114",
+      "to": "N120",
+      "distance": 178,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E133",
+      "from": "N114",
+      "to": "N129",
+      "distance": 78,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E134",
+      "from": "N115",
+      "to": "N122",
+      "distance": 182,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E135",
+      "from": "N116",
+      "to": "N117",
+      "distance": 170,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E136",
+      "from": "N117",
+      "to": "N118",
+      "distance": 177,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E137",
+      "from": "N117",
+      "to": "N126",
+      "distance": 77,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E138",
+      "from": "N118",
+      "to": "N119",
+      "distance": 177,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E139",
+      "from": "N118",
+      "to": "N127",
+      "distance": 77,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E140",
+      "from": "N119",
+      "to": "N128",
+      "distance": 77,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E141",
+      "from": "N120",
+      "to": "N123",
+      "distance": 176,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E142",
+      "from": "N120",
+      "to": "N130",
+      "distance": 77,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E143",
+      "from": "N121",
+      "to": "N124",
+      "distance": 92.54,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E144",
+      "from": "N122",
+      "to": "N116",
+      "distance": 183,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E145",
+      "from": "N123",
+      "to": "N112",
+      "distance": 268.83,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E146",
+      "from": "N123",
+      "to": "N131",
+      "distance": 77,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E147",
+      "from": "N124",
+      "to": "N115",
+      "distance": 70.18,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E148",
+      "from": "N124",
+      "to": "N137",
+      "distance": 160.47,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E149",
+      "from": "N133",
+      "to": "N110",
+      "distance": 212,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E150",
+      "from": "N133",
+      "to": "N134",
+      "distance": 61,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E151",
+      "from": "N138",
+      "to": "N133",
+      "distance": 211,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E152",
+      "from": "N138",
+      "to": "N139",
+      "distance": 61,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E153",
+      "from": "N140",
+      "to": "N093",
+      "distance": 1091,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E154",
+      "from": "N140",
+      "to": "N138",
+      "distance": 193.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E155",
+      "from": "N140",
+      "to": "N141",
+      "distance": 269,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E156",
+      "from": "N143",
+      "to": "N142",
+      "distance": 85,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E157",
+      "from": "N143",
+      "to": "N144",
+      "distance": 256,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E158",
+      "from": "N143",
+      "to": "N147",
+      "distance": 219.01,
+      "accessible": true,
+      "type": "curved"
+    },
+    {
+      "edge_id": "E159",
+      "from": "N143",
+      "to": "N151",
+      "distance": 1956,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E160",
+      "from": "N143",
+      "to": "N154",
+      "distance": 98,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E161",
+      "from": "N144",
+      "to": "N145",
+      "distance": 256,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E162",
+      "from": "N144",
+      "to": "N155",
+      "distance": 98,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E163",
+      "from": "N145",
+      "to": "N146",
+      "distance": 256,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E164",
+      "from": "N145",
+      "to": "N156",
+      "distance": 98,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E165",
+      "from": "N146",
+      "to": "N148",
+      "distance": 226.02,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E166",
+      "from": "N146",
+      "to": "N157",
+      "distance": 98,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E167",
+      "from": "N147",
+      "to": "N161",
+      "distance": 138.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E168",
+      "from": "N147",
+      "to": "N162",
+      "distance": 194,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E169",
+      "from": "N148",
+      "to": "N149",
+      "distance": 205,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E170",
+      "from": "N149",
+      "to": "N152",
+      "distance": 275,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E171",
+      "from": "N149",
+      "to": "N153",
+      "distance": 89,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E172",
+      "from": "N150",
+      "to": "N151",
+      "distance": 208.52,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E173",
+      "from": "N150",
+      "to": "N159",
+      "distance": 92.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E174",
+      "from": "N151",
+      "to": "N140",
+      "distance": 230.49,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E175",
+      "from": "N152",
+      "to": "N150",
+      "distance": 268,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E176",
+      "from": "N152",
+      "to": "N158",
+      "distance": 91.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    },
+    {
+      "edge_id": "E177",
+      "from": "N160",
+      "to": "N161",
+      "distance": 166,
+      "accessible": true,
+      "type": "straight"
+    },
+    {
+      "edge_id": "E178",
+      "from": "N161",
+      "to": "N162",
+      "distance": 55.5,
+      "accessible": true,
+      "type": "corridor_segment"
+    }
+  ]
+}
