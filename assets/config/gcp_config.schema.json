@@ -1,0 +1,963 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://safenav-cavite.firebaseapp.com/schemas/gcp-config.schema.json",
+  "title": "SAFENAV CAVITE GCP Configuration",
+  "description": "Google Cloud Platform configuration schema for SAFENAV CAVITE project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project", "firebase", "serviceAccount", "storage", "firestore", "monitoring"],
+  "properties": {
+    "project": {
+      "type": "object",
+      "description": "GCP Project configuration",
+      "required": ["projectId", "projectNumber", "region", "zone"],
+      "additionalProperties": false,
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{4,28}[a-z0-9]$",
+          "description": "GCP Project ID (e.g., safenav-cavite)"
+        },
+        "projectNumber": {
+          "type": "string",
+          "pattern": "^[0-9]{10,16}$",
+          "description": "GCP Project Number"
+        },
+        "projectName": {
+          "type": "string",
+          "description": "Human-readable project name"
+        },
+        "region": {
+          "type": "string",
+          "enum": [
+            "us-central1",
+            "us-east1",
+            "us-west1",
+            "europe-west1",
+            "asia-southeast1",
+            "asia-east1",
+            "australia-southeast1"
+          ],
+          "description": "Primary GCP region for resources"
+        },
+        "zone": {
+          "type": "string",
+          "description": "GCP zone within the region (e.g., us-central1-a)"
+        },
+        "organizationId": {
+          "type": "string",
+          "description": "GCP Organization ID (if applicable)"
+        },
+        "folderId": {
+          "type": "string",
+          "description": "GCP Folder ID (if applicable)"
+        },
+        "labels": {
+          "type": "object",
+          "description": "Labels to apply to all GCP resources",
+          "additionalProperties": {
+            "type": "string",
+            "maxLength": 63
+          },
+          "propertyNames": {
+            "pattern": "^[a-z][a-z0-9_-]{0,62}$"
+          }
+        }
+      }
+    },
+    "firebase": {
+      "type": "object",
+      "description": "Firebase project configuration",
+      "required": ["projectId", "appId", "apiKey", "authDomain", "storageBucket", "messagingSenderId", "measurementId"],
+      "additionalProperties": false,
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "description": "Firebase Project ID"
+        },
+        "appId": {
+          "type": "string",
+          "description": "Firebase App ID (format: 1:123456789:android:abcdef)"
+        },
+        "apiKey": {
+          "type": "string",
+          "description": "Firebase API Key (Web API Key)"
+        },
+        "authDomain": {
+          "type": "string",
+          "format": "uri",
+          "description": "Firebase Auth Domain"
+        },
+        "storageBucket": {
+          "type": "string",
+          "description": "Firebase Storage Bucket"
+        },
+        "messagingSenderId": {
+          "type": "string",
+          "pattern": "^[0-9]{10,16}$",
+          "description": "Firebase Messaging Sender ID"
+        },
+        "measurementId": {
+          "type": "string",
+          "description": "Google Analytics Measurement ID (G-XXXXXXXX)"
+        },
+        "databaseUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Realtime Database URL (if used)"
+        },
+        "tenantId": {
+          "type": "string",
+          "description": "Firebase Tenant ID (for multi-tenancy)"
+        },
+        "dynamicLinksDomain": {
+          "type": "string",
+          "description": "Firebase Dynamic Links Domain"
+        }
+      }
+    },
+    "serviceAccount": {
+      "type": "object",
+      "description": "Service Account configuration for backend services",
+      "required": ["clientEmail", "privateKeyId", "privateKey"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "service_account",
+          "description": "Service account type"
+        },
+        "projectId": {
+          "type": "string",
+          "description": "GCP Project ID"
+        },
+        "privateKeyId": {
+          "type": "string",
+          "description": "Private Key ID"
+        },
+        "privateKey": {
+          "type": "string",
+          "description": "RSA Private Key (PEM format) - MUST be kept secret!"
+        },
+        "clientEmail": {
+          "type": "string",
+          "format": "email",
+          "description": "Service Account Email"
+        },
+        "clientId": {
+          "type": "string",
+          "pattern": "^[0-9]{15,25}$",
+          "description": "Service Account Client ID"
+        },
+        "authUri": {
+          "type": "string",
+          "format": "uri",
+          "description": "OAuth2 Auth URI"
+        },
+        "tokenUri": {
+          "type": "string",
+          "format": "uri",
+          "description": "OAuth2 Token URI"
+        },
+        "authProviderX509CertUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Auth Provider Certificate URL"
+        },
+        "clientX509CertUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Client Certificate URL"
+        },
+        "universeDomain": {
+          "type": "string",
+          "description": "Universe Domain (default: googleapis.com)"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "OAuth2 Scopes granted to this service account",
+          "items": {
+            "type": "string",
+            "enum": [
+              "https://www.googleapis.com/auth/cloud-platform",
+              "https://www.googleapis.com/auth/firebase",
+              "https://www.googleapis.com/auth/datastore",
+              "https://www.googleapis.com/auth/devstorage.read_write",
+              "https://www.googleapis.com/auth/cloud-functions",
+              "https://www.googleapis.com/auth/cloud-run",
+              "https://www.googleapis.com/auth/monitoring",
+              "https://www.googleapis.com/auth/logging.admin"
+            ]
+          }
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "description": "Cloud Storage configuration",
+      "required": ["buckets"],
+      "additionalProperties": false,
+      "properties": {
+        "buckets": {
+          "type": "object",
+          "description": "Named storage buckets",
+          "required": ["default", "uploads", "exports", "backups"],
+          "additionalProperties": false,
+          "properties": {
+            "default": {
+              "$ref": "#/$defs/bucketConfig"
+            },
+            "uploads": {
+              "$ref": "#/$defs/bucketConfig"
+            },
+            "exports": {
+              "$ref": "#/$defs/bucketConfig"
+            },
+            "backups": {
+              "$ref": "#/$defs/bucketConfig"
+            },
+            "tiles": {
+              "$ref": "#/$defs/bucketConfig"
+            }
+          }
+        },
+        "defaultBucket": {
+          "type": "string",
+          "description": "Default bucket name (must match one of the named buckets)"
+        },
+        "cdnEnabled": {
+          "type": "boolean",
+          "description": "Enable Cloud CDN for public buckets"
+        },
+        "uniformBucketLevelAccess": {
+          "type": "boolean",
+          "description": "Enable uniform bucket-level access"
+        },
+        "lifecycleRules": {
+          "type": "array",
+          "description": "Object lifecycle management rules",
+          "items": {
+            "$ref": "#/$defs/lifecycleRule"
+          }
+        }
+      }
+    },
+    "firestore": {
+      "type": "object",
+      "description": "Firestore configuration",
+      "required": ["databaseId", "location", "indexes", "rules"],
+      "additionalProperties": false,
+      "properties": {
+        "databaseId": {
+          "type": "string",
+          "description": "Firestore Database ID (default: '(default)')"
+        },
+        "location": {
+          "type": "string",
+          "enum": [
+            "nam5",
+            "eur3",
+            "asia-south1",
+            "us-central",
+            "europe-west",
+            "asia-east1"
+          ],
+          "description": "Firestore location (multi-region or regional)"
+        },
+        "indexes": {
+          "type": "array",
+          "description": "Composite indexes to deploy",
+          "items": {
+            "$ref": "#/$defs/firestoreIndex"
+          }
+        },
+        "rules": {
+          "type": "string",
+          "description": "Path to Firestore security rules file"
+        },
+        "ttlPolicies": {
+          "type": "array",
+          "description": "Time-to-live policies for document expiration",
+          "items": {
+            "$ref": "#/$defs/ttlPolicy"
+          }
+        },
+        "settings": {
+          "type": "object",
+          "description": "Firestore settings",
+          "additionalProperties": false,
+          "properties": {
+            "ignoreUndefinedProperties": {
+              "type": "boolean"
+            },
+            "localCacheSizeBytes": {
+              "type": "integer",
+              "minimum": 1048576
+            }
+          }
+        }
+      }
+    },
+    "functions": {
+      "type": "object",
+      "description": "Cloud Functions configuration",
+      "required": ["region", "runtime", "functions"],
+      "additionalProperties": false,
+      "properties": {
+        "region": {
+          "type": "string",
+          "description": "Cloud Functions region"
+        },
+        "runtime": {
+          "type": "string",
+          "enum": ["nodejs18", "nodejs20", "python311", "python312", "go121", "go122"],
+          "description": "Cloud Functions runtime"
+        },
+        "functions": {
+          "type": "object",
+          "description": "Named function configurations",
+          "additionalProperties": {
+            "$ref": "#/$defs/functionConfig"
+          }
+        },
+        "serviceAccount": {
+          "type": "string",
+          "description": "Service account email for functions"
+        },
+        "vpcConnector": {
+          "type": "string",
+          "description": "VPC Connector name"
+        },
+        "minInstances": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000,
+          "description": "Minimum instances to keep warm"
+        },
+        "maxInstances": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "description": "Maximum instances for scaling"
+        },
+        "timeoutSeconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 540,
+          "description": "Function timeout in seconds"
+        },
+        "memoryMb": {
+          "type": "integer",
+          "enum": [128, 256, 512, 1024, 2048, 4096, 8192],
+          "description": "Memory allocation in MB"
+        },
+        "environmentVariables": {
+          "type": "object",
+          "description": "Environment variables for all functions",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "ingressSettings": {
+          "type": "string",
+          "enum": ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"],
+          "description": "Ingress settings for functions"
+        }
+      }
+    },
+    "monitoring": {
+      "type": "object",
+      "description": "Cloud Monitoring and Logging configuration",
+      "required": ["enabled", "logBucket", "metrics"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable monitoring"
+        },
+        "logBucket": {
+          "type": "string",
+          "description": "Cloud Logging bucket name"
+        },
+        "metrics": {
+          "type": "array",
+          "description": "Custom metrics to track",
+          "items": {
+            "$ref": "#/$defs/metricConfig"
+          }
+        },
+        "alerting": {
+          "type": "object",
+          "description": "Alerting policies",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "notificationChannels": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/notificationChannel"
+              }
+            },
+            "policies": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/alertPolicy"
+              }
+            }
+          }
+        },
+        "tracing": {
+          "type": "object",
+          "description": "Cloud Trace configuration",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "samplingRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "cloudRun": {
+      "type": "object",
+      "description": "Cloud Run configuration (for containerized services)",
+      "additionalProperties": false,
+      "properties": {
+        "region": {
+          "type": "string"
+        },
+        "services": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/cloudRunService"
+          }
+        },
+        "defaultServiceAccount": {
+          "type": "string"
+        }
+      }
+    },
+    "iam": {
+      "type": "object",
+      "description": "IAM roles and bindings",
+      "additionalProperties": false,
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/iamRole"
+          }
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/iamBinding"
+          }
+        },
+        "serviceAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/serviceAccountConfig"
+          }
+        }
+      }
+    },
+    "networking": {
+      "type": "object",
+      "description": "VPC and networking configuration",
+      "additionalProperties": false,
+      "properties": {
+        "vpcName": {
+          "type": "string"
+        },
+        "subnets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subnetConfig"
+          }
+        },
+        "firewallRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/firewallRule"
+          }
+        },
+        "cloudNat": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "region": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "secrets": {
+      "type": "object",
+      "description": "Secret Manager configuration",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/secretConfig"
+          }
+        },
+        "rotationPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "rotationPeriod": {
+              "type": "string",
+              "description": "Rotation period (e.g., '7776000s' for 90 days)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "bucketConfig": {
+      "type": "object",
+      "required": ["name", "location", "storageClass", "publicAccessPrevention", "versioning"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]{1,61}[a-z0-9]$"
+        },
+        "location": {
+          "type": "string"
+        },
+        "storageClass": {
+          "type": "string",
+          "enum": ["STANDARD", "NEARLINE", "COLDLINE", "ARCHIVE", "MULTI_REGIONAL", "REGIONAL"]
+        },
+        "publicAccessPrevention": {
+          "type": "string",
+          "enum": ["enforced", "inherited"]
+        },
+        "versioning": {
+          "type": "boolean"
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "cors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/corsConfig"
+          }
+        },
+        "lifecycleRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lifecycleRule"
+          }
+        }
+      }
+    },
+    "corsConfig": {
+      "type": "object",
+      "required": ["origin", "method", "responseHeader", "maxAgeSeconds"],
+      "additionalProperties": false,
+      "properties": {
+        "origin": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "method": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
+          }
+        },
+        "responseHeader": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "maxAgeSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 86400
+        }
+      }
+    },
+    "lifecycleRule": {
+      "type": "object",
+      "required": ["action", "condition"],
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["Delete", "SetStorageClass"]
+            },
+            "storageClass": {
+              "type": "string"
+            }
+          }
+        },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "age": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "createdBefore": {
+              "type": "string",
+              "format": "date"
+            },
+            "daysSinceCustomTime": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "matchesStorageClass": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "numNewerVersions": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "firestoreIndex": {
+      "type": "object",
+      "required": ["collectionGroup", "fields", "queryScope"],
+      "additionalProperties": false,
+      "properties": {
+        "collectionGroup": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["fieldPath", "order"],
+            "additionalProperties": false,
+            "properties": {
+              "fieldPath": { "type": "string" },
+              "order": { "type": "string", "enum": ["ASCENDING", "DESCENDING"] },
+              "arrayConfig": { "type": "string", "enum": ["CONTAINS"] }
+            }
+          }
+        },
+        "queryScope": {
+          "type": "string",
+          "enum": ["COLLECTION", "COLLECTION_GROUP"]
+        }
+      }
+    },
+    "ttlPolicy": {
+      "type": "object",
+      "required": ["collectionGroup", "fieldPath"],
+      "additionalProperties": false,
+      "properties": {
+        "collectionGroup": { "type": "string" },
+        "fieldPath": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "functionConfig": {
+      "type": "object",
+      "required": ["name", "entryPoint", "trigger"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "entryPoint": { "type": "string" },
+        "trigger": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["https", "firestore", "storage", "pubsub", "schedule", "auth"]
+            },
+            "eventType": { "type": "string" },
+            "resource": { "type": "string" },
+            "schedule": { "type": "string" },
+            "timeZone": { "type": "string" }
+          }
+        },
+        "memoryMb": { "type": "integer" },
+        "timeoutSeconds": { "type": "integer" },
+        "minInstances": { "type": "integer" },
+        "maxInstances": { "type": "integer" },
+        "environmentVariables": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "serviceAccount": { "type": "string" },
+        "vpcConnector": { "type": "string" },
+        "ingressSettings": {
+          "type": "string",
+          "enum": ["ALLOW_ALL", "ALLOW_INTERNAL_ONLY", "ALLOW_INTERNAL_AND_GCLB"]
+        }
+      }
+    },
+    "metricConfig": {
+      "type": "object",
+      "required": ["name", "type", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["GAUGE", "DELTA", "CUMULATIVE"] },
+        "description": { "type": "string" },
+        "labels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "unit": { "type": "string" }
+      }
+    },
+    "notificationChannel": {
+      "type": "object",
+      "required": ["type", "displayName", "labels"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string", "enum": ["email", "slack", "webhook", "pagerduty", "sms"] },
+        "displayName": { "type": "string" },
+        "description": { "type": "string" },
+        "labels": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "alertPolicy": {
+      "type": "object",
+      "required": ["displayName", "conditions", "notificationChannels"],
+      "additionalProperties": false,
+      "properties": {
+        "displayName": { "type": "string" },
+        "description": { "type": "string" },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["displayName", "conditionThreshold"],
+            "additionalProperties": false,
+            "properties": {
+              "displayName": { "type": "string" },
+              "conditionThreshold": {
+                "type": "object",
+                "required": ["filter", "comparison", "thresholdValue", "duration", "aggregations"],
+                "additionalProperties": false,
+                "properties": {
+                  "filter": { "type": "string" },
+                  "comparison": { "type": "string", "enum": ["COMPARISON_GT", "COMPARISON_LT", "COMPARISON_GE", "COMPARISON_LE", "COMPARISON_EQ", "COMPARISON_NE"] },
+                  "thresholdValue": { "type": "number" },
+                  "duration": { "type": "string" },
+                  "aggregations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["alignmentPeriod", "perSeriesAligner"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "alignmentPeriod": { "type": "string" },
+                        "perSeriesAligner": { "type": "string" },
+                        "crossSeriesReducer": { "type": "string" },
+                        "groupByFields": { "type": "array", "items": { "type": "string" } }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "notificationChannels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "enabled": { "type": "boolean" }
+      }
+    },
+    "iamRole": {
+      "type": "object",
+      "required": ["title", "stage", "includedPermissions"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "stage": { "type": "string", "enum": ["ALPHA", "BETA", "GA", "DEPRECATED", "DISABLED"] },
+        "includedPermissions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "iamBinding": {
+      "type": "object",
+      "required": ["role", "members"],
+      "additionalProperties": false,
+      "properties": {
+        "role": { "type": "string" },
+        "members": { "type": "array", "items": { "type": "string" } },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "expression": { "type": "string" }
+          }
+        }
+      }
+    },
+    "serviceAccountConfig": {
+      "type": "object",
+      "required": ["accountId", "displayName", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "accountId": { "type": "string", "pattern": "^[a-z][a-z0-9-]{4,28}[a-z0-9]$" },
+        "displayName": { "type": "string" },
+        "description": { "type": "string" },
+        "roles": { "type": "array", "items": { "type": "string" } },
+        "disabled": { "type": "boolean" }
+      }
+    },
+    "subnetConfig": {
+      "type": "object",
+      "required": ["name", "region", "ipCidrRange"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "region": { "type": "string" },
+        "ipCidrRange": { "type": "string" },
+        "purpose": { "type": "string", "enum": ["PRIVATE", "INTERNAL_HTTPS_LOAD_BALANCER"] },
+        "privateIpGoogleAccess": { "type": "boolean" }
+      }
+    },
+    "firewallRule": {
+      "type": "object",
+      "required": ["name", "direction", "action", "priority", "sourceRanges", "allowed"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "direction": { "type": "string", "enum": ["INGRESS", "EGRESS"] },
+        "action": { "type": "string", "enum": ["ALLOW", "DENY"] },
+        "priority": { "type": "integer", "minimum": 0, "maximum": 65535 },
+        "sourceRanges": { "type": "array", "items": { "type": "string" } },
+        "destinationRanges": { "type": "array", "items": { "type": "string" } },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["IPProtocol"],
+            "additionalProperties": false,
+            "properties": {
+              "IPProtocol": { "type": "string" },
+              "ports": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "denied": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["IPProtocol"],
+            "additionalProperties": false,
+            "properties": {
+              "IPProtocol": { "type": "string" },
+              "ports": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "targetTags": { "type": "array", "items": { "type": "string" } },
+        "sourceTags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "secretConfig": {
+      "type": "object",
+      "required": ["secretId", "replication"],
+      "additionalProperties": false,
+      "properties": {
+        "secretId": { "type": "string" },
+        "description": { "type": "string" },
+        "replication": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "type": "string", "enum": ["AUTOMATIC", "USER_MANAGED"] },
+            "replicas": {
+              "type": "array",
+              "items": { "type": "object", "additionalProperties": { "type": "string" } }
+            }
+          }
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "ttl": { "type": "string" },
+        "rotationPeriod": { "type": "string" },
+        "nextRotationTime": { "type": "string", "format": "date-time" }
+      }
+    },
+    "cloudRunService": {
+      "type": "object",
+      "required": ["name", "image", "region"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "image": { "type": "string" },
+        "region": { "type": "string" },
+        "memory": { "type": "string" },
+        "cpu": { "type": "string" },
+        "minInstances": { "type": "integer" },
+        "maxInstances": { "type": "integer" },
+        "concurrency": { "type": "integer" },
+        "timeout": { "type": "string" },
+        "serviceAccount": { "type": "string" },
+        "vpcConnector": { "type": "string" },
+        "ingress": { "type": "string", "enum": ["all", "internal", "internal-and-cloud-load-balancing"] },
+        "environmentVariables": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    }
+  }
+}

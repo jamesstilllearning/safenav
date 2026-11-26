@@ -1,0 +1,103 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Firebase functions dependency output (not part of the repo)
+functions/node_modules/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Widget Preview related
+.widget_preview/
+
+# macOS/IOs specific
+*.xcworkspace/
+*.xcuserdata/
+DerivedData/
+.flutter-plugins
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Windows specific
+*.userprefs
+*.sln
+*.suo
+
+# Linux specific
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
+# Environment files (uncomment if you have local env files)
+# .env
+# .env.local
+
+# Production configuration files (contain secrets, should be loaded from Secret Manager/env vars)
+assets/config/gcp_config.production.json
+assets/config/gcp_config.json
+
+# IDE temporary files
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Flutter analyze / temp output (not part of the app)
+.analyze_full.txt
+C*.txt
+
+# Android generated build files
+/android/app/build/
+/android/build/
+/android/.gradle/
+
+# Sensitive Google Cloud development credentials
+/assets/config/gcp_config.development.json
+
+# Keep local GCP example configuration out of this backup
+/assets/config/gcp_config.example.json

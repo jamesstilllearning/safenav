@@ -1,0 +1,2413 @@
+{
+ "units": "relative drawing units (no scale in source)",
+ "nodes": [
+  {
+   "id": "GATE1",
+   "label": "Gate 1",
+   "floor": 1,
+   "type": "o",
+   "x_px": 903,
+   "y_px": 1405,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "GATE2",
+   "label": "Gate 2",
+   "floor": 1,
+   "type": "o",
+   "x_px": 803,
+   "y_px": 1405,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "BB",
+   "label": "Basketball court",
+   "floor": 1,
+   "type": "o",
+   "x_px": 900,
+   "y_px": 670,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "COV",
+   "label": "Covered court",
+   "floor": 1,
+   "type": "o",
+   "x_px": 1068,
+   "y_px": 710,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "PK",
+   "label": "Parking lot",
+   "floor": 1,
+   "type": "o",
+   "x_px": 1238,
+   "y_px": 670,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "STAGE",
+   "label": "Stage",
+   "floor": 1,
+   "type": "o",
+   "x_px": 1068,
+   "y_px": 540,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "CLIN",
+   "label": "Clinic",
+   "floor": 1,
+   "type": "o",
+   "x_px": 760,
+   "y_px": 460,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "RES",
+   "label": "Research Building",
+   "floor": 1,
+   "type": "o",
+   "x_px": 864,
+   "y_px": 405,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "CAN",
+   "label": "Canteen",
+   "floor": 1,
+   "type": "o",
+   "x_px": 302,
+   "y_px": 397,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "AXE1",
+   "label": "Annex east wing (1F)",
+   "floor": 1,
+   "type": "o",
+   "x_px": 581,
+   "y_px": 427,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "AXE2",
+   "label": "Annex east wing (2F)",
+   "floor": 2,
+   "type": "o",
+   "x_px": 581,
+   "y_px": 293,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "HW",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1022,
+   "y_px": 880,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "HM",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1070,
+   "y_px": 880,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "HE",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1235,
+   "y_px": 880,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "TN",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 655,
+   "y_px": 380,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "TM",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 655,
+   "y_px": 495,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "TS",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 655,
+   "y_px": 940,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "CJ",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 510,
+   "y_px": 380,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "CJ2",
+   "label": "Walkway",
+   "floor": 1,
+   "type": "h",
+   "x_px": 510,
+   "y_px": 495,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A1H",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 623,
+   "y_px": 800,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A1T",
+   "label": "Annex stair (top) 1F",
+   "floor": 1,
+   "type": "s",
+   "x_px": 585,
+   "y_px": 555,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A1B",
+   "label": "Annex stair 1F",
+   "floor": 1,
+   "type": "s",
+   "x_px": 577,
+   "y_px": 1105,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A2H",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 452,
+   "y_px": 800,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A2T",
+   "label": "Annex stair (top) 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 402,
+   "y_px": 555,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A2B",
+   "label": "Annex stair 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 402,
+   "y_px": 1105,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A3H",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 269,
+   "y_px": 930,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "A3B",
+   "label": "Annex stair 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 219,
+   "y_px": 1105,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "FH",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 369,
+   "y_px": 1312,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MG1",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1022,
+   "y_px": 975,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MG2",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1168,
+   "y_px": 975,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MG3",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1247,
+   "y_px": 975,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MG4",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1392,
+   "y_px": 975,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MSA",
+   "label": "Stair A 1F",
+   "floor": 1,
+   "type": "s",
+   "x_px": 1022,
+   "y_px": 1055,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MSB",
+   "label": "Stair B 1F",
+   "floor": 1,
+   "type": "s",
+   "x_px": 1392,
+   "y_px": 1055,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MWB",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1460,
+   "y_px": 900,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MWH",
+   "label": "Hall",
+   "floor": 1,
+   "type": "h",
+   "x_px": 1460,
+   "y_px": 740,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MWT",
+   "label": "Stair N 1F",
+   "floor": 1,
+   "type": "s",
+   "x_px": 1459,
+   "y_px": 547,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M21",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 900,
+   "y_px": 1221,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M22",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1130,
+   "y_px": 1221,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M23",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1277,
+   "y_px": 1221,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M24",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1450,
+   "y_px": 1221,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M25",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1650,
+   "y_px": 1221,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2SW",
+   "label": "Stair W 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 851,
+   "y_px": 1252,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2SA",
+   "label": "Stair A 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 1277,
+   "y_px": 1300,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2SB",
+   "label": "Stair B 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 1650,
+   "y_px": 1300,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2WB",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1690,
+   "y_px": 1190,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2WH",
+   "label": "Hall",
+   "floor": 2,
+   "type": "h",
+   "x_px": 1713,
+   "y_px": 1000,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M2WT",
+   "label": "Stair N 2F",
+   "floor": 2,
+   "type": "s",
+   "x_px": 1717,
+   "y_px": 797,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M31",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1100,
+   "y_px": 1471,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M32",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1300,
+   "y_px": 1471,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M33",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1534,
+   "y_px": 1471,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M34",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1650,
+   "y_px": 1471,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M35",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1908,
+   "y_px": 1471,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3SW",
+   "label": "Stair W 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 1100,
+   "y_px": 1500,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3SA",
+   "label": "Stair A 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 1534,
+   "y_px": 1550,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3SB",
+   "label": "Stair B 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 1908,
+   "y_px": 1550,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3WB",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1940,
+   "y_px": 1440,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3WH",
+   "label": "Hall",
+   "floor": 3,
+   "type": "h",
+   "x_px": 1971,
+   "y_px": 1250,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3WT",
+   "label": "Stair N 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 1971,
+   "y_px": 1040,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "M3WS",
+   "label": "Stair N-low 3F",
+   "floor": 3,
+   "type": "s",
+   "x_px": 2054,
+   "y_px": 1417,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 101",
+   "label": "Annex 101",
+   "floor": 1,
+   "type": "r",
+   "x_px": 569,
+   "y_px": 826,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 102",
+   "label": "Annex 102",
+   "floor": 1,
+   "type": "r",
+   "x_px": 569,
+   "y_px": 734,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 103",
+   "label": "Annex 103",
+   "floor": 1,
+   "type": "r",
+   "x_px": 569,
+   "y_px": 643,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Guidance office",
+   "label": "Guidance office",
+   "floor": 1,
+   "type": "r",
+   "x_px": 568,
+   "y_px": 917,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "ISG",
+   "label": "ISG",
+   "floor": 1,
+   "type": "r",
+   "x_px": 568,
+   "y_px": 988,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "OSA",
+   "label": "OSA",
+   "floor": 1,
+   "type": "r",
+   "x_px": 568,
+   "y_px": 1034,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Female comfort room",
+   "label": "Female comfort room",
+   "floor": 1,
+   "type": "r",
+   "x_px": 577,
+   "y_px": 1077,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 201",
+   "label": "Annex 201",
+   "floor": 2,
+   "type": "r",
+   "x_px": 395,
+   "y_px": 1009,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 202",
+   "label": "Annex 202",
+   "floor": 2,
+   "type": "r",
+   "x_px": 395,
+   "y_px": 917,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 203",
+   "label": "Annex 203",
+   "floor": 2,
+   "type": "r",
+   "x_px": 395,
+   "y_px": 826,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 204",
+   "label": "Annex 204",
+   "floor": 2,
+   "type": "r",
+   "x_px": 395,
+   "y_px": 734,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 205",
+   "label": "Annex 205",
+   "floor": 2,
+   "type": "r",
+   "x_px": 395,
+   "y_px": 643,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Male comfort room",
+   "label": "Male comfort room",
+   "floor": 2,
+   "type": "r",
+   "x_px": 402,
+   "y_px": 1071,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 301",
+   "label": "Annex 301",
+   "floor": 3,
+   "type": "r",
+   "x_px": 211,
+   "y_px": 1009,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 302",
+   "label": "Annex 302",
+   "floor": 3,
+   "type": "r",
+   "x_px": 211,
+   "y_px": 917,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Annex 303",
+   "label": "Annex 303",
+   "floor": 3,
+   "type": "r",
+   "x_px": 211,
+   "y_px": 826,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Vacant c.r.",
+   "label": "Vacant c.r.",
+   "floor": 3,
+   "type": "r",
+   "x_px": 219,
+   "y_px": 1071,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Cashier",
+   "label": "Cashier",
+   "floor": 1,
+   "type": "r",
+   "x_px": 415,
+   "y_px": 1163,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Faculty office",
+   "label": "Faculty office",
+   "floor": 1,
+   "type": "r",
+   "x_px": 323,
+   "y_px": 1246,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Office (faculty)",
+   "label": "Office (faculty)",
+   "floor": 1,
+   "type": "r",
+   "x_px": 440,
+   "y_px": 1246,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Storage (MB ground)",
+   "label": "Storage (MB ground)",
+   "floor": 1,
+   "type": "r",
+   "x_px": 964,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "T&B (ground a)",
+   "label": "T&B (ground a)",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1060,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "T&B (ground b)",
+   "label": "T&B (ground b)",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1101,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 101",
+   "label": "MB 101",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1168,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 102",
+   "label": "MB 102",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1247,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 103",
+   "label": "MB 103",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1330,
+   "y_px": 1021,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 104",
+   "label": "MB 104",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1505,
+   "y_px": 855,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 105",
+   "label": "MB 105",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1505,
+   "y_px": 763,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 106",
+   "label": "MB 106",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1505,
+   "y_px": 680,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 107",
+   "label": "MB 107",
+   "floor": 1,
+   "type": "r",
+   "x_px": 1505,
+   "y_px": 580,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Office (2F a)",
+   "label": "Office (2F a)",
+   "floor": 2,
+   "type": "r",
+   "x_px": 897,
+   "y_px": 1171,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Office (2F b)",
+   "label": "Office (2F b)",
+   "floor": 2,
+   "type": "r",
+   "x_px": 943,
+   "y_px": 1171,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Admin office",
+   "label": "Admin office",
+   "floor": 2,
+   "type": "r",
+   "x_px": 989,
+   "y_px": 1171,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Registrar office",
+   "label": "Registrar office",
+   "floor": 2,
+   "type": "r",
+   "x_px": 967,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Speech Lab MB 201",
+   "label": "Speech Lab MB 201",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1048,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 202",
+   "label": "MB 202",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1131,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 203",
+   "label": "MB 203",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1214,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 204",
+   "label": "MB 204",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1338,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 205",
+   "label": "MB 205",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1422,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 206",
+   "label": "MB 206",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1505,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MB 207",
+   "label": "MB 207",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1588,
+   "y_px": 1267,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Drafting Lab MB 311",
+   "label": "Drafting Lab MB 311",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1760,
+   "y_px": 830,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Lab MB 210",
+   "label": "Lab MB 210",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1760,
+   "y_px": 930,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Restroom (2F wing)",
+   "label": "Restroom (2F wing)",
+   "floor": 2,
+   "type": "r",
+   "x_px": 1760,
+   "y_px": 1068,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Internet room",
+   "label": "Internet room",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1142,
+   "y_px": 1540,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Library undergraduate",
+   "label": "Library undergraduate",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1217,
+   "y_px": 1417,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Library graduate school",
+   "label": "Library graduate school",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1217,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Graduate school office",
+   "label": "Graduate school office",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1305,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Computer Lab MB 302",
+   "label": "Computer Lab MB 302",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1388,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Computer Lab MB 303",
+   "label": "Computer Lab MB 303",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1471,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MPH 1",
+   "label": "MPH 1",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1592,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MPH 2",
+   "label": "MPH 2",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1676,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "MPH 3",
+   "label": "MPH 3",
+   "floor": 3,
+   "type": "r",
+   "x_px": 1759,
+   "y_px": 1510,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Chemistry Lab MB 307",
+   "label": "Chemistry Lab MB 307",
+   "floor": 3,
+   "type": "r",
+   "x_px": 2015,
+   "y_px": 1080,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Crim Lab MB 306",
+   "label": "Crim Lab MB 306",
+   "floor": 3,
+   "type": "r",
+   "x_px": 2015,
+   "y_px": 1180,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Crim Lab MB 305",
+   "label": "Crim Lab MB 305",
+   "floor": 3,
+   "type": "r",
+   "x_px": 2015,
+   "y_px": 1280,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  },
+  {
+   "id": "Crim Lab MB 304",
+   "label": "Crim Lab MB 304",
+   "floor": 3,
+   "type": "r",
+   "x_px": 2015,
+   "y_px": 1370,
+   "lat": null,
+   "lng": null,
+   "survey_id": null,
+   "status": "unreviewed",
+   "routable": false
+  }
+ ],
+ "edges": [
+  {
+   "a": "Annex 101",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 60,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 102",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 85,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 103",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 166,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Guidance office",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 129,
+   "status": "unreviewed"
+  },
+  {
+   "a": "ISG",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 196,
+   "status": "unreviewed"
+  },
+  {
+   "a": "OSA",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 240,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Female comfort room",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 281,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 201",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 217,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 202",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 130,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 203",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 63,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 204",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 87,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 205",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 167,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Male comfort room",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 276,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 301",
+   "b": "A3H",
+   "kind": "walk",
+   "cost": 98,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 302",
+   "b": "A3H",
+   "kind": "walk",
+   "cost": 59,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Annex 303",
+   "b": "A3H",
+   "kind": "walk",
+   "cost": 119,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Vacant c.r.",
+   "b": "A3H",
+   "kind": "walk",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Cashier",
+   "b": "FH",
+   "kind": "walk",
+   "cost": 156,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Faculty office",
+   "b": "FH",
+   "kind": "walk",
+   "cost": 80,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Office (faculty)",
+   "b": "FH",
+   "kind": "walk",
+   "cost": 97,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Storage (MB ground)",
+   "b": "MG1",
+   "kind": "walk",
+   "cost": 74,
+   "status": "unreviewed"
+  },
+  {
+   "a": "T&B (ground a)",
+   "b": "MG1",
+   "kind": "walk",
+   "cost": 60,
+   "status": "unreviewed"
+  },
+  {
+   "a": "T&B (ground b)",
+   "b": "MG1",
+   "kind": "walk",
+   "cost": 91,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 101",
+   "b": "MG2",
+   "kind": "walk",
+   "cost": 46,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 102",
+   "b": "MG3",
+   "kind": "walk",
+   "cost": 46,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 103",
+   "b": "MG4",
+   "kind": "walk",
+   "cost": 77,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 104",
+   "b": "MWH",
+   "kind": "walk",
+   "cost": 123,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 105",
+   "b": "MWH",
+   "kind": "walk",
+   "cost": 51,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 106",
+   "b": "MWH",
+   "kind": "walk",
+   "cost": 75,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 107",
+   "b": "MWH",
+   "kind": "walk",
+   "cost": 166,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Office (2F a)",
+   "b": "M21",
+   "kind": "walk",
+   "cost": 50,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Office (2F b)",
+   "b": "M21",
+   "kind": "walk",
+   "cost": 66,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Admin office",
+   "b": "M21",
+   "kind": "walk",
+   "cost": 102,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Registrar office",
+   "b": "M21",
+   "kind": "walk",
+   "cost": 81,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Speech Lab MB 201",
+   "b": "M22",
+   "kind": "walk",
+   "cost": 94,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 202",
+   "b": "M22",
+   "kind": "walk",
+   "cost": 46,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 203",
+   "b": "M23",
+   "kind": "walk",
+   "cost": 78,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 204",
+   "b": "M23",
+   "kind": "walk",
+   "cost": 76,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 205",
+   "b": "M24",
+   "kind": "walk",
+   "cost": 54,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 206",
+   "b": "M24",
+   "kind": "walk",
+   "cost": 72,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MB 207",
+   "b": "M25",
+   "kind": "walk",
+   "cost": 77,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Drafting Lab MB 311",
+   "b": "M2WH",
+   "kind": "walk",
+   "cost": 176,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Lab MB 210",
+   "b": "M2WH",
+   "kind": "walk",
+   "cost": 84,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Restroom (2F wing)",
+   "b": "M2WH",
+   "kind": "walk",
+   "cost": 83,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Internet room",
+   "b": "M31",
+   "kind": "walk",
+   "cost": 81,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Library undergraduate",
+   "b": "M32",
+   "kind": "walk",
+   "cost": 99,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Library graduate school",
+   "b": "M32",
+   "kind": "walk",
+   "cost": 92,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Graduate school office",
+   "b": "M32",
+   "kind": "walk",
+   "cost": 39,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Computer Lab MB 302",
+   "b": "M32",
+   "kind": "walk",
+   "cost": 96,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Computer Lab MB 303",
+   "b": "M33",
+   "kind": "walk",
+   "cost": 74,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MPH 1",
+   "b": "M34",
+   "kind": "walk",
+   "cost": 70,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MPH 2",
+   "b": "M34",
+   "kind": "walk",
+   "cost": 47,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MPH 3",
+   "b": "M34",
+   "kind": "walk",
+   "cost": 116,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Chemistry Lab MB 307",
+   "b": "M3WH",
+   "kind": "walk",
+   "cost": 176,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Crim Lab MB 306",
+   "b": "M3WH",
+   "kind": "walk",
+   "cost": 83,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Crim Lab MB 305",
+   "b": "M3WH",
+   "kind": "walk",
+   "cost": 53,
+   "status": "unreviewed"
+  },
+  {
+   "a": "Crim Lab MB 304",
+   "b": "M3WH",
+   "kind": "walk",
+   "cost": 128,
+   "status": "unreviewed"
+  },
+  {
+   "a": "BB",
+   "b": "HW",
+   "kind": "walk",
+   "cost": 243,
+   "status": "unreviewed"
+  },
+  {
+   "a": "HW",
+   "b": "HM",
+   "kind": "walk",
+   "cost": 48,
+   "status": "unreviewed"
+  },
+  {
+   "a": "HM",
+   "b": "HE",
+   "kind": "walk",
+   "cost": 165,
+   "status": "unreviewed"
+  },
+  {
+   "a": "COV",
+   "b": "HM",
+   "kind": "walk",
+   "cost": 170,
+   "status": "unreviewed"
+  },
+  {
+   "a": "PK",
+   "b": "HE",
+   "kind": "walk",
+   "cost": 210,
+   "status": "unreviewed"
+  },
+  {
+   "a": "STAGE",
+   "b": "COV",
+   "kind": "walk",
+   "cost": 170,
+   "status": "unreviewed"
+  },
+  {
+   "a": "HW",
+   "b": "MG1",
+   "kind": "walk",
+   "cost": 95,
+   "status": "unreviewed"
+  },
+  {
+   "a": "HE",
+   "b": "MG3",
+   "kind": "walk",
+   "cost": 96,
+   "status": "unreviewed"
+  },
+  {
+   "a": "HE",
+   "b": "MWB",
+   "kind": "walk",
+   "cost": 226,
+   "status": "unreviewed"
+  },
+  {
+   "a": "CLIN",
+   "b": "BB",
+   "kind": "walk",
+   "cost": 252,
+   "status": "unreviewed"
+  },
+  {
+   "a": "CLIN",
+   "b": "TM",
+   "kind": "as",
+   "cost": 111,
+   "status": "assumed"
+  },
+  {
+   "a": "CAN",
+   "b": "CJ",
+   "kind": "walk",
+   "cost": 209,
+   "status": "unreviewed"
+  },
+  {
+   "a": "CJ",
+   "b": "TN",
+   "kind": "walk",
+   "cost": 145,
+   "status": "unreviewed"
+  },
+  {
+   "a": "CJ",
+   "b": "CJ2",
+   "kind": "walk",
+   "cost": 115,
+   "status": "unreviewed"
+  },
+  {
+   "a": "CJ2",
+   "b": "TM",
+   "kind": "walk",
+   "cost": 145,
+   "status": "unreviewed"
+  },
+  {
+   "a": "TM",
+   "b": "TN",
+   "kind": "walk",
+   "cost": 115,
+   "status": "unreviewed"
+  },
+  {
+   "a": "TM",
+   "b": "TS",
+   "kind": "walk",
+   "cost": 445,
+   "status": "unreviewed"
+  },
+  {
+   "a": "RES",
+   "b": "TN",
+   "kind": "walk",
+   "cost": 210,
+   "status": "unreviewed"
+  },
+  {
+   "a": "TN",
+   "b": "AXE1",
+   "kind": "walk",
+   "cost": 88,
+   "status": "unreviewed"
+  },
+  {
+   "a": "AXE1",
+   "b": "AXE2",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "TM",
+   "b": "A1T",
+   "kind": "walk",
+   "cost": 92,
+   "status": "unreviewed"
+  },
+  {
+   "a": "TS",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 144,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A1T",
+   "b": "A1H",
+   "kind": "walk",
+   "cost": 248,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A1H",
+   "b": "A1B",
+   "kind": "walk",
+   "cost": 308,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A2T",
+   "b": "A2H",
+   "kind": "walk",
+   "cost": 250,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A2H",
+   "b": "A2B",
+   "kind": "walk",
+   "cost": 309,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A3H",
+   "b": "A3B",
+   "kind": "walk",
+   "cost": 182,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A1B",
+   "b": "A2B",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A2B",
+   "b": "A3B",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "A1T",
+   "b": "A2T",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "FH",
+   "b": "A2B",
+   "kind": "as",
+   "cost": 210,
+   "status": "assumed"
+  },
+  {
+   "a": "MG1",
+   "b": "MG2",
+   "kind": "walk",
+   "cost": 146,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MG2",
+   "b": "MG3",
+   "kind": "walk",
+   "cost": 79,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MG3",
+   "b": "MG4",
+   "kind": "walk",
+   "cost": 145,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MG1",
+   "b": "MSA",
+   "kind": "walk",
+   "cost": 80,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MG4",
+   "b": "MSB",
+   "kind": "walk",
+   "cost": 80,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MG4",
+   "b": "MWB",
+   "kind": "walk",
+   "cost": 101,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MWB",
+   "b": "MWH",
+   "kind": "walk",
+   "cost": 160,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MWH",
+   "b": "MWT",
+   "kind": "walk",
+   "cost": 193,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M21",
+   "b": "M22",
+   "kind": "walk",
+   "cost": 230,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M22",
+   "b": "M23",
+   "kind": "walk",
+   "cost": 147,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M23",
+   "b": "M24",
+   "kind": "walk",
+   "cost": 173,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M24",
+   "b": "M25",
+   "kind": "walk",
+   "cost": 200,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M21",
+   "b": "M2SW",
+   "kind": "walk",
+   "cost": 58,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M23",
+   "b": "M2SA",
+   "kind": "walk",
+   "cost": 79,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M25",
+   "b": "M2SB",
+   "kind": "walk",
+   "cost": 79,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M25",
+   "b": "M2WB",
+   "kind": "walk",
+   "cost": 51,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2WB",
+   "b": "M2WH",
+   "kind": "walk",
+   "cost": 191,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2WH",
+   "b": "M2WT",
+   "kind": "walk",
+   "cost": 203,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M31",
+   "b": "M32",
+   "kind": "walk",
+   "cost": 200,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M32",
+   "b": "M33",
+   "kind": "walk",
+   "cost": 234,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M33",
+   "b": "M34",
+   "kind": "walk",
+   "cost": 116,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M34",
+   "b": "M35",
+   "kind": "walk",
+   "cost": 258,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M31",
+   "b": "M3SW",
+   "kind": "walk",
+   "cost": 29,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M33",
+   "b": "M3SA",
+   "kind": "walk",
+   "cost": 79,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M35",
+   "b": "M3SB",
+   "kind": "walk",
+   "cost": 79,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M35",
+   "b": "M3WB",
+   "kind": "walk",
+   "cost": 45,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M3WB",
+   "b": "M3WS",
+   "kind": "walk",
+   "cost": 116,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M3WB",
+   "b": "M3WH",
+   "kind": "walk",
+   "cost": 193,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M3WH",
+   "b": "M3WT",
+   "kind": "walk",
+   "cost": 210,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MSA",
+   "b": "M2SA",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2SA",
+   "b": "M3SA",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MSB",
+   "b": "M2SB",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2SB",
+   "b": "M3SB",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2SW",
+   "b": "M3SW",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "MWT",
+   "b": "M2WT",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "M2WT",
+   "b": "M3WT",
+   "kind": "st",
+   "cost": 150,
+   "status": "unreviewed"
+  },
+  {
+   "a": "GATE1",
+   "b": "MG1",
+   "kind": "as",
+   "cost": 446,
+   "status": "assumed"
+  },
+  {
+   "a": "GATE2",
+   "b": "MG1",
+   "kind": "as",
+   "cost": 483,
+   "status": "assumed"
+  }
+ ],
+ "note": "DRAFT from floor-plan image pixels. x,y are image_px, NOT GPS. No node has surveyed coordinates. No edge is confirmed.",
+ "coordinate_type": "image_px",
+ "source_image": "ecc_floor_plan.png"
+}

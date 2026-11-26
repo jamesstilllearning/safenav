@@ -1,0 +1,270 @@
+{
+  "type": "FeatureCollection",
+  "name": "EARIST Cavite Campus Pathways",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_main_entrance",
+        "name": "Main Entrance Path",
+        "highway": "footway",
+        "surface": "concrete",
+        "width": 3.0,
+        "category": "main_path",
+        "description": "Primary pedestrian entrance from Congressional Road",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0077500, 14.3002000],
+          [121.0080000, 14.3004000],
+          [121.0083000, 14.3005000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_central_spine",
+        "name": "Central Campus Spine",
+        "highway": "footway",
+        "surface": "concrete",
+        "width": 4.0,
+        "category": "main_path",
+        "description": "Main north-south pedestrian spine connecting buildings",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0083500, 14.3005200],
+          [121.0088000, 14.3008000],
+          [121.0092000, 14.3010000],
+          [121.0096000, 14.3007000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_building1_building2",
+        "name": "Building 1 to Building 2 Connector",
+        "highway": "footway",
+        "surface": "concrete",
+        "width": 2.5,
+        "category": "connector",
+        "description": "Path connecting Building 1 and Building 2",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0101000, 14.3006500],
+          [121.0100500, 14.3005500],
+          [121.0100000, 14.3004500],
+          [121.0099500, 14.3003000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_building2_building3",
+        "name": "Building 2 to Building 3 Connector",
+        "highway": "footway",
+        "surface": "concrete",
+        "width": 2.5,
+        "category": "connector",
+        "description": "Path connecting Building 2 and Building 3",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0101000, 14.3005500],
+          [121.0100500, 14.3006500],
+          [121.0099500, 14.3007000],
+          [121.0098500, 14.3008000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_building3_building4",
+        "name": "Building 3 to Building 4 Connector",
+        "highway": "footway",
+        "surface": "concrete",
+        "width": 2.5,
+        "category": "connector",
+        "description": "Path connecting Building 3 and Building 4",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0099500, 14.3007500],
+          [121.0098000, 14.3006500],
+          [121.0097000, 14.3005500],
+          [121.0096500, 14.3004500]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_east_perimeter",
+        "name": "East Perimeter Path",
+        "highway": "footway",
+        "surface": "paving_stones",
+        "width": 2.0,
+        "category": "perimeter",
+        "description": "Eastern perimeter walking path along campus boundary",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0102000, 14.3008000],
+          [121.0103000, 14.3005000],
+          [121.0102000, 14.3002000],
+          [121.0100000, 14.2998000],
+          [121.0096000, 14.2993000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_west_perimeter",
+        "name": "West Perimeter Path",
+        "highway": "footway",
+        "surface": "paving_stones",
+        "width": 2.0,
+        "category": "perimeter",
+        "description": "Western perimeter walking path along campus boundary",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0080000, 14.3005000],
+          [121.0078000, 14.3002000],
+          [121.0077000, 14.2998000],
+          [121.0076000, 14.2995000],
+          [121.0075000, 14.2991000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_emergency_exit_north",
+        "name": "North Emergency Exit Path",
+        "highway": "service",
+        "surface": "asphalt",
+        "width": 4.0,
+        "category": "emergency",
+        "description": "Emergency vehicle access and evacuation route - North exit",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0092000, 14.3013000],
+          [121.0095000, 14.3015000],
+          [121.0100000, 14.3016000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "path_emergency_exit_south",
+        "name": "South Emergency Exit Path",
+        "highway": "service",
+        "surface": "asphalt",
+        "width": 4.0,
+        "category": "emergency",
+        "description": "Emergency vehicle access and evacuation route - South exit to Congressional Road",
+        "source": "OpenStreetMap",
+        "verification_status": "verified_osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0080000, 14.3001500],
+          [121.0078000, 14.2998000],
+          [121.0077000, 14.2994000],
+          [121.0076878, 14.2990000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "parking_main",
+        "name": "Main Parking Area",
+        "amenity": "parking",
+        "capacity": 50,
+        "surface": "asphalt",
+        "category": "parking",
+        "description": "Main vehicle parking area near campus entrance",
+        "source": "OpenStreetMap",
+        "verification_status": "estimated"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0077000, 14.3000000],
+            [121.0080000, 14.3000000],
+            [121.0080000, 14.3001000],
+            [121.0077000, 14.3001000],
+            [121.0077000, 14.3000000]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "open_space_quadrangle",
+        "name": "Central Quadrangle",
+        "leisure": "park",
+        "surface": "grass",
+        "category": "open_space",
+        "description": "Central open green space for gatherings and assembly",
+        "source": "OpenStreetMap",
+        "verification_status": "estimated"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0088000, 14.3006000],
+            [121.0094000, 14.3006000],
+            [121.0094000, 14.3009000],
+            [121.0088000, 14.3009000],
+            [121.0088000, 14.3006000]
+          ]
+        ]
+      }
+    }
+  ]
+}

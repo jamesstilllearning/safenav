@@ -1,0 +1,83 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    function getUserRole() {
+      return isAuthenticated() ? request.auth.token.role : null;
+    }
+
+    function hasRole(roles) {
+      return isAuthenticated() && request.auth.token.role in roles;
+    }
+
+    function isAdmin() {
+      return hasRole(['admin']);
+    }
+
+    function isSecurity() {
+      return hasRole(['security']);
+    }
+
+    function isAdminOrSecurity() {
+      return isAdmin() || isSecurity();
+    }
+
+    // User profile photos: owner read/write; public read for display
+    match /user_photos/{userId}/{fileName} {
+      allow read: if isAuthenticated() || request.auth == null;
+      allow write: if isOwner(userId)
+        && request.resource.size < 5 * 1024 * 1024  // 5MB max
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if isOwner(userId) || isAdmin();
+    }
+
+    // Alert attachments: security/admin write; targeted users read
+    match /alert_attachments/{alertId}/{fileName} {
+      allow read: if isAuthenticated() && (
+        get(/databases/(default)/documents/alerts/$(alertId)).data.targetRoles.hasAny([getUserRole()])
+        || get(/databases/(default)/documents/alerts/$(alertId)).data.targetRoles.size() == 0
+      );
+      allow write: if isAdminOrSecurity()
+        && request.resource.size < 10 * 1024 * 1024  // 10MB max
+        && (request.resource.contentType.matches('image/.*')
+            || request.resource.contentType.matches('application/pdf')
+            || request.resource.contentType.matches('audio/.*'));
+      allow delete: if isAdmin();
+    }
+
+    // Emergency report media: reporter write; security/admin read
+    match /emergency_reports/{reportId}/{fileName} {
+      allow read: if isOwner(
+        get(/databases/(default)/documents/emergency_reports/$(reportId)).data.reporterId
+      ) || isAdminOrSecurity();
+      allow write: if isAuthenticated()
+        && request.auth.uid == get(/databases/(default)/documents/emergency_reports/$(reportId)).data.reporterId
+        && request.resource.size < 10 * 1024 * 1024  // 10MB max
+        && (request.resource.contentType.matches('image/.*')
+            || request.resource.contentType.matches('audio/.*')
+            || request.resource.contentType.matches('video/.*'));
+      allow delete: if isAdmin();
+    }
+
+    // Evacuation maps: public read; admin write
+    match /evacuation_maps/{fileName} {
+      allow read: if isAuthenticated() || request.auth == null;
+      allow write: if isAdmin()
+        && request.resource.size < 5 * 1024 * 1024;
+      allow delete: if isAdmin();
+    }
+
+    // Default deny all other paths
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

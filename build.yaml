@@ -1,0 +1,22 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          - lib/src/shared/models/*.dart
+          - lib/src/features/*/data/models/*.dart
+          - lib/src/features/*/data/providers/*.dart
+          - lib/src/features/*/presentation/providers/*.dart
+          - lib/src/features/auth/*.dart
+          - lib/src/core/utils/*.dart
+        options:
+          freezed:
+            map: "freezed"
+      json_serializable:
+        generate_for:
+          - lib/src/shared/models/*.dart
+          - lib/src/features/*/data/models/*.dart
+          - lib/src/features/*/data/providers/*.dart
+          - lib/src/features/*/presentation/providers/*.dart
+          - lib/src/features/auth/*.dart
+          - lib/src/core/utils/*.dart

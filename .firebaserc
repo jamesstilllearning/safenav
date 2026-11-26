@@ -1,0 +1,28 @@
+{
+  "projects": {
+    "staging": "safenav-cavite-staging",
+    "production": "safenav-cavite"
+  },
+  "targets": {
+    "safenav-cavite-staging": {
+      "firestore": {
+        "rules": "firestore.rules"
+      },
+      "storage": {
+        "rules": "storage.rules"
+      }
+    },
+    "safenav-cavite": {
+      "firestore": {
+        "rules": "firestore.rules"
+      },
+      "storage": {
+        "rules": "storage.rules"
+      }
+    }
+  },
+  "functions": {
+    "source": "functions",
+    "predeploy": ["npm --prefix functions run lint", "npm --prefix functions run build"]
+  }
+}

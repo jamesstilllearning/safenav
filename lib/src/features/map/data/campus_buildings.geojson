@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "name": "EARIST Cavite Campus Buildings",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bldg_001",
+        "osm_way_id": 413871755,
+        "name": "EARIST Cavite Building 1",
+        "building": "college",
+        "category": "academic",
+        "description": "Academic building on EARIST Cavite Campus",
+        "source": "OpenStreetMap",
+        "source_date": "2025-01-15",
+        "verification_status": "verified_osm",
+        "centroid_lat": 14.30064985,
+        "centroid_lng": 121.01015145
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0101891, 14.3007025],
+            [121.0102102, 14.3006205],
+            [121.0101138, 14.3005972],
+            [121.0100927, 14.3006792],
+            [121.0101891, 14.3007025]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bldg_002",
+        "osm_way_id": 413884377,
+        "name": "EARIST Cavite Building 2",
+        "building": "college",
+        "category": "academic",
+        "description": "Academic building on EARIST Cavite Campus",
+        "source": "OpenStreetMap",
+        "source_date": "2025-01-15",
+        "verification_status": "verified_osm",
+        "centroid_lat": 14.30027555,
+        "centroid_lng": 121.010026725
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0098353, 14.3000155],
+            [121.0101156, 14.3005832],
+            [121.0102180, 14.3005356],
+            [121.0099370, 14.2999677],
+            [121.0098353, 14.3000155]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bldg_003",
+        "osm_way_id": 413884441,
+        "name": "EARIST Cavite Building 3",
+        "building": "college",
+        "category": "academic",
+        "description": "Academic building on EARIST Cavite Campus",
+        "source": "OpenStreetMap",
+        "source_date": "2025-01-15",
+        "verification_status": "verified_osm",
+        "centroid_lat": 14.300795425,
+        "centroid_lng": 121.009906975
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0097479, 14.3009385],
+            [121.0101221, 14.3007674],
+            [121.0100661, 14.3006523],
+            [121.0096918, 14.3008235],
+            [121.0097479, 14.3009385]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bldg_004",
+        "osm_way_id": 413884446,
+        "name": "EARIST Cavite Building 4",
+        "building": "college",
+        "category": "academic",
+        "description": "Academic building on EARIST Cavite Campus",
+        "source": "OpenStreetMap",
+        "source_date": "2025-01-15",
+        "verification_status": "verified_osm",
+        "centroid_lat": 14.30041415,
+        "centroid_lng": 121.009680975
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.0095883, 14.3005481],
+            [121.0098471, 14.3004240],
+            [121.0097736, 14.3002802],
+            [121.0095149, 14.3004043],
+            [121.0095883, 14.3005481]
+          ]
+        ]
+      }
+    }
+  ]
+}
